@@ -1,0 +1,1408 @@
+BSDE with quadratic growth and unbounded terminal
+value
+Philippe Briand
+
+Ying Hu
+
+arXiv:math.PR/0504002 v1 1 Apr 2005
+
+IRMAR, Université Rennes 1, 35 042 RENNES Cedex, FRANCE
+philippe.briand@univ-rennes1.fr
+
+ying.hu@univ-rennes1.fr
+
+Abstract. In this paper, we study the existence of solution to BSDE with
+quadratic growth and unbounded terminal value. We apply a localization
+procedure together with a priori bounds. As a byproduct, we apply the same
+method to extend a result on BSDEs with integrable terminal condition.
+
+1. Introduction.
+In this paper we are concerned with real valued backward stochastic differential equations
+– BSDEs for short in the remaining –
+Z T
+Z T
+Zs · dBs ,
+0≤t≤T
+f (s, Ys , Zs ) ds −
+Yt = ξ +
+t
+
+t
+
+where (Bt )t≥0 is a standard brownian motion. Such equations have been extensively
+studied since the first paper of E. Pardoux and S. Peng [PP90]. The full list of contributions
+is too long to give and we will only quote results in our framework.
+Our setting is mainly the following : the generator, namely the function f , is of quadratic
+growth in the variable z and the terminal condition, the random variable ξ, will not be
+bounded. BSDEs with quadratic growth have been first studied by Magdalena Kobylanski
+in her PhD (see [Kob97, Kob00]) and then by Jean-Pierre Lepeltier and Jaime San Martin
+in [LSM98]. We should point out that BSDEs with quadratic growth in the variable z
+have found applications in control and finance, see, e.g., Bismut [Bis78], El Karoui, Rouge
+[EKR00], Hu, Imkeller, Muller [HIM05], . . .
+All the results on BSDEs with quadratic growth require that the terminal condition ξ is a
+bounded random variable. The boundedness of the terminal condition appears, from the
+point of view of the applications, to be restrictive and, moreover, from a theoretical point
+of view, is not necessary to obtain a solution. Indeed, let us consider the following well
+known equation :
+Z
+Z T
+1 T
+2
+|Zs | ds −
+Zs dBs ,
+0≤t≤T ;
+Yt = ξ +
+2 t
+t
+Ph. Briand,
+
+Draft 25 Mars 2005
+
+the change of variables Pt = eYt , Qt = eYt Zt , leads to the equation
+Z T
+Qs dBs
+Pt = eξ −
+t
+
+which has a solution as soon as eξ is integrable.
+On this simple example we see that the existence of exponential moments of the terminal
+condition is sufficient to construct a solution to our BSDE. Our paper will be focused
+on the theoretical study of these BSDEs but with unbounded terminal value with only
+exponential moments.
+To fill the gap between boundedness and existence of exponential moments, we will use
+an approach based upon a localization procedure together with a priori bounds. Let us
+quickly explain how it works on a simple example. Let f : R × Rd −→ R be a continuous
+function and ξ be a nonnegative terminal condition such that
+h i
+1
+E eξ < ∞,
+|f (y, z)| ≤ |z|2 ,
+2
+and let us try to construct a solution to the BSDE
+Z T
+Z T
+Zs · dBs ,
+f (Ys , Zs ) ds −
+Yt = ξ +
+
+0 ≤ t ≤ T.
+
+t
+
+t
+
+As mentioned before, BSDEs with quadratic growth in the variable z can be solved when
+the terminal solution is bounded. That is why we introduce (Y n , Z n ) as the minimal
+solution to the BSDE
+Z T
+Z T
+Zsn · dBs ,
+f (Ysn , Zsn ) ds −
+Ytn = ξ ∧ n +
+t
+
+t
+
+and of course we want to pass to the limit when n → ∞ in this equation.
+The process Y n is known to be bounded but the estimate depends on kξ ∧ nk∞ and thus
+is far from being useful when ξ is not bounded. The first step of our approach consists in
+finding an estimation for Y n independent of n. In this example, we can use the explicit
+formula mentioned before to show that
+
+
+
+
+
+
+0 ≤ − ln E e−(ξ∧n) | Ft ≤ Ytn ≤ ln E eξ∧n | Ft ≤ ln E eξ | Ft .
+
+With these inequalities in hands, we introduce the stopping time
+
+o
+n
+
+τk = inf t ∈ [0, T ] : ln E eξ | Ft ≥ k ∧ T
+
+and instead of working on the time interval [0, T ] we will restrict ourselves to [0, τk ] by
+considering the BSDE
+Z T ∧τk
+Z T ∧τk
+n
+n
+n
+n
+Zsn · dBs ,
+0 ≤ t ≤ T.
+f
+(Y
+,
+Z
+)
+ds
+−
++
+=
+Y
+Yt∧τ
+s
+s
+τk
+k
+t∧τk
+
+t∧τk
+
+n
+≤ k. This last property together with the
+By construction, we have supn supt Yt∧τ
+k ∞
+n
+fact that the sequence (Y )n≥1 is nondecreasing allows us, with the help of a result of
+
+2
+
+Kobylanski, to pass to the limit when n → ∞, k being fixed and then to send k to infinity
+to get a solution.
+The rest of the paper is organized as follows. Next section is devoted to the notations we
+use during this text. In Section 3, we claim our main result that we prove in Section 4.
+Section 5 is devoted to some additional results on BSDEs with quadratic growth in z.
+Finally, in the last section, we apply the same approach to study BSDEs with terminal
+value in L1 .
+
+2. Notations.
+For the remaining of the paper, let us fix a nonnegative real number T > 0.
+First of all, B = {Bt }t≥0 is a standard brownian motion with values in Rd defined on
+some complete probability space (Ω, F, P). {Ft }t≥0 is the augmented natural filtration of
+B which satisfies the usual conditions. In this paper, we will always use this filtration. P
+denotes the sigma-field of predictable subsets of [0, T ] × Ω.
+As mentioned in the introduction, a BSDE is an equation of the following type
+Z T
+Z T
+Zs · dBs ,
+0 ≤ t ≤ T.
+(1)
+f (s, Ys , Zs ) ds −
+Yt = ξ +
+t
+
+t
+
+f is called the generator and ξ the terminal condition.
+Let us recall that a generator is a random function f : [0, T ] × Ω × R × Rd −→ R which
+is measurable with respect to P × B(R) × B(Rd ) and a terminal condition is simply a real
+FT –measurable random variable.
+By a solution to the BSDE (1) we mean a pair (Y, Z) = {(Yt , Zt )}t∈[0,T ] of predictable
+processes with values in R × Rd such that P–a.s., t 7−→ Yt is continuous, t 7−→ Zt belongs
+to L2 (0, T ), t 7−→ f (t, Yt , Zt ) belongs to L1 (0, T ) and P–a.s.
+Z T
+Z T
+Zs · dBs ,
+0 ≤ t ≤ T.
+f (s, Ys , Zs ) ds −
+Yt = ξ +
+t
+
+t
+
+We will use the notation BSDE(ξ, f ) to say that we consider the BSDE whose generator is
+f and whose terminal condition is ξ; Y f (ξ), Z f (ξ) means a solution to the BSDE(ξ, f ).
+
+Y f (ξ), Z f (ξ) is said to be minimal if P-a.s., for each t ∈ [0, T ], Ytf(ξ) ≤ Ytg (ζ) whenever
+P–a.s. ξ ≤ ζ and f (t, y, z) ≤ g(t, y, z) for all (t, y, z). Y f (ξ), Z f (ξ) is said to be minimal
+in some space B if it belongs to this space and the previous property holds true as soon
+as (Y g (ζ), Z g (ζ)) ∈ B.
+For any real p > 0, S p denotes the set of real-valued, adapted and càdlàg processes
+{Yt }t∈[0,T ] such that
+i1∧1/p
+h
+< +∞.
+kY kS p := E supt∈[0,T ] |Yt |p
+
+If p ≥ 1, k · kS p is a norm on S p and if p ∈ (0, 1), (X, X ′ ) 7−→ X − X ′ S p defines a
+distance on S p . Under this metric, S p is complete.
+3
+
+Mp denotes the set of (equivalent classes of) predictable processes {Zt }t∈[0,T ] with values
+in Rd such that
+ Z T
+p/2 1∧1/p
+2
+< +∞.
+|Zs | ds
+kZkMp := E
+0
+
+For p ≥ 1, Mp (Rn ) is a Banach space endowed with this norm and for p ∈ (0, 1), Mp is a
+complete metric space with the resulting distance.
+We set S = ∪p>1 S p , M = ∪p>1 Mp and denote by S ∞ the set of predictable bounded
+processes. Finally, let us recall that a continuous process {Yt }t∈[0,T ] belongs to the class
+(D) if the family {Yτ : τ stopping time bounded by T } is uniformly integrable.
+
+3. Quadratic BSDEs.
+In this section, we consider BSDE(ξ, f ) when the generator f has a linear growth in y and
+a quadratic growth in z. We denote (H1) the assumption: there exist α ≥ 0, β ≥ 0 and
+γ > 0 such that P–a.s.
+∀t ∈ [0, T ],
+
+(y, z) 7−→ f (t, y, z) is continuous,
+
+∀(t, y, z) ∈ [0, T ] × R × Rd ,
+
+|f (t, y, z)| ≤ α + β|y| +
+
+γ 2
+|z| .
+2
+
+Concerning the terminal condition ξ, we will assume that
+h βT i
+E eγe |ξ| < +∞.
+
+(H1)
+
+(H2)
+
+We will use also a stronger assumption on the integrability of ξ namely
+i
+h
+∃λ > γeβT ,
+E eλ |ξ| < +∞.
+
+(H3)
+
+It is clear that we can assume without loss of generality that α ≥ β/γ.
+As we explained in the introduction, our method relies heavily on a priori estimate. To
+obtain such estimations, we will use the change of variable Pt = eγYt , Qt = γeγYt Zt ; if
+(Y, Z) is a solution to the BSDE(ξ, f ), (P, Q) solves the BSDE
+Pt = eγξ +
+
+Z T
+
+F (s, Ps , Qs ) ds −
+
+Z T
+
+Qs · dBs ,
+
+0 ≤ t ≤ T,
+
+t
+
+t
+
+with the function F defined by
+
+
+F (s, p, q) = 1p>0 γp f
+
+
+
+ln p q
+s,
+,
+γ γp
+
+
+
+1 |q|2
+−
+2 p
+
+
+
+.
+
+(2)
+
+In view of the growth of the generator f , we have F (s, p, q) ≤ 1p>0 p(αγ + β| ln p|). For
+notational convenience, we denote by H the function
+∀p ∈ R,
+
+H(p) = p (αγ + β ln p) 1[1,+∞) (p) + γα1(−∞,1) (p).
+4
+
+It is straightforward to check that, since α ≥ β/γ, H is convex and locally Lipschitz
+continuous and that, for any real p > 0, p (αγ + β| ln p|) ≤ H(p). Thus we deduce the
+inequality
+∀s ∈ [0, T ], ∀p ∈ R, ∀q ∈ Rd ,
+F (s, p, q) ≤ H(p).
+(3)
+To get an upper bound for Yt , the idea is to compare more or less Pt with φt (ξ) where,
+for any real z, {φt (z)}0≤t≤T stands for the solution to the differential equation
+Z T
+γz
+H(φs ) ds,
+0 ≤ t ≤ T.
+(4)
+φt = e +
+t
+
+Using the convexity of H, we will able to prove that
+Pt ≤ E (φt (ξ) | Ft ) ,
+
+Yt ≤
+
+1
+ln E (φt (ξ) | Ft ) .
+γ
+
+Before proving this result rigorously, let us recall that the differential equation (4) can be
+solved easily. Indeed, we have, for any z ≥ 0,
+!
+
+
+eβ(T −t) − 1
+exp zγeβ(T −t) , if β > 0,
+φt (z) = exp γα
+β
+and φt (z) = eγα(T −t) eγz if β = 0.
+Let us consider the case where z < 0. If eγz + T γα ≤ 1 then the solution is
+φt = eγz + γα(T − t)
+and otherwise there exists 0 < S < T such that eγz + γα(T − S) = 1 and
+!
+eβ(S−t) − 1
+γz
+1[0,S] (t).
+φt = [e + γα(T − t)] 1(S,T ] (t) + exp γα
+β
+It is plain to check that t 7→ φt (z) is decreasing and that z 7→ φt (z) is increasing and
+continuous.
+Lemma 1. Let the assumption (H1) hold and let ξ be a bounded FT –measurable random
+variable.
+If (Y, Z) is a solution to the BSDE(ξ, f ) in S ∞ × M2 then
+1
+1
+− ln E (φt (−ξ) | Ft ) ≤ Yt ≤ ln E (φt (ξ) | Ft ) .
+γ
+γ
+Proof. Let us set Φt = E (φt (ξ) | Ft ). We have
+
+
+
+
+Z T
+Z T
+γξ
+γξ
+H(φs (ξ)) ds Ft = E e +
+E (H(φs (ξ)) | Fs ) ds Ft .
+Φt = E e +
+t
+
+t
+
+Thus writing the bounded brownian martingale
+ Z t
+
+
+
+Z T
+Z T
+γξ
+γξ
+Ψs ·dBs
+E (H(φs (ξ)) | Fs ) ds +
+E (H(φs (ξ)) | Fs ) ds Ft = E e +
+E e +
+0
+
+0
+
+5
+
+0
+
+(Φ, Ψ) solves the BSDE
+γξ
+
+Φt = e
+
++
+
+Z T
+
+E (H(φs (ξ)) | Fs ) ds −
+
+t
+
+Z T
+
+Ψs · dBs .
+
+t
+
+On the other hand, if (Y, Z) ∈ S ∞ × M2 is a solution of (1), setting as before Pt = eγYt ,
+Qt = γeγYt Zt , we have
+Z T
+Z T
+γξ
+Qs · dBs ,
+F (s, Ps , Qs ) ds −
+Pt = e +
+t
+
+t
+
+with F defined by (2).
+It follows that
+Z T
+Z T
+Z T
+(Ψs − Qs ) · dBs
+Rs ds −
+(H(Φs ) − H(Ps )) ds +
+Φt − Pt =
+t
+
+t
+
+t
+
+where, in view of the inequality (3) and since H is convex,
+Rs = E (H(φs (ξ)) | Fs ) − H (E (φs (ξ) | Fs )) + H(Ps ) − F (s, Ps , Qs )
+is a nonnegative process.
+H is only locally Lipschitz but since Φ and P are bounded we can apply the comparison
+theorem to get Pt ≤ Φt and Yt ≤ γ1 ln Φt .
+Finally, since the function −f (t, −y, −z) still satisfies the assumption (H1), we get also
+the inequality −Yt ≤ γ1 ln E (φt (−ξ) | Ft ).
+We are now in position to prove that under the assumptions described before the BSDE (1)
+has at least a solution.
+Theorem 2. Let the assumptions (H1) and (H2) hold. Then the BSDE (1) has at least
+a solution (Y, Z) such that :
+1
+1
+− ln E (φt (−ξ) | Ft ) ≤ Yt ≤ ln E (φt (ξ) | Ft ) .
+γ
+γ
+
+(5)
+
+If moreover, (H3) holds, then Z belongs to M2 .
+Proof of the last part of Theorem 2. If (Y, Z) is a solution to the BSDE (1) such that the
+inequalities (5) hold, then
+1
+|Yt | ≤ ln E (φ0 (|ξ|) | Ft )
+γ
+and, under the assumption (H3), we deduce that, for some p > 1,
+i
+h
+E supt∈[0,T ] epγ|Yt | < +∞.
+
+For n ≥ 1, let τn be the following stopping time
+
+
+Z t
+2γ|Ys |
+2
+e
+|Zs | ds ≥ n ∧ T,
+τn = inf t ≥ 0 :
+0
+
+6
+
+and let us consider the function from R+ into itself defined by
+u(x) =
+
+1 γx
+(e − 1 − γx) .
+γ2
+
+x 7−→ u(|x|) is C 2 and we have from Itô’s formula, with the notation sgn(x) = −1x≤0 +1x>0 ,
+
+Z t∧τn 
+1 ′′
+′
+2
+u (|Ys |) sgn(Ys )f (s, Ys , Zs ) − u (|Ys |)|Zs | ds
+u(|Y0 |) = u(|Yt∧τn |) +
+2
+0
+Z t∧τn
+u′ (|Ys |) sgn(Ys )Zs · dBs .
+−
+0
+
+It follows from (H1) since u′ (x) ≥ 0 for x ≥ 0 that
+Z t∧τn
+Z t∧τn
+′
+u′ (|Ys |) sgn(Ys )Zs · dBs
+u (|Ys |) (α + β|Ys |) ds −
+u(|Y0 |) ≤ u(|Yt∧τn |) +
+0
+0
+Z
+
+1 t∧τn ′′
+−
+u (|Ys |) − γ u′ (|Ys |) |Zs |2 ds.
+2 0
+
+Moreover, we have (u′′ − γu′ )(x) = 1 for x ≥ 0 and, taking expectation of the previous
+inequality, we get
+"
+#
+
+Z T ∧τn
+Z
+1
+1
+1 T γ|Ys |
+2
+γ|Yt |
+|Zs | ds ≤ E 2 sup e
+E
++
+e
+(α + β|Ys |) ds
+2
+γ t∈[0,T ]
+γ 0
+0
+Fatou’s lemma together with the fact that eγ|Yt | ∈ S p gives the result.
+
+4. Proof of Theorem 2.
+Let us first construct a solution to the BSDE (1) in the case where ξ is nonnegative.
+For each n ∈ N∗ , we set ξ n = ξ ∧ n. Then it is known from [Kob00, Theorem 2.3] that the
+BSDE
+Z
+Z
+Ytn = ξ n +
+
+T
+
+f (s, Ysn , Zsn ) ds −
+
+T
+
+Zsn · dBs ,
+
+0≤t≤T
+
+t
+t
+n
+n
+∞
+2
+has a minimal solution (Y , Z ) in S × M . Lemma 1 implies the inequalities
+
+1
+1
+− ln E (φt (−ξ n ) | Ft ) ≤ Ytn ≤ ln E (φt (ξ n ) | Ft ) .
+γ
+γ
+Since we consider only minimal solutions, we have,
+Ytn ≤ Ytn+1 .
+
+∀t ∈ [0, T ],
+
+We define Y = supn≥1 Y n .
+Since 0 ≤ φt (ξ n ) ≤ φ0 (|ξ|) and 0 ≤ φt (−ξ n ) ≤ φ0 (|ξ|), we deduce from the dominated
+convergence theorem, noting that the random variable φ0 (|ξ|) is integrable by (H2), that
+1
+1
+− ln E (φt (−ξ) | Ft ) ≤ Yt ≤ ln E (φt (ξ) | Ft ) .
+γ
+γ
+7
+
+In particular, we have limt→T Yt = ξ = YT . Indeed, for each S < T ,
+lim sup Yt ≤ lim sup
+t→T
+
+t→T
+
+1
+1
+1
+ln E (φt (ξ) | Ft ) ≤ lim ln E (φS (ξ) | Ft ) = ln φS (ξ),
+t→T γ
+γ
+γ
+
+and limS→T γ1 ln φS (ξ) = ξ. We can do the same for lim inf.
+Let us introduce the following stopping time :
+
+
+1
+τk = inf t ∈ [0, T ] : ln E (φ0 (|ξ|) | Ft ) ≥ k ∧ T.
+γ
+n , Z n1
+Then (Ykn , Zkn ) := (Yt∧τ
+t t≤τk ) satisfies the following BSDE
+k
+
+Ykn = ξkn +
+
+Z T
+t
+
+1s≤τk f (s, Ykn (s), Zkn (s)) ds −
+
+Z T
+t
+
+Zkn (s) · dBs ,
+
+where of course ξkn = Ykn (T ) = Yτnk .
+We are going to pass to the limit when n tends to +∞ for k fixed in this last equation.
+The key point is that Ykn is increasing in n and remains bounded by k. At this stage, let
+us mention a mere generalization of Proposition 2.4 in [Kob00].
+Lemma 3 ([Kob00]). Let (ξn )n≥1 be a sequence of FT –measurable bounded random
+variables and (fn )n≥1 be a sequence of generators which are continuous with respect to
+(y, z).
+We assume that (ξn )n≥1 converges P–a.s. to ξ, that (fn )n≥1 converges locally uniformly
+in (y, z) to the generator f , and also that
+1. supn≥1 kξn k∞ < +∞ ;
+2. supn≥1 |fn (t, y, z)| satisfies the inequality in (H1).
+
+If for each n ≥ 1, the BSDE(ξn , fn ) has a solution in S ∞ × M2 , such that Y fn (ξn ) n≥1
+
+
+is nondecreasing (respectively nonincreasing), then P–a.s. Ytfn (ξn )
+converges unin≥1
+
+formly on [0, T ] to Yt = supn≥1 Ytfn (ξn ) (respectively Yt = inf n≥1 Ytfn (ξn )), Z fn (ξn ) n≥1
+converges to some Z in M2 and (Y, Z) is a solution to BSDE(ξ, f ) in S ∞ × M2 .
+Proof. It follows from Lemma 1 that there exists r > 0 such that, P–a.s.
+∀n ≥ 1,
+
+∀t ∈ [0, T ],
+
+Ytfn (ξn ) ≤ r.
+
+Let us consider the
+ continuous function ρ(x) = xr/ max(r, |x|). Since ρ(x) = x for |x| ≤ r,
+f
+f
+n
+n
+Y (ξn ), Z (ξn ) solves the BSDE(ξn , gn ) where gn (t, y, z) = fn (t, ρ(y), z). Obviously,
+we have, for each n ≥ 1,
+γ
+|gn (t, y, z)| ≤ α + β r + |z|2 ,
+2
+and thus we can apply the result of Kobylanski.
+8
+
+Setting Yk (t) = supn Ykn (t), it follows from the previous lemma that there exists a process
+Zk ∈ M2 such that limn Zkn = Zk in M2 and (Yk , Zk ) solves the BSDE
+Yk (t) = ξk +
+
+Z T
+t
+
+1s≤τk f (s, Yk (s), Zk (s)) ds −
+
+Z T
+
+Zk (s) · dBs ,
+
+(6)
+
+t
+
+where ξk = supn Yτnk .
+But τk ≤ τk+1 , and thus we get, coming back to the definition of Yk , Zk and Y ,
+Yt∧τk = Yk+1 (t ∧ τk ) = Yk (t),
+
+Zk+1 (t) 1t≤τk = Zk (t).
+
+As τk → T and the Yk ’s are continuous processes we deduce in particular that Y is
+continuous on [0, T ). On the other hand, as mentioned before limt→T Yt = ξ and YT is
+equal to ξ by construction. Thus Y is a continuous process on the closed interval [0, T ].
+Then we define Z on (0, T ) by setting :
+Zt = Zk (t),
+
+if t ∈ (0, τk ).
+
+From (6), (Y, Z) satisfies:
+Yt∧τk = Yτk +
+
+Z τk
+
+f (s, Ys , Zs )ds −
+
+Z τk
+
+Zs · dBs .
+
+(7)
+
+t∧τk
+
+t∧τk
+
+Finally, we have
+
+
+Z T
+Z T
+Z T
+2
+2
+2
+|Zs | ds = ∞, τk < T
+|Zs | ds = ∞, τk = T + P
+|Zs | ds = ∞) = P
+P(
+0
+0
+0
+
+Z τk
+2
+|Zk (s)| ds = ∞ + P(τk < T ),
+≤ P
+0
+
+and we deduce that, P–a.s.
+
+Z T
+
+|Zs |2 ds < ∞.
+
+0
+
+By sending k to infinity in (7), we deduce that (Y, Z) is a solution of (1).
+Let us explain quickly how to extend this construction to the general case. Let us fix
+n ∈ N∗ and p ∈ N∗ and set ξ n,p = ξ + ∧ n − ξ − ∧ p. Let us consider, (Y n,p , Z n,p ) the
+minimal bounded solution to the BSDE
+Z T
+Z T
+Zsn,p · dBs ,
+0≤t≤T
+f (s, Ysn,p , Zsn,p ) ds −
+Ytn,p = ξ n,p +
+t
+
+t
+
+which satisfies
+1
+1
+− ln E (φt (−ξ n,p ) | Ft ) ≤ Ytn,p ≤ ln E (φt (ξ n,p ) | Ft ) .
+γ
+γ
+We have,
+∀t ∈ [0, T ],
+
+Ytn,p+1 ≤ Ytn,p ≤ Ytn+1,p ,
+9
+
+and we define Y p = supn≥1 Y n,p so that Ytp+1 ≤ Ytp and Yt = inf p≥1 Ytp .
+By the dominated convergence theorem, we have
+1
+1
+− ln E (φt (−ξ) | Ft ) ≤ Yt ≤ ln E (φt (ξ) | Ft ) ,
+γ
+γ
+and in particular, we have limt→T Yt = ξ = YT .
+n,p
+(Yt∧τ
+, Ztn,p 1t≤τk ) solves the BSDE
+k
+n,p
++
+= Yτn,p
+Yt∧τ
+k
+k
+
+Z T
+t
+
+1s≤τk f (s, Ysn,p , Zsn,p ) ds −
+
+Z T
+t
+
+Zsn,p 1s≤τk · dBs .
+
+n,p
+But, once again Yt∧τ
+is increasing in n and decreasing in p and remains bounded by k.
+k
+n,p
+Arguing as before, setting Yk (t) = inf p supn Yt∧τ
+, there exists a process Zk such that
+k
+limp limn Z n,p (s)1s≤τk = Zk (s) and (Yk , Zk ) still solves the BSDE (6). The rest of the
+proof is unchanged.
+
+5. Additional results on quadratic BSDEs.
+5.1. Minimal solution. In this section, we give some complements on BSDEs with
+quadratic growth in z.
+Proposition 4. Let (H1) holds and assume moreover that there exists an integer r ≥ 0
+such that P–a.s.
+f (t, y, z) ≥ −r (1 + |y| + |z|) .
+Let us assume also that (H3) holds for ξ + and that, for some p > 1, ξ − ∈ Lp .
+Then BSDE(ξ, f ) has a minimal solution in S.
+Proof. For each n ≥ r, let us consider the function
+o
+n
+fn (t, y, z) = inf f (t, p, q) + n|p − y| + n|q − z| : (p, q) ∈ Q1+d .
+
+Then fn is well defined and it is globally Lipschitz continuous with constant n. Moreover (fn )n≥r is increasing and converges pointwise to f . Dini’s theorem implies that the
+convergence is also uniform on compact sets. We have also, for all n ≥ r,
+−r(1 + |y| + |z|) ≤ fn (t, y, z) ≤ f (t, y, z)
+Let (Y n , Z n ) be the unique solution in S p × Mp to BSDE(ξ, fn ). It follows from the
+classical comparison theorem that
+Ytr ≤ Ytn ≤ Ytn+1 .
+Let us prove that Ytn ≤ γ1 ln E (φt (ξ) | Ft ). To do this let us recall that, since fn is Lipschitz,
+Ytn = limm→+∞ Ytfn (ξm ) where ξm = ξ 1|ξ|≤m . Moreover E (φt (ξm ) | Ft ) −→ E (φt (ξ) | Ft )
+a.s. since supm≥1 |φt (ξm )| ≤ φ0 (ξ + ) which is integrable. Thus we have only to prove
+10
+
+that Ytfn (ξm ) ≤ γ1 ln E (φt (ξm ) | Ft ). We keep the notations of the beginning of Section 4.
+(Φ, Ψ) is solution to the BSDE
+Z T
+Z T
+Z T
+γξm
+Φt = e
++
+H(Φs ) ds +
+Γs ds −
+Ψs · dBs ,
+t
+
+t
+
+t
+
+where Γs = E (H(φs (ξ)) | Fs ) − H(Φs ) is a nonnegative process since H is convex.
+Ψt
+that (U, V ) solves the BSDE
+It follows by setting Ut = γ1 ln Φt , Vt = γΦ
+t
+
+Ut = ξm +
+
+Z T
+
+g(s, Us , Vs ) ds −
+
+Z T
+
+Vs · dBs
+
+t
+
+t
+
+where we have set g(s, u, v) = (α + βu)1u≥0 + αeγ|u| 1u<0 + γ2 |v|2 + Cs with Cs = γ1 e−γUs Γs .
+Since the process C is still nonnegative, we have the inequalities
+fn (t, u, v) ≤ f (t, u, v) ≤ g(t, u, v)
+taking into account the fact that αγ ≥ β.
++
+belongs to S, we can apply the
+Since fn is Lipschitz continuous and Y fn (ξm ) − U
+extended comparison theorem (see Proposition 5) to get, for each m ≥ 1, Ytfn (ξm ) ≤ Ut
+and thus the inequality we want to obtain.
+We set Y = supn≥r Y n and, for k ≥ 1,
+
+
+
+
+1
+τk = inf t ∈ [0, T ] : max
+ln E (φt (ξ) | Ft ) , −Ytr ≥ k ∧ T.
+γ
+Arguing as in the proof of Theorem 2, we construct a process Z such that (Y, Z) solves
+BSDE(ξ, f ).
+Let us show that this solution is minimal in S. Let (Y ′ , Z ′ ) be a solution to the BSDE(ξ ′ , f ′ )
+where ξ ≤ ξ ′ and f ≤ f ′ . It is enough to check that Y n ≤ Y ′ to prove that Y ≤ Y ′ . But
+this is a direct consequence of Proposition 5.
+To be complete, let us claim and prove the extended comparison theorem that we used in
+the proof of the previous result.
+Proposition 5. Let (Y, Z) be a solution to BSDE(ξ, f ) and (Y ′ , Z ′ ) be a solution to
+BSDE(ξ ′ , f ′ ). We assume that ξ ≤ ξ ′ and that f satisfies, for some constants µ and λ,
+P–a.s.
+
+(y − y ′ ) · f (t, y, z) − f (t, y ′ , z) ≤ µ|y − y ′ |2 ;
+f (t, y, z) − f (t, y, z ′ ) ≤ λ|z − z ′ |;
+
+If (Y − Y ′ )+ belongs to S, then P–a.s. Yt ≤ Yt′ .
+Proof. Let us fix n ∈ N∗ and denote τn the stopping time
+
+
+Z t
+
+2
+′ 2
+ds ≥ n ∧ T.
+|Zs | + Zs
+τn = inf t ∈ [0, T ] :
+0
+
+11
+
+Tanaka’s formula leads to the equation, setting Ut = Yt − Yt′ , Vt = Zt − Zt′ ,
+Z τn
+µτn +
++
+eµs 1Us >0 Vs · dBs
+−
+U
+≤e
+eµ(t∧τn ) Ut∧τ
+τn
+n
+t∧τn
+Z τn
+
+
+eµs 1Us >0 f (s, Ys , Zs ) − f ′ s, Ys′ , Zs′ − µUs+ ds.
++
+
+(8)
+
+t∧τn
+
+First of all, we write
+
+
+
+
+f (s, Ys , Zs ) − f ′ s, Ys′ , Zs′ = f (s, Ys , Zs ) − f s, Ys′ , Zs + f s, Ys′ , Zs − f ′ s, Ys′ , Zs′
+
+and we deduce, using the monotonicity of f in y that
+
+
+
+1Us >0 f (s, Ys , Zs ) − f ′ s, Ys′ , Zs′ − µUs+ ≤ 1Us >0 f s, Ys′ , Zs − f ′ s, Ys′ , Zs′ .
+
+But f (s, Ys′ , Zs′ ) − f ′ (s, Ys′ , Zs′ ) is nonpositive so that
+
+
+
+1Us >0 f (s, Ys , Zs ) − f ′ s, Ys′ , Zs′ − µUs+ ≤ 1Us >0 f s, Ys′ , Zs − f s, Ys′ , Zs′ .
+
+Finally we set
+
+βs =
+
+(f (s, Ys′ , Zs ) − f (s, Ys′ , Zs′ )) Vs
+|Vs |2
+
+which is a process bounded by λ.
+Coming back to (8), we obtain the following inequality
+Z τn
+Z τn
+µs
+µτn +
+µ(t∧τn ) +
+eµs 1Us >0 Vs · dBs
+e 1Us >0 βs · Vs ds −
+e
+Ut∧τn ≤ e Uτn +
+t∧τn
+
+t∧τn
+
+By Girsanov’s theorem, we deduce that
+i
+h
+
+
++
+≤ E∗ eµτn Uτ+n ,
+E∗ eµ(t∧τn ) Ut∧τ
+n
+
+where P∗ is the probability measure on (Ω, FT ) whose density with respect to P is
+DT = exp
+
+Z T
+
+βs · dBs −
+
+0
+
+1
+2
+
+Z T
+0
+
+
+|βs |2 ds ;
+
+it is worth noting that, since β is a bounded process, DT has moments of all order.
+Since we know that U + belongs to S, we can easily send n to infinity to get
+
+
+E∗ eµt Ut+ ≤ 0.
+
+Thus Ut ≤ 0 P∗ –a.s. and since P∗ is equivalent to P on (Ω, FT ), Yt ≤ Yt′ P–a.s..
+
+12
+
+5.2. One extension. In this paragraph, we explain how we can extend our results to a
+more general setting allowing a superlinear growth of the generator in the variable y as in
+the work [LSM98].
+Let h : R+ −→ R+ be a nondecreasing convex C 1 function with h(0) > 0 such that
+Z +∞
+0
+
+du
+= +∞.
+h(u)
+
+We denote (H1’) the assumption: there exists γ > 0 such that P–a.s.
+∀t ∈ [0, T ],
+
+(y, z) 7−→ f (t, y, z) is continuous,
+
+∀(t, y, z) ∈ [0, T ] × R × Rd ,
+−γy
+
+sup e
+
+|f (t, y, z)| ≤ h(|y|) +
+
+γ 2
+|z| ,
+2
+
+(H1’)
+
+h(y) < +∞.
+
+y>0
+
+Let us point out that the previous setting, namely the linear growth condition, corresponds
+to h(y) = α + βy but we can also have a superlinear growth in y; for instance, we can take
+h(y) = α (y + e) ln(y + e).
+Before giving our integrability condition for the terminal value ξ, let us explain what is
+the first modification we have to do. We consider only the case where h is not constant.
+
+
+According to the third point of (H1’), let us denote by c = supp∈(0,1) γph − lnγp and let
+us define
+
+
+
+
+ln p
+p0 = inf p ≥ 1 : γph
+≥c .
+γ
+We define finally
+H(p) = γph
+
+
+
+ln p
+γ
+
+
+
+1p≥p0 + c1p<p0 .
+
+Then H is convex and we have the following result.
+Lemma 6. Let z ∈ R. The differential equation
+Z T
+γz
+H(φs ) ds,
+φt = e +
+
+0 ≤ t ≤ T,
+
+t
+
+has a unique continuous solution {φt (z)}0≤t≤T which is decreasing. Moreover, for each
+t ∈ [0, T ], the map z 7−→ φt (z) is increasing and continuous.
+Proof. φt is solution if and only if ut = ln φt /γ is a solution of the differential equation
+u′t = −θ(ut ),
+
+0 ≤ t ≤ T,
+
+uT = z ≥ 0,
+
+where θ(x) = h(x)1x≥ ln p0 + γc e−γx 1x< ln p0 . Let us consider the function Θ defined by
+γ
+
+γ
+
+Θ(x) =
+
+Z x
+
+1
+du,
+θ(u)
+−∞
+
+13
+
+x ∈ R.
+
+Since θ is positive, Θ is an increasing bijection from R onto (0, ∞) of class C 1 . It’s plain to
+check that the unique solution to the previous differential equation is Θ−1 (T − t + Θ(z))
+since for any solution we have Θ(ut )′ = −1. Thus
+φt = eγΘ
+
+−1 (T −t+Θ(z))
+
+and the proof of the lemma is complete.
+We are now in position to give our second assumption.
+φ0 (|ξ|) is integrable.
+
+(H2’)
+
+Exactly as in the linear case, we can prove the following existence result.
+Theorem 7. Let assumptions (H1’) and (H2’) hold. Then the BSDE (1) has at least a
+solution (Y, Z) such that :
+1
+1
+− ln E (φt (ξ) | Ft ) ≤ Yt ≤ ln E (φt (ξ) | Ft ) .
+γ
+γ
+
+6. BSDEs in L1 .
+In this section, we use the method developed before to construct solutions to BSDEs when
+the data are only integrable. BSDEs with integrable data have been studied in [BDH+ 03]
+and we show that, in the one dimensional case, we can extend the result quoted before.
+Let us recall the framework of [BDH+ 03]: assumption (A) holds true for the random
+function f if there exist constants µ ∈ R, λ ≥ 0, δ ≥ 0 and α ∈ (0, 1) such that
+
+(y − y ′ ) · f (t, y, z) − f (t, y ′ , z) ≤ µ|y − y ′ |2 ;
+f (t, y, z) − f (t, y, z ′ ) ≤ λ|z − z ′ |;
+
+y −→ f (t, y, z) is continuous;
+for each r > 0, ψr (t) := sup |f (t, y, 0) − f (t, 0, 0)| ∈ L1 ((0, T ) × Ω);
+|y|≤r
+
+|f (t, y, z) − f (t, y, 0)| ≤ δ (gt + |y| + |z|)α ,
+where moreover the progressively measurable processes (|f (t, 0, 0)|) and (gt ) and the terminal condition ξ satisfy
+
+
+Z T
+(|f (s, 0, 0)| + gs ) ds < +∞.
+E |ξ| +
+0
+
+Let us recall the following result.
+Lemma 8 ([BDH+ 03]). Under the assumption (A), BSDE (1) has a unique solution
+(Y, Z) such that Y is of class (D) and Z ∈ Mβ for some β > α. Moreover (Y, Z) ∈ S β ×Mβ
+for each β ∈ (0, 1).
+
+14
+
+We should point out that the result holds true in all dimension not only in the real case.
+The last assumption on the generator f does not seem to be very natural; it would be
+better to have a condition of the type
+|f (t, y, z)| ≤ c (1 + |y| + |z|α )
+and the remaining of this section is devoted to the construction of a solution under this
+assumption. But before, we state a comparison result for BSDEs under assumption (A).
+Lemma 9. Let (A) holds. Then, if ξ ≤ ξ ′ belong to L1 , Ytf (ξ) ≤ Ytf (ξ ′ ).
+Proof. Let us fix n ∈ N∗ and denote τn the stopping time
+
+
+Z t
+
+2
+ds ≥ n ∧ T.
+|Zs |2 + Zs′
+τn = inf t ∈ [0, T ] :
+0
+
+Tanaka’s formula leads to the equation, setting Ut = Yt − Yt′ , Vt = Zt − Zt′ ,
+Z τn
+µτn +
+µ(t∧τn ) +
+eµs 1Us >0 Vs · dBs
+e
+Ut∧τn ≤e Uτn −
+t∧τn
+Z τn
+
+
+eµs 1Us >0 f (s, Ys , Zs ) − f s, Ys′ , Zs′ − µUs+ ds.
++
+t∧τn
+
+We deduce from the previous inequality, using the monotonicity of f in y that
+
+
+
+1Us >0 f (s, Ys , Zs ) − f s, Ys′ , Zs′ − µUs+ ≤ 1Us >0 f s, Ys′ , Zs − f s, Ys′ , Zs′
+
+and taking into account the last condition on f , the right hand side of the previous
+inequality is bounded from above by
+α
+Xs := 2δ gs + Ys′ + |Zs | + Zs′
+.
+
+It follows that
+
+µ(t∧τn )
+
+e
+and thus that
+
++
+Ut∧τ
+≤ eµτn Uτ+n +
+n
+
+Z T
+
+µs
+
+e Xs ds −
+
+Z τn
+
+t∧τn
+
+0
+
+eµs 1Us >0 Vs · dBs
+
+
+
+Z T
++
+µs
+µτn +
+F
+e
+X
+ds
+≤
+E
+e
+eµ(t∧τn ) Ut∧τ
+U
++
+t .
+s
+τn
+n
+0
+
+and Y ′ belongs to the class (D), we can send n to ∞ in the previous inequality
+
+Since Y
+(see [BDH+ 03] for details) to get
+µt
+
+e
+
+Ut+ ≤ E
+
+Z T
+
+µs
+
+
+
+e Xs ds Ft .
+
+0
+
+As a byproduct, we deduce that U + belongs to S p as soon as αp < 1. Thus we can choose
+p > 1 such that αp < 1.
+Since U + belongs to S, we can apply Proposition 5 to conclude the proof.
+15
+
+From now on we assume that f is continuous and satisfies, for some constants c ≥ 0 and
+α ∈ (0, 1),
+|f (t, y, z)| ≤ c (1 + |y| + |z|α ) .
+(H4)
+Moreover we will suppose that ξ ∈ L1 . This last assumption is denoted by (H5).
+Theorem 10. Let (H4) and (H5) hold. Then the BSDE (1) has a solution (Y, Z) such
+that Y belongs to the class (D). Moreover (Y, Z) belongs to S β × Mβ for all 0 < β < 1.
+Proof. To prove this result, we use the same approach as in the case of quadratic generators. So let us fix n ∈ N∗ and p ∈ N∗ and set ξ n,p = ξ + ∧ n − ξ − ∧ p. Since f is assumed
+to
+
+f
+n,p
+f
+n,p
+be a continuous map, we can consider, according to [LSM97], Y (ξ ), Z (ξ ) as the
+minimal solution to the BSDE
+Z T
+Z T
+Zs · dBs , 0 ≤ t ≤ T.
+f (s, Ys , Zs ) ds −
+Yt = ξ n,p +
+t
+
+t
+
+Since we are dealing with minimal solutions, we have
+Ytf (ξ n,p+1 ) ≤ Ytf (ξ n,p ) ≤ Ytf (ξ n+1,p ),
+and we set Yt = inf p≥1 supn≥1 Ytf (ξ n,p ).
+In order to apply the method described before, we have to find an upper bound independent
+of (n, p) for Y f (ξ n,p ) . For this let us observe that
+|f (t, y, z)| ≤ g(y, z) := 2c (1 + |y| + |z|α ∧ |z|) .
+This function g is globally Lipschitz continuous so that we have from the classical comparison theorem
+Y f (ξ n,p ) ≤ Y g (ξ n,p )
+and since we have the same inequality for −f (t, −y, −z),
+−Y f (ξ n,p ) ≤ Y g (−ξ n,p ).
+But the function g satisfies also the assumption (A) and thus form the comparison theorem
+in the integrable framework – Lemma 9 –, we deduce that
+Ytf (ξ n,p ) ≤ Ytg (|ξ|).
+Let us define Yt = inf p≥1 supn≥1 Ytf (ξ n,p ) and for each k ≥ 1,
+τk = inf {t ∈ [0, T ] : Ytg (|ξ|) ≥ k} ∧ T.
+Exactly as in the proof of Theorem 2, we construct a process Z such that (Y, Z) solves
+the BSDE (1).
+To conclude the proof, let us observe that since |Yt | ≤ Ytg (|ξ|), Y belongs to the class (D)
+and to S β for each β ∈ (0, 1). It follows from [BDH+ 03, Lemma 3.1] that Z belongs to
+Mβ for β ∈ (0, 1).
+16
+
+References.
+[BDH+ 03] Ph. Briand, B. Delyon, Y. Hu, É. Pardoux, and L. Stoica, Lp solutions of backward stochastic differential equations, Stochastic Process. Appl. 108 (2003),
+109–129.
+[Bis78]
+
+J.-M. Bismut, Contrôle des systèmes linéaires quadratiques: applications de
+l’intégrale stochastique, Séminaire de Probabilités, XII (Univ. Strasbourg,
+Strasbourg, 1976/1977), Lecture Notes in Math., vol. 649, Springer, Berlin,
+1978, pp. 180–264.
+
+[EKR00]
+
+N. El Karoui and R. Rouge, Pricing via utility maximization and entropy,
+Math. Finance 10 (2000), no. 2, 259–276, INFORMS Applied Probability Conference (Ulm, 1999).
+
+[HIM05]
+
+Y. Hu, P. Imkeller, and M. Müller, Utility maximization in incomplete markets,
+Ann. Appl. Probab. (2005), To appear.
+
+[Kob97]
+
+M. Kobylanski, Résultats d’existence et d’unicité pour des équations
+différentielles stochastiques rétrogrades avec des générateurs à croissance
+quadratique, C. R. Acad. Sci. Paris Sér. I Math. 324 (1997), no. 1, 81–86.
+
+[Kob00]
+
+, Backward stochastic differential equations and partial differential equations with quadratic growth, Ann. Probab. 28 (2000), no. 2, 558–602.
+
+[LSM97]
+
+J.-P. Lepeltier and J. San Martin, Backward stochastic differential equations
+with continuous coefficients, Statist. Probab. Lett. 32 (1997), no. 4, 425–430.
+
+[LSM98]
+
+, Existence for BSDE with superlinear-quadratic coefficient, Stochastics
+Stochastics Rep. 63 (1998), no. 3-4, 227–240.
+
+[PP90]
+
+E. Pardoux and S. Peng, Adapted solution of a backward stochastic differential
+equation, Systems Control Lett. 14 (1990), no. 1, 55–61.
+
+17
+
+

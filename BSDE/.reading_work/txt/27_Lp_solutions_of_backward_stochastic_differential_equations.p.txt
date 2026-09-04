@@ -1,0 +1,1863 @@
+Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+www.elsevier.com/locate/spa
+
+Lp solutions of backward stochastic di#erential
+equations
+Ph. Brianda;∗ , B. Delyona , Y. Hua , E. Pardouxb , L. Stoicac
+a IRMAR, Campus de Beaulieu, Universit
+e Rennes 1, 35 042 Rennes, Cedex, France
+
+b CMI, 39 rue Joliot-Curie, Universit
+e de Provence, 13 453 Marseille, Cedex 13, France
+c Universit
+e de Bucarest, Str. Academiei nr. 14, Bucarest, Ro 70109, Romania
+
+Received 16 July 2002; received in revised form 13 May 2003; accepted 10 June 2003
+
+Abstract
+In this paper, we are interested in solving backward stochastic di#erential equations (BSDEs
+for short) under weak assumptions on the data. The 6rst part of the paper is devoted to the
+development of some new technical aspects of stochastic calculus related to BSDEs. Then we
+derive a priori estimates and prove existence and uniqueness of solutions in Lp p ¿ 1, extending
+the results of El Karoui et al. (Math. Finance 7(1) (1997) 1) to the case where the monotonicity
+conditions of Pardoux (Nonlinear Analysis; Di#erential Equations and Control (Montreal, QC,
+1998), Kluwer Academic Publishers, Dordrecht, pp. 503–549) are satis6ed. We consider both a
+6xed and a random time interval. In the last section, we obtain, under an additional assumption,
+an existence and uniqueness result for BSDEs on a 6xed time interval, when the data are only
+in L1 .
+c
+ 2003 Elsevier B.V. All rights reserved.
+Keywords: Backward stochastic di#erential equation; Monotone generator; p-integrable data
+
+1. Introduction
+In this paper, we are concerned with backward stochastic di#erential equations
+(BSDEs for short in the remaining); a BSDE is an equation of the following type:
+ T
+ T
+f(r; Yr ; Zr ) dr −
+Zr dBr ; 0 6 t 6 T;
+(1)
+Yt =  +
+t
+
+t
+
+∗ Corresponding author. Tel.: +33-223235886; fax: +33-223236790.
+
+E-mail addresses: philippe.briand@univ-rennes1.fr (Ph. Briand), bernard.delyon@univ-rennes1.fr
+(B. Delyon), ying.hu@univ-rennes1.fr (Y. Hu), etienne.pardoux@cmi.univ-mrs.fr (E. Pardoux),
+lstoica@pompeiu.imar.ro (L. Stoica).
+0304-4149/03/$ - see front matter c
+ 2003 Elsevier B.V. All rights reserved.
+doi:10.1016/S0304-4149(03)00089-9
+
+110
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+where B is a standard Brownian motion and  is a random variable measurable with
+respect to the past of B up to time T .  is the terminal condition and f the coeGcient
+(also called the generator). The unknowns are the processes {Yt }t∈[0; T ] and {Zt }t∈[0; T ] ,
+which are required to be adapted with respect to the 6ltration of the Brownian motion:
+this is a crucial point.
+Such equations, in the nonlinear case, have been introduced by Pardoux and Peng
+(1990). They proved an existence and uniqueness result under the following assumption: f is Lipschitz continuous in both variables y and z and the data,  and the
+process {f(t; 0; 0)}t∈[0; T ] , are square integrable.
+Since this 6rst existence and uniqueness result, many papers have been devoted to
+existence and/or uniqueness results under weaker assumptions. Among these papers,
+we can distinguish two di#erent classes: scalar BSDEs and multidimensional BSDEs.
+In the 6rst case, one can take advantage of the comparison theorem: we refer to El
+Karoui et al. (1997) for this result. In this spirit, let us mention the contributions of
+Kobylanski (1997) and Lepeltier and San Martin (1998) which dealt with quadratic
+growth generators in z. For multidimensional BSDEs, there is no comparison theorem
+and to overcome this diGculty a monotonicity assumption on the generator f in the
+variable y is used. This condition is essential in the study of BSDEs with random
+terminal time and appears for the 6rst time in this context in a paper by Peng (1991).
+When the terminal time is deterministic, this condition allows to get rid of the growth
+condition in the variable y: see the work of Briand and Carmona (2000) for a study of
+polynomial growth in Lp with p ¿ 2 and the work of Pardoux (1999) for an arbitrary
+growth.
+Let us mention also that when the generator is Lipschitz continuous, a result of
+El Karoui et al. (1997), provides the existence of a solution when the data  and
+{f(t; 0; 0)}t∈[0; T ] are in Lp even for p ∈ (1; 2). The 6rst part of this paper is devoted to
+the generalization of this result to the case of a monotone generator, both for equations
+on a 6xed and on a random time interval.
+Let us brieKy comment the main issue of our study. Peng (1997) introduced the
+notion of g-martingales which can be viewed, in some sense, as nonlinear martingales.
+g-martingales are solutions to BSDEs. It is not so surprising to consider solutions to
+BSDEs as “martingales” since in the simplest case, namely when the generator is 0,
+the solution to the BSDE is the martingale E( | Ft ). Since the classical theory of
+martingales is carried in the space L1 , the question of solving a BSDE when the data
+are only integrable comes up naturally. Peng gives an answer for real BSDEs only in
+the case where f(t; y; z) = f1 (t; z) + f2 (t; y) is Lipschitz in (y; z) with f1 (t; 0) = 0,
+f2 (t; 0) ¿ 0 and for  ¿ 0. One of the objectives of this paper is to prove an existence
+and uniqueness result for BSDEs in Rd when  and the process {f(t; 0; 0)}t∈[0; T ] are
+integrable with f only monotone in the variable y.
+The paper is organized as follows: the next section contains all the notations and
+some basic identities, while Section 3 contains essential estimates. Section 4 is devoted
+to the case where the data are in Lp with p ∈ (1; 2) on a 6xed time interval, Section 5
+with the same problem, but for a BSDE on random time interval, and 6nally the last
+section studies the case p = 1, where an additional assumption on the coeGcient is
+required.
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+111
+
+2. Preliminaries
+2.1. Notations and de4nition
+First of all, B = {Bt }t¿0 is a standard Brownian motion with values in Rd de6ned on
+some complete probability space (; F; P). {Ft }t¿0 is the augmented natural 6ltration
+of B which satis6es the usual conditions. In this paper, we will always use this 6ltration.
+In most of this work, the stochastic processes will be de6ned for t ∈ [0; T ], where
+T is a positive real number, and will take their values in Rn for some positive integer
+n. If X = {Xt }t∈[0; T ] is such a process, we will simply write X∗ or supt |Xt | instead of
+supt∈[0; T ] |Xt | where |x| denotes the Euclidean norm of x ∈ Rn .
+For any real p¿0, Sp (Rn ) denotes the set of Rn -valued, adapted and cPadlPag
+processes {Xt }t∈[0; T ] such that
+1∧1=p
+
+X Sp = E sup |Xt |p
+¡ + ∞:
+t
+
+If p ¿ 1,  · Sp is a norm on Sp (Rn ) and if p ∈ (0; 1), (X; X  ) → X − X  Sp de6nes
+a distance on Sp . Under this metric, Sp (Rn ) is complete.
+M p (Rn ) denotes the set of (equivalent classes of) predictable processes {Xt }t∈[0; T ]
+with values in Rn such that
+ 
+p=2 1∧1=p
+T
+2
+X M p = E
+|Xr | dr
+¡ + ∞:
+0
+
+p
+
+n
+
+For p ¿ 1, M (R ) is a Banach space endowed with this norm and for p ∈ (0; 1) M p
+is a complete metric space with the resulting distance.
+Let us consider a random function f : [0; T ] ×  × Rk × Rk×d → Rk measurable with
+respect to Prog × B(Rk ) × B(Rk×d ) where Prog denotes the sigma-6eld of progressive
+subsets of [0; T ] × , and an Rk -valued FT -measurable random vector .
+Rk×d is identi6ed with the space of real matrices with k rows and d columns. If
+z ∈ Rk×d , we have |z|2 = trace(zz ∗ ).
+Let us recall what we mean by a solution to the BSDE (1).
+Denition 2.1. A solution to the BSDE (1) is a pair of progressively measurable processes (Y; Z) with values in Rk × Rk×d such that: P-a.s., t → Zt belongs to L2 (0; T ),
+t → f(t; Yt ; Zt ) belongs to L1 (0; T ) P-a.s., and
+ T
+ T
+Yt =  +
+f(r; Yr ; Zr ) dr −
+Zr dBr ; 0 6 t 6 T:
+t
+
+t
+
+2.2. A basic identity
+As explained in the introduction, we want to deal with BSDEs with data in Lp with
+p¡2 and we would like to use Itô’s formula applied to the function x → |x|p which is
+not smooth enough. That is why we start by a generalization to the multidimensional
+case of the Tanaka formula. Let us now introduce the notation x̂ = |x|−1 x1x=0 . The
+
+112
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+following lemma will be our basic tool in the treatment of Lp -solutions. It is very
+likely that this result has already appeared somewhere, but we have not seen it, so we
+provide a proof.
+Lemma 2.2. Let {Kt }t∈[0; T ] and {Ht }t∈[0; T ] be two progressively measurable processes
+with values respectively in Rk and Rk×d such that P-a.s.,
+ T
+(|Kt | + |Ht |2 ) dt ¡ + ∞:
+0
+
+We consider the Rk -valued semimartingale {Xt }t∈[0; T ] de4ned by
+ t
+ t
+Xt = X0 +
+Ks ds +
+Hs dBs ; 0 6 t 6 T:
+0
+
+0
+
+Then, for any p ¿ 1, we have
+|Xt |p − 1p=1 Lt = |X0 |p + p
++
+
+p
+2
+
+ t
+0
+
+ t
+0
+
+|Xs |p−1 X̂ s ; Ks ds + p
+
+ t
+0
+
+|Xs |p−1 X̂ s ; Hs dBs
+
+|Xs |p−2 1Xs =0 {(2 − p)(|Hs |2 − X̂ s ; Hs Hs∗ X̂ s )
+
++ (p − 1)|Hs |2 } ds;
+where {Lt }t∈[0; T ] is a continuous, increasing process with L0 = 0, which increases only
+on the boundary of the random set {t ∈ [0; T ]; Xt = 0}.
+Proof. Since the function x → |x|p is not smooth enough (for p ∈ [1; 2)) to apply
+Itô’s formula we use an approximation. Let  ¿ 0 and let us consider the function
+u (x) = (|x|2 + 2 )1=2 . It is a smooth function and we have, denoting I the identity
+matrix of Rk ,
+∇up (x) = pup−2 (x)x;
+
+D2 up (x) = pup−2 (x)I + p(p − 2)up−4 (x) (x ⊗ x):
+
+Itô’s formula leads to the equality
+ t
+ t
+p
+p
+p−2
+u (Xt ) = u (X0 ) + p
+u (Xs ) Xs ; Ks ds + p
+up−2 (Xs ) Xs ; Hs dBs
++
+
+1
+2
+
+ t
+0
+
+0
+
+0
+
+trace(D2 up (Xs )Hs Hs∗ ) ds:
+
+(2)
+
+It remains essentially to pass to the limit when →0 in this identity. To do this, let
+us 6rst remark that
+ t
+ t
+up−2 (Xs ) Xs ; Ks ds →
+|Xs |p−1 X̂ s ; Ks ds;
+0
+
+0
+
+P-a.s., and that, at least uniformly on [0; T ] in P-probability, we have
+ t
+ t
+p−2
+u (Xs ) Xs ; Hs dBs →
+|Xs |p−1 X̂ s ; Hs dBs ;
+0
+
+0
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+113
+
+this convergence of stochastic integrals follows from the following convergence:
+ T
+|Xr |2 1Xr =0 |Hr |2 (|Xr |p−2 − up−2 (Xr ))2 dr → 0;
+0
+
+which is clear from the dominated convergence theorem.
+It remains to study the convergence of the term including the second derivative of
+u . Let us write
+trace(D2 up (Xs )Hs Hs∗ )
+=p(2 − p) (|Xs |u−1 (Xs ))4−p |Xs |p−2 1Xs =0 (|Hs |2 − X̂ s ; Hs Hs∗ X̂ s )
++ p(p − 1)(|Xs |u−1 (Xs ))4−p |Xs |p−2 1Xs =0 |Hs |2 + Cs (p);
+where Cs (p) = p2 |Hs |2 up−4 (Xs ).
+One has
+|Hs |2 ¿ X̂ s ; Hs Hs∗ X̂ s :
+
+(3)
+
+Moreover,
+|Xs |
+ 1{Xs =0}
+u (Xs )
+as →0. Hence by monotone convergence, as  → 0,
+ t
+(|Xs |u−1 (Xs ))p−4 |Xs |p−2 1Xs =0 {(2 − p)(|Hs |2 − X̂ s ; Hs Hs∗ X̂ s ) + (p − 1)|Hs |2 } ds
+0
+
+converges to
+ t
+|Xs |p−2 1Xs =0 {(2 − p)(|Hs |2 − X̂ s ; Hs Hs∗ X̂ s ) + (p − 1)|Hs |2 } ds
+0
+
+P-a.s., for all 0 6 t 6 T .
+t
+It now follows from (2) that {Lt (p) := 0 Cs (p) ds}t∈[0; T ] converges as  → 0 to a
+continuous increasing process {Lt (p)}t∈[0; T ] , and the result follows.
+For p ¿ 4, L(p) ≡ 0 since C  (p) converges to 0 in L1 (0; T ). Now, if p ∈ (1; 4), we
+write
+Cs (p) = p(2 |Hs |2 u−3 (Xs ))" (2 |Hs |2 )1−" ;
+where " = (4 − p)=3 ∈ (0; 1), and then, we get, using HTolder’s inequality,
+ T
+1−"
+LT (p) 6 pLT (1)"
+2 |Hs |2 ds
+;
+0
+
+which tends to 0 as  → 0 so that L(p) ≡ 0.
+Let us denote by L the process L(1) and let us set A = {t ∈ [0; T ]; Xt = 0}. If t is
+in the interior of A, then there exists $ ¿ 0 such that Xs = 0 whenever |t − s| 6 $; the
+quadratic variation of X is constant on the interval [t − $; t + $] and then Hs = 0 almost
+everywhere on this interval. If t is in the complement of the set A, there exists $ ¿ 0
+
+114
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+such that Xs = 0 if |t − s| 6 $. In both cases, C  (1) converges to 0 in L1 (t − $; t + $)
+and
+ t+$
+Cs (1) ds = 0:
+Lt+$ − Lt−$ = lim
+→0
+
+t−$
+
+This concludes the proof of the lemma.
+Corollary 2.3. If (Y; Z) is a solution of the BSDE (1), p ¿ 1, c(p) = p[(p − 1) ∧ 1]=2
+and 0 6 t 6 u 6 T , then
+ u
+ u
+|Ys |p−1 Yˆ s ; f(s; Ys ; Zs ) ds
+|Ys |p−2 1Ys =0 |Zs |2 ds 6 |Yu |p + p
+|Yt |p + c(p)
+t
+
+t
+
+−p
+
+ u
+t
+
+|Ys |p−1 Yˆ s ; Zs dBs :
+
+(4)
+
+Proof. The proof follows from the following consequence of Lemma 2.2, for 0 6 t
+6 u 6 T and c(p) = p[(p − 1) ∧ 1]=2,
+ u
+ u
+|Xs |p−1 X̂ s ; Hs dBs
+|Xs |p−1 X̂ s ; Ks ds + p
+|Xu |p ¿ |Xt |p + p
+t
+
+t
+
++ c(p)
+
+ u
+t
+
+|Xs |p−2 1Xs =0 |Hs |2 ds:
+
+3. Apriori estimates
+First of all, we state some estimates concerning solutions to the BSDE (1). In what
+follows, we assume that p¿1,  is an Rk -valued, FT -measurable random vector and
+f is a random function from [0; T ] ×  × Rk × Rk×d into Rk , which is measurable with
+respect to Prog × B(Rk ) × B(Rk×d ). We will make use of the following assumption:
+P-a.s.,
+∀(t; y; z) ∈ [0; T ] × Rk × Rk×d ;
+
+ŷ; f(t; y; z) 6 ft + &|y| + '|z|;
+
+(A)
+
+where & ∈ R, ' ¿ 0 and {ft }t∈[0; T ] is a non-negative progressively measurable process.
+T
+Let us set F = 0 fr dr.
+Here, we want to obtain estimates for solutions to a BSDE in Lp in the spirit of
+the work (El Karoui et al., 1997) which shows that these estimates are very useful for
+the study of existence and uniqueness of solutions. The diGculty here comes from two
+facts: 6rstly, the function f is not supposed to be Lipschitz continuous and secondly,
+we want to obtain Lp -estimates for p ∈ (1; 2).
+We start by showing how to control the process Z in terms of the data and Y .
+Lemma 3.1. Let assumption (A) hold and let (Y; Z) be a solution to BSDE (1). Let
+us assume moreover that, for some p ¿ 0, F p is integrable.
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+115
+
+If Y ∈ Sp then Z belongs to M p and there exists a constant Cp depending only
+on p such that for any a ¿ & + '2 ,
+
+ 
+p=2 
+ T
+p 
+T
+6 Cp E sup eapt |Yt |p +
+:
+ear fr dr
+e2at |Zr |2 dr
+E
+t
+
+0
+
+0
+
+Proof. Let us 6x a ¿ & + '2 and de6ne Ỹ t = eat Yt , Z̃ t = eat Zt . (Ỹ ; Z̃) solves the BSDE
+ T
+ T
+˜
+f̃(r; Ỹ r ; Z̃ r ) dr −
+Z̃ r dBr ; 0 6 t 6 T;
+Ỹ t =  +
+t
+
+t
+
+where ˜ = e  and f̃(t; y; z) = e f(t; e−at y; e−at z) − ay which satis6es assumption (A)
+with f̃ t = eat ft , '˜ = ' and &˜ = & − a. Since we are working on a compact time interval,
+the integrability conditions are equivalent with or without the superscript ∼ . Thus, with
+this change of variable we reduce to the case a = 0 and & + '2 6 0. We forget the
+superscript ∼ for notational convenience.
+For each integer n ¿ 1, let us introduce the stopping time
+ t
+|Zr |2 dr ¿ n ∧ T:
+*n = inf t ∈ [0; T ];
+aT
+
+at
+
+0
+
+Itô’s formula gives us
+ *n
+ *n
+ *n
+|Zr |2 dr = |Y*n |2 + 2
+Yr ; f(r; Yr ; Zr ) dr − 2
+Yr ; Zr dBr :
+|Y0 |2 +
+0
+
+0
+
+0
+
+2
+
+But, from the assumption on f, we have, since & + ' 6 0,
+2 y; f(r; y; z) 6 2|y|fr + 2&|y|2 + 2'2 |y|2 + |z|2 =2 6 2|y|fr + |z|2 =2:
+Thus, since *n 6 T , we deduce that
+
+ T
+ *n
+1 *n
+2
+2
+|Zr | dr 6 Y∗ + 2Y∗
+fr dr + 2
+Yr ; Zr dBr :
+2 0
+0
+0
+It follows that
+ T
+2
+ *n
+ *n
+2
+2
+|Zr | dr 6 4 Y∗ +
+fr dr +
+Yr ; Zr dBr
+0
+
+0
+
+and thus that
+  *n
+0
+
+2
+
+|Zr | dr
+
+p=2
+6 cp
+
+Y∗p +
+
+0
+
+ T
+0
+
+p
+fr dr
+
++
+
+ *n
+0
+
+p=2
+
+Yr ; Zr dBr
+
+But by the BDG inequality, we get
+
+ 
+ 
+p=4 
+p=2
+*n
+*n
+2
+2
+6 dp E
+cp E
+Yr ; Zr dBr
+|Yr | |Zr | dr
+0
+
+0
+
+
+6 dp E
+
+Y∗p=2
+
+  *n
+0
+
+2
+
+|Zr | dr
+
+p=4 
+
+:
+
+(5)
+
+116
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+and thus
+
+ 
+
+cp E
+
+0
+
+*n
+
+p=2
+
+Yr ; Zr dBr
+
+
+
+d2p
+1
+E[Y∗p ] + E
+6
+2
+2
+
+ 
+
+*n
+
+0
+
+p=2 
+
+2
+
+|Zr | dr
+
+:
+
+Coming back to estimate (5), we get, for each n ¿ 1,
+
+ 
+p=2 
+ T
+p 
+*n
+2
+p
+6 Cp E Y∗ +
+|Zr | dr
+fr dr
+E
+0
+
+0
+
+and, Fatou’s lemma implies that
+ 
+
+p=2 
+ T
+p 
+T
+2
+p
+E
+6 Cp E Y∗ +
+:
+|Zr | dr
+fr dr
+0
+
+0
+
+The result follows.
+We keep on this study by stating the standard estimate in our context. The diGculty
+comes from the fact that f is not Lipschitz in y and also from the fact that the function
+y → |y|p is not C2 since we will work with p ∈ (1; 2).
+Proposition 3.2. Let assumption (A) hold and let us assume that, for some p ¿ 1, F
+belongs to Lp . Let (Y; Z) be a solution to BSDE (1) where Y belongs to Sp . Then,
+there exists a constant Cp , depending only on p, such that for any a ¿ & + '2 =[1 ∧
+(p − 1)],
+
+ T
+p=2 
+E sup eapt |Yt |p +
+e2ar |Zr |2 dr
+t
+
+0
+
+
+6 Cp E e
+
+apT
+
+p
+
+|| +
+
+ T
+0
+
+ar
+
+e fr dr
+
+p 
+:
+
+Proof. Let us 6x a ¿ & + '2 =[1 ∧ (p − 1)]. As in the proof of the previous lemma, we
+make the change of variables Ỹ t = eat Yt , Z̃ t = eat Zt . This reduces the proof to the case
+a = 0 and & + '2 =[1 ∧ (p − 1)] 6 0; omitting the superscript ∼ , we have to prove that
+
+
+
+p=2 
+
+p 
+E Y∗p +
+
+T
+
+0
+
+|Zr |2 dr
+
+6 Cp E ||p +
+
+T
+
+0
+
+fr dr
+
+:
+
+From Corollary 2.3, we get the following inequality:
+ T
+|Yr |p−2 1Yr =0 |Zr |2 dr
+|Yt |p + c(p)
+t
+
+6 ||p + p
+
+ T
+t
+
+|Yr |p−1 Yˆ r ; f(r; Yr ; Zr ) dr − p
+
+ T
+t
+
+|Yr |p−1 Yˆ r ; Zr dBr :
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+117
+
+The assumption on f yields the inequality
+ŷ; f(r; y; z) 6 fr + &|y| + '|z|;
+from which we deduce that, with probability one, for all t ∈ [0; T ],
+ T
+|Yt |p + c(p)
+|Yr |p−2 1Yr =0 |Zr |2 dr
+t
+
+6 ||p + p
+−p
+
+ T
+t
+
+ T
+t
+
+(|Yr |p−1 fr + &|Yr |p ) dr + p'
+
+ T
+t
+
+|Yr |p−1 |Zr | dr
+
+|Yr |p−1 Yˆ r ; Zr dBr :
+
+First of all we deduce from the previous inequality that, P-a.s.,
+ T
+|Yr |p−2 1Yr =0 |Zr |2 dr ¡ + ∞:
+0
+
+Moreover, we have
+p'|Yr |p−1 |Zr | 6
+
+p'2
+c(p)
+|Yr |p +
+|Yr |p−2 1Yr =0 |Zr |2
+1 ∧ (p − 1)
+2
+
+and thus, since & + '2 =[1 ∧ (p − 1)] 6 0, we get the inequality
+
+c(p) T
+|Yr |p−2 1Yr =0 |Zr |2 dr
+|Yt |p +
+2
+t
+ T
+ T
+p
+p−1
+6 || + p
+|Yr | fr dr − p
+|Yr |p−1 Yˆ r ; Zr dBr :
+t
+
+p
+
+T
+
+t
+
+p−1
+
+Let us set X = || + p 0 |Yr | fr dr; then, we have, a.s., for each t ∈ [0; T ],
+
+ T
+c(p) T
+|Yt |p +
+|Yr |p−2 1Yr =0 |Zr |2 dr 6 X − p
+|Yr |p−1 Yˆ r ; Zr dBr :
+(6)
+2
+t
+t
+t
+It follows from the BDG inequality that {Mt := 0 |Yr |p−1 Yˆ r ; Zr dBr }06t6T is a
+uniformly integrable martingale. Indeed, we have, by Young’s inequality
+
+ T
+1=2 
+1=2
+E[ M; M T ] 6 E Y∗p−1
+|Zr |2 dr
+0
+
+(p − 1)
+1
+6
+E[Y∗p ] + E
+p
+p
+
+ 
+0
+
+T
+
+2
+
+|Zr | dr
+
+p=2 
+;
+
+the last term being 6nite since Y belongs to Sp and then Z belongs to M p by
+Lemma 3.1.
+Coming back to inequality (6), and taking the expectation for t = 0, we get both
+ T
+
+c(p)
+p−2
+2
+E
+|Yr | 1Yr =0 |Zr | dr 6 E[X ];
+(7)
+2
+0
+
+118
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+and,
+E[Y∗p ] 6 E[X ] + kp E[ M; M T1=2 ]:
+On the other hand, we have also,
+
+
+kp E[ M; M
+
+1=2
+T ] 6 kp E
+
+6
+
+Y∗p=2
+
+(8)
+T
+
+0
+
+kp2
+1
+E[Y∗p ] +
+E
+2
+2
+
+p−2
+
+|Yr |
+
+ T
+0
+
+1=2 
+
+2
+
+1Yr =0 |Zr | dr
+
+
+|Yr |p−2 1Yr =0 |Zr |2 dr :
+
+Coming back to inequalities (7) and (8), we obtain
+E[Y∗p ] 6 dp E[X ]:
+Applying once again Young’s inequality, we get
+
+
+
+ T
+ T
+|Yr |p−1 fr dr 6 pdp E Y∗p−1
+fr dr
+pdp E
+0
+
+0
+
+1
+6 E[Y∗p ] + dp E
+2
+
+ 
+0
+
+T
+
+p 
+fr dr
+
+;
+
+from which we deduce, coming back to the de6nition of X , that
+
+ T
+p 
+p
+p
+:
+E[Y∗ ] 6 Cp E || +
+fr dr
+0
+
+The result follows from Lemma 3.1.
+4. Existence and uniqueness of a solution
+With the help of the above a priori estimates, we can obtain an existence and
+uniqueness result.
+As before, let us consider an Rk -valued FT -measurable random vector  and a
+random function f : [0; T ] ×  × Rk × Rk×d → Rk which is Prog × B(Rk ) × B(Rk×d )measurable.
+We will work under the following assumptions: for some p ¿ 1,
+
+ T
+p 
+¡ + ∞;
+(H1)
+E ||p +
+|f(s; 0; 0)| ds
+0
+
+there exist constants ' ¿ 0 and & ∈ R such that, P-a.s., for each (t; y; y ; z; z  ) ∈ [0; T ] ×
+Rk × Rk × Rk×d × Rk×d :
+|f(t; y; z) − f(t; y; z  )| 6 '|z − z  |;
+
+(H2)
+
+y − y ; f(t; y; z) − f(t; y ; z) 6 &|y − y |2 :
+
+(H3)
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+119
+
+We assume also that,
+∀(t; z) ∈ [0; T ] × Rk×d ;
+
+P-a:s:;
+
+y → f(t; y; z) is continuous
+
+(H4)
+
+and 6nally that
+∀r ¿ 0;
+
+r (t) :=
+
+sup |f(t; y; 0) − f(t; 0; 0)| ∈ L1 ([0; T ] × ; m ⊗ P):
+
+|y|6r
+
+(H5)
+
+We want to obtain an existence and uniqueness result for BSDE (1) under the
+previous assumptions for all p ¿ 1.
+Firstly, let us recall the result of Pardoux (1999, Theorem 2.2). For this, let us
+introduce the following assumption:
+∀(t; y) ∈ [0; T ] × Rk ;
+
+P-a:s:;
+
+|f(t; y; 0)| 6 |f(t; 0; 0)| + ’(|y|);
+
+(H5 )
+
+where ’ : R+ → R+ is a deterministic continuous increasing function.
+Theorem 4.1. Let p = 2. Under assumptions (H1) – (H4) and (H5 ), BSDE (1) has a
+unique solution in S2 × M 2 .
+We now prove our existence and uniqueness result.
+Theorem 4.2. Under assumptions (H1) – (H5), BSDE (1) has a unique solution in
+Sp × M p .
+Proof. Let us start by studying the uniqueness part. Let us consider (Y; Z) and (Y  ; Z  )
+two solutions of our BSDE in the appropriate space. We denote by (U; V ) the process
+(Y − Y  ; Z − Z  ); this process is solution to the following BSDE:
+ T
+ T
+g(s; Us ; Vs ) ds −
+Vs dBs ; 0 6 t 6 T;
+Ut =
+t
+
+t
+
+where g stands for the random function
+g(t; y; z) = f(t; y + Yt ; z + Zt ) − f(t; Yt ; Zt ):
+Thanks to assumptions (H2) and (H3), the function g satis6es assumption (A) with
+ft ≡ 0. By Proposition 3.2, we get immediately that (U; V ) = (0; 0).
+Let us turn to the existence part. In order to simplify the calculations, we will
+always assume that condition (H3) is satis6ed with & = 0. If it is not true, the change
+of variables Ỹ t = e&t Yt , Z̃ t = e&t Zt reduces to this case. We set ft0 = f(t; 0; 0).
+The proof will be split into two steps.
+First step: We assume that  and supt |ft0 | are bounded random variables. Let r be
+a positive real such that
+
+e(1+'2 )T (∞ + T f0 ∞ ) ¡ r:
+Let "r be a smooth function such that 0 6 "r 6 1, "r (y)=1 for |y| 6 r and "r (y)=0
+as soon as |y| ¿ r + 1. For each n ∈ N∗ , we denote qn (z) = zn=(|z| ∨ n) and set
+n
+hn (t; y; z) = "r (y)(f(t; y; qn (z)) − ft0 )
++ ft0 :
+(t)
+∨n
+r+1
+
+120
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+This function still satis6es quadratic condition (H3) but with a positive constant. Indeed,
+let us pick y and y in Rk . If |y| ¿ r + 1 and |y | ¿ r + 1, the inequality is trivially
+satis6ed and thus we reduce to the case where |y | 6 r + 1. We write
+y − y ; hn (t; y; z) − hn (t; y ; z)
+= "r (y)
++
+
+n
+n∨
+
+r+1 (t)
+
+n
+n∨
+
+r+1 (t)
+
+y − y ; f(t; y; qn (z)) − f(t; y ; qn (z))
+
+("r (y) − "r (y )) y − y ; [f(t; y ; qn (z)) − ft0 ] :
+
+The 6rst term of the right-hand side of the previous equality is negative since condition
+(H3) is in force for f with & = 0. For the second term, one can use the fact that "r
+is C(r)-Lipschitz, to get, since |y | 6 r + 1,
+("r (y) − "r (y )) y − y ; [f(t; y ; qn (z)) − ft0 ]
+6 C(r) |y − y |2 |f(t; y ; qn (z)) − ft0 | 6 C(r)('n +
+
+ 2
+r+1 (t)) |y − y |
+
+and thus
+n
+n∨
+
+r+1 (t)
+
+("r (y) − "r (y )) y − y ; [f(t; y ; qn (z)) − ft0 ] 6C(r)(' + 1)n|y − y |2 :
+
+Then the pair (; hn ) satis6es the assumptions of Theorem 4.1. Hence, for each
+n ∈ N∗ , the BSDE associated to (; hn ) has a unique solution (Y n ; Z n ) in the space
+S2 × M 2 .
+Since
+y; hn (t; y; z) 6 |y| f0 ∞ + '|y| |z|
+and  is bounded, Lemma 2.2 in Briand and Carmona (2000) shows that the process
+Y n satis6es the inequality Y n ∞ 6 r. In addition, from Proposition 3.2,
+Z n M 2 6 r  ;
+
+(9)
+
+where r  is another constant. As a byproduct (Y n ; Z n ) is a solution to the BSDE
+associated to (; fn ) where
+n
+fn (t; y; z) = (f(t; y; qn (z)) − ft0 )
++ ft0
+r+1 (t) ∨ n
+for this function (H3) is satis6ed with “& = 0”.
+We now have, for i ∈ N, setting U = Y n+i − Y n , V = Z n+i − Z n , using assumptions
+(H2) and (H3) on fn+i
+
+1 T 2'2 s
+2'2 t
+2
+e |Ut | +
+e |Vs |2 ds
+2 t
+ T
+ T
+2
+2
+62
+e2' s Us ; fn+i (s; Ysn ; Zsn ) − fn (s; Ysn ; Zsn ) ds − 2
+e2' s Us ; Vs dBs :
+t
+
+t
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+121
+
+But U ∞ 6 2r so that
+
+1 T 2'2 s
+2'2 t
+2
+e |Vs |2 ds
+e |Ut | +
+2 t
+ T
+ T
+2
+2
+6 4r
+e2' s |fn+i (s; Ysn ; Zsn ) − fn (s; Ysn ; Zsn )| ds − 2
+e2' s Us ; Vs dBs
+0
+
+t
+
+and using the BDG inequality, we get, for a constant C depending only on ' and T ,
+
+
+ T
+
+ T
+n
+n
+2
+2
+n
+n
+|Vs | ds 6 Cr E
+|fn+i (s; Ys ; Zs ) − fn (s; Ys ; Zs )| ds :
+E sup |Ut | +
+t
+
+0
+
+0
+
+n
+
+On the other hand, since Y ∞ 6 r, we have
+|fn+i (s; Ysn ; Zsn ) − fn (s; Ysn ; Zsn )|
+6 2'|Zsn |1|Zsn |¿n + 2'|Zsn |1 r+1 (s)¿n + 2 r+1 (s)1 r+1 (s)¿n ;
+from which we deduce, with the help of inequality (9) and assumption (H5), that
+(Y n ; Z n ) is a Cauchy sequence in S2 × M 2 . It is easy to pass to the limit in the
+approximating equation, yielding a solution to BSDE (1).
+Second step: We now treat the general case. For each n ∈ N∗ , let us de6ne
+n = qn ();
+
+fn (t; y; z) = f(t; y; z) − ft0 + qn (ft0 ):
+
+For each pair (n ; fn ), BSDE (1) has a unique solution (Y n ; Z n ) in L2 thanks to the
+6rst step of this proof, but in fact also in all Lp , p ¿ 1 according to Lemma 3.1. Now
+from Proposition 3.2, for (i; n) ∈ N × N∗ ,
+
+ T
+p=2 
+n+i
+n p
+n+i
+n 2
+|Zs − Zs | ds
+E sup |Yt − Yt | +
+t
+
+0
+
+
+p
+
+6 C E |n+i − n | +
+
+ T
+0
+
+|qn+i (ft0 ) − qn (ft0 )| dt
+
+p 
+;
+
+where C depends on T and '.
+The right-hand side of the last inequality clearly tends to 0, as n → ∞, uniformly in i,
+so we have again a Cauchy sequence and the limit is a solution to BSDE (1).
+Remark 4.3. In the case k = 1, Theorem 4.2 remains valid if we replace (H5) by the
+weaker condition
+1
+r ∈ L (0; T );
+
+a:s:
+
+∀r ¿ 0:
+
+The additional estimate in this case which allows that generalization is the following:
+
+ 
+p 
+ T
+p 
+T
+6 c E ||p +
+;
+|f(s; Ys ; Zs )| ds
+|ft0 | dt
+E
+0
+
+0
+
+122
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+for a certain constant c depending only upon T , & and '. Indeed, it follows from (4),
+that
+ T
+e&s |f(s; Ys ; 0) − fs0 − &Ys | ds
+e&t |Yt | +
+t
+
+&T
+
+6 e || +
+
+ T
+t
+
+e
+
+&s
+
+|fs0 | ds + '
+
+ T
+t
+
+&s
+
+e |Zs | ds −
+
+ T
+t
+
+e&s sgn(Ys )Zs dBs
+
+and it remains to combine this last inequality with Proposition 3.2.
+5. Lp solution of a BSDE with a random terminal time
+We now assume that T is a stopping time for the 6ltration Ft , which need not
+be bounded (T ≡ +∞ is an interesting particular case, which we have in mind).
+Assumptions (H2) – (H4) are still in force. We shall assume in this section that p ¿ 1.
+We shall follow closely the approach in Pardoux (1999), which treats the same problem
+in the case p = 2.
+Assumption (H1) will be replaced by the following condition. For some
+3 ¿ 4 := & +
+
+'2
+2(p − 1)
+
+(where & and ' are the constants appearing in conditions (H3) and (H2), respectively),
+
+
+ T
+E ep3T ||p +
+ep3t |f(t; 0; 0)|p dt ¡ + ∞:
+(H1 )
+0
+
+Assumption (H5) is replaced by
+1
+r ∈ L ((0; n) × ; m ⊗ P)
+
+∀n ∈ N∗
+
+∀r ¿ 0
+
+(H5 )
+
+and we shall need the following additional assumption:  is FT -measurable and
+ T
+
+p3t
+−4t W
+−4t
+p
+E
+e |f(t; e t ; e 5Wt )| dt ¡ + ∞;
+(H6)
+0
+
+where W = e4T , Wt = E(e4T  | Ft ) and 5W is predictable and such that
+ 
+p=2 
+ ∞
+∞
+2
+W
+W
+¡ + ∞:
+ = E[] +
+5Wt dBt ; E
+|5Wt | dt
+0
+
+0
+
+Denition 5.1. A pair (Yt ; Zt )t¿0 of progressively measurable processes with values in
+Rk × Rk×d is a solution to the BSDE with random terminal time T with data (; f) if
+on the set {t ¿ T } Yt =  and Zt = 0, P-a.s., t → 1t6T f(t; Yt ; Zt ) belongs to L1loc (0; ∞),
+t → Zt belongs to L2loc (0; ∞) and, P-a.s., for all 0 6 t 6 u,
+ u∧T
+ u∧T
+Yt∧T = Yu∧T +
+f(s; Ys ; Zs ) ds −
+Zs dBs :
+(10)
+t∧T
+
+t∧T
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+123
+
+A solution is said to be in Lp if we have moreover
+
+
+ T
+ T
+E sup ep3t |Yt |p +
+ep3t |Yt |p dt +
+ep3t |Yt |p−2 |Zt |2 dt ¡ + ∞:
+06t6T
+
+0
+
+0
+
+We have
+Theorem 5.2. Under assumptions (H1 ), (H2) – (H4), (H5 ) and (H6), the BSDE with
+random terminal time (10) has a unique solution satisfying
+
+
+ T
+p3t
+p
+p3t
+p−2
+2
+2
+E sup e |Yt | +
+e |Yt | {|Yt | + |Zt | } dt
+06t6T
+
+0
+
+
+
+ T
+ep3t |f(t; 0; 0)|p dt
+6 cE ep3T ||p +
+0
+
+for some constant c depending upon p, ', 3 and &.
+Proof. The proof follows the steps of the proof of Pardoux (1999, Theorem 4.1).
+Firstly, we make the change of variables Yˆ t = e4t Yt to reduce to the terminal condition
+W which belongs to Lp . We derive the apriori estimate in Lp with p ∈ (1; 2), which is
+the only di#erence with the proof in Pardoux (1999). It follows easily from inequality
+(4) that, for 0 6 t 6 u,
+
+
+ u∧T
+p−1
+ep3(t∧T ) |Yt∧T |p + p
+ep3s
+|Ys |p−2 |Zs |2 + 3|Ys |p ds
+2
+t∧T
+ u∧T
+6 ep3(u∧T ) |Yu∧T |p + p
+ep3s |Ys |p−1 Yˆ s ; f(s; Ys ; Zs ) ds
+−p
+
+ u∧T
+t∧T
+
+t∧T
+
+ep3s |Ys |p−1 Yˆ s ; Zs dBs :
+
+The assumptions on f together with Young’s inequality leads to the inequality, denoting
+as before fs0 = f(s; 0; 0), for any 0 ¡ $ ¡ (p − 1)=2,
+
+
+'2
+p−1
+|y|p
+|y|
+ŷ; f(s; y; z) 6 & + $ +
+2(p − 1 − 2$)
+
+1−p
+
+
+p$
+p−1
+1 0p
+p−2 2
+− $ |y| |z| + |fs |
++
+:
+2
+p
+p−1
+We choose $ ¿ 0 small enough so that & + 2$ + '2 =(2(p − 1 − 2$)) 6 3 and deduce
+from the previous inequalities that
+ u∧T
+p3(t∧T )
+p
+e
+|Yt∧T | + p$
+ep3s (|Ys |p + |Ys |p−2 |Zs |2 ) ds
+t∧T
+
+124
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+p3(u∧T )
+
+6e
+
+−p
+
+p
+
+|Yu∧T | + C(p; $)
+
+ u∧T
+t∧T
+
+ u∧T
+t∧T
+
+ep3s |fs0 |p ds
+
+ep3s |Ys |p−1 Yˆ s ; Zs dBs :
+
+Taking the expectation and sending u to in6nity in the last inequality, we get
+
+
+ T
+ep3s (|Ys |p + |Ys |p−2 |Zs |2 ) ds
+E ep3(t∧T ) |Yt∧T |p + $
+0
+
+
+
+ T
+p3T
+p
+p3s 0 p
+6 C(p; $) E e || +
+e |fs | ds :
+0
+
+Using a standard argument based on the Burkholder–Davis–Gundy inequality, we can
+moreover include a supt inside the expectation of the left-hand side.
+Remark 5.3. In most interesting applications, in particular to elliptic PDEs, if T is an
+unbounded stopping time (e.g., ≡ +∞), (H1 ) cannot be satis6ed unless 3 ¡ 0. This
+implies, in particular that & ¡ 0, which should be expected, from the relation with
+elliptic PDEs, see Pardoux (1999).
+In the case p = 2, the condition 3 ¿ & + (2(p − 1))−1 '2 reduces to 3 ¿ & + '2 =2,
+which is the condition in Pardoux (1999). On the other hand, as p→1, the condition
+'2
+&+
+¡3¡0
+2(p − 1)
+requires & to be negative, with larger and larger absolute value. No result for the case
+p = 1 can be deduced from the above.
+6. Integrable parameters
+In this section, we will deal with the case p = 1 which appears to be very di#erent
+from the previous one. We assume here that T is a 6xed terminal time. Let us denote
+6T the set of all stopping times * such that * 6 T ; we recall that, for a process Y =
+{Yt }06t6T , Y belongs to class (D) if the family {Y* ; * ∈ 6T } is uniformly integrable.
+For a process Y in class (D), we put
+Y 1 = sup{E[|Y* |]; * ∈ 6T }:
+The space of progressive measurable continuous processes which belong to class (D)
+is complete under this norm, see Dellacherie and Meyer (1980, p. 90).
+We will need a further assumption on the function f: we will assume that there exist
+two constants 7 ¿ 0, 8 ∈ (0; 1) and a non-negative progressively measurable process
+{gt }t∈[0; T ] such that
+∀(t; y; z) ∈ [0; T ] × Rk × Rk×d ;
+|f(t; y; z) − f(t; y; 0)| 6 7(gt + |y| + |z|)8 :
+Note that this assumption is trivially satis6ed if f does not depend on z.
+
+(H7)
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+We will also assume that
+
+
+ T
+E || +
+(ft + gt ) dt ¡ + ∞:
+
+125
+
+(H1 )
+
+0
+
+Firstly, let us recall the following result which can be found in Revuz and Yor
+(1991) with a di#erent constant but in a more general context.
+Lemma 6.1. Let {Mt }t∈[0; T ] be a martingale. Then, for all 9 ∈ (0; 1),
+1
+E[M∗9 ] 6
+E[|MT |]9 :
+1−9
+Proof. Let us denote c = E[|MT |]. We have, by Doob’s inequality, for each x ¿ 0,
+x P(M∗ ¿ x) 6 c. Then,
+  +∞
+
+1M∗ ¿x 9x9−1 d x
+E[M∗9 ] = E
+0
+
+6
+
+ +∞
+0
+
+min(1; c=x) 9x9−1 d x = c9 =(1 − 9):
+
+Our main results are Theorems 6.2 and 6.3 below.
+Theorem 6.2. Let assumptions (H1 ), (H2) – (H5) and (H7) hold. Then BSDE (1)
+has at most one
+ solution (Y; Z) such that Y belongs to the class (D) and Z belongs
+to the space 9¿8 M 9 .
+Proof. We can assume without loss of generality that & = 0.
+Let us consider (Y; Z) and (Y  ; Z  ) two solutions to (1) with the appropriate conditions. Once again we introduce, for n ∈ N∗ ,
+ t
+*n = inf t ∈ [0; T ];
+(|Zr |2 + |Zr |2 ) dr ¿ n ∧ T:
+0
+
+Setting yt = Yt − Yt , zt = Zt − Zt , formula (4) yields the inequality
+ *n
+ *n
+|yt∧*n | 6 |y*n | +
+ŷ r ; f(r; Yr ; Zr ) − f(r; Yr ; Zr ) dr −
+ŷ r ; zr dBr :
+t∧*n
+t∧*n
+Thus, using the monotonicity of f in y, we get
+ T
+ *n
+|yt∧*n | 6 |y*n | +
+|f(r; Yr ; Zr ) − f(r; Yr ; Zr )| dr −
+ŷ r ; zr dBr
+0
+
+t∧*n
+
+and conditioning with respect to Ft we have
+
+
+ T
+|yt∧*n | 6 E |y*n | +
+|f(r; Yr ; Zr ) − f(r; Yr ; Zr )| dr | Ft :
+0
+
+Of course, we want to send n to in6nity. To do this, let us mention that the process
+y is continuous and belongs to class (D). It follows that, P-a.s., y*n = yT ∧*n → yT = 0
+
+126
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+and, moreover, this convergence holds in L1 . As a byproduct, we deduce that the
+continuous martingale E(y*n | Ft ) converges to 0 in ucp. Extracting a subsequence, we
+obtain, P-a.s.,
+
+ T
+∀t ∈ [0; T ]; |yt | 6 E
+(11)
+|f(r; Yr ; Zr ) − f(r; Yr ; Zr )| dr | Ft
+0
+
+and from assumption (H7) we get, P-a.s.,
+
+ T
+ 8
+∀t ∈ [0; T ]; |yt | 6 27E
+(gr + |Yr | + |Zr | + |Zr |) dr | Ft :
+0
+
+Since there exists 9 ¿ 8 such that Z and Z  belongs to M 9 and since Y is of class
+(D), we deduce immediately from the previous inequality and assumption (H3) that y
+belongs to the space Sq for some q ¿ 1. Lemma 3.1 and Proposition 3.2 imply that
+(y; z) = (0; 0) ∈ Sq × M q .
+We turn now to the existence part of our study. We are going to prove the following
+result.
+Theorem 6.3. Let assumptions (H1 ), (H2) – (H5) and (H7) hold. Then BSDE (1)
+has a solution (Y; Z) such that Y belongs to the class (D).
+Moreover, for each 9 ∈ (0; 1), (Y; Z) belongs to the space S9 × M 9 .
+Before giving the proof of this result, we study the case where the generator is
+independent of the variable z.
+Proposition 6.4. Let assumptions (H1 ), (H3) – (H5) hold and let us suppose that f
+does not depend on z. Then, BSDE (1) has a solution (Y; Z) such that Y belongs to
+the class (D). Moreover, for each 9 ∈ (0; 1), (Y; Z) belongs to the space S9 × M 9 .
+Proof. We use a standard truncation method still assuming that &=0. Let us introduce,
+for each integer n ¿ 1, n = qn () and fn (t; y) = f(t; y) − f(t; 0) + qn (f(t; 0)) with
+qn (y) = y n=(|y| ∨ n). We know from our previous result (Theorem 4.2) that the BSDE
+associated to the parameter (n ; fn ) has a unique solution in the space S2 × M 2 .
+We set $Y = Y n+i − Y n , $Z = Z n+i − Z i . Using the same computation as in the
+uniqueness part, see (11), we have
+
+
+ T
+|$Yt | 6 E |$| +
+|fn+i (r; Yrn ) − fn (r; Yrn )| dr | Ft
+0
+
+from which we derive the inequality
+
+
+ T
+|$Yt | 6 E ||1||¿n +
+|f(r; 0)|1|f(r; 0)|¿n dr | Ft :
+0
+
+We deduce immediately from this inequality that
+
+
+ T
+$Y 1 6 E ||1||¿n +
+|f(r; 0)|1|f(r; 0)|¿n dr
+0
+
+(12)
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+127
+
+and from Lemma 6.1 that, for any 9 ∈ (0; 1),
+
+9
+
+
+ T
+1
+9
+|f(r; 0)|1|f(r; 0)|¿n dr :
+E sup |$Yt | 6
+E ||1||¿n +
+1−9
+t
+0
+Thus (Y n )N is a Cauchy sequence for the  · 1 norm and for natural distance on
+S9 for each 9 ∈ (0; 1). Let Y be the progressive measurable continuous process limit
+of this sequence: Y belongs to class (D) and to S9 for each 9 ∈ (0; 1).
+Now, ($Y; $Z) solves the following BSDE:
+ T
+ T
+F(r; $Yr ) dr −
+$Zr dBr ;
+$Yt = n+i − n +
+t
+
+t
+
+where F stands for the random function
+F(t; y) = fn+i (t; y + Ytn ) − fn (t; Ytn );
+since fn+i is monotone, F satis6es the inequality
+y; F(t; y) 6 |y| |f(t; 0)|1|f(t; 0)|¿n :
+Thus, using Lemma 3.1, we deduce that, for 9 ∈ (0; 1),
+
+ 
+9=2 
+ T
+9 
+T
+6 C9 E sup |$Yt |9 +
+:
+|$Zr |2 dr
+|f(r; 0)|1|f(r; 0)|¿n dr
+E
+t
+
+0
+
+0
+
+It follows that, for each 9 ∈ (0; 1), (Z k )k is a Cauchy sequence in M 9 for the natural
+metric and
+to some progressively measurable process Z.
+ t then converges in this space
+t
+Since 0 Zrn dBr converges to 0 Zr dBr in ucp and since the map y → f(t; y) is
+continuous, we easily check by taking a limit in ucp that (Y; Z) solves the correct
+BSDE.
+With this proposition in hands we can prove our main existence result.
+Proof of Theorem 6.3. Once again, we can assume that & = 0 without loss of generality. We will use some kind of Picard’s iterative procedure. Let us set as usual
+(Y 0 ; Z 0 ) = (0; 0) and de6ne recursively, in view of the previous proposition, for each
+n ¿ 0,
+ T
+ T
+f(r; Yrn+1 ; Zrn ) dr −
+Zrn+1 dBr ; 0 6 t 6 T:
+Ytn+1 =  +
+t
+
+t
+
+For each n, Y n belongs to class (D) and (Y n ; Z n ) belongs to S9 ×M 9 for all 9 ∈ (0; 1).
+For n ¿ 1, arguing as in the proof of uniqueness, we deduce that
+
+ T
+n+1
+n
+n
+n
+n−1 8
+(gr + |Yr | + |Zr | + |Zr |) dr | Ft :
+∀t ∈ [0; T ]; |Yt − Yt | 6 27E
+0
+
+128
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+Z n and Z n−1 belongs to M 9 for each 9 ∈ (0; 1), Y n belongs to class (D) and {gt }t∈[0; T ]
+is integrable. Thus the random variable
+ T
+(gr + |Yrn | + |Zrn | + |Zrn−1 |)8 dr
+In =
+0
+
+belongs to the space Lq as soon as 8q ¡ 1. Let us 6x q ∈ (1; 2) such that 8q ¡ 1. Then,
+for n ¿ 1, yn = Y n+1 − Y n belongs to the space Sq . Let us set z n = Z n+1 − Z n . (yn ; z n )
+is solution to the following BSDE:
+ T
+ T
+n
+n
+zrn dBr ;
+fn (r; yr ) dr −
+yt =
+t
+
+t
+
+where
+fn (r; y) = f(r; y + Yrn ; Zrn ) − f(r; Yrn ; Zrn−1 ):
+Since f is assumed to satisfy condition (H3) with & = 0, fn satis6es assumption (A)
+and, using (H7), we have the inequality
+ŷ; fn (r; y) 6 |f(r; Yrn ; Zrn ) − f(r; Yrn ; Zrn−1 )| 6 27(gr + |Yrn | + |Zrn | + |Zrn−1 |)8 :
+Lemma 3.1 shows that z n is in the space M q since In is in Lq .
+Proposition 3.2 implies that there exists a constant Cq depending only on q such that
+for each n ¿ 1,
+ 
+q 
+T
+n n q
+n
+n
+n
+n−1
+;
+|f(r; Yr ; Zr ) − f(r; Yr ; Zr )| dr
+(y ; z ) 6 Cq E
+0
+
+where  ·  stands for the following norm on Sq × M q :
+
+ T
+q=2  1=q
+(Y; Z) = E sup |Yt |q +
+|Zr |2 dr
+:
+t
+
+0
+
+For n ¿ 2, we use the fact that f is '-Lipschitz in z to get, using HTolder’s inequality,
+ 
+q=2 
+T
+n−1 2
+n n q
+(y ; z ) 6 cE
+;
+|zr | dr
+0
+
+q
+
+where c = Cq ' T
+n
+
+n
+
+q=2
+
+. Thus, we have, for n ¿ 2,
+
+q
+
+(y ; z ) 6 cn−1 (y1 ; z 1 )q :
+Let us assume 6rst that c = Cq 'q T q=2 ¡ 1. Since (y1 ; z 1 )q is 6nite, it follows
+immediately that (Y n − Y 1 ; Z n − Z 1 ) converges in the space Sq × M q to some (U; V ).
+We deduce that (Y n ; Z n ) converges to (Y = U + Y 1 ; Z = V + Z 1 ) in S9 × M 9 for each
+9 ∈ (0; 1) since (Y 1 ; Z 1 ) belongs to it. Moreover Y n converges to Y for the norm  · 1
+since Y 1 belongs to class (D) and the convergence in Sq with q ¿ 1 in stronger than
+the convergence in  · 1 -norm.
+To conclude the proof in this case, it remains to pass to the limit in the equation
+satis6ed by (Y n ; Z n ) to see that (Y; Z) solves BSDE (1). This is easily done in ucp.
+For the general case, we have only to subdivide the time interval [0; T ] into a 6nite
+number of small intervals. This completes the proof.
+
+Ph. Briand et al. / Stochastic Processes and their Applications 108 (2003) 109 – 129
+
+129
+
+References
+Briand, Ph., Carmona, R., 2000. BSDEs with polynomial growth generators. J. Appl. Math. Stochastic Anal.
+13 (3), 207–238.
+Dellacherie, C., Meyer, P.-A., 1980. ProbabilitXes et Potentiel. ThXeorie des Martingales. Hermann, Paris
+(Chapitres V Pa VIII).
+El Karoui, N., Peng, S., Quenez, M.-C., 1997. Backward stochastic di#erential equations in 6nance. Math.
+Finance 7 (1), 1–71.
+Kobylanski, M., 1997. RXesultats d’existence et d’unicitXe pour des Xequations di#Xerentielles stochastiques
+rXetrogrades avec des gXenXerateurs Pa croissance quadratique. C. R. Acad. Sci. Paris SXer. I Math. 324 (1),
+81–86.
+Lepeltier, J.-P., San Martin, J., 1998. Existence for BSDE with superlinear-quadratic coeGcient. Stochastics
+Stochastics Rep. 63 (3,4), 227–240.
+Pardoux, E., 1999. BSDEs, weak convergence and homogenization of semilinear PDEs, Nonlinear Analysis,
+Di#erential Equations and Control (Montreal, QC, 1998). Kluwer Academic Publishers, Dordrecht, pp.
+503–549.
+Pardoux, E., Peng, S., 1990. Adapted solution of a backward stochastic di#erential equation. Systems Control
+Lett. 14 (1), 55–61.
+Peng, S., 1991. Probabilistic interpretation for systems of quasilinear parabolic partial di#erential equations.
+Stochastics Stochastics Rep. 37 (1,2), 61–74.
+Peng, S., 1997. Backward SDE and related g-expectation. In: El Karoui, N., Mazliak, L. (Eds.), Backward
+Stochastic Di#erential Equations, Pitman Research Notes Mathematical Series, Vol. 364. Longman,
+Harlow, pp. 141–159.
+Revuz, D., Yor, M., 1991. Continuous martingales and Brownian motion. In: Grundlehren Math. Wiss., Vol.
+293. Springer, Berlin, Heidelberg, New York.
+
+

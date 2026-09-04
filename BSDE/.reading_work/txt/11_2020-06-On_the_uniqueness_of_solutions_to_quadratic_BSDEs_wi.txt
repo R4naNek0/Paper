@@ -1,0 +1,810 @@
+Comptes Rendus
+Mathématique
+Shengjun Fan, Ying Hu and Shanjian Tang
+On the uniqueness of solutions to quadratic BSDEs with non-convex
+generators and unbounded terminal conditions
+Volume 358, issue 2 (2020), p. 227-235.
+<https://doi.org/10.5802/crmath.40>
+
+© Académie des sciences, Paris and the authors, 2020.
+Some rights reserved.
+This article is licensed under the
+C REATIVE C OMMONS ATTRIBUTION 4.0 I NTERNATIONAL L ICENSE .
+http://creativecommons.org/licenses/by/4.0/
+
+Les Comptes Rendus. Mathématique sont membres du
+Centre Mersenne pour l’édition scientifique ouverte
+www.centre-mersenne.org
+
+Comptes Rendus
+Mathématique
+2020, 358, n 2, p. 227-235
+
+https://doi.org/10.5802/crmath.40
+
+Probability Theory / Probabilités
+
+On the uniqueness of solutions to quadratic
+BSDEs with non-convex generators and
+unbounded terminal conditions
+Shengjun Fan a , Ying Hu b and Shanjian Tang c
+a School of Mathematics, China University of Mining and Technology, Xuzhou 221116,
+
+China
+b Univ. Rennes, CNRS, IRMAR-UMR6625, F-35000, Rennes, France
+c Department of Finance and Control Sciences, School of Mathematical Sciences,
+
+Fudan University, Shanghai 200433, China.
+E-mails: f_s_j@126.com, ying.hu@univ-rennes1.fr, sjtang@fudan.edu.cn.
+
+Abstract. We prove a uniqueness result of the unbounded solution for a quadratic backward stochastic
+differential equation whose terminal condition is unbounded and whose generator g may be non-Lipschitz
+continuous in the state variable y and non-convex (non-concave) in the state variable z, and instead satisfies
+a strictly quadratic condition and an additional assumption. The key observation is that if the generator is
+strictly quadratic, then the quadratic variation of the first component of the solution admits an exponential
+moment. Typically, a Lipschitz perturbation of some convex (concave) function satisfies the additional
+assumption mentioned above. This generalizes some results obtained in [1] and [2].
+2020 Mathematics Subject Classification. 60H10.
+Funding. Shengjun Fan is supported by the State Scholarship Fund from the China Scholarship Council (No. 201806425013). Ying Hu is partially supported by Lebesgue center of mathematics “Investissements d’avenir” program-ANR-11-LABX-0020-01, by CAESARS-ANR-15-CE05-0024 and by MFG-ANR-16CE40-0015-01. Shanjian Tang is partially supported by National Science Foundation of China (No. 11631004)
+and Science and Technology Commission of Shanghai Municipality (No. 14XD1400400).
+Manuscript received 28th May 2019, revised and accepted 17th March 2020.
+
+1. Introduction
+Since the seminal paper [7] on nonlinear backward stochastic differential equations (BSDEs
+in short), a lot of efforts have been made to study the well posedness, and many applications
+have been found in various fields such as mathematical finance, stochastic control and PDEs. In
+particular, quadratic BSDEs were first investigated in [6] for bounded terminal conditions, which
+have attracted much attention and are the subject of this article.
+
+ISSN (electronic) : 1778-3569
+
+https://comptes-rendus.academie-sciences.fr/mathematique/
+
+228
+
+Shengjun Fan, Ying Hu and Shanjian Tang
+
+We consider the following quadratic BSDE:
+Z T
+Z T
+Yt = ξ +
+g (s, Y s , Z s )ds −
+Z s · dB s , t ∈ [0, T ],
+t
+
+(1)
+
+t
+
+where the terminal value ξ is an unbounded random variable, and the generator g has a quadratic
+growth in the variable z. In [1], the authors obtained the first existence result for this kind of
+BSDEs, when the terminal value has a certain exponential moment. The uniqueness results were
+established in [2], [4] and [5] when the generator g is Lipschitz continuous in y, and either
+convex or concave in z. The case of a non-convex generator g was tackled in [8] and [3], but
+more assumptions are required on the terminal value ξ than the exponential integrability. In this
+paper, we prove a uniqueness result for the unbounded solution of quadratic BSDEs, where the
+generator g may be non-Lipschitz and has a general growth in y, and non-convex (non-concave)
+in z. Rather than imposing any additional assumption on the terminal value, we suppose that
+the generator g satisfies an additional assumption which holds typically for a (locally) Lipschitz
+perturbation of some convex (concave) function (see (H4) and Proposition 3 together with (H40 )
+and Remark 7 for details), and is strictly quadratic, i.e., either
+g (ω, t , y, z) ≥
+
+γ 2
+|z| − β|y| − αt (ω),
+2
+
+or
+
+γ
+g (ω, t , y, z) ≤ − |z|2 + β|y| + αt (ω)
+2
+holds for two constants γ > 0, β ≥ 0 and a nonnegative process α· . Under
+this condition, we
+Rt
+can prove that if (Y· , Z· ) is a solution satisfying E[supt ∈[0,T ] exp(p|Y t | + p 0 αs ds)] < +∞ for some
+RT
+p > 0, then there exists a constant ε > 0 such that E[exp(ε 0 |Z t |2 dt )] < +∞. See Proposition 2 for
+details.
+Let us close this introduction by introducing some notations that will be used later. Fix the
+terminal time T > 0 and a positive integer d , and let x · y denote the Euclidean inner product for
+x, y ∈ Rd . Suppose that (B t )t ∈[0,T ] is a d -dimensional standard Brownian motion defined on some
+complete probability space (Ω, F , P). Let (Ft )t ∈[0,T ] be the natural filtration generated by B · and
+augmented by all P-null sets of F . All the processes are assumed to be (Ft )-adapted.
+Denote by 1 A ( · ) the indicator of set A, and sgn(x) := 1x>0 − 1x≤0 . Let a ∧ b be the minimum of
+a and b, a − := −(a ∧ 0) and a + := (−a)− . For any real p ≥ 1, let S p be the set of all progressively
+measurable and continuous real-valued processes (Y t )t ∈[0,T ] such that
+#!1/p
+Ã "
+kY kS p := E
+
+sup |Y t |p
+
+< +∞,
+
+t ∈[0,T ]
+
+and M p the set of all progressively measurable Rd -valued processes (Z t )t ∈[0,T ] such that
+( "µZ
+¶p/2 #)1/p
+kZ kM p := E
+
+T
+
+0
+
+|Z t |2 dt
+
+< +∞.
+
+As mentioned before, we will study BSDEs of type (1). The terminal condition ξ is real-valued
+and FT -measurable, and the process g ( · , · , y, z) : Ω × [0, T ] → R is progressively measurable for
+each pair (y, z) and continuous in (y, z). By a solution to (1), we mean a pair of progressively
+measurable processes (Y t , Z t )t ∈[0,T ] , taking values in R × Rd such that P − a.s., the function t 7→ Y t
+is continuous, t 7→ Z t is square-integrable, t 7→ g (t , Y t , Z t ) is integrable, and verifies (1). And, we
+usually denote by BSDE (ξ, g ) the BSDE whose terminal condition is ξ and whose generator is g .
+Finally, we recall that a process (X t )t ∈[0,T ] belongs to class (D) if the family of random variables
+{X τ : τ is any stopping time taking values in [0, T ]} is uniformly integrable.
+
+C. R. Mathématique, 2020, 358, n 2, 227-235
+
+Shengjun Fan, Ying Hu and Shanjian Tang
+
+229
+
+2. Main result
+We define for any non-negative integrable function f (·) : [0, T ] → [0, +∞) and any constants κ ≥ 0
+and λ > 0 the following function:
+µ
+¶
+Z s
+ψ(s, x; f , κ, λ) = exp λe κs x + λ
+f (r )e κr dr , (s, x) ∈ [0, T ] × [0, +∞).
+(2)
+0
+
+It is easy to verify that for each x ∈ [0, +∞), ds − a.e. on [0, T ], it holds that
+− ψx (s, x; f , κ, λ)( f (s) + κx) + ψs (s, x; f , κ, λ) = 0
+
+(3)
+
+− λψx (s, x; f , κ, λ) + ψxx (s, x; f , κ, λ) ≥ 0,
+
+(4)
+
+and
+
+where and hereafter, ψs ( · , · ; f , κ, λ) denotes the first-order partial derivative with respect to time,
+and ψx ( · , · ; f , κ, λ) and ψxx ( · , · ; f , κ, λ) are the first-order and second-order partial derivatives
+with respect to space of the time-space function ψ( · , · ; f , κ, λ).
+In the whole paper, we always fix a progressively measurable non-negative process (αt )t ∈[0,T ]
+and several real constants β ≥ 0, 0 < γ ≤ γ, k ≥ 0, k ≥ 0 and δ ∈ [0, 1). Let us first introduce the
+following two assumptions on the generator g .
+(H1) dP × dt − a.e., for each (y, z) ∈ R × Rd , it holds that
+γ
+sgn(y)g (ω, t , y, z) ≤ αt (ω) + β|y| + |z|2 ;
+2
+(H2) There exists a deterministic nondecreasing continuous function φ(·) : [0, +∞) → [0, +∞)
+with φ(0) = 0 such that dP × dt − a.e., for each (y, z) ∈ R × Rd ,
+γ
+|g (ω, t , y, z)| ≤ αt (ω) + φ(|y|) + |z|2 .
+2
+The following proposition gives a slight generalization of the existence result of [2] for quadratic BSDEs with unbounded terminal conditions.
+Proposition 1. Suppose that the function ψ is defined in (2) and that ξ is a terminal condition
+and g is a generator which is continuous in (y, z) and satisfies assumptions (H1) and (H2).
+(i) Let (Y· , Z· ) be a solution to BSDE (ξ, g ) such that (ψp (t , |Y t |; α· , β, γ))t ∈[0,T ] belongs to class
+(D) for some real p ≥ 1. Then, P − a.s., for each t ∈ [0, T ],
+1
+pγ|Y t | ≤ ψp (t , |Y t |; α· , β, γ) + p(p − 1)γ2 E
+2
+
+·Z T
+t
+
+¯ ¸
+¯
+¯
+|Z s |2 ds ¯Ft ≤ E[ψp (T, |ξ|; α· , β, γ)¯Ft ].
+
+(5)
+
+(ii) If E[ψp (T, |ξ|; α· , β, γ)] < +∞ for some real p ≥ 1, then BSDE (ξ, g ) admits a solution (Y· , Z· )
+such that (ψp (t , |Y t |; α· , β, γ))t ∈[0,T ] belongs to class (D). Moreover, if p > 1, then there exists
+a constant C > 0 depending only on p such that
+"
+#
+¡
+¢
+p
+E sup ψ t , |Y t |; α· , β, γ ≤ C E[ψp (T, |ξ|; α· , β, γ)]
+(6)
+t ∈[0,T ]
+
+and Z· ∈ M 2 . And, if p > 2, then Z· ∈ M p .
+
+C. R. Mathématique, 2020, 358, n 2, 227-235
+
+230
+
+Shengjun Fan, Ying Hu and Shanjian Tang
+
+Proof.
+(i). Let L · denote the local time of Y· at 0. Itô-Tanaka’s formula applied to ψ(s, |Y s |; α· , β, pγ) =
+ψ(s, |Y s |; 0, β, pγ)ψ(s, 0; α· , β, pγ) gives, in view of assumption (H1),
+dψ(s, |Y s |; α· , β, pγ)
+= −ψx (s, |Y s |; α· , β, pγ) sgn(Y s )g (s, Y s , Z s )ds + ψx (s, |Y s |; α· , β, pγ) sgn(Y s )Z s · dB s
+1
++ ψx (s, |Y s |; α· , β, pγ)dL s + ψxx (s, |Y s |; α· , β, pγ)|Z s |2 ds + ψs (s, |Y s |; α· , β, pγ)ds
+2
+£
+¤
+≥ −ψx (s, |Y s |; α· , β, pγ)(αs + β|Y s |) + ψs (s, |Y s |; α· , β, pγ) ds
+¤
+1£
++ −γψx (s, |Y s |; α· , β, pγ)|Z s |2 + ψxx (s, |Y s |; α· , β, pγ)|Z s |2 ds
+2
++ ψx (s, |Y s |; α· , β, pγ) sgn(Y s )Z s · dB s ,
+dP × ds − a.e.
+Then, by virtue of (3) and (4) together with the fact that ψx ( · , · ; f · , κ, λ) ≥ λ, we have
+1
+dψ(s, |Y s |; α· , β, pγ) ≥ p(p − 1)γ2 |Z s |2 ds + ψx (s, |Y s |; α· , β, pγ) sgn(Y s )Z s · dB s , dP × ds − a.e. (7)
+2
+Let us denote, for each t ∈ [0, T ] and each integer m ≥ 1, the following stopping time
+½
+¾
+Z s
+¡
+¢2
+t
+τm
+:= inf s ∈ [t , T ] :
+ψx (r, |Yr |; α· , β, pγ) |Zr |2 dr ≥ m ∧ T
+t
+
+t
+with the convention inf ; = +∞. It follows from (7) and the definition of τm
+that for each m ≥ 1,
+¯ #
+"Z t
+¯
+¯ i
+h
+τm
+1
+¯
+¯
+t
+t |; α· , β, pγ)¯ Ft , t ∈ [0, T ].
+ψ(t , |Y t |; α· , β, pγ) + p(p − 1)γ2 E
+|Z s |2 ds ¯ Ft ≤ E ψ(τm
+, |Yτm
+¯
+2
+t
+
+Thus, since (ψ(s, |Y s |; α· , β, pγ))s∈[0,T ] belongs to class (D), the desired inequality (5) follows by
+letting m → ∞ and using Fatou’s lemma in the last inequality.
+(ii). Thanks to (i), proceeding as in the proof of Proposition 3 in [2] with a localization argument,
+we conclude that if E[ψp (T, |ξ|; α· , β, γ)] < +∞ for some real p ≥ 1, then BSDE (ξ, g ) has a solution
+(Y· , Z· ) such that (ψp (t , |Y t |; α· , β, γ))t ∈[0,T ] belongs to class (D) and (5) holds. Moreover, for p > 1,
+it is clear from (5) that Z· ∈ M 2 . Since (5) holds for p = 1, we apply Doob’s maximal inequality to
+get (6). Finally, the conclusion that Z· ∈ M p for p > 2 has been given in Corollary 4 of [2].
+
+To obtain a stronger integrability with respect to the process Z· , we need the following assumption, called hereafter the strictly (positive) quadratic condition:
+(H3) dP × dt − a.e., for each (y, z) ∈ R × Rd , it holds that
+g (ω, t , y, z) ≥
+
+γ 2
+|z| − β|y| − αt (ω).
+2
+
+(8)
+
+Proposition 2. Let ψ be defined in (2), ξ be a terminal condition, g be a generator satisfing (H3),
+and (Y· , Z· ) be a solution to BSDE (ξ, g ). If E[supt ∈[0,T ] ψ(t , |Y t |; α· , 0, p 0 )] < +∞ for some real
+γ2
+
+p γ
+
+0
+p 0 > 0, then for each real ε ∈ (0, ε0 ] with ε0 := 18 ∧ 12+6βT
+, we have
+·
+µ Z T
+¶¸
+E exp ε
+|Z s |2 ds < +∞.
+
+0
+
+RT
+In particular, for each p > 0 and δ ∈ [0, 1), E[exp(p 0 |Z s |1+δ ds)] < +∞.
+Proof. Since (Y· , Z· ) is a solution to BSDE (ξ, g ) and (8) holds, we have for each n ≥ 1,
+Z
+Z σn
+Z σn
+Z σn
+γ σn
+2
+|Z s | ds ≤ Y0 − Yσn +
+(αs + β|Y s |)ds +
+Z s · dB s ≤ X +
+Z s · dB s ,
+2 0
+0
+0
+0
+
+C. R. Mathématique, 2020, 358, n 2, 227-235
+
+(9)
+
+Shengjun Fan, Ying Hu and Shanjian Tang
+
+231
+
+RT
+where X := (2 + βT ) supt ∈[0,T ] |Y t | + 0 αs ds, and
+½
+¾
+Z s
+σn := inf s ∈ [0, T ] :
+|Zr |2 dr ≥ n ∧ T.
+0
+
+Then, for each ε > 0 such that 3ε(2 + βT ) ≤ p 0 , we have
+¶
+µ Z σn
+¶
+µ
+¶
+µ Z σn
+Z
+Z
+γ
+3 2 σn
+3 2 σn
+2
+2
+2
+|Z s | ds ≤ exp(εX ) exp ε
+Z s · dB s − ε
+|Z s | ds exp ε
+|Z s | ds .
+exp ε
+2 0
+2
+2
+0
+0
+0
+Observe that the process
+µ Z t ∧σn
+¶
+Z t ∧σn
+9
+H (t ) := exp 3ε
+Z s · dB s − ε2
+|Z s |2 ds
+2
+0
+0
+is a positive martingale with H (0) = 1. Taking expectation in both sides of the last inequality and
+applying Hölder’s inequality, we obtain
+¶¸
+µ ·
+µ
+¶¸¶ 1
+·
+µ Z σn
+Z σn
+3
+¡ £
+¤¢ 1
+γ
+9
+|Z s |2 ds ≤ E exp(3εX ) 3 E exp ε2
+.
+|Z s |2 ds
+E exp ε
+2 0
+2
+0
+Consequently, for ε ≤ γ/9, we have
+µ ·
+µ Z σn
+¶¸¶ 2
+3
+¡ £
+¤¢ 1
+γ
+E exp ε
+≤ E exp(3εX ) 3 < +∞,
+|Z s |2 ds
+2 0
+which yields the inequality (9) immediately from Fatou’s lemma. Finally, for each p > 0, δ ∈ [0, 1),
+x ≥ 0 and ε ∈ (0, ε0 ], it follows from Young’s inequality that
+1−δ
+µ
+¶ 1+δ
+¶ 1+δ Ã
+µ
+¶− 1+δ ! 2
+µ
+2
+1−δ
+2
+2
+1 − δ 2 1 + δ 1−δ
+2
+1+δ
+2
+px
+=
+p 1−δ
+≤ εx 2 +
+.
+εx
+ε
+p 1−δ
+1+δ
+1+δ
+2
+2ε
+Thus, the last desired assertion follows from (9). The proof is complete.
+
+
+
+In what follows, the following assumption on the generator g will be used.
+(H4) dP × dt − a.e., for each (y i , z i ) ∈ R × Rd , i = 1, 2 and each θ ∈ (0, 1), it holds that
+¡
+¢
+1{y 1 −θy 2 >0} g (ω, t , y 1 , z 1 ) − θg (ω, t , y 2 , z 2 )
+¯
+¡ ¯
+¢
+≤ (1 − θ) β ¯δθ y ¯ + γ |δθ z|2 + h(ω, t , y 1 , y 2 , z 1 , z 2 , δ) ,
+where
+δθ y :=
+and
+
+(10)
+
+y 1 − θy 2
+z 1 − θz 2
+, δθ z :=
+,
+1−θ
+1−θ
+
+´
+³
+h(ω, t , y 1 , y 2 , z 1 , z 2 , δ) := αt (ω) + k(|y 1 | + |y 2 |) + k |z 1 |1+δ + |z 2 |1+δ .
+One typical example of (H4) is
+g (ω, t , y, z) := g 1 (z) + g 2 (z),
+d
+
+where g 1 : R → R is convex with quadratic growth, and g 2 : Rd → R is Lipschitz continuous, i.e.,
+g is a Lipschitz perturbation of some convex function. More generally, we have
+Proposition 3. Assumption (H4) holds for the generator g as soon as it is continuous in (y, z) and
+satisfies (H1) together with anyone of the following conditions:
+(i) dP × dt − a.e., g (ω, t , · , · ) is convex;
+(ii) g is Lipschitz in the variable y and δ-locally Lipschitz in the variable z, i.e., dP × dt − a.e.,
+for each (y i , z i ) ∈ R × Rd , i = 1, 2, we have
+|g (ω, t , y 1 , z 1 ) − g (ω, t , y 2 , z 2 )| ≤ β|y 1 − y 2 | + γ(1 + |z 1 |δ + |z 2 |δ )|z 1 − z 2 |;
+(iii) dP × dt − a.e., for each (y, z) ∈ R × Rd , g (ω, t , ·, z) is Lipschitz, and g (ω, t , y, ·) is convex;
+
+C. R. Mathématique, 2020, 358, n 2, 227-235
+
+(11)
+
+232
+
+Shengjun Fan, Ying Hu and Shanjian Tang
+
+(iv) dP × dt − a.e., for each (y, z) ∈ R × Rd , g (ω, t , ·, z) is convex, and g (ω, t , y, ·) is δ-locally
+Lipschitz, i.e., (11) holds with y 1 = y 2 = y.
+Proof. Given (y i , z i ) ∈ R × Rd , i = 1, 2 and θ ∈ (0, 1).
+(i). Assume that dP × dt − a.e., g (ω, t , · , · ) is convex. In view of (H1), if δθ y > 0, then
+¡
+¢
+g (ω, t , y 1 , z 1 ) = g ω, t , θy 2 + (1 − θ)δθ y, θz 2 + (1 − θ)δθ z
+¡
+¢
+≤ θg (ω, t , y 2 , z 2 ) + (1 − θ)g ω, t , δθ y, δθ z
+´
+³
+γ
+≤ θg (ω, t , y 2 , z 2 ) + (1 − θ) αt (ω) + β|δθ y| + |δθ z|2 .
+2
+Thus, the inequality (10) holds with (γ, k, k) being replaced with (γ/2, 0, 0).
+(ii). Let the inequality (11) holds. Note by (H1) that |g (ω, t , 0, 0)| ≤ αt (ω). Then, in view of the fact
+that 2δ < 1 + δ, using Young’s inequality, we deduce that for each ε > 0,
+g (ω, t , y 1 , z 1 ) − θg (ω, t , y 2 , z 2 )
+≤ |g (ω, t , y 1 , z 1 ) − g (ω, t , y 2 , z 2 )| + (1 − θ)|g (ω, t , y 2 , z 2 )|
+³
+´
+³
+³
+´
+´
+≤ β|y 1 − y 2 | + γ 1 + |z 1 |δ + |z 2 |δ |z 1 − z 2 | + (1 − θ) |g (ω, t , 0, 0)| + β|y 2 | + γ 1 + |z 2 |δ |z 2 |
+³
+´
+≤ β(|y 1 − θy 2 | + (1 − θ)|y 2 |) + γ 1 + |z 1 |δ + |z 2 |δ (|z 1 − θz 2 | + (1 − θ)|z 2 |)
+³
+³
+´
+´
++ (1 − θ) αt (ω) + β|y 2 | + γ 1 + |z 2 |δ |z 2 |
+h
+³
+´i
+≤ (1 − θ) β|δθ y| + 2β|y 2 | + αt (ω) + ε|δθ z|2 + c 1 + |z 1 |1+δ + |z 2 |1+δ ,
+where c is a constant depending only on (γ, δ, ε). Thus, the inequality (10) holds with (γ, α· , k, k)
+being replaced with (ε, α· + c, 2β, c).
+(iii). Assume that dP × dt − a.e., for each (y, z) ∈ R × Rd , g (ω, t , ·, z) is Lipschitz, and g (ω, t , y, ·) is
+convex. Then, noticing by (H1) that |g (ω, t , 0, z)| ≤ αt + γ|z|2 /2, we have
+g (ω, t , y 1 , z 1 ) − θg (ω, t , y 2 , z 2 )
+≤ |g (ω, t , y 1 , z 1 ) − g (ω, t , y 2 , z 1 )| + g (ω, t , y 2 , z 1 ) − θg (ω, t , y 2 , z 2 )
+≤ β|y 1 − y 2 | + g (ω, t , y 2 , θz 2 + (1 − θ)δθ z) − θg (ω, t , y 2 , z 2 )
+¡
+¢
+≤ β(|y 1 − θy 2 | + (1 − θ)|y 2 |) + (1 − θ) |g (ω, t , y 2 , δθ z) − g (ω, t , 0, δθ z)| + |g (ω, t , 0, δθ z)|
+´
+³
+γ
+≤ (1 − θ) β|δθ y| + 2β|y 2 | + αt (ω) + |δθ z|2 ,
+2
+Thus, (10) holds with (γ, k, k) being (γ/2, 2β, 0).
+(iv). Assume that dP × dt − a.e., for each (y, z) ∈ R × Rd , g (ω, t , · , z) is convex, and g (ω, t , y, · ) is
+δ-locally Lipschitz. In view of (H1) and the fact that 2δ < 1 + δ, we can apply Young’s inequality to
+get that if δθ y > 0, then for each ε > 0,
+g (ω, t , y 1 , z 1 ) − θg (ω, t , y 2 , z 2 )
+≤ g (ω, t , y 1 , z 1 ) − θg (ω, t , y 2 , z 1 ) + θ|g (ω, t , y 2 , z 1 ) − g (ω, t , y 2 , z 2 )|
+³
+´
+≤ g (ω, t , θy 2 + (1 − θ)δθ y, z 1 ) − θg (ω, t , y 2 , z 1 ) + θγ 1 + |z 1 |δ + |z 2 |δ |z 1 − z 2 |
+¡
+¢
+≤ (1 − θ) |g (ω, t , δθ y, z 1 ) − g (ω, t , δθ y, 0)| + g (ω, t , δθ y, 0)
+³
+´
++ γ 1 + |z 1 |δ + |z 2 |δ (|z 1 − θz 2 | + (1 − θ)|z 2 |)
+h
+³
+´i
+≤ (1 − θ) αt (ω) + β|δθ y| + ε|δθ z|2 + c 1 + |z 1 |1+δ + |z 2 |1+δ ,
+
+C. R. Mathématique, 2020, 358, n 2, 227-235
+
+Shengjun Fan, Ying Hu and Shanjian Tang
+
+233
+
+where c is a constant depending only on (γ, δ, ε). Thus, the inequality (10) holds with (γ, α· , k, k) :=
+(ε, α· + c, β, c). The proposition is then proved.
+
+Remark 4. It is easy to verify that the sum of generators satisfying assumption (H4) still satisfies (H4). Hence, in view of Proposition 3, the generator g satisfying assumption (H4) is neither
+necessarily convex nor Lipschitz in the variables (y, z), and it may have a general growth in the
+variable y.
+The main result of this paper is stated as follows.
+Theorem 5. Suppose that the function ψ is defined in (2) and that ξ is a terminal condition, g is a
+generator which is continuous in the state variables (y, z) and satisfies assumptions (H1) and (H2),
+and E[ψp (T, |ξ|; α· , β, γ)] < +∞ for each real p ≥ 1. Then, we have
+(i) If g also satisfies assumption (H4)£ with k = 0, then
+BSDE (ξ, g¢¤) admits a unique solution
+¡
+(Y· , Z· ) such that for each p ≥ 1, E supt ∈[0,T ] ψp t , |Y t |; α· , β, γ < +∞. Moreover, Z· ∈ M p
+for each p ≥ 1.
+(ii) If g also satisfies assumptions (H3) and £(H4), then BSDE
+(ξ, g ) admits
+¡
+¢¤ a unique solution (Y· , Z· ) such that for each p ≥ 1, E supt ∈[0,T ] ψp t , |Y t |; α· , β, γ < +∞. Moreover,
+RT
+E[exp(ε 0 |Z s |2 ds)] < +∞ for some real ε > 0.
+Proof. The existence is a direct consequence of Propositions 1 and 2. We now show the uniqueness part. Let us assume that (H4) holds.
+Let both (Y· , Z· ) and (Y·0 , Z·0 ) be solutions to BSDE (ξ, g ) such that for each p ≥ 1,
+"
+#
+"
+#
+¡
+¢
+¡
+¢
+p
+p
+0
+E sup ψ t , |Y t |; α· , β, γ < +∞
+and
+E sup ψ t , |Y t |; α· , β, γ < +∞.
+(12)
+t ∈[0,T ]
+
+t ∈[0,T ]
+
+We use the θ-difference technique developed in [2]. For each fixed θ ∈ (0, 1), define
+Y· − θY·0
+Z· − θZ·0
+and
+δθ V· :=
+.
+1−θ
+1−θ
+Then, the pair (δθU· , δθ V· ) solves the following BSDE:
+Z T
+Z T
+δθ U t = ξ +
+δθ g (s)ds −
+δθ Vs · dB s , t ∈ [0, T ],
+δθU· :=
+
+t
+
+where
+δθ g (s) :=
+
+(13)
+
+t
+
+¤
+1 £
+g (s, Y s , Z s ) − θg (s, Y s0 , Z s0 ) .
+1−θ
+
+It follows from (10) that
+
+1{δθ Us >0} δθ g (s) ≤ αs + β|δθU s | + γ|δθ Vs |2 ,
+
+(14)
+
+with
+´
+³
+αs := αs + k(|Y s | + |Y s0 |) + k |Z s |1+δ + |Z s0 |1+δ .
+(i). Let k = 0. In view of (12), using Hölder’s inequality, it is not hard to verify that
+"
+#
+¡
+¢
+E sup ψ t , |δθU t |; α· , β, γ < +∞.
+
+(15)
+
+t ∈[0,T ]
+
+Thus, in view of (13), (14) and (15), we apply Itô-Tanaka’s formula to ψ(s, δθU s+ ; α· , β, γ) and argue
+as in the proof of Proposition 1 to deduce that for each t ∈ [0, T ],
+£
+¤
+£
+¤
+γδθU t+ ≤ ψ(t , δθU t+ ; α· , β, γ) ≤ E ψ(T, ξ+ ; α· , β, γ)|Ft ≤ E ψ(T, |ξ|; α· , β, γ)|Ft ,
+and then
+£
+¤
+γ(Y t − θY t0 )+ ≤ (1 − θ)E ψ(T, |ξ|; α· , β, γ)|Ft .
+
+C. R. Mathématique, 2020, 358, n 2, 227-235
+
+234
+
+Shengjun Fan, Ying Hu and Shanjian Tang
+
+Letting θ → 1 in the last inequality yields that P−a.s., for each t ∈ [0, T ], Y t ≤ Y t0 . Thus, the desired
+conclusion follows by interchanging the position of Y· and Y·0 .
+RT
+(ii). Let assumption (H3) hold. Thanks to Proposition 2, we have E[exp(p 0 |Z s |1+δ ds)] < +∞
+R T 0 1+δ
+and E[exp(p 0 |Z s | ds)] < +∞ for each p ≥ 1. Then, in view of (12), using Hölder’s inequality,
+we can conclude that (15) still holds. Thus, the same computation as above yields the uniqueness
+result.
+
+
+
+The proof is then complete.
+
+Remark 6. In view of Proposition 3 and Remark 4, Theorem 5 generalizes the uniqueness
+result for quadratic BSDEs with unbounded terminal conditions obtained in [2]. Indeed, for the
+uniqueness of solutions to quadratic BSDEs with unbounded terminal conditions, Theorem 5
+covers the case of a Lipschitz perturbation of some convex function when the strictly quadratic
+condition holds.
+The following Remark 7 illustrates that some previous results remain true when some other
+conditions are satisfied. For this, let us introduce the following assumptions on the generator g .
+(H30 ) dP × dt − a.e., for each (y, z) ∈ R × Rd , it holds that
+γ
+g (ω, t , y, z) ≤ − |z|2 + β|y| + αt (ω).
+2
+(H40 ) dP × dt − a.e., for each (y i , z i ) ∈ R × Rd , i = 1, 2 and each θ ∈ (0, 1), it holds that
+¡
+¢
+1{θy 1 −y 2 >0} θg (ω, t , y 1 , z 1 ) − g (ω, t , y 2 , z 2 )
+³ ¯
+´
+¯
+¯
+¯2
+≤ (1 − θ) β ¯δ̄θ y ¯ + γ ¯δ̄θ z ¯ + h(ω, t , y 1 , y 2 , z 1 , z 2 , δ) ,
+where
+δ̄θ y :=
+
+(16)
+
+θy 1 − y 2
+θz 1 − z 2
+, δ̄θ z :=
+,
+1−θ
+1−θ
+
+and
+³
+´
+h(ω, t , y 1 , y 2 , z 1 , z 2 , δ) := αt (ω) + k(|y 1 | + |y 2 |) + k |z 1 |1+δ + |z 2 |1+δ .
+Remarks 7.
+(a) It is easy to check that the conclusions in Proposition 2 still hold if assumption (H3) is
+replaced with assumption (H30 ).
+(b) It is not difficult to verify that the assertions in Proposition 3 and Remark 4 still hold if
+assumption (H4) is replaced with assumption (H40 ) and the word “convex” is replaced
+with “concave”. In particular, a (locally) Lipschitz perturbation of some concave function
+satisfies (H40 ).
+(c) By virtue of (a) and (b), in the same way as in Theorem 5, we can prove that all the
+conclusions in Theorem 5 still hold if assumptions (H3) and (H4) are replaced with (H30 )
+and (H40 ), respectively.
+Remarks 8.
+(a) Letting y 1 = y 2 = y and z 1 = z 2 = z in (10) and (16) respectively yields that
+
+1{y>0} g (ω, t , y, z) ≤ β|y| + γ|z|2 + αt (ω) + 2k|y| + 2k|z|1+δ
+and
+−1{y<0} g (ω, t , y, z) ≤ β|y| + γ|z|2 + αt (ω) + 2k|y| + 2k|z|1+δ ,
+whose combination implies assumption (H1).
+
+C. R. Mathématique, 2020, 358, n 2, 227-235
+
+Shengjun Fan, Ying Hu and Shanjian Tang
+
+235
+
+(b) Letting first z 1 = z 2 = z in (10) or (16) and then letting θ → 1 yields that
+¡
+¢
+1{y 1 −y 2 >0} g (ω, t , y 1 , z) − g (ω, t , y 2 , z) ≤ β|y 1 − y 2 |,
+which means that g satisfies the monotonicity condition in the state variable y.
+Example 9. For each (ω, t , y, z) ∈ Ω × [0, T ] × R × Rd , define
+3
+
+g 1 (ω, t , y, z) = |z|2 − |z| 2 + sin |z| + y 2 1 y≤0 − |y| + |B t (ω)|
+and
+
+4
+
+g 2 (ω, t , y, z) = −|z|2 + sin |z| 3 + |z| − y 3 1 y≥0 + sin |y| + |B t (ω)|.
+By virtue of Proposition 3 together with Remark 7 (b), it is not difficult to verify that g 1 (resp. g 2 )
+is continuous in (y, z) and satisfies assumptions (H1)—(H4) (resp. (H1), (H2), (H30 ) and (H40 )).
+However, both of them are non-convex (non-concave) in z and non-Lipschitz in y.
+Acknowledgements
+The authors are grateful to the anonymous referee for their helpful suggestions.
+
+References
+[1] P. Briand, Y. Hu, “BSDE with quadratic growth and unbounded terminal value”, Probab. Theory Relat. Fields 136 (2006),
+no. 4, p. 604-618.
+[2] ——— , “Quadratic BSDEs with convex generators and unbounded terminal conditions”, Probab. Theory Relat. Fields
+141 (2008), no. 3-4, p. 543-567.
+[3] P. Briand, A. Richou, “On the uniqueness of solutions to quadratic BSDEs with non-convex generators”, https:
+//arxiv.org/abs/1801.00157v1, 2017.
+[4] F. Delbaen, Y. Hu, A. Richou, “On the uniqueness of solutions to quadratic BSDEs with convex generators and
+unbounded terminal conditions”, Ann. Inst. Henri Poincaré 47 (2011), no. 2, p. 559-574.
+[5] ——— , “On the uniqueness of solutions to quadratic BSDEs with convex generators and unbounded terminal
+conditions: the critical case”, Discrete Contin. Dyn. Syst. 35 (2015), no. 11, p. 5273-5283.
+[6] M. Kobylanski, “Backward stochastic differential equations and partial differential equations with quadratic growth”,
+Ann. Probab. 28 (2000), no. 2, p. 558-602.
+[7] É. Pardoux, S. Peng, “Adapted solution of a backward stochastic differential equation”, Syst. Control Lett. 14 (1990),
+no. 1, p. 55-61.
+[8] A. Richou, “Markovian quadratic and superquadratic BSDEs with an unbounded terminal condition”, Stochastic
+Processes Appl. 122 (2012), no. 9, p. 3173-3208.
+
+C. R. Mathématique, 2020, 358, n 2, 227-235
+
+

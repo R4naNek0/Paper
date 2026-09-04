@@ -1,0 +1,3490 @@
+Available online at www.sciencedirect.com
+
+ScienceDirect
+Stochastic Processes and their Applications 126 (2016) 1511–1552
+www.elsevier.com/locate/spa
+
+Bounded solutions, L p ( p > 1) solutions and L 1
+solutions for one dimensional BSDEs under general
+assumptions✩
+ShengJun Fan
+College of Sciences, China University of Mining and Technology, Jiangsu 221116, PR China
+Received 26 February 2014; received in revised form 31 October 2015; accepted 28 November 2015
+Available online 4 December 2015
+
+Abstract
+This paper aims at solving one dimensional backward stochastic differential equations (BSDEs) under
+weaker assumptions. We establish general existence, uniqueness, and comparison results for bounded
+solutions, L p ( p > 1) solutions and L 1 solutions of the BSDEs. The time horizon is allowed to be finite
+or infinite, and the generator g is allowed to have a general growth in y and a quadratic growth in z. As
+compensation, the generator g needs to satisfy a kind of one-sided linear or super-linear growth condition in
+y, instead of the monotonicity condition in y as is usually done. Many of our results improve considerably
+some known results, even though for the case of finite time horizon and the case of L 2 solution.
+c 2015 Elsevier B.V. All rights reserved.
+⃝
+
+MSC: 60H10
+Keywords: Backward stochastic differential equation; Existence and uniqueness; Comparison theorem; L p solution;
+Bounded solution; Infinite time interval
+
+1. Preliminaries and introduction
+Throughout this paper, let us fix a positive integer d and a positive time horizon T which can
+be finite or infinite. Moreover, let R+ := [0, +∞), R+ := (0, +∞) and let L 1 ([0, T ]; R+ ) and
+✩ Supported by the National Natural Science Foundation of China (No. 11371362), the China Postdoctoral Science
+Foundation (No. 2013M530173), the Qing Lan Project and the Fundamental Research Funds for the Central Universities
+(No. 2013RC20).
+E-mail address: f s j@126.com.
+
+http://dx.doi.org/10.1016/j.spa.2015.11.012
+c 2015 Elsevier B.V. All rights reserved.
+0304-4149/⃝
+
+1512
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+L 2 ([0, T ]; R+ ), respectively, represent the set of nonnegative functions u(·) from [0, T ] to R+
+such that
+ T
+ T
+u(t) dt < +∞ and
+u 2 (t) dt < +∞.
+0
+
+0
+
+Let (Ω , F, P) be a complete probability space carrying a standard d-dimensional Brownian
+motion (Bt )t≥0 . We consider (Ft )t≥0 the natural filtration of (Bt )t≥0 augmented by the P-null
+sets of F and we assume FT = F. P denotes, as usual, the σ -algebra of predictable subsets of
+Ω × [0, T ]. For each predictable subset A of Ω × [0, T ], let 1 A equal to 1 when (t, ω) ∈ A, and 0
+otherwise. For every positive integer n, we use | · | to denote the norm of Euclidean space Rn . For
+each p > 0, L p (Ω , FT , P) represents the set of FT -measurable random variables ξ such that
+E[|ξ | p ] < +∞, and S p denotes the set of real-valued, (Ft )-adapted and continuous processes
+(Yt )t∈[0,T ] such that
+
+1∧1/ p
+< +∞.
+
+∥Y ∥S p := E[ sup |Yt | p ]
+t∈[0,T ]
+
+If p ≥ 1, ∥ · ∥S p is a norm on S p and if p ∈ (0, 1), (X, X ′ ) −→ ∥X − X ′ ∥S p defines a distance
+on S p . Under this metric, S p is complete. Moreover, for each p > 0, let M p denote the set of
+(equivalent classes of) (Ft )-progressively measurable, Rd -valued processes (Z t )t∈[0,T ] such that
+ 
+
+T
+
+2
+
+ p/2 1∧1/ p
+
+|Z t | dt
+
+∥Z ∥M p := E
+
+< +∞.
+
+0
+
+For p ≥ 1, M p is a Banach space endowed with this norm and for p ∈ (0, 1), M p is a
+complete metric space with the resulting distance. Finally, for each p ≥ 1, we denote by
+L p (Ω ; L 1 ([0, T ]; R+ )) the set of (Ft )-progressively measurable, nonnegative and real-valued
+process ( f t )t∈[0,T ] such that
+
+p
+T
+
+| f t | dt
+
+E
+
+< +∞.
+
+0
+
+And, L 1 (Ω ; L 1 ([0, T ]; R+ )) will be denoted simply by L 1 (Ω × [0, T ]).
+
+p
+∞ the set of predictable bounded processes, and
+We set S =
+p>1 S and denote by S
+∞
+by L (Ω , FT , P) the set of FT -measurable bounded random variables. Let us recall that a
+continuous process (Yt )t∈[0,T ] belongs to the class (D) if the family {Yτ : τ ∈ ΣT } is uniformly
+integrable, where and hereafter ΣT stands for the set of all (Ft )-stopping times τ such that τ ≤ T .
+In this paper, we consider the following one dimensional backward stochastic differential
+equation (BSDE in short for the remaining of this paper):
+yt = ξ +
+
+ T
+t
+
+g(s, ys , z s )ds −
+
+ T
+
+z s · dBs ,
+
+t ∈ [0, T ],
+
+(1)
+
+t
+
+where the random variable ξ is FT -measurable, called the terminal condition of BSDE(1), the
+random function
+g(ω, t, y, z) : Ω × [0, T ] × R × Rd −→ R
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1513
+
+is P ⊗ B(R) ⊗ B(Rd ) measurable, called the generator of BSDE(1). We will sometimes use the
+notation BSDE(ξ, g) to say that we consider the BSDE whose generator is g and whose terminal
+condition is ξ .
+For convenience of the following discussion, we introduce the following definitions
+concerning the solutions of BSDE(1).
+Definition 1.1. A solution of BSDE(1) is a pair of (Ft )-progressively measurable processes
+(y· , z · ) with values in R × Rd such that dP-a.s., t → yt is continuous, t → z t belongs to
+L2 (0, T ), t → g(t, yt , z t ) belongs to L1 (0, T ), and dP-a.s., (1) holds true for each t ∈ [0, T ].
+Definition 1.2. Assume that (y· , z · ) is a solution of BSDE(1). If (y· , z · ) ∈ S ∞ × M2 , then it
+is called a bounded solution; if (y· , z · ) ∈ S p × M p for some p > 1, then an L p solution; if
+(y· , z · ) ∈ S β × Mβ for any β ∈ (0, 1) and y· belongs to the class (D), then an L 1 solution.
+Definition 1.3. We say that (y· , z · ) is a maximal bounded (resp. L p ( p > 1) and L 1 ) solution of
+BSDE(1) if it is a bounded (resp. L p and L 1 ) solution and y· ≥ y·′ for any bounded (resp. L p and
+L 1 ) solution (y·′ , z ·′ ). Similarly, if y· ≤ y·′ , then (y· , z · ) is called a minimal bounded (resp. L p and
+L 1 ) solution.
+Since the first existence and uniqueness result for nonlinear multidimensional BSDEs with
+square integrable parameters was introduced by Pardoux and Peng [32] under the Lipschitz
+assumption of g, BSDEs have been extensively studied, and many applications have been
+found in mathematical finance, stochastic control, partial differential equations and so on (see
+[2,4,12–14,22,26,30,31,33–37] for details).
+From the beginning, many authors attempted to improve the result of [32] by weakening
+the Lipschitz hypothesis on g, see [1,2,4–8,12–21,23,24,26–31,33,38,39], or the L 2 integrability
+assumptions on ξ , see [5,6,10,14,16,17,20,34,38,39], or relaxing the finite time horizon T to a
+stopping time or infinity, see [11,17,19,30,31]. From these results it is not difficult to see that the
+case of one dimensional BSDEs is easy to handle due to the presence of the comparison theorem
+of solutions, see [6,7,9–11,14–16,19,20,23,24,26–29,34,38,39].
+This paper aims at solving one dimensional BSDEs under weaker assumptions. We establish
+general existence, uniqueness, and comparison results for bounded solutions, L p ( p > 1)
+solutions and L 1 solutions of the BSDEs. The time horizon T is allowed to be finite or infinite,
+and the generator g is allowed to have a general growth in y and a quadratic growth in z. As
+compensation, the generator g needs to satisfy a kind of one-sided linear or super-linear growth
+condition in y, instead of the monotonicity condition in y as is usually done. Many of our results
+improve considerably some known results, even though for the case of finite time horizon and
+the case of L 2 solution.
+More specifically, with respect to the existence for bounded solutions, L p ( p > 1) solutions
+and L 1 solutions of BSDEs, we would like to list respectively several existing results and our
+results as follows in order to compare with each other. Here, we always assume that the generator
+g is continuous in (y, z), and T is a finite real number.
+First, when ξ is bounded there exists a maximal (resp. minimal) bounded solution of
+BSDE(ξ, g) under one of the following two groups of conditions:
+• g has a super-linear growth in y and a quadratic growth in z, i.e., there exist a constant C > 0
+and a continuous function l : R → R+ such that
+|g(ω, t, y, z)| ≤ l(y) + C|z|2 ,
+
+1514
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+ +∞ dx
+ 0 dx
+where 0
+l(x) = −∞ l(x) = +∞
+(see Lepeltier and San Martı́n [28] and Kobylanski [26]).
+• There exist two constants α > 0 and β > 0 together with a convex C 1 function ρ : R+ → R+
+with ρ(0) = 0 and a continuous function ϕ : R+ → R+ with ϕ(0) = 0 such that
+(i) (g(ω, t, y, z) − g(ω, t, 0, z)) sgn(y) ≤ ρ(|y|),
+(ii) |g(ω, t, y, z)| ≤ α + ϕ(|y|) + β|z|2 ,
+ +∞ ds
+where 0
+ρ(s)+α = +∞
+(see Briand and Hu [7] and Briand, Lepeltier and San Martin [8]).
+It is not hard to verify that neither of the above two groups of conditions is satisfied for the
+following two generators:
+g1 (ω, t, y, z) := |z|2 e y + y cos y
+
+and
+
+3
+
+g2 (ω, t, y, z) := −y 3 + |z| 2 sin y.
+
+However, they both satisfy the following condition:
+• g has a one-sided super-linear growth in y and a quadratic growth in z, i.e., there exist two
+continuous functions l : R → R+ and ϕ : R → R+ such that
+(i) g(ω, t, y, z) sgn(y) ≤ l(y) + ϕ(y)|z|2 ,
+(ii) |g(ω, t, y, z)| ≤ ϕ(y)(1 + |z|2 ),
+ +∞ dx
+ 0 dx
+where 0
+l(x) = −∞ l(x) = +∞.
+Then, by Theorem 3.1 of this paper we know that when ξ is bounded there exists a maximal
+(resp. minimal) bounded solution of BSDE(ξ, gi ) for i = 1, 2. In addition, the case of T = +∞
+is also considered in Theorem 3.1.
+Second, when ξ ∈ L p (Ω , FT , P) for some p > 1 there exists a maximal (resp. minimal) L p
+solution of BSDE(ξ, g) under one of the following two groups of conditions:
+• g has a linear growth in (y, z), i.e., there exists a constant C > 0 such that
+|g(ω, t, y, z)| ≤ C(1 + |y| + |z|)
+(see Lepeltier and San Martı́n [27] and Chen [10]).
+• There exist two constants µ ∈ R and A > 0 together with a continuous adapted process
+gt ∈ L p (Ω ; L 1 ([0, T ]; R+ )) and a continuous function ϕ : R+ → R+ with ϕ(0) = 0 such
+that
+(i) (g(ω, t, y1 , z) − g(ω, t, y2 , z)) sgn(y1 − y2 ) ≤ µ|y1 − y2 |,
+(ii) |g(ω, t, y, z)| ≤ gt (ω) + ϕ(|y|) + A|z|
+(see Briand, Lepeltier and San Martin [8]).
+It is not hard to verify that neither of the above two groups of conditions is satisfied for the
+following two generators:
+g1 (ω, t, y, z) := |z|2 (1 − e y ) + |z| sin |z|
+
+and
+
+g2 (ω, t, y, z) := −y 5 + cos(y|z|).
+
+However, they both satisfy the following condition:
+• g has a one-sided linear growth in (y, z) and a quadratic growth in z, i.e., there exist a constant
+C > 0 and a continuous function ϕ : R → R+ such that
+(i) g(ω, t, y, z) sgn(y) ≤ C(1 + |y| + |z|),
+(ii) |g(ω, t, y, z)| ≤ ϕ(y)(1 + |z|2 ).
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1515
+
+Then, by Theorem 5.1 of this paper we know that when ξ ∈ L p (Ω , FT , P) for some p > 1
+there exists an L p solution of BSDE(ξ, gi ) for i = 1, 2. In addition, the case of T = +∞ is
+also considered in Theorem 5.1, and the existence of a maximal (resp. minimal) L p solution is
+further investigated in Theorem 5.2.
+Third, when ξ ∈ L 1 (Ω , FT , P) there exists an L 1 solution of BSDE(ξ, g) under one of the
+following two groups of conditions:
+• g has a linear growth in y and a sub-linear growth in z, i.e., there exist two constants C > 0
+and α ∈ (0, 1) such that
+|g(ω, t, y, z)| ≤ C(1 + |y| + |z|α )
+(see the first version of Briand and Hu [6]).
+• There exist constants µ ∈ R, λ ≥ 0, δ ≥ 0 and α ∈ (0, 1) together with an (Ft )-progressively
+measurable nonnegative process gt ∈ L 1 (Ω × [0, T ]) such that
+(i) (g(ω, t, y1 , z) − g(ω, t, y2 , z)) sgn(y1 − y2 ) ≤ µ|y1 − y2 |,
+(ii) |g(ω, t, y, z 1 ) − g(ω, t, y, z 2 )| ≤ λ|z 1 − z 2 |,
+(iii) for each r ≥ 0, ψr (t) := sup |g(ω, t, y, 0)| ∈ L 1 (Ω × [0, T ]),
+|y|≤r
+
+(iv) |g(ω, t, y, z) − g(ω, t, y, 0)| ≤ δ(gt (ω) + |y| + |z|)α
+(see Briand, Delyon, Hu, Pardoux and Stoica [5] in the multidimensional case).
+It is not hard to verify that neither of the above two groups of conditions is satisfied for the
+following two generators:
+
+
+
+g1 (ω, t, y, z) := −|z|2 y 3 + 3 |z| and g2 (ω, t, y, z) := e−y |z| + 1 + |y| + |z|.
+However, they both satisfy the following condition:
+• g has a one-sided linear growth in y, a one-sided sub-linear growth in z and a quadratic growth
+in z, i.e., there exist two constants C > 0, α ∈ (0, 1) and a continuous function ϕ : R → R+
+such that
+(i) g(ω, t, y, z) sgn(y) ≤ C(1 + |y| + |z|α ),
+(ii) |g(ω, t, y, z)| ≤ ϕ(y)(1 + |z|2 ).
+Then, by Theorem 6.1 of this paper we know that when ξ ∈ L 1 (Ω , FT , P) there exists an L 1
+solution of BSDE(ξ, gi ) for i = 1, 2. In addition, the case of T = +∞ is also considered in
+Theorem 6.1, and the existence of a maximal (resp. minimal) L 1 solution is further investigated
+in Theorem 6.2.
+In the sequel, with respect to the uniqueness and comparison results for bounded solutions,
+L p ( p > 1) solutions and L 1 solutions of BSDEs, we also list respectively several existing
+results and our results as follows.
+Briand and Hu [7] established a comparison theorem for bounded solutions of BSDEs with
+finite time horizon when one of the generators is Lipschitz in y and concave or convex in z;
+Morlais [30] obtained a comparison theorem for bounded solutions of BSDEs with infinite time
+horizon when one of the generators satisfies a monotonicity condition in y and a local Lipschitz
+
+1516
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+condition in z. Under the conditions that one of the generators only satisfies a one-sided Osgood
+condition in y (see assumption (2A1) and Remark 2.1 in Section 2 for details), and a local
+Lipschitz condition (resp. a concavity or convexity condition) in z, Theorems 4.1 and 4.2 of
+this paper respectively prove a comparison theorem for bounded solutions of BSDEs with finite
+or infinite time horizon, extending two results mentioned above.
+Fan, Jiang and Tian [19] established a comparison theorem for L 2 solutions of BSDEs with
+finite or infinite time horizon when one of the generators satisfies a one-sided Osgood condition
+in y and a uniform continuity condition in z, which generalizes four classical comparison
+theorems obtained respectively in El Karoui, Peng and Quenez [14], Cao and Yan [9], Chen
+and Wang [11] and Briand and Hu [6]. Theorem 2.1 of this paper further extends this result to
+the case of the L p ( p > 1) solution. More importantly, in this paper we eliminate the concavity
+condition with respect to function ρ(·) in the one-sided Osgood condition.
+To the best of our knowledge, Briand and Hu [6] first put forward and proved a comparison
+theorem for L 1 solutions of BSDEs with finite time horizon when one of the generators satisfies a
+monotonicity condition in y and a Lipschitz condition together with a sub-linear growth condition
+in z. Recently, Fan and Liu [20], Xiao, Li and Fan [39], Fan and Jiang [16] and Tian, Jiang and
+Shi [38] further establish the comparison results for L 1 solutions of BSDEs with finite time
+horizon under the conditions that one of the generators satisfies a monotonicity condition or
+a Osgood condition in y and a quasi-Hölder continuity condition in z. Theorem 2.4 of this
+paper unifies these results to the case of BSDEs with finite or infinite time horizon when one
+of the generators satisfies a one-sided Osgood condition in y and a uniform continuity condition
+together with a sub-linear growth condition in z. For example, the following generator g does not
+satisfy their conditions but satisfies our conditions:
+
+
+|z|, 0 ≤ |z| ≤ 1;
+
+g(ω, t, y, z) =
+(n − 1)4 , (n − 1)4 < |z| ≤ n 4 − 2n + 1; n = 2, 3, 4, . . . .
+
+|z| + n 2 − n 4 , n 4 − 2n + 1 < |z| ≤ n 4 ,
+More specifically, this generator g satisfies the uniform continuity condition as well as the
+sub-linear growth condition in z, but it does not satisfy the quasi-Hölder continuity condition
+in z.
+Finally, we would like to mention that several new comparison results for the maximal and
+minimal solutions of BSDEs are put forward and proved (see, for example, Theorems 2.2–2.3,
+3.2–3.3, 5.3–5.4 and 6.3–6.4), and they also play an important role in the proof of our existence
+results. Furthermore, by products, three general existence and uniqueness results for bounded
+solutions, L p ( p > 1) solutions and L 1 solutions of BSDEs are also obtained respectively (see
+Theorems 4.3, 5.5 and 6.5). In addition, we also point out that our results are all obtained due to
+the application of new ideas and new techniques or the development of those existing ideas and
+methods.
+The remaining of this paper is organized as follows. In Section 2, we establish several
+comparison theorems for the (maximal and minimal) L p ( p > 1) solutions and the L 1 solutions
+of BSDEs. Then, we prove an existence result together with two comparison results for the
+maximal and minimal bounded solutions in Section 3, and two comparison theorems together
+with an existence and uniqueness result for the bounded solutions in Section 4. Finally, in
+Sections 5 and 6, we establish several existence results, comparison theorems, and existence
+and uniqueness results for the (maximal and minimal) L p ( p > 1) and L 1 solutions of BSDEs
+respectively.
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1517
+
+2. Comparison theorems of L p ( p > 1) solutions and L 1 solutions
+In this section, we will establish several comparison theorems for the (maximal and minimal)
+L p ( p > 1) solutions and the L 1 solutions of BSDEs. Let us first introduce the following
+assumptions on the generator g, where we assume that 0 < T ≤ +∞:
+(2A1) There exist a function u(·) ∈ L 1 ([0, T ]; R+ ) and a nondecreasing continuous function
+ρ(·) : R+ → R+ with linear growth such that dP × dt-a.e.,
+(g(ω, t, y1 , z) − g(ω, t, y2 , z)) sgn(y1 − y2 ) ≤ u(t)ρ(|y1 − y2 |), ∀ y1 , y2 , z.
+
+1
+du = +∞.
+Assume further that ρ(0) = 0, ρ(u) > 0 for u > 0 and 0+ ρ(u)
+2
+(2A2) There exist a function v(·) ∈ L ([0, T ]; R+ ) and a nondecreasing continuous function
+φ(·) : R+ → R+ with φ(0) = 0 such that dP × dt-a.e.,
+|g(ω, t, y, z 1 ) − g(ω, t, y, z 2 )| ≤ v(t)φ(|z 1 − z 2 |),
+
+∀ y, z 1 , z 2 .
+
+Without loss of generality, here and henceforth we can always assume that for all x ∈ R+ ,
+0 ≤ φ(x) ≤ ax + b. Furthermore, we assume also that v(t) ∈ L 1 ([0, T ]; R+ ) in the case where
+b ̸= 0.
+(2A3) dP × dt-a.e., g(ω, t, ·, ·) : R × Rd −→ R is continuous.
+(2A4) There exist two functions u(·) ∈ L 1 ([0, T ]; R+ ), v(·) ∈ L 2 ([0, T ]; R+ ) and a process
+f t ∈ L 2 (Ω ; L 1 ([0, T ]; R+ )) such that dP × dt-a.e.,
+|g(ω, t, y, z)| ≤ f t (ω) + u(t)|y| + v(t)|z|,
+
+∀ y, z.
+
+(2A5) There exist a constant α ∈ (0, 1), a function λ(·) : [0, T ] → R+ and an (Ft )progressively measurable nonnegative process ( f t )t∈[0,T ] ∈ L 1 ([0, T ] × Ω ) such that dP ×
+dt-a.e.,
+|g(ω, t, y, z) − g(ω, t, y, 0)| ≤ λ(t)( f t (ω) + |y| + |z|)α ,
+
+∀ y, z.
+
+We also assume that
+ T
+
+1
+λ(t) + λ 1−α (t) dt < +∞.
+0
+
+(2A5′ ) There exist a constant α ∈ (0, 1) and a function λ(·) : [0, T ] → R+ such that
+dP × dt-a.e.,
+|g(ω, t, y, z) − g(ω, t, y, 0)| ≤ λ(t)|z|α ,
+
+∀ y, z.
+
+We also assume that
+ T
+2
+λ 2−α (t) dt < +∞.
+0
+
+Remark 2.1. In (2A1), we do not assume that ρ(·) is a concave function required by Theorem 2
+of Fan, Jiang and Tian [19].
+The following lemma will play an important role in the proof of main results of this paper.
+Lemma 2.1. Assume that 0 < T ≤ +∞, {bn }+∞
+n=1 is a nonnegative and non-increasing real
+sequence, β(t) ∈ L 1 ([0, T ]; R+ ) and ψ(·) : R+ → R+ is a nondecreasing continuous function
+
+1518
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+with linear growth. Let {(u n (t))t∈[0,T ] }+∞
+n=1 be a sequence of non-negative (Ft )-progressively
+measurable and continuous processes satisfying
+
+
+sup u n (t) < +∞
+
+En
+
+t∈[0,T ]
+
+and for each t ∈ [0, T ],
+ 
+ T
+
+u n (t) ≤ bn + En
+β(s)ψ(u n (s)) ds  Ft
+
+dP-a.s.,
+
+(2)
+
+t
+
+where En [X |Ft ] represents the conditional expectation of random variable X with respect to Ft
+under a probability measure Pn defined on (Ω , FT ), which is equivalent to P and may depend
+on n. If limn→∞ bn = 0, ψ(0) = 0, ψ(u) > 0 for u > 0, and
+
+1
+du = +∞,
+(3)
++
+0 ψ(u)
+then for each t ∈ [0, T ],
+lim u n (t) = 0
+
+n→∞
+
+dP-a.s.
+
+(4)
+
+Proof. Since ψ is of linear growth, we can get the existence of a constant k such that ψ(x) ≤
+k(1 + x) for all x ∈ R+ . Then, in view of bn ≤ b1 , β(·) ∈ L 1 ([0, T ]; R+ ) and Fubini’s Theorem,
+by (2) we can obtain that for each t ∈ [0, T ], dP-a.s.,
+ T
+ T
+En [u n (r )|Ft ] ≤ b1 + k
+β(s) ds + k
+β(s)En [u n (s)|Ft ] ds, r ∈ [t, T ].
+0
+
+r
+
+Thus, Gronwall’s inequality yields that for each t ∈ [0, T ], dP-a.s.,
+
+ 
+ T
+T
+En [u n (r )|Ft ] ≤ b1 + k
+β(s) ds ek r β(s) ds , r ∈ [t, T ].
+0
+
+Letting r = t in the above inequality we get that for each t ∈ [0, T ],
+
+ 
+ T
+T
+sup u n (t) ≤ C := b1 + k
+β(s) ds ek 0 β(s) ds dP-a.s.
+
+(5)
+
+0
+
+n≥1
+
+In the sequel, in view of the linear growth of ψ, for each n ≥ 1 we can define the function
+ψn : R+ → R+ as follows
+ψn (x) = sup {ψ(y) − (n + 2k)|x − y|}.
+y∈R+
+
+It is well known that ψn is well defined and Lipschitz. Moreover, the sequence {ψn }+∞
+n=1 is non1
+increasing and converges to ψ. Thus, for each n ≥ 1, noticing that β(·) ∈ L ([0, T ]; R+ ), we
+can let vn : R+ → R+ be the solution of the following backward ordinary differential equation
+(ODE for short):
+ T
+vn (t) = bn +
+β(s)ψn (vn (s))ds, t ∈ [0, T ].
+t
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1519
+
+∞
+Since {ψn }∞
+n=1 and {bn }n=1 are both non-increasing sequences, we know that vn+1 ≤ vn for each
+n ≥ 1. This implies that, in view of the fact that limn→∞ bn = 0 and {ψn }+∞
+n=1 converges to ψ as
+converges
+pointwise
+to
+a
+function
+v
+:
+R
+→
+R+ which satisfies
+n → ∞, the sequence {vn }∞
++
+n=1
+ T
+v(t) =
+β(s)ψ(v(s))ds, t ∈ [0, T ].
+t
+
+In view of (3) and the fact that β(·) ∈ L 1 ([0, T ]; R+ ), Bihari’s inequality (see Bihari [3] for
+details) yields that v(t) = 0 for each t ∈ [0, T ].
+j
+Now for n, j ≥ 1, let vn be the function defined recursively as follows:
+vn1 (t) ≡ C,
+j+1
+vn (t) = bn +
+
+ T
+
+j
+
+β(s)ψn (vn (s))ds,
+
+j ≥ 1, t ∈ [0, T ],
+
+(6)
+
+t
+
+where C is defined in (5). Since ψn is Lipschitz and β(·) ∈ L 1 ([0, T ]; R+ ), we know that
+j
+vn → vn as j → ∞. On the other hand, it is easily seen by induction that for all n, j ≥ 1 and
+each t ∈ [0, T ],
+j
+
+u n (t) ≤ vn (t)
+
+dP-a.s.
+
+(7)
+
+Indeed, for j = 1 the formula holds true by (5). Suppose it also holds for some j, then
+j
+
+j
+
+ψ(u n (s)) ≤ ψ(vn (s)) ≤ ψn (vn (s)), s ∈ [0, T ].
+
+dP-a.s.,
+
+In view of (2), the previous inequality and (6), we can deduce that for all n ≥ 1 and each
+t ∈ [0, T ],
+j+1
+
+u n (t) ≤ vn
+
+(t) dP-a.s.
+
+Thus, (7) follows. Finally, taking limit in (7) as first j → ∞, and then n → ∞, we obtain (4).
+The proof of Lemma 2.1 is then completed. 
+The following Theorem 2.1 establishes a general comparison theorem for L p ( p > 1) solutions of BSDEs. It can be regarded as a generalization of Theorem 2 in Fan, Jiang and Tian [19],
+where only L 2 solutions are considered, and the concavity condition of ρ(·) in (2A1) is also
+required.
+Theorem 2.1. Assume that 0 < T ≤ +∞, ξ and ξ ′ are two FT -measurable random variables,
+g and g ′ are two generators of BSDEs and (y· , z · ) and (y·′ , z ·′ ) are, respectively, a solution of
+BSDE(ξ, g) and BSDE(ξ ′ , g ′ ). Assume further that (y· − y·′ )+ ∈ S. If ξ ≤ ξ ′ dP-a.s. and one
+of the following two statements holds true:
+(i) g satisfies (2A1) and (2A2) , and
+
+1 yt >yt′ (g(t, yt′ , z t′ ) − g ′ (t, yt′ , z t′ )) ≤ 0 dP × dt-a.e.;
+
+(8)
+
+(ii) g ′ satisfies (2A1) and (2A2), and
+
+1 yt >yt′ (g(t, yt , z t ) − g ′ (t, yt , z t )) ≤ 0 dP × dt-a.e.,
+then for each t ∈ [0, T ], we have
+yt ≤ yt′
+
+dP-a.s.
+
+(9)
+
+1520
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+Proof. We will only prove the case (i). The other case can be proved in the same way. Let us fix
+k ∈ N∗ and denote τk the stopping time
+
+
+ t
+
+τk = inf t ∈ [0, T ] :
+|z s |2 + |z s′ |2 ds ≥ k ∧ T.
+0
+
+Tanaka’s formula leads to the equation, setting ŷt = yt − yt′ , ẑ t = z t − z t′ ,
+ τk
+ τk
++
++
+′
+′ ′
+ŷt∧τk ≤ ŷτk +
+1 ŷs >0 (g(s, ys , z s ) − g (s, ys , z s )) ds −
+1 ŷs >0 ẑ s · dBs .
+t∧τk
+
+(10)
+
+t∧τk
+
+First of all, since 1 ŷs >0 (g(s, ys′ , z s′ ) − g ′ (s, ys′ , z s′ )) is non-positive, we have
+
+1 ŷs >0 (g(s, ys , z s ) − g ′ (s, ys′ , z s′ ))
+= 1 ŷs >0 (g(s, ys , z s ) − g(s, ys′ , z s′ )) + 1 ŷs >0 (g(s, ys′ , z s′ ) − g ′ (s, ys′ , z s′ ))
+≤ 1 ŷs >0 (g(s, ys , z s ) − g(s, ys′ , z s )) + 1 ŷs >0 (g(s, ys′ , z s ) − g(s, ys′ , z s′ ))
+and we deduce, using the assumptions (2A1) and (2A2) for g, that
+
+1 ŷs >0 (g(s, ys , z s ) − g ′ (s, ys′ , z s′ )) ≤ u(s)ρ( ŷs+ ) + 1 ŷs >0 v(s)φ(|ẑ s |).
+
+(11)
+
+From the proof of Theorem 1 in Fan, Jiang and Davison [18] we know that, with c = a + b,
+
+
+2c
+, ∀ x ∈ R+ , ∀ n ≥ 1.
+(12)
+φ(x) ≤ (n + 2c)x + 1b̸=0 φ
+n + 2c
+Combining (10)–(12) yields that for each n ≥ 1 and each t ∈ [0, T ],
+ τk
+ τk
+
+
++
++
++
+ŷt∧τ
+≤
+a
++
+ŷ
++
+u(s)ρ(
+ŷ
+)
++
+1
+(n
++
+2c)v(s)|ẑ
+|
+ds
+−
+1 ŷs >0 ẑ s · dBs
+n
+s
+ŷs >0
+τk
+s
+k
+t∧τk
+t∧τk
+ τk
+ τk
+= an + ŷτ+k +
+u(s)ρ( ŷs+ ) ds −
+1 ŷs >0 ẑ s
+t∧τk
+
+t∧τk
+
+
+(n + 2c)v(s)ẑ s
+1|ẑs |̸=0 ds + dBs ,
+· −
+|ẑ s |
+
+
+(13)
+
+where
+an = 1b̸=0 φ
+
+
+
+2c
+n + 2c
+
+  T
+·
+v(s) ds → 0
+
+by (2A2) as n → ∞.
+
+(14)
+
+0
+
+Let Pn be the probability on (Ω , FT ) which is equivalent to P and defined by
+
+
+ T
+ T
+dPn
+v(s)ẑ s
+1
+:= exp (n + 2c)
+1|ẑs |̸=0 · dBs − (n + 2c)2
+1|ẑs |̸=0 v 2 (s) ds .
+dP
+|ẑ s |
+2
+0
+0
+It is worth noticing that dPn /dP has moments of all orders since v(·) ∈ L 2 ([0, T ]; R+ ). By
+Girsanov’s theorem, under Pn the process
+ t
+(n + 2c)v(s)ẑ s
+Bn (t) = Bt −
+1|ẑs |̸=0 ds, t ∈ [0, T ],
+|ẑ s |
+0
+
+1521
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+is an (Ft , Pn )-Brownian motion. Moreover, the process
+ t∧τk
+
+1 ŷs >0 ẑ s · dBn (s)
+0
+
+0≤t≤T
+
+is an (Ft , Pn )-martingale. Let En [X |Ft ] represent the conditional expectation of the random
+variable X with respect to Ft under Pn . By taking the conditional expectation with respect to Ft
+under Pn in (13) we get that for each n ≥ 1 and t ∈ [0, T ],
+ 
+  τk
+ + 
+ + 
++
+
+ Ft
+ŷt∧τ
+≤
+a
++
+E
+ŷ
+F
++
+E
+dP-a.s.
+u(s)ρ
+ŷ
+ds
+n
+n
+t
+n
+τk
+s
+
+k
+t∧τk
+
+Furthermore, in view of the facts that τk → T as k → ∞, ( ŷ· )+ belongs to S, ξ ≤ ξ ′ and
+u(·) ∈ L 1 ([0, T ]; R+ ), letting k → ∞ in the above inequality and using Lebesgue’s dominated
+convergence theorem yields that for each t ∈ [0, T ],
+ 
+ T
+ + 
++
+dP-a.s.
+ŷt ≤ an + En
+u(s)ρ ŷs ds  Ft
+t
+
+Thus, in view of (14), applying Lemma 2.1 with u n (t) ≡ ŷt+ , bn = an , β(s) = u(s) and
+ψ(u) = ρ(u) yields that for each t ∈ [0, T ],
+ŷt+ = lim ŷt+ = lim u n (t) = 0
+n→∞
+
+n→∞
+
+dP-a.s.
+
+That is to say, for each t ∈ [0, T ], yt ≤ yt′ dP-a.s. Theorem 2.1 is then proved.
+
+
+
+It should be especially noted that the presence of the indicator function makes that (8) and (9)
+can be more easily satisfied than the usual form. This important observation is one of the start
+points of this paper.
+The following Remark 2.2 gives an easily verifiable condition to ensure that (8) or (9) holds
+true, which will be used several times and play an important role later.
+Remark 2.2. Assume that c is a constant. If
+dP-a.s., ∀ t ∈ [0, T ],
+
+yt ≤ c
+
+and
+dP × dt-a.e., ∀ y < c, ∀ z ∈ Rd ,
+
+g(t, y, z) ≤ g ′ (t, y, z),
+
+then (8) holds true. Similarly, if
+dP-a.s., ∀ t ∈ [0, T ],
+
+yt′ ≥ c
+
+and
+dP × dt-a.e., ∀ y > c, ∀ z ∈ Rd ,
+
+g(t, y, z) ≤ g ′ (t, y, z),
+
+then (9) holds true.
+Let us further introduce the following Lemma 2.2, which comes from Theorem 1 in Fan, Jiang
+and Tian [19]. It will be generalized in Section 5.
+
+1522
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+Lemma 2.2. Assume that 0 < T ≤ +∞ and the generator g satisfies (2A3) and (2A4). Then
+for each ξ ∈ L 2 (Ω , FT , P), BSDE(ξ, g) has both a minimal L 2 solution and a maximal L 2
+solution.
+The following Theorem 2.2 establishes a general comparison theorem for the maximal L 2
+solutions, which will be also generalized in Section 5.
+Theorem 2.2. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L 2 (Ω , FT , P), g and g ′ are two
+generators of BSDEs, and (y· , z · ) is any L 2 solution of BSDE(ξ, g). Assume further that
+g ′ satisfies (2A3) and (2A4), and (y·′ , z ·′ ) is the maximal L 2 solution of BSDE(ξ ′ , g ′ )
+(recall Lemma 2.2). If ξ ≤ ξ ′ dP-a.s. and (9) holds true, then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Proof. Since g ′ satisfies (2A3) and (2A4), by the proof of Theorem 1 in Fan, Jiang and Tian [19]
+we know that if we take for each n ≥ 1 and (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd ,
+g (ω, t, y, z) :=
+
+n ′
+
+sup
+(u,v)∈R1+d
+
+{g ′ (ω, t, u, v) − nu(t)|y − u| − nv(t)|z − v|},
+
+then n g ′ (t, ·, ·) ↓ g ′ (t, ·, ·) and n g ′ (t, ·, ·) satisfies
+|n g ′ (t, y1 , z 1 ) − n g ′ (t, y2 , z 2 )| ≤ nu(t)|y1 − y2 | + nv(t)|z 1 − z 2 |,
+
+∀ y1 , y2 , z 1 , z 2 . (15)
+
+Furthermore, from the proof of Theorem 1 in Fan, Jiang and Tian [19], we also know that
+(n y·′ , n z ·′ ), the unique L 2 solution of BSDE(ξ ′ , n g ′ ), satisfies
+n ′
+y· ↓ y·′ .
+
+(16)
+
+Combining (9) and (16) as well as the fact n g ′ ≥ g ′ we can get that for each n ≥ 1,
+
+1 yt >n yt′ g(t, yt , z t ) ≤ 1 yt >n yt′ g ′ (t, yt , z t ) ≤ 1 yt >n yt′ n g ′ (t, yt , z t ) dP × dt-a.e.
+Thus, in view of (15) and the above inequality, Theorem 2.1 yields that
+∀ n ≥ 1, ∀ t ∈ [0, T ],
+
+yt ≤ n yt′ dP-a.s.
+
+In view of (16), the conclusion follows by letting n → ∞ in (17).
+
+(17)
+
+
+By a similar argument to Theorem 2.2 we can get the following Theorem 2.3.
+Theorem 2.3. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L 2 (Ω , FT , P), g and g ′ are two
+generators of BSDEs, and (y·′ , z ·′ ) is any L 2 solution of BSDE(ξ ′ , g ′ ). Assume further
+that g satisfies (2A3) and (2A4), and (y· , z · ) is the minimal L 2 solution of BSDE(ξ, g)
+(recall Lemma 2.2). If ξ ≤ ξ ′ , dP-a.s. and (8) holds true, then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Corollary 2.1. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L 2 (Ω , FT , P), and both g and g ′
+satisfy (2A3) and (2A4). Let (y· , z · ) and (y·′ , z ·′ ) be, respectively, the maximal (resp. minimal) L 2
+solution of BSDE(ξ, g) and BSDE(ξ ′ , g ′ ) (recall Lemma 2.2). If ξ ≤ ξ ′ dP-a.s. and for each
+(y, z) ∈ R × Rd ,
+g(t, y, z) ≤ g ′ (t, y, z)
+
+dP × dt-a.e.,
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1523
+
+then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+The following Theorem 2.4 establishes a general comparison theorem for L 1 solutions
+of BSDEs, which improves considerably several corresponding comparison results obtained
+respectively in Briand and Hu [6], Fan and Liu [20], Xiao, Li and Fan [39], Fan and Jiang [16]
+and Tian, Jiang and Shi [38] even for the case of finite time horizon.
+Theorem 2.4. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L 1 (Ω , FT , P), g and g ′ are two
+generators of BSDEs, and (y· , z · ) and (y·′ , z ·′ ) are, respectively, an L 1 solution of BSDE(ξ, g)
+and BSDE(ξ ′ , g ′ ). If ξ ≤ ξ ′ dP-a.s. and one of the following two statements is satisfied:
+(i) g satisfies (2A1), (2A2) and (2A5) (or (2A5′ )), and (8) holds true;
+(ii) g ′ satisfies (2A1), (2A2) and (2A5) (or (2A5′ )), and (9) holds true,
+then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Proof. It follows from Theorem 2.1 that we need only to show under the assumptions of
+Theorem 2.4 that (y· − y·′ )+ belongs to S.
+We now assume that ξ ≤ ξ ′ dP-a.s., g satisfies (2A1), (2A2) and (2A5), and (8) holds true.
+The same arguments as follows can prove the other cases. Let us fix k ∈ N∗ and denote the
+stopping time
+
+
+ t
+
+τk := inf t ∈ [0, T ] :
+|z s |2 + |z s′ |2 ds ≥ k ∧ T.
+0
+
+Tanaka’s formula leads to the equation, setting ŷt = yt − yt′ , ẑ t = z t − z t′ ,
+ τk
+ τk
++
++
+′
+′ ′
+ŷt∧τk ≤ ŷτk +
+1 ŷs >0 (g(s, ys , z s ) − g (s, ys , z s )) ds −
+1 ŷs >0 ẑ s · dBs .
+t∧τk
+
+t∧τk
+
+Since 1 ŷs >0 (g(s, ys′ , z s′ ) − g ′ (s, ys′ , z s′ )) is non-positive, we have
+
+1 ŷs >0 (g(s, ys , z s ) − g ′ (s, ys′ , z s′ ))
+= 1 ŷs >0 (g(s, ys , z s ) − g(s, ys′ , z s′ )) + 1 ŷs >0 (g(s, ys′ , z s′ ) − g ′ (s, ys′ , z s′ ))
+≤ 1 ŷs >0 (g(s, ys , z s ) − g(s, ys′ , z s )) + 1 ŷs >0 (g(s, ys′ , z s ) − g(s, ys′ , z s′ ))
+and we deduce, using the assumptions (2A1) and (2A5) of g, that
+
+1 ŷs >0 (g(s, ys , z s ) − g ′ (s, ys′ , z s′ )) ≤ u(s)ρ( ŷs+ ) + 2λ(s)( f s + |ys′ | + |z s | + |z s′ |)α .
+Thus, we get that, with φs := 2λ(s)( f s + |ys′ | + |z s | + |z s′ |)α ,
+ τk
+ τk
+
+
++
++
++
+ŷt∧τk ≤ ŷτk +
+u(s)ρ( ŷs ) + φs ds −
+1 ŷs >0 ẑ s · dBs ,
+t∧τk
+
+t∧τk
+
+and then that
++
+ŷt∧τ
+≤E
+k
+
+
+
+ŷτ+k +
+
+ τk
+t∧τk
+
+
+
+u(s)ρ( ŷs+ ) + φs
+
+
+
+ 
+
+ds  Ft .
+
+(18)
+
+1524
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+Furthermore, since ρ(·) is of linear growth, we can find a pair of positive constants k1 and k2
+such that
+ρ(u) ≤ k1 + k2 u,
+
+∀ u ≥ 0.
+
+(19)
+
+Then, since both (y· , z · ) and (y·′ , z ·′ ) are the L 1 solutions, we can send k to ∞ in (18) and use
+Lebesgue’s dominated convergence theorem and Fubini’s theorem, in view of ξ ≤ ξ ′ , τk → T
+as k → ∞, u(·) ∈ L 1 ([0, T ]; R+ ) and (19), to get that, for each t ∈ [0, T ],
+ 
+ 
+ T
+ T
+
+
++
++
+
+ŷt ≤ E
+φs ds  Ft + E
+u(s)ρ( ŷs )ds  Ft
+0
+t
+ 
+ T
+ T
+ T
+
+  
+≤ k1
+u(s) ds + E
+φs ds  Ft + k2
+u(s)E ŷs+  Ft ds,
+0
+
+0
+
+t
+
+and then for each r ∈ [t, T ],
+ 
+ T
+ T
+ T
+
+ + 
+  
+
+
+E ŷr Ft ≤ k1
+u(s) ds + E
+φs ds  Ft + k2
+u(s)E ŷs+  Ft ds.
+0
+
+0
+
+r
+
+Gronwall’s inequality yields that for each r ∈ [t, T ],
+ 
+  T
+ T
+T
+
+ + 
+
+E ŷr Ft ≤ k1
+· ek2 r u(s)ds ,
+u(s) ds + E
+φs ds  Ft
+0
+
+0
+
+from where, by letting r = t, we have
+ŷt+ ≤
+
+ T
+
+
+
+ T
+u(s) ds + E
+
+k1
+0
+
+0
+
+ 
+T
+
+· ek2 0 u(s)ds .
+φs ds  Ft
+
+(20)
+
+Now, let β be any constant which belongs to (α, 1). Then we have
+
+
+ T
+ βα
+E
+φs ds  < +∞.
+
+(21)
+
+0
+
+Indeed, Hölder’s inequality yields that
+ T
+0
+
+ T
+
+λ(s) f sα ds ≤
+α
+
+ T
+
+λ(s)|z s | ds ≤
+
+λ
+
+1
+1−α
+
+(s) ds
+
+f s ds
+
+0
+
+,
+
+0
+
+ T
+
+0
+
+α
+
+1−α  T
+
+λ
+
+2
+2−α
+
+(s) ds
+
+ 2−α
+ T
+2
+
+0
+
+2
+
+|z s | ds
+
+ α2
+
+,
+
+0
+
+and z s′ has a similar estimate. Besides,
+ T
+ T
+λ(s)|ys′ |α ds ≤
+λ(s) ds · sup |yt′ |α .
+0
+
+0
+
+t∈[0,T ]
+
+Thus, coming back to the definition of φs and noticing the assumptions on deterministic function
+λ(·) and the facts that 1 ≤ 2/(2 − α) ≤ 1/(1 − α) for α ∈ (0, 1), f s ∈ L 1 (Ω × [0, T ]),
+
+1525
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+(z t )t∈[0,T ] and (z t′ )t∈[0,T ] belong to the space Mβ , and (yt′ )t∈[0,T ] belongs to the space S β , we
+can obtain (21).
+Finally, taking supremum over t and expectation on both sides of (20) after taking the power
+of β/α, and then making use of Doob’s inequality, we can get that there exists a constant k̄ > 0
+such that, in view of (21),
+
+
+
+
+β
+
+β
+
+E
+
+sup | ŷt+ | α
+
+T
+
+≤ k̄ + k̄E 
+
+t∈[0,T ]
+
+φs ds
+
+α
+
+0
+
+ < +∞,
+
+which means that (y· − y·′ )+ ∈ S. Thus, we complete the proof of Theorem 2.4.
+
+
+
+3. Existence of bounded solutions
+In this section, we will put forward and prove an existence result and two comparison results
+for the maximal and minimal bounded solutions. We denote by L(R; R+ ) the set of continuous
+and strictly positive functions l(x) : R → R+ satisfying
+ +∞
+ 0
+dx
+dx
+=
+= +∞.
+l(x)
+0
+−∞ l(x)
+We will use the following assumptions on the generator g, where 0 < T ≤ +∞:
+(3A1) There exist a function u(·) ∈ L 1 ([0, T ]; R+ ) and two continuous functions l(·) ∈
+L(R; R+ ) and h(·) : R → R+ such that dP × dt-a.e.,
+g(ω, t, y, z) sgn(y) ≤ u(t)l(y) + h(y)|z|2 ,
+
+∀ y, z.
+
+(3A2) There exist a function ū(·) ∈ L 1 ([0, T ]; R+ ) and two continuous functions ϕ̄(·), h̄(·) :
+R → R+ such that dP × dt-a.e.,
+|g(ω, t, y, z)| ≤ ū(t)ϕ̄(y) + h̄(y)|z|2 ,
+
+∀ y, z.
+
+To state the main results of this section, we introduce the following Lemma 3.1.
+Lemma 3.1. Assume that 0 < T ≤ +∞, u(·) ∈ L 1 ([0, T ]; R+ ) and l(x) : R → R+ is a
+continuous function. Then l(·) ∈ L(R; R+ ) if and only if for each −∞ < a ≤ 0 ≤ b < +∞, the
+following two backward ODEs:
+ T
+Lt = a −
+u(s) l(L s ) ds
+(22)
+t
+
+and
+ T
+Ut = b +
+
+u(s) l(Us ) ds
+
+(23)
+
+t
+
+have both global bounded solutions on [0, T ].
+Moreover, if l(·) ∈ L(R; R+ ), then (22) and (23) have unique global bounded solutions L t
+and Ut on [0, T ], and for each t ∈ [0, T ], we have
+L 0 ≤ L t ≤ a ≤ 0 ≤ b ≤ Ut ≤ U0 .
+
+1526
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+Proof. In the proof of Lemma 1 in Lepeltier and San Martı́n [28], by replacing the term T − t
+with
+ T
+u(s) ds
+t
+
+
+
+we can complete the proof of this lemma.
+
+The following Theorem 3.1 is one of the main results in this section, which generalizes
+considerably the corresponding existence results for bounded solutions of BSDEs obtained
+respectively in Kobylanski [26], Lepeltier and San Martı́n [28], Briand and Hu [7] and Briand,
+Lepeltier and San Martin [8] even for the case of finite time horizon.
+Theorem 3.1. Assume that 0 < T ≤ +∞ and that g satisfies (2A3), (3A1) and (3A2). Then
+for each ξ ∈ L ∞ (Ω , FT , P), BSDE(ξ, g) has both a minimal and a maximal solution among all
+bounded solutions (Y, Z ). Moreover, for each t ∈ [0, T ],
+L 0 ≤ L t ≤ Yt ≤ Ut ≤ U0
+
+dP-a.s.,
+
+where (L , U ) are the unique solutions of (22) and (23) with a = −∥ξ ∥∞ and b = ∥ξ ∥∞ .
+To prove Theorem 3.1, we need the following three lemmas. First, by a similar argument to the
+proof of Lemma 3 in Lepeltier and San Martı́n [28] and in view of Lemma 2.2 and Theorem 2.1
+(or Theorem 1.2 in Chen and Wang [11]), we can obtain the following Lemma 3.2.
+Lemma 3.2. Assume that 0 < T ≤ +∞, u(·) ∈ L 1 ([0, T ]; R+ ), v(·) ∈ L 2 ([0, T ]; R+ ),
+f 1 (·) : R → R is a continuous function with linear growth and the random function f 2 (ω, t, z) :
+Ω × [0, T ] × Rd → R is P × B(Rd )-measurable, with dP × dt-a.e.,
+f 2 (ω, t, 0) = 0
+
+and
+
+| f 2 (ω, t, z 1 ) − f 2 (ω, t, z 2 )| ≤ v(t)|z 1 − z 2 |,
+
+If the backward ODE
+ T
+Jt = a +
+u(s) f 1 (Js ) ds,
+
+∀ z 1 , z 2 ∈ Rd .
+
+a∈R
+
+t
+
+has a unique solution J on [0, T ], then the BSDE
+ T
+ T
+Yt = a +
+(u(s) f 1 (Ys ) + f 2 (s, Z s )) ds −
+Z s · dBs ,
+t
+
+t ∈ [0, T ]
+
+t
+
+has a unique solution given by Z ≡ 0 and Y ≡ J .
+The following Lemma 3.3 is the first step to prove Theorem 3.1.
+Lemma 3.3. Assume that 0 < T ≤ +∞ and η ∈ L ∞ (Ω , FT , P) which satisfies 0 ≤ α ≤
+η ≤ β dP-a.s. We assume without loss of generality that α ≤ 1 and β ≥ 1. Suppose that
+G(ω, t, y, z) : Ω × [0, T ] × R × Rd → R vanishes when y ≤ 0 and verifies for a constant k > 0
+and a function u(·) ∈ L 1 ([0, T ]; R+ ) the following restriction:
+dP × dt-a.e., ∀ y > 0, ∀ z ∈ Rd ,
+
+−u(t)y − k|z|2 ≤ G(ω, t, y, z) ≤ u(t)y.
+
+Also we assume that G is P ⊗ B(Rd+1 ) measurable and dP × dt-a.e., G(ω, t, ·, ·) is continuous.
+Then the BSDE
+ T
+ T
+Yt = η +
+G(s, Ys , Z s ) ds −
+Z s · dBs , t ∈ [0, T ]
+t
+
+t
+
+1527
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+has a maximal bounded solution (θ, Γ ). Moreover, for each t ∈ [0, T ], we have Q 0 ≤ Q t ≤
+θt ≤ St ≤ S0 dP-a.s., where
+  T
+
+ T
+
+Q t := α exp −
+u(s) ds .
+u(s) ds ,
+St := β exp
+t
+
+t
+
+Proof. We will follow those steps used in the proof of Theorem 2 in Lepeltier and San
+Martı́n [28]. We take κn : Rd → R a sequence of smooth functions such that
+(1) 0 ≤ κn ≤ 1;
+
+(2) κn (z) = 1
+
+if |z| ≤ n;
+
+(3) κn (z) = 0
+
+if |z| ≥ n + 1.
+
+For each (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd and each n ≥ 1, define
+
+
+
+
+
+t
+t
+G n (ω, t, y, z) := u(t)y 1 y>0 1 − κn z · e 2 + κn z · e 2 G(ω, t, y, z).
+It is immediately seen that G n ↓ G and that G n is a continuous function of (y, z) which satisfies
+that dP × dt-a.e.,
+|G n (ω, t, y, z)| ≤ k(n + 1)2 e−t + u(t)|y|,
+
+(24)
+
+∀ y, z.
+
+Then by Lemma 2.2 we have the existence of a maximal L 2 solution (θ n , Γ n ) for the equation
+ T
+ T
+n
+n
+n
+θt = η +
+G n (s, θs , Γs ) ds −
+Γsn · dBs .
+t
+
+t
+
+Since dP × dt-a.e.,
+
+
+t
+λn (t, y, z) := −u(t)|y| − k|z|2 κn z · e 2 ≤ G n (ω, t, y, z) ≤ u(t)|y|,
+
+∀ y, z,
+
+noticing that both u(t)|y| and λn satisfy (2A1)–(2A4), from Theorem 2.1 we can get that for each
+t ∈ [0, T ],
+Q nt ≤ θtn ≤ S̄t
+
+dP-a.s.,
+
+where (Q n , Z n ) and ( S̄, Z̄ ) are, respectively, the unique L 2 solution of BSDE(α, λn ) and
+BSDE(β, u(t)|y|) by Lemma 2.2 and Theorem 2.1. Furthermore, it follows from Lemma 3.2
+that ( S̄, Z̄ ) = (S, 0) and for each n ≥ 1, (Q n , Z n ) = (Q, 0).
+Consequently, θ n is a decreasing and bounded sequence (in view of (24) and Corollary 2.1),
+then we have the existence of θ such that for each t ∈ [0, T ], θtn ↓ θt dP-a.s. and
+ T
+
+E
+u(t)|θtn − θt |2 dt → 0, as n → ∞.
+0
+
+Moreover θ satisfies that for each t ∈ [0, T ], Q 0 ≤ Q t ≤ θt ≤ St ≤ S0 dP-a.s.
+In the sequel, following closely the proof procedure of Theorem 2 in Lepeltier and San
+Martı́n [28] and noticing that dP × dt-a.e., for each (y, z) ∈ [Q 0 , S0 ] × Rd ,
+sup |G n (ω, t, y, z)| ≤ u(t)S0 + k|z|2 ,
+n≥1
+
+we can prove that Γ n has a convergent subsequence in M2 . Thus, take Γ any accumulation point
+in M2 of Γ n then it is easy to verify that (θ, Γ ) is a solution of BSDE(η, G) (for more details see
+the proof of Theorem 1 in Fan, Jiang and Tian [19]).
+
+1528
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+Finally, for any bounded solution (Ŷ , Ẑ ) of BSDE(η, G), noticing that G n ↓ G, (24) and the
+fact that (θ n , Γ n ) is the maximal L 2 solution of BSDE(η, G n ), by Theorem 2.2 we can conclude
+that for each t ∈ [0, T ] and each n ≥ 1,
+Ŷt ≤ θtn
+
+dP-a.s.,
+
+and then Ŷ ≤ θ . Thus, Lemma 3.3 is proved.
+
+
+
+By virtue of Lemma 3.3 we can prove the following Lemma 3.4.
+Lemma 3.4. Assume that 0 < T ≤ +∞ and the generator g satisfies (2A3). Assume further
+that there exist a constant γ > 0 and a function u(·) ∈ L 1 ([0, T ]; R+ ) such that dP × dt-a.e.,
+|g(ω, t, y, z)| ≤ u(t) +
+
+γ 2
+|z| ,
+2
+
+(25)
+
+∀ y, z.
+
+Then for each ξ ∈ L ∞ (Ω , FT , P), BSDE(ξ, g) has both a maximal and a minimal solution
+among all bounded solutions (y· , z · ). Moreover, for each t ∈ [0, T ], we have
+ T
+|yt | ≤ ∥ξ ∥∞ +
+u(s) ds dP-a.s.
+t
+
+Proof. We will first prove the existence of the maximal bounded solution by following those
+steps used in the proof of Theorem 1 in Lepeltier and San Martı́n [28]. Let
+η := eγ ξ ∈ L ∞ (Ω , FT , P),
+α := e−γ ∥ξ ∥∞ ,
+β := eγ ∥ξ ∥∞ ,
+
+
+  T
+
+ T
+Q t = α exp −γ
+u(s) ds ,
+St = β exp γ
+u(s) ds ,
+t
+
+t ∈ [0, T ],
+
+t
+
+and for each (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd , define
+
+
+
+
+ln y z
+1 |z|2
+,
+G(ω, t, y, z) := 1 y>0 γ yg ω, t,
+−
+.
+γ γy
+2 y
+It then follows from (25) that 0 < α ≤ 1 ≤ β, α ≤ η ≤ β dP-a.s., and dP × dt-a.e.,
+∀ y > 0, ∀ z ∈ Rd ,
+
+−γ u(t)y −
+
+|z|2
+≤ G(ω, t, y, z) ≤ γ u(t)y.
+y
+
+Furthermore, for each pair of positive real numbers K 1 and K 2 satisfying that [Q 0 , S0 ] ⊂
+[2K 1 , K 2 /2], let Ψ be a smooth function with values in [0, 1] which satisfies that Ψ (x) = 1
+for x ∈ [2K 1 , K 2 /2], and Ψ (x) = 0 when x is outside [K 1 , K 2 ]. Define
+G Ψ (ω, t, y, z) := Ψ (y)G(ω, t, y, z),
+then dP × dt-a.e.,
+∀ y > 0, ∀ z ∈ R ,
+d
+
+
+−γ u(t)y −
+
+1
+K1
+
+
+
+|z|2 ≤ G Ψ (ω, t, y, z) ≤ γ u(t)y.
+
+Thanks to Lemma 3.3, we know that the BSDE
+ T
+ T
+Yt = η +
+G Ψ (s, Ys , Z s ) ds −
+Z s · dBs ,
+t
+
+t
+
+t ∈ [0, T ]
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1529
+
+has a maximal one (Y Ψ , Z Ψ ) among all bounded solutions. Moreover, we also have that for each
+t ∈ [0, T ], 0 < Q 0 ≤ Q t ≤ YtΨ ≤ St ≤ S0 dP-a.s., which means that, in view of the definition
+of Ψ , (Y Ψ , Z Ψ ) is a bounded solution to the following BSDE:
+ T
+ T
+Yt = η +
+G(s, Ys , Z s ) ds −
+Z s · dBs , t ∈ [0, T ].
+t
+
+t
+
+We define
+y Ψ :=
+
+ln(Y Ψ )
+γ
+
+and
+
+z Ψ :=
+
+ZΨ
+.
+γYΨ
+
+It follows from Itô’s formula that (y Ψ , z Ψ ) is a bounded solution of BSDE(ξ, g), and it is easy
+to verify that for each t ∈ [0, T ],
+ T
+|ytΨ | ≤ ∥ξ ∥∞ +
+u(s) ds dP-a.s.
+(26)
+t
+
+In the sequel, let us show that (y Ψ , z Ψ ) is also the maximal bounded solution. Indeed, let
+( ŷ, ẑ) be a bounded solution of BSDE(ξ, g), with A ≤ ŷ ≤ B. We can choose positive real
+numbers K̂ 1 , K̂ 2 satisfying that [eγ A , eγ B ] ⊂ [2 K̂ 1 , K̂ 2 ] and consider Ψ̂ with values in [0, 1]
+which satisfies that Ψ̂ (x) = 1 for x ∈ [2 K̂ 1 , K̂ 2 /2], and Ψ̂ (x) = 0 when x is outside [ K̂ 1 , K̂ 2 ]. It
+then follows from Itô’s formula that Ŷ := eγ ŷ , Ẑ := γ ẑ ŷ is a bounded solution of BSDE(η, G Ψ̂ ),
+where G Ψ̂ (ω, t, y, z) := Ψ̂ (y)G(ω, t, y, z). Note that dP × dt-a.e.,
+ 
+1
+d
+∀ y > 0, ∀ z ∈ R , −γ u(t)y −
+|z|2 ≤ G Ψ̂ (ω, t, y, z) ≤ γ u(t)y.
+K̂ 1
+Thanks to Lemma 3.3 again, we know that 0 < Q 0 ≤ Q t ≤ Ŷt ≤ St ≤ S0 , which means that
+(Ŷ , Ẑ ) is also a bounded solution of BSDE(η, G Ψ ). Therefore, since (Y Ψ , Z Ψ ) is the maximal
+Ψ
+bounded solution of BSDE(η, G Ψ ), we have eγ ŷ = Ŷ ≤ Y Ψ = eγ y , and then for each
+t ∈ [0, T ], ŷt ≤ ytΨ dP-a.s. This is the desired result. This argument also shows that y Ψ does
+not depend on Ψ .
+Finally, let us define
+g̃(ω, t, y, z) := −g(ω, t, −y, −z),
+
+∀ ω, t, y, z.
+
+Then g̃ also satisfies (2A3) and (25). Consequently, by above arguments we know that
+BSDE(−ξ, g̃) has a maximal bounded solution ( ỹ, z̃) and ỹ also satisfies the estimate in
+(26). Furthermore, it is easy to verify that (− ỹ, −z̃) is just the minimal bounded solution of
+BSDE(ξ, g). Lemma 3.4 is then proved. 
+Remark 3.1. A similar result to Lemma 3.4 was given in Morlais [30] with a different method.
+We are now in a position to prove Theorem 3.1.
+Proof of Theorem 3.1. Assume that ξ ∈ L ∞ (Ω , FT , P) and g satisfies (2A3), (3A1) and (3A2).
+We only prove the case of maximal solution, the other case can be proved in a similar way. First,
+by Lemma 3.1 we can let (L t )t∈[0,T ] and (Ut )t∈[0,T ] be, respectively, the unique global solution
+to the following two backward ODEs
+ T
+L t = −∥ξ ∥∞ −
+u(s) l(L s ) ds
+(27)
+t
+
+1530
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+and
+ T
+Ut = ∥ξ ∥∞ +
+
+u(s) l(Us ) ds.
+
+(28)
+
+t
+
+Then for each t ∈ [0, T ], we have
+L 0 ≤ L t ≤ −∥ξ ∥∞ ≤ 0 ≤ ∥ξ ∥∞ ≤ Ut ≤ U0 .
+For each constant K > 0 satisfying that [L 0 , U0 ] ⊂ [−K , K ], consider a continuous function
+κ such that κ(x) = −K when x < −K , κ(x) = x when x ∈ [−K , K ], and κ(x) = K when
+x > K . For each (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd , we define
+
+
+K
+gκ (ω, t, y, z) := g(ω, t, κ(y), z) and γ := 2
+max h(x) + 1 .
+x∈[−K ,K ]
+
+Then it follows from (3A1) and (3A2) that dP × dt-a.e., for each (y, z) ∈ R × Rd ,
+gκ (t, y, z) sgn(y) ≤ u(t)l(κ(y)) +
+
+γK 2
+|z|
+2
+
+(29)
+
+and
+|gκ (t, y, z)| ≤ ū(t)
+
+
+max
+
+x∈[−K ,K ]
+
+ 
+ϕ̄(x) +
+max
+
+x∈[−K ,K ]
+
+
+h̄(x) |z|2 .
+
+It then follows from Lemma 3.4 that BSDE(ξ, gκ ) has a maximal bounded solution (ytκ ,
+K κ
+z tκ )t∈[0,T ] . Let Ytκ := eγ yt and Z tκ := γ K Ytκ z tκ , then (Y κ , Z κ ) is a bounded solution to the
+following BSDE
+ T
+ T
+Yt = η +
+G κ (s, Ys , Z s ) ds −
+Z s · dBs , t ∈ [0, T ],
+t
+
+where η := e
+
+t
+
+γKξ
+
+and for each (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd ,
+
+
+
+
+ln y
+z
+1 |z|2
+G κ (ω, t, y, z) := γ K ygκ ω, t, K , K
+−
+1 y>0 .
+γ
+γ y
+2 y
+
+Furthermore, it follows from (29) that dP × dt-a.e.,
+∀ y > 0, ∀ z ∈ Rd ,
+
+gκ (t, y, z) ≤ u(t)l(κ(y)) +
+
+γK 2
+|z| ,
+2
+
+(30)
+
+and then dP × dt-a.e.,
+∀ y > 1, ∀ z ∈ R ,
+d
+
+G κ (ω, t, y, z) ≤ G ′κ (ω, t, y, z) := γ K yu(t)l
+
+Note that dP × dt-a.e., for each (y, z) ∈ R × Rd ,
+
+
+′
+K
+|G κ (t, y, z)| ≤ γ
+max l(x) u(t)|y|.
+x∈[−K ,K ]
+
+ 
+
+ln y
+κ
+1 y>0 .
+γK
+(31)
+
+(32)
+
+By Lemma 2.2 we know that BSDE(∥η∥∞ , G ′κ ) has a maximal L 2 solution (κ Y ′ , κ Z ′ ). On the
+other hand, noticing the definition of κ and the assumptions of u(·) and l(·), we can verify directly
+
+1531
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+that the following backward ODE
+ 
+
+ T
+ln RsK
+K
+γ K u(s)l κ
+RsK 1 RsK >0 ds
+RtK = eγ ∥ξ ∥∞ +
+γK
+t
+has a unique solution RtK = eγ Ut with t ∈ [0, T ], where Ut is defined in (28). Thus, by terms
+of Lemma 3.2 we know that (κ Y ′ , κ Z ′ ) = (R K , 0). Furthermore, in view of (31), (32) and the
+fact κ Y ′ ≥ 1, it follows from Theorem 2.2 and Remark 2.2 that for each t ∈ [0, T ],
+K
+
+eγ
+
+K yκ
+t
+
+= Ytκ ≤ κ Yt′ = eγ Ut
+K
+
+dP-a.s.,
+
+and then
+ytκ ≤ Ut ≤ U0 ≤ K
+
+dP-a.s.
+
+(33)
+
+On the other hand, noticing that κ(−x) = −κ(x), by (29) we get that dP × dt-a.e.,
+∀ y > 0, ∀ z ∈ Rd ,
+
+ḡκ (ω, t, y, z) := −gκ (ω, t, −y, −z) ≤ u(t) ¯l(κ(y)) +
+
+γK 2
+|z| ,
+2
+
+where ¯l(u) := l(−u) for each u ∈ R. Furthermore, note that (−ytκ , −z tκ )t∈[0,T ] is a bounded
+solution of BSDE(−ξ, ḡκ ), ¯l(·) ∈ L(R; R+ ) and the following backward ODE
+ T
+ T
+¯
+Ūt = ∥ − ξ ∥∞ +
+u(s) l(Ūs ) ds = ∥ξ ∥∞ +
+u(s) l(−Ūs ) ds
+t
+
+t
+
+has a unique solution Ūt = −L t with t ∈ [0, T ], where L t is defined in (27). The similar
+argument to that from (29) to (33) yields that for each t ∈ [0, T ],
+−ytκ ≤ Ūt = −L t
+
+dP-a.s.,
+
+and then
+ytκ ≥ L t ≥ L 0 ≥ −K
+
+dP-a.s.
+
+(34)
+
+Thus, in view of (33), (34), the definition of gκ and κ, we know that the (ytκ , z tκ )t∈[0,T ] is a
+bounded solution of BSDE(ξ, g).
+Finally, let us show that (ytκ , z tκ )t∈[0,T ] is also the maximal bounded solution of BSDE(ξ, g).
+Indeed, let ( ŷt , ẑ t )t∈[0,T ] be a bounded solution of BSDE(ξ, g), with A ≤ ŷ ≤ B. We choose
+a positive constant K̂ satisfying that [A, B] ∪ [L 0 , U0 ] ⊂ [− K̂ , K̂ ] and consider κ̂ such that
+κ̂(x) = − K̂ for x < − K̂ , κ̂(x) = x for x ∈ [− K̂ , K̂ ], and κ̂(x) = K̂ for x > K̂ . For each
+(ω, t, y, z) ∈ Ω × [0, T ] × R × Rd , we define
+gκ̂ (ω, t, y, z) := g(ω, t, κ̂(y), z).
+Then ( ŷt , ẑ t )t∈[0,T ] is a bounded solution of BSDE(ξ, gκ̂ ). Furthermore, by the above argument
+as above (from (29) to (34)) we can conclude that for each t ∈ [0, T ],
+−K ≤ L 0 ≤ L t ≤ ŷt ≤ Ut ≤ U0 ≤ K
+
+dP-a.s.,
+
+which means that ( ŷt , ẑ t )t∈[0,T ] is also a bounded solution of BSDE(ξ, gκ ). Note that
+(ytκ , z tκ )t∈[0,T ] is the maximal bounded solution of BSDE(ξ, gκ ). We know that for each t ∈
+[0, T ], ŷt ≤ ytκ dP-a.s., which is the desired result. This argument also shows that ytκ does not
+depend on κ. The proof of Theorem 3.1 is then complete. 
+
+1532
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+Finally, in view of Theorems 2.2 and 2.3, by checking carefully the proof of Theorem 3.1,
+Lemma 3.4 and, especially, Lemma 3.3, we can prove that the following two comparison
+theorems for the maximal and minimal bounded solutions hold true.
+Theorem 3.2. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L ∞ (Ω , FT , P), g and g ′ are two
+generators of BSDEs, and (y· , z · ) is any bounded solution of BSDE(ξ, g). Assume further that g ′
+satisfies (2A3), (3A1) and (3A2), and (y·′ , z ·′ ) is the maximal bounded solution of BSDE(ξ ′ , g ′ )
+(recall Theorem 3.1). If ξ ≤ ξ ′ dP-a.s. and (9) holds true, then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Theorem 3.3. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L ∞ (Ω , FT , P), g and g ′ are two
+generators of BSDEs, and (y·′ , z ·′ ) is any bounded solution of BSDE(ξ ′ , g ′ ). Assume further that
+g satisfies (2A3), (3A1) and (3A2), and (y· , z · ) is the minimal bounded solution of BSDE(ξ, g)
+(recall Theorem 3.1). If ξ ≤ ξ ′ dP-a.s. and (8) holds true, then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Corollary 3.1. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L ∞ (Ω , FT , P), and both g and g ′
+satisfy (2A3), (3A1) and (3A2). Let (y· , z · ) and (y·′ , z ·′ ) be, respectively, the maximal (resp.
+minimal) bounded solution of BSDE(ξ, g) and BSDE(ξ ′ , g ′ ) (recall Theorem 3.1). If ξ ≤
+ξ ′ dP-a.s. and for each (y, z) ∈ R × Rd ,
+g(t, y, z) ≤ g ′ (t, y, z)
+
+dP × dt-a.e.,
+
+then for each t ∈ [0, T ], we have
+yt ≤ yt′
+
+dP-a.s.
+
+4. Comparison theorems of bounded solutions
+In this section, we will establish two comparison theorems and an existence and uniqueness
+theorem for bounded solutions of BSDEs. Let us first introduce the following assumptions on the
+generator g, where 0 < T ≤ +∞:
+(4A1) There exists a function v(·) ∈ L 2 ([0, T ]; R+ ) such that dP × dt-a.e.,
+|g(ω, t, y, z 1 ) − g(ω, t, y, z 2 )| ≤ (v(t) + |z 1 | + |z 2 |)|z 1 − z 2 |,
+
+∀ y, z 1 , z 2 .
+
+(4A2) dP × dt-a.e., ∀ y, g(ω, t, y, ·) : Rd → R is convex, or dP × dt-a.e., ∀ y, g(ω, t, y, ·) :
+Rd → R is concave.
+Let us now recall several facts on the martingales of bounded mean oscillation, briefly called
+BMO-martingales. Readers are referred to Kazamaki [25], Hu, Imkeller and Müller [22] and
+Briand and Confortola [4] for more details. Suppose that (z t )t∈[0,T ] is an (Ft )-progressively
+T
+2
+measurable Rd -valued
+ · process such that 0 |z s | ds < +∞, dP-a.s. First, it is well known that
+the local martingale 0 z s · dBs is a BMO-martingale if and only if
+  T
+
+
+
+2
+
+sup E
+|z s | ds|Fτ  < +∞,
+τ ∈Σ T
+
+τ
+
+∞
+
+where and hereafter | · |∞ denotes the essential supremum norm. Furthermore, according to
+Theorem 2.3 in Kazamaki [25], the stochastic exponential E(M) of a BMO-martingale M is a
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1533
+
+uniformly integrable martingale, note that the stochastic exponential E(M) is given by
+
+
+1
+E(M)t = exp Mt − ⟨M⟩t , t ∈ [0, T ],
+2
+where the quadratic variation is denoted by ⟨M⟩. Finally, by Theorem 3.6 in Kazamaki [25] we
+also know that if Q is a probability measure defined by
+dQ = E(M)T dP
+for a BMO-martingale M under P, then the Girsanov transform of a BMO-martingale under P
+is a BMO-martingale under Q.
+The following Lemma 4.1 will be used several times later.
+Lemma 4.1. Let 0 < T ≤ +∞, g satisfies (3A2), and let (y· , z · ) be a bounded solution of
+·
+BSDE(ξ, g). Then 0 z s · dBs is a BMO-martingale under P.
+
+
+Proof. Assume that A ≤ y· ≤ B with A, B ∈ R. Let γ = 2 maxx∈[A,B] h̄(x) + 1 and consider
+the following function from R+ into itself defined by
+f (x) =
+
+1 γx
+(e − 1 − γ x).
+γ2
+
+Clearly, x → f (|x|) is C 2 and for each τ ∈ ΣT , we have from Itô’s formula,
+
+ T
+1 ′′
+′
+2
+f (|yτ |) = f (|ξ |) +
+f (|ys |)sgn(ys )g(s, ys , z s ) − f (|ys |)|z s | ds
+2
+τ
+ T
+−
+f ′ (|ys |)sgn(ys )z s · dBs .
+τ
+
+Since A ≤ y· ≤ B and f ′ (x) ≥ 0 for x ≥ 0, by (3A2) and the definition of γ we can get the
+existence of a constant k > 0 satisfying that
+
+  T
+ T
+0 ≤ f (|yτ |) ≤ k 1 +
+ū(s) ds −
+f ′ (|ys |)sgn(ys )z s · dBs
+0
+
+1
+−
+2
+
+ T
+
+τ
+
+τ
+
+
+
+f ′′ (|ys |) − γ f ′ (|ys |) |z s |2 ds.
+
+Note that (y· , z · ) be a bounded solution and f ′′ (x) − γ f ′ (x) = 1 for x ≥ 0. By taking the
+conditional expectation with respect to Fτ under P in the previous inequality we get that for
+each τ ∈ ΣT ,
+ 
+ T
+
+
+ T
+
+2
+
+E
+|z s | ds  Fτ ≤ 2k 1 +
+ū(s) ds .
+τ
+0
+·
+That is to say, 0 z s · dBs is a BMO-martingale under P. The proof is complete. 
+The following Theorems 4.1–4.2 establish two comparison theorems for bounded solutions of
+BSDEs, which considerably improves the corresponding comparison results obtained in Briand
+and Hu [7] and Morlais [30] even for the case of finite time horizon.
+Theorem 4.1. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L ∞ (Ω , FT , P), both g and g ′ satisfy (3A2),
+and (y· , z · ) and (y·′ , z ·′ ) are, respectively, a bounded solution of BSDE(ξ, g) and BSDE(ξ ′ , g ′ ).
+If ξ ≤ ξ ′ dP-a.s. and one of the following two statements is satisfied:
+
+1534
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+(i) g satisfies (2A1) and (4A1), and (8) holds true;
+(ii) g ′ satisfies (2A1) and (4A1), and (9) holds true,
+then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Proof. We only prove the case (i). The other case can be proved in the same way. Tanaka’s
+formula leads to the equation, setting ŷt = yt − yt′ , ẑ t = z t − z t′ and noticing that dP-a.s.,
+(ξ − ξ ′ )+ = 0,
+ T
+ T
+ŷt+ ≤
+1 ŷs >0 (g(s, ys , z s ) − g ′ (s, ys′ , z s′ )) ds −
+1 ŷs >0 ẑ s · dBs , t ∈ [0, T ]. (35)
+t
+
+t
+
+First of all, since 1 ŷs >0 (g(s, ys′ , z s′ ) − g ′ (s, ys′ , z s′ )) is non-positive, we have
+
+1 ŷs >0 (g(s, ys , z s ) − g ′ (s, ys′ , z s′ ))
+= 1 ŷs >0 (g(s, ys , z s ) − g(s, ys′ , z s′ )) + 1 ŷs >0 (g(s, ys′ , z s′ ) − g ′ (s, ys′ , z s′ ))
+≤ 1 ŷs >0 (g(s, ys , z s ) − g(s, ys′ , z s )) + 1 ŷs >0 (g(s, ys′ , z s ) − g(s, ys′ , z s′ ))
+and we deduce, using the assumptions (2A1) and (4A1) for g, that
+
+1 ŷs >0 (g(s, ys , z s ) − g ′ (s, ys′ , z s′ )) ≤ u(s)ρ( ŷs+ ) + 1 ŷs >0 (v(s) + |z s | + |z s′ |)|ẑ s |.
+
+(36)
+
+Thus, by (35) and (36) we can get that for each t ∈ [0, T ],
+ T
+ T
+
+
+ŷt+ ≤
+u(s)ρ( ŷs+ ) + 1 ŷs >0 (v(s) + |z s | + |z s′ |)|ẑ s | ds −
+1 ŷs >0 ẑ s · dBs
+t
+
+t
+
+ T
+=
+t
+
+u(s)ρ( ŷs+ ) ds −
+
+ T
+t
+
+
+(v(s) + |z s | + |z s′ |)ẑ s
+1|ẑs |̸=0 ds . (37)
+1 ŷs >0 ẑ s · dBs −
+|ẑ s |
+
+
+′ ′
+Furthermore, since both g and g ′ satisfy (3A2),
+ · and both (y· ,· z′· ) and (y· , z · ) are bounded
+solutions, it follows from Lemma 4.1 that both 0 z s · dBs and 0 z s · dBs are BMO-martingale
+
+under P. Then we have
+  T
+
+
+
+′ 2
+
+sup E
+(v(s) + |z s | + |z s |) ds|Fτ 
+τ
+
+τ ∈Σ T
+
+∞
+
+ T
+
+  T
+
+
+2
+2
+
+≤4
+v (s) ds + 4 sup E
+|z s | ds|Fτ 
+0
+τ
+τ ∈ΣT
+∞
+  T
+
+
+
++ 4 sup E
+|z s′ |2 ds|Fτ  < +∞,
+τ ∈ΣT
+
+τ
+
+∞
+
+which means that the process
+ t
+(v(s) + |z s | + |z s′ |)ẑ s
+1|ẑs |̸=0 · dBs ,
+Mt :=
+|ẑ s |
+0
+
+t ∈ [0, T ]
+
+is a BMO-martingale under P. Then the stochastic exponential
+
+
+1
+E(M)t = exp Mt − ⟨M⟩t , t ∈ [0, T ]
+2
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1535
+
+of M is a uniformly integrable martingale. Now, let us define by Q the probability measure on
+(Ω , FT ) given by
+dQ
+:= E(M)T .
+dP
+Then, noticing that
+ t
+M t :=
+1 ŷs >0 ẑ s · dBs ,
+
+t ∈ [0, T ]
+
+0
+
+is also a BMO-martingale under P, we know that the process
+ t
+(v(s) + |z s | + |z s′ |)ẑ s
+1|ẑs |̸=0 ds],
+1 ŷs >0 ẑ s · [dBs −
+|ẑ s |
+0
+
+t ∈ [0, T ],
+
+the Girsanov’s transform of M, is a BMO-martingale under Q. Let E Q [X |Ft ] represent the
+conditional expectation of the random variable X with respect to Ft under Q. Taking the
+conditional expectation with respect to Ft under Q in (37) yields that for each t ∈ [0, T ],
+ 
+ T
+
+ŷt+ ≤ E Q
+u(s)ρ( ŷs+ ) ds  Ft
+dP-a.s.
+t
+
+Thus, applying Lemma 2.1 with u n (t) ≡ ŷt+ , bn ≡ 0, Pn ≡ Q, β(s) = u(s) and ψ(u) = ρ(u)
+yields that for each t ∈ [0, T ],
+ŷt+ = lim ŷt+ = lim u n (t) = 0
+n→∞
+
+n→∞
+
+dP-a.s.
+
+That is to say, for each t ∈ [0, T ], yt ≤ yt′ dP-a.s. The proof is complete.
+
+
+
+Theorem 4.2. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L ∞ (Ω , FT , P), both g and g ′ satisfy (3A2),
+and (y· , z · ) and (y·′ , z ·′ ) are, respectively, a bounded solution of BSDE(ξ, g) and BSDE(ξ ′ , g ′ ).
+If ξ ≤ ξ ′ dP-a.s. and one of the following two statements is satisfied:
+(i) g satisfies (2A1) and (4A2), and (8) holds true;
+(ii) g ′ satisfies (2A1) and (4A2), and (9) holds true,
+then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Proof. The proof will be split into four steps.
+First step: Suppose that both g and g ′ satisfy (3A2), ξ ≤ ξ ′ dP-a.s., g also satisfies (2A1)
+and is convex with respect to z, and (8) holds true. We further assume that both y· and y·′ are
+non-positive.
+For each n ≥ 2, let us set
+ŷtn = yt −
+
+n−1 ′
+yt ,
+n
+
+ẑ tn = z t −
+
+Note that
+
+
+n−1 ′ +
+≤ (ξ − ξ ′ )+ = 0
+ξ−
+ξ
+n
+
+n−1 ′
+z.
+n t
+
+1536
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+due to the fact that ξ ′ ≤ 0. Tanaka’s formula yields that for t ∈ [0, T ],
+( ŷtn )+ ≤
+
+ T
+t
+
+
+
+1 ŷsn >0 g(s, ys , z s ) −
+
+
+ T
+n−1 ′
+g (s, ys′ , z s′ ) ds −
+1 ŷsn >0 ẑ sn · dBs .
+n
+t
+
+(38)
+
+First of all, in view of ys′ ≤ 0 and then
+n−1 ′
+ys ≥ ys′ ,
+n
+it follows from (8) that 1 ŷsn >0 (g(s, ys′ , z s′ ) − g ′ (s, ys′ , z s′ )) is non-positive. Then we have
+
+
+n−1 ′
+′ ′
+g (s, ys , z s )
+1 ŷsn >0 g(s, ys , z s ) −
+n
+
+
+n−1
+′ ′
+g(s, ys , z s )
+= 1 ŷsn >0 g(s, ys , z s ) −
+n
+n−1
++ 1 ŷsn >0
+(g(s, ys′ , z s′ ) − g ′ (s, ys′ , z s′ ))
+n
+
+
+n−1
+≤ 1 ŷsn >0 (g(s, ys , z s ) − g(s, ys′ , z s )) + 1 ŷsn >0 g(s, ys′ , z s ) −
+g(s, ys′ , z s′ ) . (39)
+n
+By (2A1) we can obtain that, in view of ys′ ≤ 0,
+
+1 ŷsn >0 (g(s, ys , z s ) − g(s, ys′ , z s ))
+
+
+
+
+n−1 ′
+= 1 ŷsn >0 g(s, ys , z s ) − g s,
+ys , z s
+n
+
+
+ 
+n−1 ′
+′
+ys , z s − g(s, ys , z s )
++ g s,
+n
+ ′
+−ys
+≤ u(s)ρ(( ŷsn )+ ) + u(s)ρ
+.
+n
+
+
+
+(40)
+
+Furthermore, since g is convex with respect to z, and satisfies (3A2), we have
+
+
+1
+′
+′ n−1 ′
+′
+g(s, ys , z s ) = g s, ys ,
+z + (nz s − (n − 1)z s )
+n s n
+
+n−1
+1 
+≤
+g(s, ys′ , z s′ ) + g s, ys′ , n ẑ sn
+n
+n
+n−1
+ū(s)ϕ̄(ys′ )
+≤
+g(s, ys′ , z s′ ) +
++ n h̄(ys′ )|ẑ sn |2 .
+n
+n
+
+(41)
+
+Thus, in view of the fact that −k ≤ ys′ ≤ 0 for some positive constant k > 0, combining
+(38)–(41) yields that
+ T
+ T
+( ŷtn )+ ≤ an +
+(u(s)ρ(( ŷsn )+ ) + nγ 1 ŷsn >0 |ẑ tn |2 ) ds −
+1 ŷsn >0 ẑ sn · dBs
+t
+
+ T
+= an +
+t
+
+t
+
+u(s)ρ(( ŷsn )+ ) ds −
+
+ T
+t
+
+1 ŷsn >0 ẑ sn · [dBs − nγ ẑ tn ds], t ∈ [0, T ],
+
+(42)
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1537
+
+where γ := maxx∈[−k,0] h̄(x) and
+an := ρ
+
+  T
+max ϕ̄(x)  T
+k
+x∈[−k,0]
+u(s) ds +
+ū(s) ds → 0
+n
+n
+0
+0
+
+as n → ∞.
+
+In the sequel, since both g and g ′ satisfy (3A2), and both (y· , z · ) and (y·′ , z ·′ ) are bounded
+solutions, it follows from Lemma 4.1 that for each n ≥ 2, the process
+ t
+Ntn :=
+nγ ẑ sn · dBs , t ∈ [0, T ]
+0
+
+is a BMO-martingale under P. Then the stochastic exponential
+
+
+1
+E(N n )t = exp Ntn − ⟨N n ⟩t , t ∈ [0, T ]
+2
+of N n is a uniformly integrable martingale. Now, let us define by Pn the probability measure on
+(Ω , FT ) given by
+dPn
+:= E(N n )T .
+dP
+Then, noticing that
+ t
+n
+N t :=
+1 ŷsn >0 ẑ sn · dBs ,
+
+t ∈ [0, T ]
+
+0
+
+is also a BMO-martingale under P, we know that the process
+ t
+1 ŷsn >0 ẑ sn · [dBs − nγ ẑ sn ds], t ∈ [0, T ],
+0
+
+n
+
+the Girsanov’s transform of N , is a BMO-martingale under Pn . Let En [X |Ft ] represent the conditional expectation of the random variable X with respect to Ft under Pn . Taking the conditional
+expectation with respect to Ft under Pn in (42) yields that for each t ∈ [0, T ],
+ 
+ T
+
+n +
+n +
+( ŷt ) ≤ an + En
+u(s)ρ(( ŷs ) ) ds  Ft
+dP-a.s.
+t
+
+Thus, applying Lemma 2.1 with u n (t) = ( ŷtn )+ , bn = an , β(s) = u(s) and ψ(u) = ρ(u) yields
+that for each t ∈ [0, T ],
+(yt − yt′ )+ = lim ( ŷtn )+ = lim u n (t) = 0
+n→∞
+
+n→∞
+
+dP-a.s.
+
+That is to say, for each t ∈ [0, T ], yt ≤ yt′ dP-a.s.
+Second step: In this step, we will eliminate the condition that both y· and y·′ are non-positive
+required in the first step.
+Indeed, note that both y· and y·′ are bounded processes. We can assume that there exists a constant k > 0 such that for each t ∈ [0, T ], |yt | + |yt′ | ≤ k dP-a.s. Let ȳt := yt − k and ȳt′ := yt′ − k,
+then ( ȳt , z t )t∈[0,T ] and ( ȳt′ , z t′ )t∈[0,T ] are, respectively, a bounded solution of BSDE(ξ̄ , ḡ) and
+BSDE(ξ̄ ′ , ḡ ′ ), where ξ̄ := ξ − k, ξ̄ ′ := ξ ′ − k and for each (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd ,
+ḡ(ω, t, y, z) := g(ω, t, y + k, z),
+
+ḡ ′ (ω, t, y, z) := g ′ (ω, t, y + k, z).
+
+1538
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+It is not difficult to verify that both ḡ and ḡ ′ satisfy (3A2) but ϕ̄(u) and h̄(u) are replaced by
+ϕ̄(u + k) and h̄(u + k) respectively, ξ̄ ≤ ξ̄ ′ dP-a.s., ḡ satisfies (2A1), dP × dt-a.e.,
+
+1 ȳt > ȳt′ ḡ(t, ȳt′ , z t′ ) = 1 yt >yt′ g(t, yt′ , z t′ )
+≤ 1 yt >yt′ g ′ (t, yt′ , z t′ )
+= 1 ȳt > ȳt′ ḡ ′ (t, ȳt′ , z t′ ),
+ḡ is convex with respect to z, and both ȳ· and ȳ·′ are non-positive. Thus, by the first step we can
+conclude that for each t ∈ [0, T ],
+yt − k = ȳt ≤ ȳt′ = yt′ − k
+
+dP-a.s.,
+
+which is the desired result.
+Third step: Suppose that both g and g ′ satisfy (3A2), ξ ≤ ξ ′ dP-a.s., g ′ also satisfies (2A1)
+and is convex with respect to z, and (9) holds true. Then in view of (9) we can replace (39) by
+the following inequality
+
+
+n−1 ′
+g (s, ys′ , z s′ )
+1 ŷsn >0 g(s, ys , z s ) −
+n
+
+
+n−1 ′
+= 1 ŷsn >0 (g(s, ys , z s ) − g ′ (s, ys , z s )) + 1 ŷsn >0 g ′ (s, ys , z s ) −
+g (s, ys′ , z s′ )
+n
+
+
+n−1 ′
+≤ 1 ŷsn >0 (g ′ (s, ys , z s ) − g ′ (s, ys′ , z s )) + 1 ŷsn >0 g ′ (s, ys′ , z s ) −
+g (s, ys′ , z s′ ) ,
+n
+and then make use of the assumptions on g ′ to conclude that (42) holds still true provided that
+y·′ ≤ 0. Thus, the similar argument to the previous two steps will give the desired conclusion.
+Fourth step: Suppose that both g and g ′ satisfy (3A2), ξ ≤ ξ ′ dP-a.s., g also satisfies (2A1)
+and is concave with respect to z, and (8) holds true.
+Let us set
+ξ̃ ′ := −ξ ′ ,
+
+ỹt′ := −yt′ ,
+
+z̃ t′ := −z t′ ,
+
+g̃ ′ (t, y, z) := −g ′ (t, −y, −z)
+
+ξ̃ := −ξ,
+
+ỹt := −yt ,
+
+z̃ t := −z t ,
+
+g̃(t, y, z) := −g(t, −y, −z).
+
+and
+
+Then ( ỹt′ , z̃ t′ )t∈[0,T ] and ( ỹt , z̃ t )t∈[0,T ] are, respectively, a bounded solution of BSDE(ξ̃ ′ , g̃ ′ ) and
+BSDE(ξ̃ , g̃). And, it is easy to verify that both g̃ ′ and g̃ satisfy (3A2), ξ̃ ′ ≤ ξ̃ dP-a.s., g̃ satisfies
+(2A1) and is convex with respect to z, and dP × dt-a.e.,
+
+1 ỹt′ > ỹt g̃ ′ (t, ỹt′ , z̃ t′ ) = −1 yt >yt′ g ′ (t, yt′ , z t′ )
+≤ −1 yt >yt′ g(t, yt′ , z t′ )
+= 1 ỹt′ > ỹt g̃(t, ỹt′ , z̃ t′ ).
+Thus, by the third step we know that for each t ∈ [0, T ],
+−yt′ = ỹt′ ≤ ỹt = −yt
+
+dP-a.s.,
+
+which is the desired result. In the same way, we can prove the remainder case that both g and
+g ′ satisfy (3A2), ξ ≤ ξ ′ dP-a.s., g ′ also satisfies (2A1) and is concave with respect to z, and (9)
+holds true. Theorem 4.2 is then proved. 
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1539
+
+By virtue of Theorems 2.1, 3.1, 4.1 and 4.2, we can obtain the following existence and
+uniqueness result for bounded solutions of BSDEs.
+Theorem 4.3. Assume that 0 < T ≤ +∞ and that g satisfies (2A3), (3A2) and (2A1).
+Furthermore, we also assume that one of three assumptions (2A2), (4A1) and (4A2) holds true
+for g. Then for each ξ ∈ L ∞ (Ω , FT , P), BSDE(ξ, g) has a unique bounded solution (Y, Z ).
+Moreover, for each t ∈ [0, T ], we have
+L 0 ≤ L t ≤ Yt ≤ Ut ≤ U0
+
+dP-a.s.,
+
+where (L , U ) are the unique solutions of (27) and (28) but u(t) is replaced by u(t) + ū(t), and
+l(x) := ρ(|x|) + ϕ̄(0) + 1,
+
+(43)
+
+∀ x ∈ R.
+
+Proof. It follows from (2A1) and (3A2) that dP × dt-a.e., for each (y, z) ∈ R × Rd ,
+g(ω, t, y, z) sgn(y) ≤ u(t)ρ(|y|) + |g(t, 0, z)| ≤ [u(t) + ū(t)]l(y) + h̄(0)|z|2 ,
+where l(x) is defined in (43). Note that ρ is of linear growth. We can deduce that l(·) belongs
+to L(R; R+ ) and then (3A1) holds true for the generator g. Thus, the existence of a bounded
+solution of BSDE(ξ, g) follows from Theorem 3.1. Finally, the uniqueness follows directly from
+Theorems 2.1, 4.1 and 4.2. The proof is then completed. 
+Remark 4.1. By the proof of Theorem 2.1 and Theorems 4.1–4.3 we can conclude that if
+assumptions (2A2), (4A1) and (4A2) hold true only when y ∈ [L 0 , U0 ], then the conclusions
+of Theorem 4.3 hold still true.
+5. Existence and uniqueness of L p ( p > 1) solutions
+In this section, we will fix a real number p > 1 and establish two existence results, two
+comparison theorems and an existence and uniqueness result for the (maximal and minimal) L p
+solutions of BSDEs. As before, let us first introduce the following assumptions on the generator
+g, where we also assume that 0 < T ≤ +∞.
+(5A1) There exist two functions u(·) ∈ L 1 ([0, T ]; R+ ), v(·) ∈ L 2 ([0, T ]; R+ ) and a process
+f t ∈ L p (Ω ; L 1 ([0, T ]; R+ )) such that dP × dt-a.e.,
+g(ω, t, y, z) sgn(y) ≤ f t (ω) + u(t)|y| + v(t)|z|,
+
+∀ y, z.
+
+(5A2) There exist two functions ū(·) ∈ L 1 ([0, T ]; R+ ), v̄(·) ∈ L 2 ([0, T ]; R+ ) and a process
+f¯t ∈ L p (Ω ; L 1 ([0, T ]; R+ )) such that dP × dt-a.e.,
+∀ y ≤ 0, ∀ z ∈ Rd ,
+
+g(ω, t, y, z) ≤ f¯t (ω) + ū(t)|y| + v̄(t)|z|.
+
+(5A3) There exist two functions ū(·) ∈ L 1 ([0, T ]; R+ ), v̄(·) ∈ L 2 ([0, T ]; R+ ) and a process
+f¯t ∈ L p (Ω ; L 1 ([0, T ]; R+ )) such that dP × dt-a.e.,
+∀ y ≥ 0, ∀ z ∈ Rd ,
+
+−g(ω, t, y, z) ≤ f¯t (ω) + ū(t)|y| + v̄(t)|z|.
+
+(5A4) There exist two functions u(·) ∈ L 1 ([0, T ]; R+ ), v(·) ∈ L 2 ([0, T ]; R+ ) and a process
+f t ∈ L p (Ω ; L 1 ([0, T ]; R+ )) such that dP × dt-a.e.,
+|g(ω, t, y, z)| ≤ f t (ω) + u(t)|y| + v(t)|z|,
+
+∀ y, z.
+
+1540
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+(5A5) There exist a nonnegative (Ft )-progressively measurable process (ǔ t )t∈[0,T ] with
+T
+dP-a.s., 0 ǔ t (ω) dt < +∞, and two continuous functions ϕ̌(·), ȟ(·) : R → R+
+such that dP × dt-a.e.,
+|g(ω, t, y, z)| ≤ ǔ t (ω)ϕ̌(y) + ȟ(y)|z|2 ,
+
+∀ y, z.
+
+Remark 5.1. It is clear that (5A4) ⇐⇒ (5A1) + (5A2) + (5A3), (5A4) H⇒ (5A5), and
+(3A2) H⇒ (5A5).
+The following lemma will be used in this section, which comes from Proposition 2.3 in Fan
+and Jiang [17].
+Lemma 5.1. Assume that 0 < T ≤ +∞, g is a generator of BSDEs and the process g(t, 0, 0) ∈
+L p (Ω ; L 1 ([0, T ]; R+ )). Assume further that there exist two functions u(·) ∈ L 1 ([0, T ]; R+ ) and
+v(·) ∈ L 2 ([0, T ]; R+ ) such that dP × dt-a.e.,
+|g(ω, t, y1 , z 1 ) − g(ω, t, y2 , z 2 )| ≤ u(t)|y1 − y2 | + v(t)|z 1 − z 2 |,
+Then for each ξ ∈ L p (Ω , F
+
+T
+
+∀ y1 , y2 , z 1 , z 2 . (44)
+
+, P), BSDE(ξ, g) has a unique L p solution.
+
+By Theorem 2.1 and Remark 2.2, we can establish the following lemma.
+Lemma 5.2. Assume that 0 < T ≤ +∞, ξ ∈ L p (Ω , FT , P), and g satisfies (2A3) and (5A1).
+Let (yt , z t )t∈[0,T ] be any L p solution of BSDE(ξ, g) and (yt′ , z t′ )t∈[0,T ] the unique L p solution
+of BSDE(|ξ |, g ′ ) (recall Lemma 5.1), where
+g ′ (ω, t, y, z) := f t (ω) + u(t)|y| + v(t)|z|,
+
+∀ ω, t, y, z.
+
+Then for each t ∈ [0, T ], we have
+|yt | ≤ yt′
+
+dP-a.s.
+
+Proof. Note that |ξ | ≥ 0 dP-a.s. and g ′ (t, 0, 0) = f t ≥ 0 dP × dt-a.e. By Theorem 2.1 we know
+that for each t ∈ [0, T ],
+yt′ ≥ 0
+
+dP-a.s.
+
+(45)
+
+It follows from (5A1) that dP × dt-a.e.,
+∀ y > 0, ∀ z ∈ Rd ,
+
+g(ω, t, y, z) ≤ g ′ (ω, t, y, z).
+
+(46)
+
+Thus, in view of (45), (46), Remark 2.2 and the fact that ξ ≤ |ξ | dP-a.s., by Theorem 2.1 we
+deduce that for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Furthermore, by (5A1) we can also deduce that dP × dt-a.e.,
+∀ y < 0, ∀ z ∈ Rd ,
+
+−g ′ (ω, t, y, z) ≤ g(ω, t, y, z).
+
+(47)
+
+On the other hand, it is not difficult to verify that (−yt′ , −z t′ )t∈[0,T ] is the unique L p solution of
+BSDE(−|ξ |, −g ′ ). Then, in view of (45), (47), Remark 2.2 and the fact that −|ξ | ≤ ξ dP-a.s.,
+by Theorem 2.1 we can deduce that for each t ∈ [0, T ],
+−yt′ ≤ yt
+
+dP-a.s.
+
+Thus, we have completed the proof of Lemma 5.2.
+
+
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1541
+
+The following Theorem 5.1 establishes an existence result for L p solutions of BSDEs, which
+is one of main results in this section. It improves considerably the corresponding existence results
+obtained respectively in Lepeltier and San Martı́n [27], Chen [10] and Briand, Lepeltier and San
+Martin [8] even for the case of finite time horizon.
+Theorem 5.1. Assume that 0 < T ≤ +∞ and g satisfies (2A3), (3A2) and (5A1) with
+f t ∈ L 1 ([0, T ]; R+ ). Then for each ξ ∈ L p (Ω , FT , P), BSDE(ξ, g) has an L p solution.
+Proof. Let us first assume that ξ is nonnegative. Note first that (5A1) with f t ∈ L 1 ([0, T ]; R+ )
+can imply (3A1). Indeed, if g satisfies (5A1), then dP × dt-a.e.,
+g(ω, t, y, z) sgn(y) ≤ ũ(t) ˜l(y) + |z|2 ,
+
+∀ y, z,
+
+˜
+where ũ(t) := f t + u(t) + v 2 (t) ∈ L 1 ([0, T ]; R+ ) and l(x)
+:= 1 + |x| ∈ L(R; R+ ).
+It follows from Theorem 3.1 that BSDE(ξn , g) has a maximal bounded solution (ytn , z tn )t∈[0,T ]
+for each n ≥ 1, where ξn := ξ ∧ n. Furthermore, in view of ξn ≤ ξn+1 , by Corollary 3.1 we also
+know that for each t ∈ [0, T ], (ytn )+∞
+n=1 is nondecreasing.
+In the sequel, for each (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd , we define
+g ′ (ω, t, y, z) := f t + u(t)|y| + v(t)|z|.
+It follows from Lemma 5.1 that for each n ≥ 1, BSDE(|ξn |, g ′ ) has a unique L p solution
+(n yt′ , n z t′ )t∈[0,T ] . Furthermore, in view of (5A1), by Lemma 5.2 we can conclude that for each
+t ∈ [0, T ] and each n ≥ 1, |ytn | ≤ n yt′ dP-a.s.
+On the other hand, in view of ξ ∈ L p (Ω , FT , P), it follows from Lemma 5.1 that
+BSDE(|ξ |, g ′ ) has also a unique L p solution (yt′ , z t′ )t∈[0,T ] . Then, in view of |ξn | ≤ |ξ |, by
+Theorem 2.1 we know that for each t ∈ [0, T ] and each n ≥ 1, n yt′ ≤ yt′ dP-a.s.
+As a result, we have proved that for each t ∈ [0, T ] and n ≥ 1,
+− yt′ ≤ ytn ≤ ytn+1 ≤ yt′
+
+dP-a.s.
+
+(48)
+
+We define y· = limn→∞ y·n , then
+∀ t ∈ [0, T ], |yt | ≤ |yt′ | = yt′ dP-a.s.
+In the sequel, we will use the localization procedure used in Briand and Hu [6] to construct
+the desired solution. For each k ≥ 1, let us introduce the following stopping time:
+τk = inf{t ∈ [0, T ] : |yt′ | ≥ k} ∧ T.
+n , zn 1
+Then (ykn (t), z kn (t)) := (yt∧τ
+t t≤τk ) solves the following BSDE:
+k
+
+ykn (t) = yτnk +
+
+ T
+t
+
+1s≤τk g(s, ykn (s), z kn (s))ds −
+
+ T
+t
+
+z kn (s) · dBs .
+
+(49)
+
+It is very important to observe that ykn is nondecreasing in n and that, from the definition of τk
+and inequality (48),
+sup sup ∥ykn (t)∥∞ ≤ k.
+n≥1 t∈[0,T ]
+
+Furthermore, by (3A2) we know that dP × dt-a.e., for each (y, z) ∈ [−k, k] × Rd ,
+
+ 
+
+|g(ω, t, y, z)| ≤ ū(t) max ϕ̄(x) +
+max h̄(x) |z|2 .
+x∈[−k,k]
+
+x∈[−k,k]
+
+1542
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+Thus, arguing as in the last second paragraph of the proof of Lemma 3.3, we can take the
+limit with respect to n (k being fixed) in (49) in the space S 2 × M2 . In particular, setting
+yk (t) = supn≥1 ykn (t), we know that yk (·) is continuous and that there exists a process z k (t) ∈ M2
+such that limn→∞ z kn (t) = z k (t) in M2 and (yk (t), z k (t)) solves the following BSDE
+ T
+ T
+n
+yk (t) = sup yτk +
+1s≤τk g(s, yk (s), z k (s))ds −
+z k (s) · dBs .
+(50)
+t
+
+n≥1
+
+t
+
+Since τk ≤ τk+1 , it follows from the definitions of yk (·), z k (·) and y· that
+n
+,
+yt∧τk = yk+1 (t ∧ τk ) = yk (t) = sup yt∧τ
+k
+n≥1
+
+z k+1 (t)1t≤τk = z k (t) = lim z tn 1t≤τk .
+n→∞
+
+Thus, since yk (·) are continuous processes and moreover dP-a.s., τk = T for k large enough,
+we know that y· is continuous on [0, T ]. Then we define z · on (0, T ) by setting
+z t = z k (t),
+
+if t ∈ (0, τk ),
+
+so that z t 1t≤τk = z k (t)1t≤τk = z k (t) and (49) can be rewritten as
+ τk
+ τk
+yt∧τk = yτk +
+g(s, ys , z s )ds −
+z s · dBs .
+t∧τk
+
+(51)
+
+t∧τk
+
+Furthermore, we have
+ T
+
+ T
+
+ T
+
+P
+|z s |2 ds = ∞ = P
+|z s |2 ds = ∞, τk = T + P
+|z s |2 ds = ∞, τk < T
+0
+0
+0
+
+ τk
+|z k (s)|2 ds = ∞ + P (τk < T ) ,
+≤ P
+0
+
+and we deduce, since τk ↑ T , that
+ T
+|z s |2 ds < ∞ dP-a.s.
+0
+
+Thus, letting k → ∞ in (51), we can deduce that (y· , z · ) is a solution of BSDE(ξ, g). Furthermore, by (48) we know that y· ∈ S p , and then arguing as in Lemma 3.1 of Briand, Delyon, Hu,
+Pardoux and Stoica [5], in view of (5A1), we can deduce that z · ∈ M p . That is to say, (y· , z · ) is
+also an L p solution of BSDE(ξ, g).
+In the general case, we can use a double approximation: ξn, p := ξ + ∧ n − ξ − ∧ p as in Briand
+and Hu [6] and Briand and Hu [7]. The proof is then complete. 
+The following Theorem 5.2 gives a new existence result on the maximal and minimal L p
+solution of BSDEs. In view of Remark 5.1, we know that it generalizes Theorem 1 in Fan, Jiang
+and Tian [19] (see Lemma 2.2) even for the case of L 2 solutions.
+Theorem 5.2. Assume that 0 < T ≤ +∞ and g satisfies (2A3), (5A1) and (5A5). Assume
+further that g satisfies (5A2) (resp. (5A3)). Then for each ξ ∈ L p (Ω , FT , P), BSDE(ξ, g) has
+a maximal (resp. minimal) L p solution.
+Proof. We only prove the case of maximal solution, the other case is similar. Assume now that
+ξ ∈ L p (Ω , FT , P) and that g satisfies (2A3), (5A1), (5A5) and (5A2). By (5A1) and (5A2) we
+know that dP × dt-a.e.,
+g(ω, t, y, z) ≤ ( f t (ω) + f¯t (ω)) + (u(t) + ū(t))|y| + (v(t) + v̄(t))|z|,
+
+∀ y, z.
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1543
+
+Then for each n ≥ 1 and (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd , we can define
+gn (ω, t, y, z) :=
+
+sup
+(u,v)∈R1+d
+
+{g(ω, t, u, v) − n(u(t) + ū(t))|y − u|
+
+− n(v(t) + v̄(t))|z − v|}.
+
+(52)
+
+Arguing as in Fan, Jiang and Tian [19], we can also conclude that the sequence of functions gn
+is well defined for each n ≥ 1, and it satisfies, dP × dt-a.e.,
+(i) ∀ y, z, gn (ω, t, y, z) ≤ ( f t (ω) + f¯t (ω)) + (u(t) + ū(t))|y| + (v(t) + v̄(t))|z|.
+(ii) ∀ y, z, gn (ω, t, y, z) non-increases in n.
+(iii) ∀ y1 , y2 , z 1 , z 2 , we have
+|gn (ω, t, y1 , z 1 ) − gn (ω, t, y2 , z 2 )| ≤ n(u(t) + ū(t))|y1 − y2 |
++ n(v(t) + v̄(t))|z 1 − z 2 |.
+(iv) If (yn , z n ) → (y, z), then gn (ω, t, yn , z n ) → g(ω, t, y, z).
+Furthermore, it follows from (52) and (5A1) that for each n ≥ 1, dP × dt-a.e.,
+∀ y < 0, ∀ z ∈ Rd ,
+
+g ′ (ω, t, y, z) ≤ g(ω, t, y, z) ≤ gn (ω, t, y, z),
+
+(53)
+
+where
+g ′ (ω, t, y, z) := − f t (ω) − u(t)|y| − v(t)|z|,
+
+∀ ω, t, y, z.
+
+L p (Ω ; L 1 ([0, T ]; R
+
+Note that (iii) and |gn (t, 0, 0)| ∈
++ )) by (i) and (53). It follows from
+Lemma 5.1 that BSDE(ξ, gn ) has a unique L p solution (ytn , z tn )t∈[0,T ] for each n ≥ 1. In view of
+(ii) and (iii), by Theorem 2.1 we know that for each t ∈ [0, T ], the sequel (ytn )+∞
+n=1 is nonincreasing. On the other hand, let (y·′ , z ·′ ) be the unique L p solution of BSDE(−|ξ |, g ′ ) by
+Lemma 5.1. Note that y·′ ≤ 0 by Theorem 2.1. In view of (53), Remark 2.2 and the fact that
+−|ξ | ≤ ξ dP-a.s., by Theorem 2.1 we know that for each t ∈ [0, T ] and each n ≥ 1,
+yt′ ≤ ytn+1 ≤ ytn ≤ yt1
+
+dP-a.s.
+
+(54)
+
+In the sequel, for each k ≥ 1, let us introduce the following stopping time:
+
+
+ t
+′
+1
+¯
+(ǔ t + f t + f t ) ds ≥ k ∧ T.
+τk = inf t ∈ [0, T ] : |yt | + |yt | +
+0
+
+n , zn 1
+Then (ykn (t), z kn (t)) := (yt∧τ
+t t≤τk ) solves the following BSDE:
+k
+
+ykn (t) = yτnk +
+
+ T
+t
+
+1s≤τk gn (s, ykn (s), z kn (s))ds −
+
+ T
+t
+
+z kn (s) · dBs .
+
+In view of (i) and the facts that gn ≥ g and g satisfies (5A5), we know that dP × dt-a.e., for each
+(y, z) ∈ [−k, k] × Rd ,
+
+
+sup |gn (ω, t, y, z)| ≤ ǔ t (ω) max ϕ̌(x) + f t (ω) + f¯t (ω) + k(u(t) + ū(t))
+n≥1
+
+x∈[−k,k]
+
++ (v(t) + v̄(t))2 +
+
+
+
+
+max ȟ(x) + 1 |z|2 .
+
+x∈[−k,k]
+
+Thus, in view of (54) and the definition of τk , by a similar argument to Lemma 4.1 we can deduce
+that (ykn (t), z kn (t)) ∈ S ∞ × M2 for each n ≥ 1 and k ≥ 1. Furthermore, in view of (iv), (54) and
+
+1544
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+the above inequality together with the definition of τk , arguing as in the proof of Theorem 5.1,
+we can define y· = limn→∞ y·n and use the localization procedure to obtain a process z · such
+that (y· , z · ) is an L p solution of BSDE(ξ, g).
+Finally, it remains to show that (y· , z · ) is the maximal one among all L p solutions of
+BSDE(ξ, g). Indeed, let ( ŷ· , ẑ · ) be any L p solutions of BSDE(ξ, g). In view of (iii) and the
+fact that gn ≥ g, by Theorem 2.1 we can obtain that for each n ≥ 1 and each t ∈ [0, T ],
+ŷt ≤ ytn
+
+dP-a.s.
+
+Letting n → ∞ yields the desired result. The proof is then completed.
+
+
+
+By Theorem 5.2 and Remark 5.1, the following corollary is immediate. It generalizes
+Lemma 2.2 to the case of L p solutions.
+Corollary 5.1. Assume that 0 < T ≤ +∞ and g satisfies (2A3) and (5A4). Then for each
+ξ ∈ L p (Ω , FT , P), BSDE(ξ, g) has both a maximal and a minimal L p solution.
+Similar to Theorems 2.2 and 2.3, by virtue of Theorem 2.1 we can prove the following
+Theorems 5.3 and 5.4, which establish the comparison theorems on the maximal and minimal
+L p solutions of BSDEs under the assumptions of Theorem 5.2. In view of Remark 5.1, they
+generalizes Theorems 2.2 and 2.3 even for the case of L 2 solutions.
+Theorem 5.3. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L p (Ω , FT , P), g and g ′ are two
+generators of BSDEs, and (y· , z · ) is any L p solution of BSDE(ξ, g). Assume further that
+g ′ satisfies (2A3), (5A1), (5A2) and (5A5), and (y·′ , z ·′ ) is the maximal L p solution of
+BSDE(ξ ′ , g ′ ) (recall Theorem 5.2). If ξ ≤ ξ ′ dP-a.s. and (9) holds true, then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Theorem 5.4. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L p (Ω , FT , P), g and g ′ are two
+generators of BSDEs, and (y·′ , z ·′ ) is any L p solution of BSDE(ξ ′ , g ′ ). Assume further that g
+satisfies (2A3), (5A1), (5A3) and (5A5), and (y· , z · ) is the minimal L p solution of BSDE(ξ, g)
+(recall Theorem 5.2). If ξ ≤ ξ ′ dP-a.s. and (8) holds true, then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Corollary 5.2. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L p (Ω , FT , P), and both g and g ′
+satisfy (2A3) and (5A4). Let (y· , z · ) and (y·′ , z ·′ ) be, respectively, the maximal (resp. minimal)
+L p solution of BSDE(ξ, g) and BSDE(ξ ′ , g ′ ) (recall Corollary 5.1). If ξ ≤ ξ ′ dP-a.s. and for
+each (y, z) ∈ R × Rd ,
+g(t, y, z) ≤ g ′ (t, y, z)
+
+dP × dt-a.e.,
+
+then for each t ∈ [0, T ], we have
+yt ≤ yt′
+
+dP-a.s.
+
+Finally, by virtue of Theorems 5.1 and 2.1 we can obtain the following existence and
+uniqueness result for L p solutions of BSDEs.
+Theorem 5.5. Assume that 0 < T ≤ +∞ and that g satisfies (2A1)–(2A3) and (3A2). Then for
+each ξ ∈ L p (Ω , FT , P), BSDE(ξ, g) has a unique L p solution.
+
+1545
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+Proof. It follows from (2A1), (2A2) and (3A2) that dP × dt-a.e., for each (y, z) ∈ R × Rd ,
+g(ω, t, y, z) sgn(y) ≤ u(t)ρ(|y|) + |g(t, 0, z) − g(t, 0, 0)| + |g(t, 0, 0)|
+≤ u(t)(k|y| + k) + v(t)(a|z| + b) + ū(t)ϕ̄(0)
+= ku(t) + bv(t) + ū(t)ϕ̄(0) + ku(t)|y| + av(t)|z|,
+
+(55)
+
+where k > 0 is the constant of linear growth for the function ρ. Consequently, (5A1) with
+f t = ku(t) + bv(t) + ū(t)ϕ̄(0) ∈ L 1 ([0, T ]; R+ ) holds true for the generator g. Thus, the
+existence of an L p solution of BSDE(ξ, g) follows from Theorem 5.1. Finally, the uniqueness
+follows directly from Theorem 2.1. The proof is then completed. 
+6. Existence and uniqueness of L 1 solutions
+In this section, we will establish two existence results, two comparison theorems and an
+existence and uniqueness result for the (maximal and minimal) L 1 solutions of BSDEs. For
+2
+convenience of expression, let us first fix a real number α ∈ (0, 1) and let L 2−α ([0, T ]; R+ )
+denote the set of nonnegative functions λ(·) from [0, T ] to R+ such that
+ T
+2
+λ 2−α (t) dt < +∞.
+0
+
+In the sequel, let us introduce the following assumptions on the generator g, where 0 < T ≤ +∞,
+and a ∧ b represents the minimal number between a and b.
+(6A1) There exist a nonnegative (Ft )-progressively measurable process ( f t )t∈[0,T ] ∈ L 1 ([0, T ]
+× Ω ) and three functions u(·) ∈ L 1 ([0, T ]; R+ ), v(·) ∈ L 2 ([0, T ]; R+ ) and λ(·) ∈
+2
+L 2−α ([0, T ]; R+ ) such that dP × dt-a.e.,
+g(ω, t, y, z) sgn(y) ≤ f t (ω) + u(t)|y| + (v(t)|z|) ∧ (λ(t)|z|α ),
+
+∀ y, z.
+
+(6A2) There exist a nonnegative (Ft )-progressively measurable process ( f¯t )t∈[0,T ] ∈ L 1 ([0, T ]
+× Ω ) and three functions ū(·) ∈ L 1 ([0, T ]; R+ ), v̄(·) ∈ L 2 ([0, T ]; R+ ) and λ̄(·) ∈
+2
+L 2−α ([0, T ]; R+ ) such that dP × dt-a.e.,
+∀ y ≤ 0, ∀ z ∈ Rd ,
+
+g(ω, t, y, z) ≤ f¯t (ω) + ū(t)|y| + (v̄(t)|z|) ∧ (λ̄(t)|z|α ).
+
+(6A3) There exist a nonnegative (Ft )-progressively measurable process ( f¯t )t∈[0,T ] ∈ L 1 ([0, T ]
+× Ω ) and three functions ū(·) ∈ L 1 ([0, T ]; R+ ), v̄(·) ∈ L 2 ([0, T ]; R+ ) and λ̄(·) ∈
+2
+L 2−α ([0, T ]; R+ ) such that dP × dt-a.e.,
+∀ y ≥ 0, ∀ z ∈ Rd ,
+
+−g(ω, t, y, z) ≤ f¯t (ω) + ū(t)|y| + (v̄(t)|z|) ∧ (λ̄(t)|z|α ).
+
+(6A4) There exist a nonnegative (Ft )-progressively measurable process ( f t )t∈[0,T ] ∈ L 1 ([0, T ]
+× Ω ) and three functions u(·) ∈ L 1 ([0, T ]; R+ ), v(·) ∈ L 2 ([0, T ]; R+ ) and λ(·) ∈
+2
+L 2−α ([0, T ]; R+ ) such that dP × dt-a.e.,
+|g(ω, t, y, z)| ≤ f t (ω) + u(t)|y| + (v(t)|z|) ∧ (λ(t)|z|α ),
+
+∀ y, z.
+
+Remark 6.1. It is clear that (6A4) ⇐⇒ (6A1) + (6A2) + (6A3), and (6A4) H⇒ (5A5).
+The following lemma will be our basic tool in the treatment of L 1 -solutions.
+
+1546
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+Lemma 6.1. Assume that 0 < T ≤ +∞, the generator g satisfies (44) and (2A5) (or (2A5′ )),
+and the process g(t, 0, 0) ∈ L 1 (Ω × [0, T ]). Then for each ξ ∈ L 1 (Ω , FT , P), BSDE(ξ, g) has
+a unique L 1 solution.
+Proof. The uniqueness follows from Theorem 2.4. Using a similar argument to Theorem 6.3 in
+Briand, Delyon, Hu, Pardoux and Stoica [5] and making use of Lemma 5.1 and (21), we can
+prove the existence. The proof is standard, we omit it here. 
+Similar to Lemma 5.2, we can prove the following Lemma 6.2.
+Lemma 6.2. Assume that 0 < T ≤ +∞, ξ ∈ L 1 (Ω , FT , P), and the generator g satisfies
+(2A3) and (6A1). Let (yt , z t )t∈[0,T ] be any L 1 solution of BSDE(ξ, g) and (yt′ , z t′ )t∈[0,T ] the
+unique L 1 solution of BSDE(|ξ |, g ′ ) (recall Lemma 6.1), where
+g ′ (ω, t, y, z) := f t (ω) + u(t)|y| + (v(t)|z|) ∧ (λ(t)|z|α ),
+
+∀ ω, t, y, z.
+
+Then for each t ∈ [0, T ], we have
+|yt | ≤ yt′
+
+dP-a.s.
+
+Proof. We consider the function κ(t, x) := (v(t)x) ∧ (λ(t)x α ) for (t, x) ∈ [0, T ] × R+ . It is
+not hard to verify that for each t ∈ [0, T ], κ(t, ·) is nondecreasing and sub-additive on R+ , i.e.,
+κ(t, x1 + x2 ) ≤ κ(t, x1 ) + κ(t, x2 ) for each x1 , x2 ∈ R+ . Based on this fact, we can prove that
+for each t ∈ [0, T ] and (z 1 , z 2 ) ∈ Rd × Rd ,
+|(v(t)|z 1 |) ∧ (λ(t)|z 1 |α ) − (v(t)|z 2 |) ∧ (λ(t)|z 2 |α )|
+≤ (v(t)|z 1 − z 2 |) ∧ (λ(t)|z 1 − z 2 |α ).
+Then we can see that g ′
+
+(56)
+
+satisfies (44) and (2A5′ ). Thus, note that |ξ |
+
+≥ 0 dP-a.s. and
+g ′ (t, 0, 0) = f t ≥ 0 dP × dt-a.e., Theorem 2.4 yields that for each t ∈ [0, T ],
+yt′ ≥ 0
+
+dP-a.s.
+
+(57)
+
+It follows from (6A1) that dP × dt-a.e.,
+∀ y > 0, ∀ z ∈ Rd ,
+
+g(ω, t, y, z) ≤ g ′ (ω, t, y, z).
+
+(58)
+
+Then, in view of (57), (58), Remark 2.2 and the fact that ξ ≤ |ξ | dP-a.s., by Theorem 2.4 we
+deduce that for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Furthermore, by (6A1) we can also deduce that dP × dt-a.e.,
+∀ y < 0, ∀ z ∈ Rd ,
+
+−g ′ (ω, t, y, z) ≤ g(ω, t, y, z).
+
+(59)
+
+On the other hand, it is not difficult to verify that (−yt′ , −z t′ )t∈[0,T ] is the unique L 1 solution of
+BSDE(−|ξ |, −g ′ ). Then, in view of (57), (59), Remark 2.2 and the fact that −|ξ | ≤ ξ dP-a.s.,
+by Theorem 2.4 we can deduce that for each t ∈ [0, T ],
+−yt′ ≤ yt
+
+dP-a.s.
+
+Thus, we have completed the proof of Lemma 6.2.
+
+
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1547
+
+The following Theorem 6.1 establishes an existence result on L 1 solutions of BSDEs, which is
+one of main results in this section. It improves considerably the corresponding existence results
+obtained in Briand and Hu [6] and Briand, Delyon, Hu, Pardoux and Stoica [5] for the one
+dimensional case, even for the case of finite time horizon.
+Theorem 6.1. Assume that 0 < T ≤ +∞ and g satisfies (2A3), (3A2) and (6A1) with
+f t ∈ L 1 ([0, T ]; R+ ). Then for each ξ ∈ L 1 (Ω , FT , P), BSDE(ξ, g) has an L 1 solution.
+Proof. Let us first assume that ξ is nonnegative. Note that (6A1) H⇒ (5A1). By Theorem 3.1
+and the proof of Theorem 5.1 we know that BSDE(ξn , g) has a maximal bounded solution
+(ytn , z tn )t∈[0,T ] for each n ≥ 1, where ξn := ξ ∧ n. Furthermore, by Corollary 3.1 we also
+know that for each t ∈ [0, T ], (ytn )+∞
+n=1 is nondecreasing.
+In the sequel, for each (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd , define
+g ′ (ω, t, y, z) := f t + u(t)|y| + (v(t)|z|) ∧ (λ(t)|z|α ).
+By (56) we know that g ′ satisfies (44) and (2A5′ ). It then follows from Lemma 6.1 that for each
+n ≥ 1, BSDE(|ξn |, g ′ ) has a unique L 1 solution (n yt′ , n z t′ )t∈[0,T ] . Furthermore, in view of (6A1),
+by Lemma 6.2 we can conclude that for each t ∈ [0, T ] and each n ≥ 1, |ytn | ≤ n yt′ dP-a.s.
+On the other hand, in view of ξ ∈ L 1 (Ω , FT , P), it follows from Lemma 6.1 that
+BSDE(|ξ |, g ′ ) has also a unique L 1 solution (yt′ , z t′ )t∈[0,T ] . Then, in view of |ξn | ≤ |ξ |, by
+Theorem 2.4 we know that for each t ∈ [0, T ] and each n ≥ 1, n yt′ ≤ yt′ dP-a.s.
+As a result, we have proved that for each t ∈ [0, T ] and n ≥ 1,
+− yt′ ≤ ytn ≤ ytn+1 ≤ yt′
+
+dP-a.s.
+
+(60)
+
+In the sequel, arguing as in Theorem 5.1, we define y· = limn→∞ y·n and use the localization
+procedure to find a process z · such that (y· , z · ) is a solution of BSDE(ξ, g). Furthermore, by (60)
+we know that y· belongs to the class (D) and the space S β for each β ∈ (0, 1), and then arguing
+as in Lemma 3.1 of Briand, Delyon, Hu, Pardoux and Stoica [5], in view of (6A1), we can deduce
+that z · ∈ Mβ for each β ∈ (0, 1). That is to say, (y· , z · ) is also an L 1 solution of BSDE(ξ, g).
+In the general case, we can use a double approximation: ξn, p := ξ + ∧ n − ξ − ∧ p as in Briand
+and Hu [6] and Briand and Hu [7]. The proof is then complete. 
+The following Theorem 6.2 gives a new existence result on the maximal and minimal L 1
+solution of BSDEs.
+Theorem 6.2. Assume that 0 < T ≤ +∞ and g satisfies (2A3), (6A1) and (5A5). Assume
+further that g satisfies (6A2) (resp. (6A3)). Then for each ξ ∈ L 1 (Ω , FT , P), BSDE(ξ, g) has
+a maximal (resp. minimal) L 1 solution.
+Proof. We only prove the case of maximal solution, the other case is similar. Assume now that
+ξ ∈ L 1 (Ω , FT , P) and that g satisfies (2A3), (6A1), (6A2) and (5A5). By (6A1) and (6A2) we
+know that dP × dt-a.e.,
+g(ω, t, y, z) ≤ f˜t (ω) + ũ(t)|y| + (ṽ(t)|z|) ∧ (λ̃(t)|z|α ),
+
+∀ y, z
+
+where f˜t (ω) := f t (ω) + f¯t (ω) ∈ L 1 ([0, T ] × Ω ), ũ(t) := u(t) + ū(t) ∈ L 1 ([0, T ]; R+ ),
+2
+ṽ(t) := v(t) + v̄(t) ∈ L 2 ([0, T ]; R+ ) and λ̃(t) := λ(t) + λ̄(t) ∈ L 2−α ([0, T ]; R+ ). Then for
+
+1548
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+each n ≥ 1 and (ω, t, y, z) ∈ Ω × [0, T ] × R × Rd , we can define
+gn (ω, t, y, z) :=
+
+sup
+(u,v)∈R1+d
+
+{g(ω, t, u, v) − n ũ(t)|y − u|
+
+− n[(ṽ(t)|z − v|) ∧ (λ̃(t)|z − v|α )]}.
+
+(61)
+
+In view of (56), arguing as in Fan, Jiang and Tian [19], we can also prove that the sequence of
+functions gn is well defined for each n ≥ 1, and it satisfies, dP × dt-a.e.,
+(i) ∀ y, z, gn (ω, t, y, z) ≤ f˜t (ω) + ũ(t)|y| + (ṽ(t)|z|) ∧ (λ̃(t)|z|α ).
+(ii) ∀ y, z, gn (ω, t, y, z) non-increases in n.
+(iii) ∀ y1 , y2 , z 1 , z 2 , we have
+|gn (ω, t, y1 , z 1 ) − gn (ω, t, y2 , z 2 )| ≤ n ũ(t)|y1 − y2 |
++ n[(ṽ(t)|z 1 − z 2 |) ∧ (λ̃(t)|z 1 − z 2 |α )].
+(iv) If (yn , z n ) → (y, z), then gn (ω, t, yn , z n ) → g(ω, t, y, z).
+Furthermore, it follows from (61) and (6A1) that for each n ≥ 1, dP × dt-a.e.,
+∀ y < 0, ∀ z ∈ Rd ,
+
+g ′ (ω, t, y, z) ≤ g(ω, t, y, z) ≤ gn (ω, t, y, z),
+
+(62)
+
+where
+g ′ (ω, t, y, z) := − f t (ω) − u(t)|y| − (v(t)|z|) ∧ (λ(t)|z|α ),
+
+∀ ω, t, y, z.
+
+It follows from (56) that g ′ satisfies (44) and (2A5′ ).
+Note that for each n ≥ 1, gn satisfies (44) and (2A5′ ) by (iii), and |gn (t, 0, 0)| ∈ L 1 (Ω ×
+[0, T ]) by (i) and (62). It follows from Lemma 6.1 that BSDE(ξ, gn ) has a unique L 1 solution
+(ytn , z tn )t∈[0,T ] for each n ≥ 1. In view of (ii) and (iii), by Theorem 2.4 we know that for each
+t ∈ [0, T ], the sequence (ytn )+∞
+n=1 is non-increasing. On the other hand, by Lemma 6.1 we can let
+(y·′ , z ·′ ) be the unique L 1 solution of BSDE(−|ξ |, g ′ ). Note that y·′ ≤ 0 by Theorem 2.4. In view
+of (62), (iii), Remark 2.2 and the fact that −|ξ | ≤ ξ dP-a.s., by Theorem 2.4 we know that for
+each t ∈ [0, T ] and each n ≥ 1,
+yt′ ≤ ytn+1 ≤ ytn ≤ yt1
+
+dP-a.s.
+
+(63)
+
+In the sequel, arguing as in the proof of Theorems 5.2 and 6.1, in view of (63) and (iv), we can
+define y· = limn→∞ y·n and use the localization procedure to obtain a process z · such that (y· , z · )
+is an L 1 solution of BSDE(ξ, g).
+Finally, it remains to show that (y· , z · ) is the maximal one among all L 1 solutions of
+BSDE(ξ, g). Indeed, let ( ŷ· , ẑ · ) be any L 1 solutions of BSDE(ξ, g). In view of (iii) and the
+fact that gn ≥ g, by Theorem 2.4 we can obtain that for each n ≥ 1 and each t ∈ [0, T ],
+ŷt ≤ ytn
+
+dP-a.s.
+
+Letting n → ∞ yields the desired result. The proof is then completed.
+
+
+
+The following corollary is an immediate consequence of Theorem 6.2 and Remark 6.1.
+Corollary 6.1. Assume that 0 < T ≤ +∞ and the generator g satisfies (2A3) and (6A4). Then
+for each ξ ∈ L 1 (Ω , FT , P), BSDE(ξ, g) has both a maximal and a minimal L 1 solution.
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1549
+
+Remark 6.2. A similar result to Corollary 6.1 has been obtained in the first version of Briand
+and Hu [6], where only the case of 0 < T < +∞ is considered, all of f t , u(t), v(t) and λ(t) are
+constants and we do not know whether the L 1 solution constructed by them is the maximal (or
+minimal) one or not.
+Similar to Theorems 2.2 and 2.3, by virtue of Theorem 2.4 we can prove the following
+Theorems 6.3 and 6.4, which establish the comparison theorems on the maximal and minimal L 1
+solutions of BSDEs under the assumptions of Theorem 6.2.
+Theorem 6.3. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L 1 (Ω , FT , P), g and g ′ are two generators
+of BSDEs, and (y· , z · ) is any L 1 solution of BSDE(ξ, g). Assume further that g ′
+satisfies (2A3), (6A1), (6A2) and (5A5), and (y·′ , z ·′ ) is the maximal L 1 solution of
+BSDE(ξ ′ , g ′ ) (recall Theorem 6.2). If ξ ≤ ξ ′ dP-a.s. and (9) holds true, then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Theorem 6.4. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L 1 (Ω , FT , P), g and g ′ are two generators
+of BSDEs, and (y·′ , z ·′ ) is any L 1 solution of BSDE(ξ ′ , g ′ ). Assume further that g satisfies
+(2A3), (6A1), (6A3) and (5A5), and (y· , z · ) is the minimal L 1 solution of BSDE(ξ, g)
+(recall Theorem 6.2). If ξ ≤ ξ ′ dP-a.s. and (8) holds true, then for each t ∈ [0, T ],
+yt ≤ yt′
+
+dP-a.s.
+
+Corollary 6.2. Assume that 0 < T ≤ +∞, ξ, ξ ′ ∈ L 1 (Ω , FT , P), and both g and g ′ satisfy
+(2A3) and (6A4). Let (y· , z · ) and (y·′ , z ·′ ) be, respectively, the maximal (resp. minimal) L 1
+solution of BSDE(ξ, g) and BSDE(ξ ′ , g ′ ) (recall Corollary 6.1). If ξ ≤ ξ ′ dP-a.s. and for
+each (y, z) ∈ R × Rd ,
+g(t, y, z) ≤ g ′ (t, y, z)
+
+dP × dt-a.e.,
+
+then for each t ∈ [0, T ], we have
+yt ≤ yt′
+
+dP-a.s.
+
+By virtue of Theorems 6.1 and 2.4 we can obtain the following new existence and uniqueness
+result for L 1 solutions.
+Theorem 6.5. Assume that 0 < T ≤ +∞ and that g satisfies (2A1)–(2A3) and (3A2).
+Assume further that g satisfies (2A5) with f t ∈ L 1 ([0, T ]; R+ ) or (2A5′ ). Then for each
+ξ ∈ L 1 (Ω , FT , P), BSDE(ξ, g) has a unique L 1 solution.
+Proof. We only prove the case where g satisfies (2A1)–(2A3), (3A2) and (2A5) with
+f t ∈ L 1 ([0, T ]; R+ ). The other case is similar. It follows from (2A1), (2A5) with f t ∈
+L 1 ([0, T ]; R+ ), and (3A2) that dP × dt-a.e., for each (y, z) ∈ R × Rd ,
+g(ω, t, y, z) sgn(y) ≤ u(t)ρ(|y|) + |g(t, 0, z) − g(t, 0, 0)| + |g(t, 0, 0)|
+≤ u(t)(k|y| + k) + λ(t)( f t + |z|)α + ū(t)ϕ̄(0)
+≤ f˜t + ku(t)|y| + λ(t)|z|α ,
+
+(64)
+
+where f˜t := ku(t) + λ(t) f tα + ū(t)ϕ̄(0) ∈ L 1 ([0, T ]; R+ ) by Hölder inequality and the
+assumptions of u(t), λ(t), f t and ū(t), and k > 0 is the constant of linear growth for ρ. Thus,
+
+1550
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+combining (55) and (64) yields that (6A1) holds true for the generator g. Thus, the existence of
+an L 1 solution of BSDE(ξ, g) follows from Theorem 6.1. Finally, the uniqueness follows directly
+from Theorem 2.4. The proof is then completed. 
+At the end of this paper, let us give two examples to illustrate some applications of the previous
+theoretical results for two practice problems, where 0 < T < +∞.
+Example 6.1. Recently, Shamarova, Ramos and Aguiar [35] shows an application of BSDE
+in gene expression. In case of one protein, the generator function g(y) : R → R for the
+synthesis/degradation rate is
+g(y) = R
+
+ay 2
+− ρy,
+1 + ay 2
+
+where R, a, ρ are positive constants. It is clear that the generator g does not depend on z
+and is uniformly Lipschitz continuous in y. Hence, by Theorem 6.5 we know that for each
+ξ ∈ L 1 (Ω , FT , P), BSDE(ξ, g) has a unique L 1 solution.
+Example 6.2. In the well known Kreps–Porteus utility (see, for example, El Karoui, Peng and
+Quenez [14] for details), the generator g(y) : R+ → R is defined by
+g(y) =
+
+β
+β cρ − y ρ
+= (cρ y 1−ρ − y),
+ρ−1
+ρ y
+ρ
+
+where 0 ̸= ρ ≤ 1, 0 ≤ c and 0 ≤ β. Note that the generator g is only defined on R+ . We have
+to consider the existence and uniqueness of nonnegative solutions for BSDE(ξ, g) when ξ is a
+nonnegative random variable. The following argument will be divided into three cases: ρ = 1,
+0 < ρ < 1 and ρ < 0.
+• In case of ρ = 1, g(y) = β(c − y), y ≥ 0. We define a function ḡ(y) : R → R such that
+ḡ(y) = βc when y < 0 and ḡ(y) = g(y) when y ≥ 0. Then ḡ(y) is uniformly Lipschitz
+continuous on R, and by Theorem 6.5, BSDE(ξ, ḡ) has a unique L 1 solution (y· , z · ) for
+nonnegative random variable ξ ∈ L 1 (Ω , FT , P). Furthermore, in view of ḡ(0) = βc ≥ 0
+and ξ ≥ 0, it follows from Theorem 2.4 that y· ≥ 0. Thus, (y· , z · ) is the nonnegative and
+unique L 1 solution of BSDE(ξ, g).
+• In case of 0 < ρ < 1, we define a function ḡ(y) : R → R such that ḡ(y) = 0 when y < 0
+and ḡ(y) = g(y) when y ≥ 0. Then ḡ(y) is of linear growth on R, and by Corollary 6.1,
+BSDE(ξ, ḡ) has both a maximal L 1 solution (Y· , Z · ) and a minimal L 1 solution (y· , z · )
+for nonnegative random variable ξ ∈ L 1 (Ω , FT , P). Furthermore, we construct a function
+g(y) : R → R such that g(y) = β(cρ − 1)y/ρ when 0 ≤ y ≤ 1 and g(y) = ḡ(y) when
+y < 0 and y > 1. Then g(y) is uniformly Lipschitz continuous on R, and BSDE(0, g) has a
+unique L 1 solution (0, 0). Now, in view of ξ ≥ 0 and ḡ(y) ≥ g(y) for each y ∈ R, it follows
+from Corollary 6.2 that y· ≥ 0. Hence, (Y· , Z · ) and (y· , z · ) are, respectively, the maximal and
+minimal nonnegative L 1 solution of BSDE(ξ, g).
+• In case of ρ < 0, we construct a function ḡ(y) : R → R such that ḡ(y) = 0 when y < 0
+and ḡ(y) = g(y) when y ≥ 0. It is not very hard to verify that ḡ(y) satisfies (3A2) and (2A1)
+with u(t) ≡ 0 and ρ(x) = −βx/ρ. It then follows from Theorem 6.5 that BSDE(ξ, ḡ) has a
+unique L 1 solution (y· , z · ) for nonnegative random variable ξ ∈ L 1 (Ω , FT , P). Furthermore,
+in view of ḡ(0) = 0 and ξ ≥ 0, it follows from Theorem 2.4 that y· ≥ 0. Hence, we can
+conclude that (y· , z · ) is the nonnegative and unique L 1 solution of BSDE(ξ, g).
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+1551
+
+Remark 6.3. By virtue of the results obtained in Sections 2–5 of this paper, the corresponding
+conclusions for nonnegative bounded solutions and L p ( p > 1) solutions of BSDE(ξ, g) in
+Examples 6.1 and 6.2 are also true.
+Acknowledgments
+The author would like to thank the two anonymous referees for their very careful reading and
+helpful comments.
+References
+[1] K. Bahlali, Existence and uniqueness of solutions for BSDEs with locally Lipschitz coefficient, Electron. Comm.
+Probab. 7 (2002) 169–179.
+[2] K. Bahlali, E. Essaky, M. Hassani, Multidimensional BSDEs with super-linear growth coefficient: Application to
+degenerate systems of semilinear PDEs, C. R. Acad. Sci., Paris I 348 (2010) 677–682.
+[3] I. Bihari, A generalization of a lemma of Bellman and its application to uniqueness problem of differential
+equations, Acta Math. Acad. Sci. Hungar. 7 (1956) 71–94.
+[4] Ph. Briand, F. Confortola, BSDEs with stochastic Lipschitz condition and quadratic PDEs in Hilbert spaces,
+Stochastic Process. Appl. 118 (2008) 818–838.
+[5] Ph. Briand, B. Delyon, Y. Hu, E. Pardoux, L. Stoica, L p solutions of backward stochastic differential equations,
+Stochastic Process. Appl. 108 (2003) 109–129.
+[6] Ph. Briand, Y. Hu, BSDEs with quadratic growth and unbounded terminal value, Probab. Theory Related Fields
+136 (2006) 604–618.
+[7] Ph. Briand, Y. Hu, Quadratic BSDEs with convex generators and unbounded terminal conditions, Probab. Theory
+Related Fields 141 (2008) 543–567.
+[8] Ph. Briand, J.-P. Lepeltier, J. San Martin, One-dimensional BSDEs whose coefficient is monotonic in y and nonLipschitz in z, Bernoulli 13 (2007) 80–91.
+[9] Z. Cao, J. Yan, A comparison theorem for solutions of backward stochastic differential equations, Adv. Math.
+(China) 28 (4) (1999) 304–308.
+[10] S. Chen, L p solutions of one-dimensional backward stochastic differential equations with continuous coefficients,
+Stoch. Anal. Appl. 28 (2010) 820–841.
+[11] Z. Chen, B. Wang, Infinite time interval BSDEs and the convergence of g-martingales, J. Aust. Math. Soc. Ser. A
+69 (2000) 187–211.
+[12] F. Delbaen, Y. Hu, X. Bao, Backward SDEs with superquadratic growth, Probab. Theory Related Fields 150 (24)
+(2011) 145–192.
+[13] F. Delbaen, S. Tang, Harmonic analysis of stochastic equations and backward stochastic differential equations,
+Probab. Theory Related Fields 146 (2010) 291–336.
+[14] N. El Karoui, S. Peng, M.C. Quenez, Backward stochastic differential equations in finance, Math. Finance 7 (1997)
+1–72.
+[15] S. Fan, L. Jiang, Uniqueness result for the BSDE whose generator is monotonic in y and uniformly continuous in
+z, C. R. Acad. Sci., Paris I 348 (2010) 89–92.
+[16] S. Fan, L. Jiang, BSDEs with uniformly continuous generators and integrable parameters, Sci. Sin. Math. 42 (2)
+(2012) 119–131. (in Chinese).
+[17] S. Fan, L. Jiang, L p solutions of finite and infinite time interval BSDEs with non-Lipschitz coefficients, Stochastics
+84 (4) (2012) 487–506.
+[18] S. Fan, L. Jiang, M. Davison, Uniqueness of solutions for multidimensional BSDEs with uniformly continuous
+generators, C. R. Acad. Sci., Paris I 348 (11–12) (2010) 683–686.
+[19] S. Fan, L. Jiang, D. Tian, One-dimensional BSDEs with finite and infinite time horizons, Stochastic Process. Appl.
+121 (2011) 427–440.
+[20] S. Fan, D. Liu, A class of BSDEs with integrable parameters, Statist. Probab. Lett. 80 (2010) 2024–2031.
+[21] S. Hamadène, Multidimensional backward stochastic differential equations with uniformly continuous coefficients,
+Bernoulli 9 (2003) 517–534.
+[22] Y. Hu, P. Imkeller, M. Müller, Utility maximization in incomplete markets, Ann. Appl. Probab. 15 (3) (2005)
+1691–1712.
+[23] G. Jia, A class of backward stochastic differential equations with discontinuous coefficients, Statist. Probab. Lett.
+78 (2008) 231–237.
+
+1552
+
+S. Fan / Stochastic Processes and their Applications 126 (2016) 1511–1552
+
+[24] G. Jia, Backward Stochastic differential equations with a uniformly continuous generator and related g-expectation,
+Stochastic Process. Appl. 120 (11) (2010) 2241–2257.
+[25] N. Kazamaki, Continuous Exponential Martingals and BMO, in: Lecture Notes in Math., vol. 1579, Springer,
+Berlin, 1994.
+[26] M. Kobylanski, Backward stochastic differential equations and partial equations with quadratic growth, Ann.
+Probab. 28 (2000) 259–276.
+[27] J.-P. Lepeltier, J. San Martı́n, Backward stochastic differential equations with continuous coefficient, Statist. Probab.
+Lett. 32 (1997) 425–430.
+[28] J.-P. Lepeltier, J. San Martı́n, Existence for BSDE with superlinear-quadratic coefficient, Stoch. Stoch. Rep. 63
+(1998) 227–240.
+[29] J.-P. Lepeltier, J. San Martı́n, On the existence or non-existence of solutions for certain backward stochastic
+differential equations, Bernoulli 8 (1) (2002) 123–137.
+[30] M.-A. Morlais, Quadratic BSDEs driven by a continuous martingale and applications to the utility maximization
+problem, Finance Stoch. 13 (2009) 121–150.
+[31] E. Pardoux, BSDEs, weak convergence and homogenization of semilinear PDEs, in: Nonlinear Analysis,
+Differential Equations and Control (Montreal, QC, 1998), Kluwer Academic Publishers, Dordrecht, 1999,
+pp. 503–549.
+[32] E. Pardoux, S. Peng, Adapted solution of a backward stochastic differential equation, Systems Control Lett. 14
+(1990) 55–61.
+[33] S. Peng, Probabilistic interpretation for systems of quasilinear parabolic partial differential equations, Stoch. Stoch.
+Rep. 37 (1991) 61–74.
+[34] S. Peng, Backward SDE and related g-expectation, in: N. El Karoui, L. Mazliak (Eds.), Backward Stochastic
+Differential Equations, in: Pitman Research Notes Mathematical Series, vol. 364, Longman, Harlow, 1997,
+pp. 141–159.
+[35] E. Shamarova, A.-F. Ramos, P. Aguiar, Backward SDE approach to modelling of gene expression, 2013.
+arXiv:1308.6619v1 [physics.bio-ph].
+[36] S. Tang, The maximum principle for partially observed optimal control of stochastic differential equations, SIAM
+J. Control Optim. 36 (5) (1998) 1596–1617.
+[37] S. Tang, X. Li, Necessary conditions for optimal control of stochastic systems with random jumps, SIAM J. Control
+Optim. 32 (5) (1994) 1447–1475.
+[38] D. Tian, L. Jiang, X. Shi, Integrable solutions to BSDEs with quasi-Hölder continuous generators, Acta Math. Appl.
+Sin. 36 (5) (2013) 783–790. (in Chinese).
+[39] L. Xiao, H. Li, S. Fan, One-dimensional BSDEs with monotonic, Holder continuous and integrable parameters,
+J. East China Norm. Univ. (Natur. Sci.) 1 (2012) 130–137.
+
+

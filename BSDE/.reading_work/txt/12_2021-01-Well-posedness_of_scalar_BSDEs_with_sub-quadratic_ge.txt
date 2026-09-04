@@ -1,0 +1,3204 @@
+Available online at www.sciencedirect.com
+
+ScienceDirect
+Stochastic Processes and their Applications 131 (2021) 21–50
+www.elsevier.com/locate/spa
+
+Well-posedness of scalar BSDEs with sub-quadratic
+generators and related PDEs✩
+Shengjun Fana ,∗, Ying Hub
+a School of Mathematics, China University of Mining and Technology, Xuzhou 221116, China
+b Univ. Rennes, CNRS, IRMAR-UMR6625, F-35000, Rennes, France
+
+Received 9 October 2019; received in revised form 27 April 2020; accepted 4 September 2020
+Available online 10 September 2020
+
+Abstract
+We first establish the existence of an unbounded solution to a backward stochastic differential equation
+(BSDE) with generator g allowing a general growth in the state variable y and a sub-quadratic growth
+in the state variable z, when the terminal condition satisfies a sub-exponential moment integrability
+condition, which is weaker than the usual exp(µL)-integrability and stronger than L p ( p > 1)integrability. Then, we prove the uniqueness and comparison theorem for the unbounded solutions of
+the preceding BSDEs under some additional assumptions and establish a general stability result for the
+unbounded solutions. Finally, we derive the nonlinear Feynman–Kac formula in this context.
+c 2020 Elsevier B.V. All rights reserved.
+⃝
+MSC: 60H10
+Keywords:
+Backward
+stochastic differential equation; Existence and uniqueness; Sub-quadratic growth;
+(
+)
+∗
+exp µL2/α -integrability; Comparison theorem; Feynman–Kac formula
+
+1. Notations and introduction
+Fix a positive real number T > 0 and a positive integer d, and let |x| represent the
+Euclidian norm for x ∈ Rd and x · y the usual scalar inner product for x, y ∈ Rd . Let
+✩ Shengjun Fan is supported by the State Scholarship Fund from the China Scholarship Council (No.
+201806425013). Ying Hu is partially supported by Lebesgue center of mathematics, France “Investissements
+d’avenir” program-ANR-11-LABX-0020-01, by CAESARS-ANR-15-CE05-0024 and by MFG-ANR-16-CE40-001501.
+∗ Corresponding author.
+E-mail addresses: f_s_j@126.com (S. Fan), ying.hu@univ-rennes1.fr (Y. Hu).
+
+https://doi.org/10.1016/j.spa.2020.09.001
+c 2020 Elsevier B.V. All rights reserved.
+0304-4149/⃝
+
+22
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+(Bt )t∈[0,T ] be a standard Rd -valued Brownian motion defined on some complete probability
+space (Ω , F, P) with (Ft )t∈[0,T ] being its natural filtration augmented by all P-null sets of F.
+All the measurability with respect to processes will refer to this filtration. Let us recall that a
+progressively measurable scalar process (X t )t∈[0,T ] belongs to class (D) if the family of random
+variables {X τ }, τ running all (Ft )-stopping times valued in [0, T ], is uniformly integrable.
+Denote R+ := [0, +∞), 1 A (x) = 1 when x ∈ A otherwise 0, and sgn(x) := 1x>0 − 1x≤0 .
+Let a ∧ b denote the minimum of two real a and b, a − := −(a ∧ 0) and a + := (−a)− . For
+each α ∈ (1, 2), let α ∗ stand for the conjugate of α, that is, 1/α + 1/α ∗ = 1 or
+α
+> 2.
+α ∗ :=
+α−1
+For any real p ≥ 1, let L p represent the set of (equivalent classes of) all FT -measurable
+scalar random variables ξ such that E[|ξ | p ] < +∞, L p the set of (equivalent classes of) all
+progressively measurable scalar processes (X t )t∈[0,T ] such that
+{ [(∫
+) p ]}1/ p
+T
+< +∞,
+|X t |dt
+∥X ∥L p := E
+0
+p
+
+S the set of (equivalent classes of) all progressively measurable and continuous scalar
+processes (Yt )t∈[0,T ] such that
+(
+)1/ p
+∥Y ∥S p := E[ sup |Yt | p ]
+
+< +∞,
+
+t∈[0,T ]
+
+and M p the set of (equivalent classes of) all progressively measurable Rd -valued processes
+(Z t )t∈[0,T ] such that
+{ [(∫
+) p/2 ]}1/ p
+T
+
+< +∞.
+
+|Z t |2 dt
+
+∥Z ∥M p := E
+0
+
+We study the following backward stochastic differential equation (BSDE for short):
+∫ T
+∫ T
+Yt = ξ +
+g(s, Ys , Z s )ds −
+Z s · dBs , t ∈ [0, T ],
+t
+
+(1.1)
+
+t
+
+where ξ is an FT -measurable scalar random variable called the terminal condition, the function
+g(ω, t, y, z) : Ω × [0, T ] × R × Rd ↦→ R is progressively measurable for each (y, z) and
+continuous in (y, z) called the generator, and the pair of processes (Yt , Z t )t∈[0,T ] valued in
+R × Rd is called the solution of Eq. (1.1), which is progressively measurable such that P −a.s.,
+t ↦→ Yt is continuous, t ↦→ Z t is square-integrable, t ↦→ g(t, Yt , Z t ) is integrable, and verifies
+(1.1).
+In this paper, we always assume that ξ is a terminal condition and g is a generator which
+is continuous in (y, z), and we use BSDE(ξ, g) to denote the BSDE with terminal condition ξ
+and generator g. We consider the BSDE with generator g satisfying dP × dt − a.e.,
+∀ (y, z) ∈ R × Rd ,
+
+|g(ω, t, y, z)| ≤ |g(ω, t, 0, 0)| + β|y| + γ |z|α
+
+(1.2)
+
+with α > 0, β ≥ 0 and γ > 0. We usually say that g has a linear growth in the state variable z
+when α = 1, a sub-linear growth in z when α ∈ (0, 1), a quadratic growth in z when α = 2, a
+superquadratic growth in z when α > 2, and a sub-quadratic growth in z when α ∈ (1, 2). Our
+attention focuses on the last case. Let us first recall some related results in previous four cases,
+which have been intensively studied. For narrative convenience, we denote g0 := g(·, 0, 0).
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+23
+
+Assume first that the generator g has a linear growth in (y, z), i.e., (1.2) with α = 1 holds
+for g. It is well known that for (ξ, g0 ) ∈ L p × L p with some p > 1, BSDE(ξ, g) admits
+a solution in S p × M p , and the solution is unique when g further satisfies the uniformly
+Lipschitz condition in (y, z). Readers are referred to Pardoux and Peng [22], El Karoui et al.
+[12], Lepeltier and San Martin [20], Briand et al. [3] and Fan and Jiang [16] for more details.
+Recently, Hu and Tang [18], Buckdahn et al. [7] and Fan and Hu [15] extended this result and
+established the existence and uniqueness of an unbounded solution
+to BSDE(ξ, g)
+( √
+) with lineargrowth generator g √
+by assuming that (ξ, g0 ) satisfies an L exp µ 2 ln(1 + L) -integrability
+condition for µ ≥ γ T , which is weaker than the usual L p ( p > 1) integrability and stronger
+than L ln L integrability.
+Secondly, assume that the generator g has a linear growth in y and a sub-linear growth in
+z, i.e., Eq. (1.2) with α ∈ (0, 1) is satisfied for g. It follows from Briand et al. [3] that for
+(ξ, g0 ) ∈ L 1 × L1 , BSDE(ξ, g) admits a solution (Y· , Z · ) such that Y· belongs to class (D), and
+the solution is unique when g further satisfies the uniformly Lipschitz condition in (y, z). See
+for example Briand and Hu [5] and Fan [13,14] for more details on this topic.
+Thirdly, from Delbaen et al. [10] it is well known that superquadratic BSDEs, i.e., Eq. (1.2)
+with α > 2 holds for the generator g, are not solvable in general. Some solvability results
+under the Markovian setting can be found in Delbaen et al. [10], Masiero and Richou [21],
+Richou [24] and Cheridito and Nam [8].
+Finally, we assume that the generator g has a linear growth in y and a quadratic growth
+in z, i.e., Eq. (1.2)∫ with α = 2 is satisfied for g. It is also well known from Kobylanski [19]
+T
+that if both ξ and 0 |g0 |dt are bounded, then BSDE(ξ, g) admits a solution (Y· , Z · ) such that
+Y· is a bounded process and Z · ∈ M2 , and the solution is unique if g further satisfies the
+uniformly Lipschitz condition in y and a locally Lipschitz condition in z. Readers are referred
+to Briand and Elie [4], Hu and Tang [17] and Fan [13] for further research on the bounded
+solution of quadratic BSDEs. Later, Briand and Hu [5,6] and Delbaen et al. [11] extended this
+result and established the existence and uniqueness of an unbounded solution to BSDE(ξ, g)
+with generator g having a quadratic growth in z by assuming that (ξ, g0 ) has only γ eβT -order
+exponential moment integrability, where the generator g need to be uniformly Lipschitz with
+respect to the variable y and convex (concave) with respect to the variable z for the uniqueness
+of the solution, see also Barrieu and El Karoui [2] for more details.
+In this paper, we study the existence, uniqueness, comparison theorem and stability theorem
+for unbounded solutions of BSDE(ξ, g) with generator g having a linear growth in y and a
+sub-quadratic growth in( z, namely,
+Eq. (1.2) with α ∈ (1, 2) is satisfied for g. We prove that if
+∗)
+(ξ, g0 ) satisfies an exp µL 2/α -integrability condition for a positive parameter µ > µ0 with
+a certain value µ0 , which is clearly weaker than the usual exp(µL) integrability and stronger
+than L p ( p > 1) integrability, then BSDE(ξ, g) admits a solution (Y· , Z · ) such that Y· belongs
+to class (D) and Z · ∈ M2 , and the solution is unique and the comparison theorem and stability
+theorem hold when g further satisfies a (extended) convexity/concavity condition with respect to
+′
+the variables (y, z) (see assumptions
+( 2/α∗ )(H2) and (H2 ) together with Proposition 3.5 in Section 3),
+and (ξ, g0 ) satisfies the exp µL
+-integrability condition for all µ > 0. We remark that in
+our final results, the linear growth condition of the generator g in y is also weakened to a
+one-sided growth condition, see (H1′′ ) at the end of Section 2.
+For the existence of an unbounded solution to BSDE(ξ, g) with generator g satisfying (1.2)
+with α ∈ (1, 2), our whole strategy is to establish first some uniform a priori estimate on the
+n, p
+process Y· in the solution of the usual approximated BSDEs (see the definition in (2.30) of
+Section 2) and to apply the localization procedure put forward initially in Briand and Hu [5]. In
+
+24
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+order to obtain the a priori estimate, the idea consists in searching for an appropriate function
+n, p
+φ(s, x) and applying Itô-Tanaka’s formula to φ(s, |Ys |) on the time interval s ∈ [t, τm ] with
+(Ft )-stopping time τm valued in [t, T ] for t ∈ [0, T ], which will be done in Section 2.
+For the uniqueness, comparison theorem and stability theorem of unbounded solutions to
+BSDE(ξ, g) with generator g satisfying (1.2) with α ∈ (1, 2), some stronger assumptions
+than those needed for the existence are required as usual. We first assume in addition that
+(ξ, g0 ) has sub-exponential moments integrability of any order and the generator g is convex
+or concave with respect to the state variables (y, z), which appears a natural assumption for
+a non-linear growth function (see e.g. Briand and Hu [6] and Delbaen et al. [11]), and then
+relax the convexity/concavity assumption. The main idea is to use the θ -technique developed
+in Briand and Hu [6] to prove these results. More specifically, in order to take advantage of
+the (extended) convexity condition, we will estimate Y·1 − θ Y·2 , for each θ ∈ (0, 1), instead
+of estimating the difference between the processes Y·1 and Y·2 . Moreover, it turns out that the
+uniform a priori estimate is also the key to solve the uniqueness, comparison theorem and
+stability theorem.
+The paper is organized as follows. In Section 2 we make an important preparation (see
+Proposition 2.1) for the proof of the main results of this paper and establish the existence
+result. In Section 3 we prove the uniqueness and comparison theorem under the (extended)
+convexity/concavity condition of the generator. And, in Section 4 we establish the stability
+result for unbounded solutions of the preceding BSDEs under general assumptions and derive
+a nonlinear Feynman–Kac formula in this context.
+2. Existence of the solution
+2.1. The test function and its property
+In order to obtain the uniform a priori estimate stated in the previous section, we need to find
+a positive real number δ > 0, and a positive and smooth function φ(s, x) : [0, T ] × R+ → R+
+satisfying that φx (s, x) > 0, φx x (s, x) > δ and
+1
+−φx (s, x) (βx + γ |z|α ) + (φx x (s, x) − δ)|z|2 + φs (s, x) ≥ 0,
+2
+(s, x, z) ∈ [0, T ] × R+ × Rd ,
+
+(2.1)
+
+where and hereafter, φs (·, ·) stands for the first-order partial derivative of φ(·, ·) with respect to
+the first variable, and φx (·, ·) and φx x (·, ·) respectively the first-order and second order partial
+derivative of φ(·, ·) with respect to the second variable.
+Observe from Young’s inequality that
+(
+) 2
+2−α
+φx (s, x)
+1
+γ φx (s, x)
+α
+|z| ≤ cα,γ
++ |z|2
+φx x (s, x) − δ
+φx x (s, x) − δ
+2
+and then
+1
+−γ φx (s, x)|z|α + (φx x (s, x) − δ)|z|2
+( 2
+)
+γ φx (s, x)
+1 2
+α
+= (φx x (s, x) − δ) −
+|z| + |z|
+φx x (s, x) − δ
+2
+2
+2−α
+(φx (s, x))
+≥ −cα,γ
+α ,
+(φx x (s, x) − δ) 2−α
+
+25
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+where
+2
+2−α α
+α 2−α γ 2−α .
+2
+It is clear that (2.1) holds if the function φ(·, ·) satisfies the following condition:
+
+cα,γ :=
+
+2
+
+(φx (s, x)) 2−α
+
+− βφx (s, x)x − cα,γ
+
++ φs (s, x) ≥ 0, (s, x) ∈ [0, T ] × R+ .
+(2.2)
+α
+(φx x (s, x) − δ) 2−α
+Now, let µ(s) : [0, T ] → R+ (µs in short) be a nondecreasing and continuously
+differentiable function with µ0 = ε for some ε > 0, and let
+⎞ α
+⎛
+2(α−1)
+2−α
+α
+(1
++
+ε)
+⎠
+⎝
+(
+)
+.
+(2.3)
+kα,ε :=
+2−α
+2(α − 1)ε (1 + ε) α − 1
+We choose the following function
+(
+)
+)
+(
+(
+) 2∗
+(
+) 2(α−1)
+α
+α
+φ(s, x; ε) := exp µs x + kα,ε
+,
+= exp µs x + kα,ε
+
+(s, x) ∈ [0, T ] × R+
+(2.4)
+
+to explicitly solve the inequality (2.2). For each (s, x) ∈ [0, T ] × R+ , a simple computation
+gives
+φx (s, x; ε) = φ(s, x; ε)
+
+2(α − 1)µs
+2−α
+
+α(x + kα,ε ) α
+
+φx x (s, x; ε) = φ(s, x; ε)
+
+> 0,
+
+(2.5)
+
+]
+[
+2(α−1)
+2(α − 1)µs 2(α − 1)µs (x + kα,ε ) α − 1 + (α − 1)
+2
+
+α 2 (x + kα,ε ) α
+
+>0
+(2.6)
+
+and
+φs (s, x; ε) = φ(s, x; ε)(x + kα,ε )
+
+2(α−1)
+α
+
+µ′s > 0.
+
+(2.7)
+
+Furthermore, for each (s, x) ∈ [0, T ] × R+ , in view of the fact of µs ≥ µ0 = ε and (2.3), we
+have
+2(α − 1)µs (x + kα,ε )
+
+2(α−1)
+α
+
+( ) 2(α−1)
+≥ 2(α − 1)ε kα,ε α ≥
+
+2−α
+
+(1 + ε) α
+2−α
+
+(1 + ε) α − 1
+
+(2.8)
+
+and
+φ(s, x; ε)
+
+2(α − 1)2 µs
+
+)
+(
+(
+) 2(α−1)
+2(α − 1)2 ε
+α
+≥
+exp
+ε
+x
++
+k
+.
+α,ε
+2
+2
+α 2 (x + kα,ε ) α
+α 2 (x + kα,ε ) α
+
+(2.9)
+
+Observe that the function on the right hand side of (2.9) is positive and continuous on R+ , and
+tends to infinity as x → +∞. It follows that there exists a constant δα,ε > 0 depending only
+on (α, ε) such that
+φ(s, x; ε)
+
+2(α − 1)2 µs
+2
+
+α 2 (x + kα,ε ) α
+
+≥ δα,ε ,
+
+(s, x) ∈ [0, T ] × R+ .
+
+(2.10)
+
+26
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+Combining (2.6), (2.8) and (2.10) yields that for each (s, x) ∈ [0, T ] × R+ ,
+]
+[
+2(α−1)
+2(α − 1)µs 2(α − 1)µs (x + kα,ε ) α
+φx x (s, x; ε) − δα,ε ≥ φ(s, x; ε)
+2−α
+2
+(1 + ε) α α 2 (x + kα,ε ) α
+4(α − 1)2 µ2s
+.
+= φ(s, x; ε)
+2(2−α)
+2−α
+(1 + ε) α α 2 (x + kα,ε ) α
+
+(2.11)
+
+In the sequel, we substitute (2.5), (2.7) and (2.11) into the left side of (2.2) with δ = δα,ε
+to obtain that for each (s, x) ∈ [0, T ] × R+ ,
+2
+
+≥
+
+(φx (s, x; ε)) 2−α
+−βφx (s, x; ε)x − cα,γ (
+) α + φs (s, x)
+φx x (s, x; ε) − δα,ε 2−α
+(
+) 2
+2(α−1)
+2−α
+2(α−1)µs
+φ(s,
+x;
+ε)
+(x + kα,ε ) α
+α
+2(α − 1)µs φ(s, x; ε)(x + kα,ε )
+−β
+− cα,γ
+(
+) α
+2−α
+2−α
+α(x + kα,ε ) α
+4(α−1)2 µ2s
+φ(s, x; ε)
+2−α
++φ(s, x; ε)(x + kα,ε )
+
+= φ(s, x; ε)(x + kα,ε )
+
+(1+ε) α α 2
+
+2(α−1)
+α
+
+′
+⎛µs
+
+2(α−1)
+α
+
+⎞
+
+⎜ 2(α − 1)β
+⎜−
+µs − cα,γ (
+⎝
+α
+
+⎟
+1+ε
+′⎟
+) 2(α−1) + µs ⎠ .
+2−α
+2(α−1)
+µs
+α
+
+Thus, (2.2) holds if the function µs , s ∈ [0, T ] satisfies the following ODE:
+µ′s =
+
+2(α − 1)β
+1+ε
+µs + Cα,γ 2(α−1) , s ∈ [0, T ]
+α
+µs 2−α
+
+(2.12)
+
+with µ0 = ε and
+Cα,γ := (
+
+cα,γ
+) 2(α−1) =
+
+2(α−1)
+α
+
+2−α
+
+α
+
+2
+
+2
+(2 − α)α 2−α
+2−α .
+(
+) 2(α−1) γ
+
+2(α−1)
+α
+
+2−α
+
+It remains to solve ODE (2.12). We need to distinguish two different cases β = 0 and β > 0.
+We first consider the case of β = 0. After separating variables for (2.12) we integrate on the
+time interval [0, s] to get that
+⏐
+∫ s 2(α−1)
+)
+α
+α ⏐s
+α
+2 − α 2−α
+2 − α ( 2−α
+µs − ε 2−α =
+µr ⏐⏐ =
+µr 2−α dµr = Cα,γ (1 + ε)s
+α
+α
+0
+0
+and then
+µs =
+
+(
+
+α
+α
+Cα,γ (1 + ε)s + ε 2−α
+2−α
+
+) 2−α
+α
+
+, s ∈ [0, T ].
+
+For the case of β > 0, after separating variables for (2.12) again we integrate on interval [0, s]
+to get that
+2(α−1)
+(
+)⏐s ∫ s
+2−α
+α
+2−α
+2(α − 1)β 2−α
+µ
+dµr
+r
+ln
+µr + Cα,γ (1 + ε) ⏐⏐ =
+=s
+α
+2(α−1)β
+2(α − 1)β
+α
+2−α
+0
+0
+µ
++ C (1 + ε)
+
+α
+
+r
+
+α,γ
+
+27
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+and then
+)
+(
+)
+} 2−α
+{(
+α
+Cα,γ α(1 + ε)
+Cα,γ α(1 + ε) α
+2(α − 1)β
+exp
+s −
+µs =
+, s ∈ [0, T ].
+ε 2−α +
+2(α − 1)β
+2−α
+2(α − 1)β
+We summarize the preceding arguments into the following proposition, which will play a
+crucial role in the proof of the main results of this paper.
+Given α ∈ (1, 2) and β, γ > 0. For each (s, x) ∈ [0, T ] × R+ and ε > 0,
+
+Proposition 2.1.
+define
+
+)
+)
+(
+(
+(
+) 2(α−1)
+(
+)2
+ϕ̃(s, x; ε) := exp µ̃α,γ ,ε (s) x + kα,ε α∗ = exp µ̃α,γ ,ε (s) x + kα,ε α
+
+(2.13)
+
+and
+(
+)
+(
+)
+(
+)2
+(
+) 2(α−1)
+ϕ̄(s, x; ε) := exp µ̄α,β,γ ,ε (s) x + kα,ε α∗ = exp µ̄α,β,γ ,ε (s) x + kα,ε α
+, (2.14)
+where
+(
+
+µ̃α,γ ,ε (s) := c̃α,γ (1 + ε)s + ε
+
+α
+2−α
+
+) 2−α
+α
+
+⎞ α
+2(α−1)
+2−α
+α
+(1
++
+ε)
+(
+)⎠
+kα,ε := ⎝
+2−α
+2(α − 1)ε (1 + ε) α − 1
+⎛
+
+,
+
+(2.15)
+and
+µ̄α,β,γ ,ε (s) :=
+
+{(
+
+)
+} 2−α
+(
+)
+α
+α
+2(α − 1)β
+s − (1 + ε)c̄α,β,γ
+ε 2−α + (1 + ε)c̄α,β,γ exp
+2−α
+
+(2.16)
+
+with
+2
+
+2
+
+c̃α,γ :=
+2
+
+(αγ ) 2−α
+(
+) 2(α−1)
+2(α−1)
+α
+
+2−α
+
+and
+
+(2 − α)(αγ ) 2−α
+c̄α,β,γ :=
+(
+) 2(α−1) .
+2−α
+2(α−1)
+4αβ
+α
+
+(2.17)
+
+Then, there exists a constant δα,ε > 0 depending only on (α, ε) such that for each (s, x, z) ∈
+[0, T ] × R+ × Rd , we have
+1
+− γ ϕ̃x (s, x; ε)|z|α + (ϕ̃x x (s, x; ε) − δα,ε )|z|2 + ϕ̃s (s, x; ε) ≥ 0
+2
+
+(2.18)
+
+1
+− ϕ̄x (s, x; ε) (βx + γ |z|α ) + (ϕ̄x x (s, x; ε) − δα,ε )|z|2 + ϕ̄s (s, x; ε) ≥ 0.
+2
+
+(2.19)
+
+and
+
+2.2. Existence theorem
+In this subsection, we assume that ξ is a terminal condition and g is a generator which is
+continuous in (y, z), and satisfies the following assumption:
+(H1) There exist three constants α ∈ (1, 2), β ≥ 0 and γ > 0 such that dP × dt − a.e.,
+|g(ω, t, y, z)| ≤ |g(ω, t, 0, 0)| + β|y| + γ |z|α ,
+
+(y, z) ∈ R × Rd .
+
+28
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+Define the function
+(
+)
+(
+)
+2(α−1)
+2
+ψ(x, µ) := exp µ x α∗ = exp µ x α
+, (x, µ) ∈ R+ × R+ ,
+
+(2.20)
+
+and the two constants
+α2
+
+2−α
+
+µ̃0α,γ ,T := (c̃α,γ T ) α =
+
+2
+
+2(α−1)
+α
+
+2−α
+
+γαT α ,
+
+2(α − 1)
+(
+)
+} 2−α
+α
+2(α − 1)β
+0
+µ̄α,β,γ ,T := c̄α,β,γ exp
+T − c̄α,β,γ
+,
+2−α
+{
+
+(2.21)
+
+where c̃α,γ and c̄α,β,γ are defined in (2.17). Note that µ̃0α,γ ,T = limε→0+ µ̃α,γ ,ε (T ) and
+µ̄0α,β,γ ,T = limε→0+ µ̄α,β,γ ,ε (T ), where µ̃α,γ ,ε (·) and µ̄α,β,γ ,ε (·) are defined in (2.15) and (2.16)
+respectively.
+The following existence theorem is the main result of this section.
+Theorem 2.2. Assume that ξ is a terminal condition, g is a generator which is continuous with
+respect to (y, z) and satisfies assumption (H1) with parameters α, β and γ , and the function
+ψ(x, µ) and the constants µ̃0α,γ ,T and µ̄0α,β,γ ,T are defined respectively in (2.20) and (2.21).
+(i) Let β = 0 and µ̃α,γ ,ε (·) be defined in (2.15). If there exists a constant µ > µ̃0α,γ ,T such
+that
+)]
+[ (
+∫ T
+|g(t, 0, 0)|dt, µ
+E ψ |ξ | +
+⎧0
+⎫⎤
+⎡
+) α2∗ ⎬
+∫ T
+⎨ (
+⎦ < +∞,
+|g(t, 0, 0)|dt
+= E ⎣exp µ |ξ | +
+(2.22)
+⎩
+⎭
+0
+( (
+))
+then BSDE(ξ, g) admits a solution (Yt , Z t )t∈[0,T ] such that ψ |Yt |, µ̃α,γ ,ε (t) t∈[0,T ] belongs
+to class (D) for some ε > 0 and Z · ∈ M2 , where ε is the unique positive constant satisfying
+µ̃α,γ ,ε (T ) = µ. Moreover, for some constant δα,ε > 0 depending only on (α, ε) we have, P−a.s.,
+δα,ε
+ψ |Yt |, µ̃α,γ ,ε (t) +
+E
+[ (
+∫ 2
+(
+
+)
+
+T
+
+[∫ T
+t
+
+⏐ ]
+⏐
+|Z s | ds ⏐⏐ Ft
+2
+
+)⏐ ]
+⏐
+≤ Cµ,α,ε E ψ |ξ | +
+|g(s, 0, 0)|ds, µ̃α,γ ,ε (T ) ⏐⏐ Ft
+[ (
+)⏐ ]
+∫0 T
+⏐
+= Cµ,α,ε E ψ |ξ | +
+|g(s, 0, 0)|ds, µ ⏐⏐ Ft ,
+t ∈ [0, T ],
+
+(2.23)
+
+0
+
+where Cµ,α,ε is a positive constant depending only on (µ, α, ε).
+(ii) Let β > 0 and µ̄α,β,γ ,ε (·) be defined in (2.16). If there exists a constant µ >
+0
+µ̄
+holds, then BSDE(ξ, g) admits a solution (Yt , Z t )t∈[0,T ] such that
+( α,β,γ
+( ,T such that (2.22)
+))
+ψ |Yt |, µ̄α,β,γ ,ε (t) t∈[0,T ] belongs to class (D) for some ε > 0 and Z · ∈ M2 , where ε is the
+unique positive constant satisfying µ̄α,β,γ ,ε (T ) = µ. Moreover, for some δα,ε > 0 depending
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+29
+
+only on (α, ε) we have, P − a.s.,
+δα,ε
+E
+ψ |Yt |, µ̄α,β,γ ,ε (t) +
+[ (
+∫ 2
+(
+
+)
+
+[∫ T
+
+T
+
+t
+
+⏐ ]
+⏐
+|Z s | ds ⏐⏐ Ft
+2
+
+)⏐ ]
+⏐
+≤ Cµ,α,ε E ψ |ξ | +
+|g(s, 0, 0)|ds, µ̄α,β,γ ,ε (T ) ⏐⏐ Ft
+[ (
+)⏐ ]
+∫0 T
+⏐
+= Cµ,α,ε E ψ |ξ | +
+|g(s, 0, 0)|ds, µ ⏐⏐ Ft , t ∈ [0, T ],
+
+(2.24)
+
+0
+
+where the constant Cµ,α,ε is the same as (i).
+Remark 2.3. It is not very hard to check that µ̃0α,γ ,T and µ̄0α,β,γ ,T defined in (2.21) tends
+respectively to 2γ and 2γ eβT as α → 2, which is a direct correspondence of the known
+result for the quadratic growth case in Briand and Hu [5,6]. From this point of view, the
+condition (2.22) in Theorem 2.2 is seemingly the reasonably weakest possible one guaranteeing
+the existence of the solution. However, by now we cannot prove it.
+In order to prove Theorem 2.2, we need the following proposition, which establishes some
+a priori estimate for solutions to BSDEs with bounded terminal conditions and sub-quadratic
+growth generators.
+Proposition 2.4. Assume that ξ is a terminal condition, g is a generator which is continuous
+in the state variables (y, z) and satisfies assumption (H1) with parameters α, β and γ , and
+the functions µ̃α,γ ,ε (s), µ̄α,β,γ ,ε (s) and ψ(x, µ) together with the constant kα,ε are respectively
+defined in (2.15), (2.16) and (2.20).
+∫T
+Let |ξ | + 0 |g(t, 0, 0)|dt be a bounded random variable, and (Yt , Z t )t∈[0,T ] a solution to
+BSDE(ξ, g) such that Y· is a bounded process (and Z · ∈ M2 ). Then for any ε > 0, there
+exists a constant δα,ε > 0 depending only on (α, ε) such that P − a.s., for each t ∈ [0, T ], the
+inequality
+⏐ ]
+[∫ T
+⏐
+(
+) δα,ε
+2 ⏐
+ψ |Yt |, µ̃α,γ ,ε (t) +
+E
+|Z s | ds ⏐ Ft
+(
+) 2[ ( t
+)⏐ ]
+∫ T
+(2.25)
+2
+⏐
+∗
+α
+≤ exp µ̃α,γ ,ε (T ) kα,ε E ψ |ξ | +
+|g(s, 0, 0)|ds, µ̃α,γ ,ε (T ) ⏐⏐ Ft
+0
+
+holds for β = 0, and the inequality
+⏐ ]
+[∫ T
+⏐
+(
+) δα,ε
+ψ |Yt |, µ̄α,β,γ ,ε (t) +
+E
+|Z s |2 ds ⏐⏐ Ft
+) 2[ ( t
+)⏐ ]
+(
+∫ T
+2
+⏐
+α∗
+|g(s, 0, 0)|ds, µ̄α,β,γ ,ε (T ) ⏐⏐ Ft
+≤ exp µ̄α,β,γ ,ε (T ) kα,ε E ψ |ξ | +
+
+(2.26)
+
+0
+
+holds for β > 0.
+Proof. We first consider the case of β = 0. Define
+∫ t
+Ȳt := |Yt | +
+|g(s, 0, 0)|ds and Z̄ t := sgn(Yt )Z t ,
+
+t ∈ [0, T ].
+
+0
+
+It follows from Itô-Tanaka’s formula that
+∫ T
+∫ T
+∫ T
+Ȳt = ȲT +
+Z̄ s ·dBs −
+dL s , t ∈ [0, T ],
+(sgn(Ys )g(s, Ys , Z s ) − |g(s, 0, 0)|) ds−
+t
+
+t
+
+t
+
+30
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+where L · stands for the local time of Y· at 0. Now, we fix ε > 0 and apply Itô-Tanaka’s formula
+to the process ϕ̃(s, Ȳs ; ε), where the function ϕ̃(s, x; ε) is defined in (2.13), to derive, in view
+of assumption (H1) with β = 0,
+dϕ̃(s, Ȳs ; ε)
+
+= ϕ̃x (s, Ȳs ; ε) (−sgn(Ys )g(s, Ys , Z s ) + |g(s, 0, 0)|) ds
++ϕ̃x (s, Ȳs ; ε) Z̄ s · dBs
+1
++ϕ̃x (s, Ȳs ; ε)dL s + ϕ̃x x (s, Ȳs ; ε)|Z s |2 ds + ϕ̃s (s, Ȳs ; ε)ds
+2
+[
+]
+≥ −γ ϕ̃x (s, Ȳs ; ε)|Z s |α + 21 ϕ̃x x (s, Ȳs ; ε)|Z s |2 + ϕ̃s (s, Ȳs ; ε) ds
++ϕ̃x (s, Ȳs ; ε) Z̄ s · dBs .
+
+Thus, from (2.18) in Proposition 2.1 we know the existence of a positive constant δα,ε > 0
+depending only on α, ε such that
+1
+δα,ε |Z s |2 ds + ϕ̃x (s, Ȳs ; ε) Z̄ s · dBs , s ∈ [0, T ].
+(2.27)
+2
+Let us denote, for each t ∈ [0, T ] and each integer m ≥ 1, the following stopping time
+{
+}
+∫ s
+(
+)2
+2
+τm := inf s ∈ [t, T ] :
+ϕ̃x (r, Ȳr ; ε) | Z̄ r | dr ≥ m ∧ T
+dϕ̃(s, Ȳs ; ε) ≥
+
+t
+
+with the convention inf ∅ = +∞. It follows from the inequality (2.27) and the definition of τm
+that for each t ∈ [0, T ] and m ≥ 1,
+⏐ ]
+[ ∫ τm
+⏐
+⏐ ]
+[
+δα,ε
+2 ⏐
+|Z s | ds ⏐ Ft ≤ E ϕ̃(τm , Ȳτm ; ε)⏐ Ft .
+E
+ϕ̃(t, Ȳt ; ε) +
+2
+t
+Furthermore, in view of the definition of τm again, by sending m to infinity and using Fatou’s
+lemma and Lebesgue’s dominated convergence theorem in above inequality we get
+⏐ ]
+[∫ T
+⏐ ]
+⏐
+[
+δα,ε
+2 ⏐
+ϕ̃(t, Ȳt ; ε) +
+(2.28)
+|Z s | ds ⏐ Ft ≤ E ϕ̃(T, ȲT ; ε)⏐ Ft , t ∈ [0, T ].
+E
+2
+t
+And, from the definitions of ϕ̃(s, x; ε) and ψ(x, µ) with the inequality (a + b)λ ≤ a λ + bλ for
+a, b ≥ 0 and λ ∈ (0, 1), observe that for each x ∈ R+ , t ∈ [0, T ] and ε > 0,
+(
+)
+2
+α∗
+ψ(x, µ̃α,γ ,ε (t)) ≤ ϕ̃(t, x; ε) ≤ exp µ̃α,γ ,ε (t) kα,ε
+ψ(x, µ̃α,γ ,ε (t)).
+(2.29)
+The desired inequality (2.25) follows immediately from (2.28) and (2.29).
+Finally, in the case of β > 0, by a similar argument as above we can use the functions
+ϕ̄(s, x; ε) and µ̄α,β,γ ,ε (t) defined respectively in (2.14) and (2.16) of Proposition 2.1 instead
+of ϕ̃(s, x; ε) and µ̃α,γ ,ε (t), and apply (2.19) in Proposition 2.1 to get the desired inequality
+(2.26). □
+Remark 2.5. From the above proof, it is easy to see that in the assumptions of Proposition 2.4,
+if |ξ | is replaced with ξ + and (H1) is replaced with the following assumption (H1′ ):
+(H1′ ) There exist three constants α ∈ (1, 2), β ≥ 0 and γ > 0 such that dP × dt − a.e.,
+g(ω, t, y, z)1 y>0 ≤ |g(ω, t, 0, 0)| + β|y| + γ |z|α ,
+
+(y, z) ∈ R × Rd ,
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+31
+
+then for any ε > 0, there exists a constant δα,ε > 0 depending only on (α, ε) such that P − a.s.,
+for each t ∈ [0, T ], the inequality
+⏐ ]
+[∫ T
+⏐
+( +
+) δα,ε
+2 ⏐
+1Ys >0 |Z s | ds ⏐ Ft
+ψ Yt , µ̃α,γ ,ε (t) +
+E
+(
+) 2[ ( t
+)⏐ ]
+∫ T
+2
+⏐
+α∗
+≤ exp µ̃α,γ ,ε (T ) kα,ε E ψ ξ + +
+|g(s, 0, 0)|ds, µ̃α,γ ,ε (T ) ⏐⏐ Ft
+0
+
+holds for β = 0, and the inequality
+⏐ ]
+[∫ T
+⏐
+(
+) δα,ε
+1Ys >0 |Z s |2 ds ⏐⏐ Ft
+E
+ψ Yt+ , µ̄α,β,γ ,ε (t) +
+(
+)⏐ ]
+) 2[ ( t
+∫ T
+2
+⏐
+α∗
+≤ exp µ̄α,β,γ ,ε (T ) kα,ε E ψ ξ + +
+|g(s, 0, 0)|ds, µ̄α,β,γ ,ε (T ) ⏐⏐ Ft
+0
+
+holds for β > 0. For this, in the above proof one only needs to respectively use Y·+ , 1Y· >0 Y·
+and 21 L · instead of |Y· |, sgn(Y· ) and L · .
+Now, we can give the proof of Theorem 2.2.
+The proof of Theorem 2.2. For any given positive integers n, p ≥ 1, set
+ξ n, p := ξ + ∧ n − ξ − ∧ p
+
+and
+
+g n, p (ω, t, y, z) := g + (ω, t, y, z) ∧ n − g − (ω, t, y, z) ∧ p.
+
+As both the terminal condition ξ n, p and the generator g n, p are bounded, and g n, p remains to
+be continuous in (y, z), in view of the existence result in Lepeltier and San Martin [20], the
+n, p
+n, p
+following BSDE(ξ n, p , g n, p ) admits a maximal bounded solution (Yt , Z t )t∈[0,T ] such that
+n, p
+n, p
+2
+Y· is a bounded process and Z · ∈ M :
+∫ T
+∫ T
+n, p
+Yt = ξ n, p +
+g n, p (s, Ysn, p , Z sn, p )ds −
+Z sn, p · dBs , t ∈ [0, T ].
+(2.30)
+t
+
+t
+n, p
+
+And, by virtue of the comparison theorem (see, for example, Theorem 2.3 in Fan [13]), Y·
+is nondecreasing in n and non-increasing in p.
+We now assume that β = 0 and there exists a constant µ > µ̃0α,γ ,T such that (2.22) holds.
+Observe that the function
+(
+) 2−α
+α
+α
+, (t, ε) ∈ [0, T ] × R+
+µ̃α,γ ,ε (t) := c̃α,γ (1 + ε)t + ε 2−α
+defined in (2.15) is strictly increasing with respect to the variables t ∈ [0, T ] and ε > 0,
+µ̃α,γ ,ε (T ) → µ̃0α,γ ,T when ε → 0+ and µ̃α,γ ,ε (T ) → +∞ when ε → +∞. Since µ > µ̃0α,γ ,T ,
+we can conclude that there must exist a (unique) positive ε0 > 0 such that for each t ∈ [0, T ],
+ε0 = µ̃α,γ ,ε0 (0) ≤ µ̃α,γ ,ε0 (t) ≤ µ̃α,γ ,ε0 (T ) = µ.
+
+(2.31)
+
+Thus, we can apply (2.25) in Proposition 2.4 with ε = ε0 for BSDE (2.30) to get that there
+exists a positive constant δα,ε0 > 0 depending only on (α, ε0 ) such that P − a.s., for each
+
+32
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+t ∈ [0, T ] and n, p ≥ 1,
+( n, p
+)
+ψ |Yt |, ε0
+⏐ ]
+[∫ T
+⏐
+( n, p
+) δα,ε0
+n, p 2 ⏐
+≤ ψ |Yt |, µ̃α,γ ,ε0 (t) +
+E
+|Z s | ds ⏐ Ft
+2
+(
+)⏐ ]
+) [ ( t
+∫ T
+2
+⏐
+n, p
+n, p
+α∗
+⏐ Ft
+≤ exp µ̃α,γ ,ε0 (T ) kα,ε
+E
+ψ
+|ξ
+|
++
+|g
+(s,
+0,
+0)|ds,
+µ̃
+(T
+)
+α,γ ,ε0
+0
+⏐
+0
+(
+)
+[
+(
+)⏐
+]
+∫
+T
+2
+⏐
+α∗
+≤ exp µ kα,ε
+|g(s, 0, 0)|ds, µ̃α,γ ,ε0 (T ) ⏐⏐ Ft
+E ψ |ξ | +
+0
+0
+(
+)⏐ ]
+) [ (
+∫ T
+2
+⏐
+α∗
+= exp µ kα,ε0 E ψ |ξ | +
+|g(s, 0, 0)|ds, µ ⏐⏐ Ft < +∞.
+0
+
+(2.32)
+In previous inequality, we have used (2.31) together with definitions of ξ
+and g . Now, in
+view of assumption (H1) and the fact that, by (2.32),
+(
+) α∗
+)) 2
+1 ( ( n, p
+n, p
+|Yt | =
+ln ψ |Yt |, ε0
+ε0
+(
+)⏐ ]}) α2∗
+{ [ (
+∫ T
+2
+⏐
+1
+1
+∗
+α
+≤
+|g(s, 0, 0)|ds, µ ⏐⏐ Ft
+,
+µkα,ε
+ln E ψ |ξ | +
+0 +
+ε
+ε
+n, p
+
+0
+
+0
+
+n, p
+
+0
+
+we can apply the localization procedure developed initially in Briand and Hu [5] to obtain
+n, p
+the existence of a progressively measurable process (Z t )t∈[0,T ] such that dP × dt − a.e., Z ·
+n, p
+tends to Z · as n, p tend to infinity and the pair of (Y· := inf p supn Y· , Z · ) is a solution to
+BSDE(ξ, g). Moreover, we can (send
+in (2.32) and use Fatou’s lemma to get
+( n and p to infinity
+))
+the inequality (2.23), and then ψ |Yt |, µ̃α,γ ,ε0 (t) t∈[0,T ] belongs to class (D), and Z · ∈ M2 .
+Finally, in the case of β > 0, by a similar argument as above we can use µ̄α,β,γ ,ε (t) defined
+in (2.16) of Proposition 2.1 instead of µ̃α,γ ,ε (t), and apply (2.26) with ε = ε0 in Proposition 2.4
+instead of (2.25) to get the desired inequality (2.24). □
+At the end of this section, we make an important remark—Remark 2.6, which illustrates that
+the sub-quadratic growth assumption (H1) in Theorem 2.2 and Proposition 2.4 can be relaxed
+to the following one-sided sub-quadratic growth assumption:
+(H1′′ ) There exist four real constants α ∈ (1, 2), β ≥ 0, γ > 0 and c > 0, and a
+progressively measurable R+ -valued process ( f t )t∈[0,T ] such that dP × dt − a.e., for
+each (y, z) ∈ R × Rd ,
+sgn(y)g(ω, t, y, z) ≤ f t (ω)+β|y|+γ |z|α
+
+and
+
+|g(ω, t, y, z)| ≤ f t (ω)+κ(|y|)+c|z|2 ,
+
+where κ(·) is a nondecreasing, continuous and deterministic function with κ(0) = 0.
+This weaker assumption (H1′′ ) will be also used in the following Sections 3 and 4.
+Remark 2.6. From the proof of Theorem 2.2 and Proposition 2.4, it is not difficult to see that
+if the assumption (H1) is relaxed to the assumption (H1′′ ) and the process |g(t, 0, 0)| is replaced
+with the process f t in these two results, then the corresponding conclusions still hold. We also
+note that the main reason why we use (H1) instead of (H1′′ ) in Section 2 and subsequent
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+33
+
+Section 3.1 is that this replacement does not change the key point of the problem and a more
+explicit growth of the generator in (y, z) can be easily observed from the assumption (H1).
+3. Uniqueness and comparison theorem of the solutions
+3.1. The convexity/concavity case
+In this subsection, we will prove the uniqueness and comparison theorem for the unbounded
+solutions of BSDE (1.1) with generator g satisfying the assumption (H1) with parameters α, β
+and γ , and the following assumption (H2) when the inequality (2.22) holds for any µ > 0:
+(H2) dP × dt − a.e., the generator g is convex or concave with respect to the variables (y, z).
+Theorem 3.1. Assume that ξ is a terminal condition, g is a generator which is continuous
+in (y,
+∫ Tz) and satisfies assumption (H1) with parameters α, β and γ . If the terminal condition
+ξ + 0 |g(t, 0, 0)|dt has sub-exponential moments of any order, i.e., for any p > 0, we have
+⎫⎤
+⎧
+⎡
+) α2∗ ⎬
+)]
+[ (
+∫ T
+∫ T
+⎨ (
+⎦
+|g(t, 0, 0)|dt
+|g(t, 0, 0)|dt, p
+= E ⎣exp p |ξ | +
+E ψ |ξ | +
+⎭
+⎩
+0
+0
+<
+
++∞,
+(3.1)
+
+then BSDE(ξ, g) admits a solution (Yt , Z t )t∈[0,T ] such that supt∈[0,T ] |Yt | has sub-exponential
+moments of any order, i.e.,
+⎧ (
+⎡
+[
+]
+) 2∗ ⎫⎤
+α ⎬
+⎨
+⎦ < +∞.
+∀ p > 0, E ψ( sup |Yt |, p) = E ⎣exp p sup |Yt |
+(3.2)
+⎩
+⎭
+t∈[0,T ]
+t∈[0,T ]
+And, Z · ∈ M p for all p > 0.
+Furthermore, if the generator g also satisfies assumption (H2), then the solution
+(Yt , Z t )t∈[0,T ] satisfying (3.2) is unique.
+Proof. Firstly, since the generator g satisfies (H1) and (3.1) holds, it follows from Theorem 2.2
+together with its )
+proof that BSDE(ξ, g) admits a solution( (Yt , Z t )t∈[0,T ] )
+such that for each ε > 0,
+(
+ψ |Yt |, µ̃α,γ ,ε (t) belongs to class (D) for β = 0, ψ |Yt |, µ̄α,β,γ ,ε (t) belongs to class (D)
+for β > 0, and Z · ∈ M2 .
+Now, we show (3.2). Indeed, since (3.1) holds, by virtue of Proposition 2.4 and Theorem 2.2
+together with their proofs we can conclude that for each p > 0, P − a.s., for each t ∈ [0, T ],
+[ (
+∫ T
+(
+)
+ψ (|Yt |, p) ≤ ψ |Yt |, µ̃α,γ , p (t) ≤ C̃α,γ , p,T E ψ |ξ | +
+|g(s, 0, 0)|ds,
+0
+)⏐ ]
+⏐
+µ̃α,γ , p (T ) ⏐⏐ Ft
+holds for β = 0, and
+[ (
+∫ T
+ψ (|Yt |, p) ≤ ψ |Yt |, µ̄α,β,γ , p (t) ≤ C̄α,β,γ , p,T E ψ |ξ | +
+|g(s, 0, 0)|ds,
+0
+)⏐ ]
+⏐
+µ̄α,β,γ , p (T ) ⏐⏐ Ft
+(
+
+)
+
+34
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+holds for β > 0, where µ̃α,γ , p (·), kα, p and µ̄α,β,γ , p (·) are respectively defined in (2.15) and
+(2.16),
+)
+(
+)
+(
+2
+2
+∗
+∗
+and C̄α,β,γ , p,T := exp µ̄α,β,γ , p (T ) kα,α p .
+(3.3)
+C̃α,γ , p,T := exp µ̃α,γ , p (T ) kα,α p
+Consequently, in the case of β = 0, for each t ∈ [0, T ] and p > 0, we can derive
+(
+)
+{ [ (
+∫
+T
+
+ψ
+
+sup |Yt |, p
+
+≤ C̃α,γ , p,T sup
+
+t∈[0,T ]
+
+E ψ |ξ | +
+
+t∈[0,T ]
+
+0
+
+)⏐ ]}
+⏐
+|g(s, 0, 0)|ds, µ̃α,γ , p (T ) ⏐⏐ Ft ,
+(3.4)
+
+and in the case of β > 0,
+(
+)
+ψ
+
+sup |Yt |, p
+
+≤ C̄α,β,γ , p,T sup
+
+t∈[0,T ]
+
+{ [ (
+∫ T
+E ψ |ξ | +
+|g(s, 0, 0)|ds,
+
+t∈[0,T ]
+
+0
+
+)⏐ ]}
+⏐
+µ̄α,β,γ , p (T ) ⏐⏐ Ft .
+
+(3.5)
+
+Thus, with the help of Doob’s maximal inequality on martingale, the desired inequality (3.2)
+follows from inequalities (3.4), (3.5) and (3.1).
+In the sequel, we prove that Z · ∈ M p for all p > 0. We only prove the case of β = 0, and
+the case of β > 0 can be proved in the same way. Let the function ϕ̃(s, x; ε) be defined in
+(2.13). In the case of β = 0, it follows from (2.27) that there exists a constant δ > 0 depending
+only on α such that for each integer m ≥ 1,
+∫
+∫ σm
+δ σm
+|Z s |2 ds ≤ ϕ̃(σm , Ȳσm ; 1) − ϕ̃(0, Ȳ0 ; 1) +
+ϕ̃x (s, Ȳs ; 1)sgn(Ys )Z s · dBs ,
+2 0
+0
+∫t
+where Ȳt := |Yt | + 0 |g(s, 0, 0)|ds and σm is a stopping time defined by
+{
+}
+∫ s
+(
+)2
+σm := inf s ∈ [0, T ] :
+ϕ̃x (r, Ȳr ; 1) |Z r |2 dr ≥ m ∧ T.
+0
+
+Then for each real p > 0, we have
+(∫ σm
+)p
+2
+|Z s |2 ds
+⏐∫ t∧σm
+⏐p]
+( 0) p [
+⏐
+⏐2
+) 2p
+4 2 (
+≤
+ϕ̃(σm , Ȳσm ; 1) + sup ⏐⏐
+ϕ̃x (s, Ȳs ; 1)sgn(Ys )Z s · dBs ⏐⏐ .
+δ
+t∈[0,T ] 0
+In view of inequality (a + b)λ ≤ a λ + bλ for a, b ≥ 0 and λ ∈ (0, 1) and Hölder’s inequality
+together with (2.13), (3.1) and (3.2), we get that for each q > 1,
+[(
+)q ]
+sup ϕ̃(t, Ȳt ; 1)
+[ (
+)]
+∫ T
+(
+)q
+≤
+C̃α,γ ,1,T E ψ sup |Yt | +
+|g(s, 0, 0)|ds, q µ̃α,γ ,1 (T )
+< +∞,
+E
+
+t∈[0,T ]
+
+t∈[0,T ]
+
+0
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+35
+
+where µ̃α,γ ,1 (·) and C̃α,γ ,1,T are respectively defined in (2.15) and (3.3). Note from (2.5) that
+for each s ∈ [0, T ] and x ≥ 0, we have ϕ̃x (s, x; 1) ≤ K ϕ̃(s, x; 1) with
+K :=
+
+2(α − 1)µ̃α,γ ,1 (T )
+2−α
+
+αkα,1α
+
+,
+
+where kα,1 is defined in (2.15). It follows from the BDG inequality that there exists a constant
+C > 0 depending only on ( p, α) such that for each m ≥ 1,
+⏐∫ t∧σm
+⏐p]
+( )p [
+⏐
+⏐2
+4 2
+ϕ̃x (s, Ȳs ; 1)sgn(Ys )Z s · dBs ⏐⏐
+E sup ⏐⏐
+δ
+⎡( t∈[0,T ] 0
+⎤
+) p (∫
+)p
+2
+σm
+4
+≤ CE ⎣ K sup ϕ̃(t, Ȳt ; 1)
+|Z s |2 ds ⎦
+t∈[0,T ]
+
+≤
+
+1
+E
+2
+
+[(∫
+
+σm
+
+0
+2
+
+)p]
+2
+
+|Z s | ds
+0
+
+C2K p
++
+E
+2
+
+)p]
+
+[(
+sup ϕ̃(t, Ȳt ; 1)
+
+.
+
+t∈[0,T ]
+
+Combining the previous three inequalities yields the existence of a constant C̄ > 0 depending
+only on ( p, α, γ , T ) such that for each m ≥ 1,
+)]
+[(∫
+[ (
+)p]
+∫ T
+σm
+2
+2
+|Z s | ds
+|g(s, 0, 0)|ds, p µ̃α,γ ,1 (T )
+< +∞,
+E
+≤ C̄E ψ sup |Yt | +
+t∈[0,T ]
+
+0
+
+0
+
+from which the conclusion that Z ∈ M for all p > 0 follows using Fatou’s lemma.
+Finally, under the assumption (H2), the uniqueness part is a direct consequence of the
+following comparison theorem—Theorem 3.2. □
+p
+
+Let us turn to the comparison theorem of the unbounded solutions.
+Theorem 3.2. Let ξ and ξ ′ be two terminal conditions, g and g ′ be two generators which
+are continuous with respect to the state variables (y, z), and (Yt , Z t )t∈[0,T ] and (Yt′ , Z t′ )t∈[0,T ]
+be respectively a solution to BSDE(ξ, g) and BSDE(ξ ′ , g ′ ) such that
+[ (
+)]
+∫ T
+(
+)
+′
+′
+∀ p > 0, E ψ sup (|Yt | + |Yt |) +
+|g(t, 0, 0)| + |g (t, 0, 0)| dt, p
+< +∞.
+t∈[0,T ]
+
+0
+
+(3.6)
+Assume that P − a.s., ξ ≤ ξ . If g (resp. g ) verifies assumptions (H1) and (H2), and
+′
+
+dP × dt − a.e.,
+
+′
+
+g(t, Yt′ , Z t′ ) ≤ g ′ (t, Yt′ , Z t′ )
+
+(resp. g(t, Yt , Z t ) ≤ g ′ (t, Yt , Z t ) ), (3.7)
+
+then P − a.s., for each t ∈ [0, T ], Yt ≤ Yt′ .
+Proof. We first consider the case when the generator g satisfies (H1) with parameters α, β
+and γ , and is convex in (y, z), and dP × dt −a.e., g(t, Yt′ , Z t′ ) ≤ g ′ (t, Yt′ , Z t′ ). In order to utilize
+the convexity of g, we use the θ -technique developed in Briand and Hu [6]. For each fixed
+θ ∈ (0, 1), define
+δθ U· :=
+
+Y· − θ Y·′
+Z · − θ Z ·′
+and δθ V· :=
+.
+1−θ
+1−θ
+
+(3.8)
+
+36
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+Then the pair (δθ U· , δθ V· ) verifies the following BSDE:
+∫ T
+∫ T
+δθ U t = δθ U T +
+δθ g(s, δθ Us , δθ Vs )ds −
+δθ Vs · dBs ,
+t
+
+t ∈ [0, T ],
+
+(3.9)
+
+t
+
+where dP × ds − a.e., for each (y, z) ∈ R × Rd ,
+δθ g(s, y, z)
+
+:=
+
+]
+1 [
+g(s, (1 − θ)y + θ Ys′ , (1 − θ )z + θ Z s′ ) − θg(s, Ys′ , Z s′ )
+1−θ
+]
+θ [
++
+g(s, Ys′ , Z s′ ) − g ′ (s, Ys′ , Z s′ ) .
+1−θ
+(3.10)
+
+It follows from the assumptions that dP × ds − a.e., for each (y, z) ∈ R × Rd ,
+δθ g(s, y, z)1 y>0 ≤ g(s, y, z)1 y>0 ≤ |g(s, 0, 0)| + β|y| + γ |z|α ,
+
+(3.11)
+
+which means that the generator δθ g satisfies assumption (H1′ ) defined in Remark 2.5. Thus, in
+view of (3.6) and (3.11) and by virtue of Remark 2.5 together with the proof of Proposition 2.4,
+we can conclude for BSDE (3.9) that P − a.s., for each t ∈ [0, T ], the inequality
+[ (
+)⏐ ]
+∫ T
+⏐
+(
+)
+(3.12)
+ψ δθ Ut+ , 1 ≤ C̃α,γ ,1,T E ψ δθ UT+ +
+|g(s, 0, 0)|ds, µ̃α,γ ,1 (T ) ⏐⏐ Ft
+0
+
+holds for β = 0, and the inequality
+[ (
+)⏐ ]
+∫ T
+⏐
+(
+)
++
++
+ψ δθ Ut , 1 ≤ C̄α,β,γ ,1,T E ψ δθ UT +
+|g(s, 0, 0)|ds, µ̄α,β,γ ,1 (T ) ⏐⏐ Ft
+
+(3.13)
+
+0
+
+holds for β > 0, where µ̃α,γ ,1 (·), µ̄α,β,γ ,1 (·), C̃α,γ ,1,T and C̄α,β,γ ,1,T are respectively defined in
+(2.15), (2.16) and (3.3). Moreover, in view of the fact that
+[
+]+
+ξ − θ ξ + θ (ξ − ξ ′ )
+(ξ − θ ξ ′ )+
++
+δθ U T =
+=
+≤ ξ +,
+(3.14)
+1−θ
+1−θ
+by (3.12) and (3.13) we derive that P − a.s., for each t ∈ [0, T ], for β = 0,
+( {
+[ (
+∫ T
+)
+(
+′ +
+Yt − θ Yt ≤ (1 − θ) ln C̃α,γ ,1,T E ψ ξ + +
+|g(s, 0, 0)|ds,
+0
+
+)⏐ ]}) α2∗
+⏐
+,
+µ̃α,γ ,1 (T ) ⏐⏐ Ft
+and for β > 0,
+(
+
++
+Yt − θ Yt′ ≤ (1 − θ)
+
+)
+
+( {
+[ (
+∫ T
+ln C̄α,β,γ ,1,T E ψ ξ + +
+|g(s, 0, 0)|ds,
+0
+
+)⏐ ]}) α2∗
+⏐
+.
+µ̄α,β,γ ,1 (T ) ⏐⏐ Ft
+Consequently, the desired conclusion follows by sending θ → 1 in the previous two
+inequalities.
+For the case that the generator g is concave with respect to the state variables (y, z), we
+need to use θ Y· − Y·′ and θ Z · − Z ·′ instead of Y· − θ Y·′ and Z · − θ Z ·′ in (3.8) respectively. And,
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+37
+
+in this case the generator δθ g in (3.10) should be replaced with
+δθ g(s, y, z) :=
+
+1
+[ θg(s, Ys , Z s ) − g(s, −(1 − θ )y + θ Ys , −(1 − θ)z + θ Z s ) ]
+1−θ
+]
+1 [
++
+g(s, Ys′ , Z s′ ) − g ′ (s, Ys′ , Z s′ ) .
+1−θ
+(3.15)
+
+Since g is concave in (y, z), we have, dP × ds − a.e., for each (y, z) ∈ R × Rd ,
+g(s, −(1 − θ )y + θ Ys , −(1 − θ )z + θ Z s ) ≥ θg(s, Ys , Z s ) + (1 − θ )g(t, −y, −z),
+and then, (3.11) needs to be replaced by
+δθ g(s, y, z)1 y>0 ≤ −g(s, −y, −z)1 y>0 ≤ |g(s, 0, 0)| + β|y| + γ |z|α ,
+
+(3.16)
+
+which means that the generator δθ g still satisfies assumption (H1′ ). Consequently, both (3.12)
+and (3.13) still hold. Moreover, we use
+[
+]+
+θ ξ − ξ + (ξ − ξ ′ )
+(θ ξ − ξ ′ )+
++
+=
+≤ (−ξ )+ = ξ − ,
+δθ U T =
+1−θ
+1−θ
+instead of (3.14), and by virtue of (3.12) and (3.13), derive that P − a.s., for each t ∈ [0, T ],
+for β = 0,
+( {
+[ (
+∫ T
+(
+)+
+θ Yt − Yt′ ≤ (1 − θ ) ln C̃α,γ ,1,T E ψ ξ − +
+|g(s, 0, 0)|ds,
+0
+
+)⏐ ]}) α2∗
+⏐
+µ̃α,γ ,1 (T ) ⏐⏐ Ft
+,
+and for β > 0,
+(
+
++
+θ Yt − Yt′ ≤ (1 − θ )
+
+)
+
+( {
+[ (
+∫ T
+−
+|g(s, 0, 0)|ds,
+ln C̄α,β,γ ,1,T E ψ ξ +
+0
+
+)⏐ ]}) α2∗
+⏐
+.
+µ̄α,β,γ ,1 (T ) ⏐⏐ Ft
+Thus, the desired conclusion follows by sending θ → 1 in the previous two inequalities.
+Finally, in the same way as above, one can prove the desired conclusion under the conditions
+that the generator g ′ satisfies assumptions (H1) and (H2), and dP × dt − a.e., g(t, Yt , Z t ) ≤
+g ′ (t, Yt , Z t ). The proof of Theorem 3.2 is then complete. □
+Remark 3.3. Clearly, if dP × dt − a.e., for each (y, z) ∈ R × Rd , g(t, y, z) ≤ g ′ (t, y, z), then
+the inequality (3.7) holds.
+Remark 3.4. From the above proofs, it is not hard to verify that the assumption (H1) in
+Theorems 3.1 and 3.2 can also be relaxed to the weaker assumption (H1′′ ) at the end of
+Section 2.
+3.2. The extended convexity/concavity case
+In this subsection, we first introduce an extended non-convexity/non-convexity assumption
+(H2′ ) on the generator g, and then illustrate that it is strictly weaker than the assumption (H2)
+
+38
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+provided that the assumption (H1′′ ) or (H1) holds for g. Finally, we prove that Theorems 3.1
+and 3.2 hold still under the weaker assumptions (H1′′ ) and (H2′ ). Let us start by introducing
+assumption (H2′ ):
+(H2′ ) There exist four real constants α ∈ (1, 2), β ≥ 0, γ > 0 and k > 0, and a
+progressively measurable R+ -valued process ( f t )t∈[0,T ] such that dP × dt − a.e., for
+each (yi , z i ) ∈ R × Rd , i = 1, 2 and each θ ∈ (0, 1), it holds that
+≤
+
+1{y1 −θ y2 >0} (g(ω, t, y1 , z 1 ) − θg(ω, t, y2 , z 2 ))
+(1 − θ ) ( f t (ω) + k|y2 | + β |δθ y| + γ |δθ z|α )
+
+(3.17)
+
+≤
+
+−1{y1 −θ y2 <0} (g(ω, t, y1 , z 1 ) − θg(ω, t, y2 , z 2 ))
+(1 − θ ) ( f t (ω) + k|y2 | + β |δθ y| + γ |δθ z|α ) ,
+
+(3.18)
+
+or
+
+where
+y1 − θ y2
+z1 − θ z2
+, δθ z :=
+.
+1−θ
+1−θ
+One typical example of (H2′ ) is g(ω, t, y, z) := g1 (y) + g2 (y), where g1 : R → R is convex
+or concave with one-sided linear growth, and g2 : R → R is a Lipschitz function, i.e., g is a
+Lipschitz perturbation of some convex (concave) function.
+Another typical example of (H2′ ) is ḡ(ω, t, y, z) := g3 (z) + g4 (z), where g3 : Rd → R is
+convex or concave with sub-quadratic growth, and g4 : Rd → R is a Lipschitz function with
+bounded support, i.e., ḡ is a local Lipschitz perturbation of some convex (concave) function.
+More generally, we have
+δθ y :=
+
+Proposition 3.5. Assume that the generator g is continuous in (y, z) and satisfies assumption
+(H1′′ ). Then, assumption (H2′ ) holds for g if it satisfies anyone of the following conditions:
+(i) dP × dt − a.e., g(ω, t, ·, ·) is convex or concave;
+(ii) dP × dt − a.e., for each (y, z) ∈ R × Rd , g(ω, t, ·, z) is Lipschitz and g(ω, t, y, ·) is
+convex or concave;
+(iii) g(t, y, z) ≡ l(y)q(z), where both l : R → R and q : Rd → R are bounded Lipschitz
+functions, and the function q(z) has a bounded support.
+Before giving the proof of this proposition, we first make the following important remark.
+Remark 3.6. It is easy to verify that if for i = 1, 2, the generator gi is continuous in (y, z)
+and satisfies assumption (H1′′ ) together with anyone of (i), (ii) and (iii) in Proposition 3.5 (with
+the same convexity or concavity when available), then g1 + g2 also satisfies assumption (H2′ ).
+Consequently, the generator g satisfying (H2′ ) may be not necessarily convex (concave) or
+Lipschitz in the variables y and z, and it can have a general growth in y.
+Proof of Proposition 3.5. Given (yi , z i ) ∈ R × Rd , i = 1, 2 and θ ∈ (0, 1), and let δθ y and
+δθ z be defined in assumption (H2′ ).
+(i) Assume that dP × dt − a.e., g(ω, t, ·, ·) is convex. In view of (H1′′ ), if δθ y > 0, then
+g(ω, t, y1 , z 1 )
+
+= g (ω, t, θ y2 + (1 − θ)δθ y, θ z 2 + (1 − θ )δθ z)
+≤ θg(ω, t, y2 , z 2 ) + (1 − θ )g (ω, t, δθ y, δθ z)
+≤ θg(ω, t, y2 , z 2 ) + (1 − θ ) ( f t (ω) + β|δθ y| + γ |δθ z|α ) .
+
+Thus, the inequality (3.17) holds with k = 0. The concave case is similar.
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+39
+
+(ii) Assume that dP × dt − a.e., for each (y, z) ∈ R × Rd , g(ω, t, ·, z) is Lipschitz with
+Lipschitz constant β, and g(ω, t, y, ·) is convex. Then, noticing by (H1′′ ) that |g(ω, t, 0, z)| ≤
+f t + γ |z|2 , we have
+g(ω, t, y1 , z 1 ) − θg(ω, t, y2 , z 2 )
+≤ |g(ω, t, y1 , z 1 ) − g(ω, t, y2 , z 1 )| + g(ω, t, y2 , z 1 ) − θg(ω, t, y2 , z 2 )
+≤ β|y1 − y2 | + g(ω, t, y2 , θ z 2 + (1 − θ )δθ z) − θg(ω, t, y2 , z 2 )
+≤ β(|y1 − θ y2 | + (1 − θ )|y2 |) + (1 − θ ) (|g(ω, t, y2 , δθ z) − g(ω, t, 0, δθ z)|
++|g(ω, t, 0, δθ z)|)
+≤ (1 − θ ) (β|δθ y| + 2β|y2 | + f t (ω) + γ |δθ z|α ) .
+Thus, (3.17) holds with 2β instead of k. The concave case is similar.
+(iii) With loss of generality, we assume that the functions l(y) and q(z) have Lipschitz
+constants β and γ together with a same bound M > 0, and q(z) ≡ 0 when |z| > R for some
+R > 0. Noticing that
+|q(θ z 2 ) − q(z 2 )|
+
+=
+≤
+≤
+
+|q(θ z 2 ) − q(z 2 )|1θ ∈(0,1/2] + |q(θ z 2 ) − q(z 2 )|1θ ∈(1/2,1)
+2M
+1θ∈(0,1/2] + (1 − θ )γ |z 2 |1|z2 |≤2R |1θ ∈(1/2,1)
+(1 − θ )
+1−θ
+(1 − θ )(4M + 2γ R),
+
+we have
+≤
+≤
+≤
+≤
+≤
+
+g(ω, t, y1 , z 1 ) − θg(ω, t, y2 , z 2 ) = l(y1 )q(z 1 ) − θl(y2 )q(z 2 )
+|l(y1 ) − l(y2 )∥q(z 1 )| + |l(y2 )∥q(z 1 ) − θq(z 2 )|
+Mβ|y1 − y2 | + M (|q(z 1 ) − q(θ z 2 )| + |q(θ z 2 ) − q(z 2 )| + (1 − θ )|q(z 2 )|)
+Mβ(|y1 − θ y2 | + (1 − θ )|y2 |) + M (γ |z 1 − θ z 2 | + (1 − θ )(4M + 2γ R) + (1 − θ )M)
+(1 − θ)M (β|δθ y| + β|y2 | + γ |δθ z| + 5M + 2γ R)
+(1 − θ)M (5M + 2γ R + γ + β|y2 | + β|δθ y| + γ |δθ z|α ) .
+
+Thus, the inequality (3.17) holds with M(5M + 2γ R + γ ) instead of f · , Mβ instead of k and
+β, and Mγ instead of γ respectively. □
+Remark 3.7. (i) Letting y1 = y2 = y and z 1 = z 2 = z in (3.17) and (3.18) respectively yields
+that
+1{y>0} g(ω, t, y, z) ≤ f t (ω) + (β + k)|y| + γ |z|α
+and
+−1{y<0} g(ω, t, y, z) ≤ f t (ω) + (β + k)|y| + γ |z|α ,
+whose combination implies that g has a one-sided linear growth in the state variable y and a
+sub-quadratic growth in the state variable z.
+(ii) Letting first z 1 = z 2 = z in (3.17) and (3.18) and then letting θ → 1 yields that
+1{y1 −y2 >0} (g(ω, t, y1 , z) − g(ω, t, y2 , z)) ≤ β|y1 − y2 |,
+which means that g satisfies the so-called monotonicity condition in y.
+−θ y2
+−θ z 2
+(iii) Set y = y11−θ
+, z = z11−θ
+, ȳ = y2 and z̄ = z 2 . Then, (3.17) and (3.18) can be
+respectively rewritten as the following forms:
+1{y>0} (g(ω, t, (1 − θ)y + θ ȳ, (1 − θ )z + θ z̄) − θg(ω, t, ȳ, z̄))
+≤ (1 − θ ) ( f t (ω) + k| ȳ| + β|y| + γ |z|α )
+
+(3.19)
+
+40
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+and
+−1{y<0} (g(ω, t, (1 − θ )y + θ ȳ, (1 − θ )z + θ z̄) − θg(ω, t, ȳ, z̄))
+≤ (1 − θ ) ( f t (ω) + k| ȳ| + β|y| + γ |z|α ) .
+
+(3.20)
+
+The following Theorems 3.8 and 3.9 are the main results of this section.
+Theorem 3.8. Let ξ and ξ ′ be two terminal conditions such that P − a.s., ξ ≤ ξ ′ , g and g ′
+be two generators which are continuous in (y, z), g (resp. g ′ ) verifies assumption (H2′ ) with
+constants (α, β, γ , k) and process f · , and (Yt , Z t )t∈[0,T ] and (Yt′ , Z t′ )t∈[0,T ] be respectively a
+solution to BSDE(ξ, g) and BSDE(ξ ′ , g ′ ) such that
+)]
+[ (
+∫ T
+′
+f t dt, p
+< +∞.
+(3.21)
+∀ p > 0, E ψ sup (|Yt | + |Yt |) +
+t∈[0,T ]
+
+0
+
+If dP × dt − a.e., we have
+g(t, Yt′ , Z t′ ) ≤ g ′ (t, Yt′ , Z t′ )
+
+(resp. g(t, Yt , Z t ) ≤ g ′ (t, Yt , Z t ) ),
+
+then P − a.s., for each t ∈ [0, T ], Yt ≤ Yt′ .
+Proof. We only prove the case that the generator g satisfies (3.17) with constants (α, β, γ , k)
+and process f · , and dP × dt − a.e., g(t, Yt′ , Z t′ ) ≤ g ′ (t, Yt′ , Z t′ ). For each fixed θ ∈ (0, 1), with
+the notations in (3.8), we know that the pair (δθ U· , δθ V· ) verifies BSDE (3.9) with generator g
+defined in (3.10). Then, in view of (3.19), it follows from the assumptions that dP × ds − a.e.,
+for each (y, z) ∈ R × Rd , we have
+δθ g(s, y, z)1 y>0 ≤ | f s | + k|Ys′ | + β|y| + γ |z|α ,
+
+(3.22)
+
+which means that the generator δθ g satisfies assumption (H1′ ) with the process | f · | + k|Y·′ |
+instead of |g(·, 0, 0)|. Thus, thanks to (3.21), the rest of proof runs as that in Theorem 3.2. □
+Theorem 3.9. Assume that ξ is a terminal condition and g is a generator which is continuous
+in (y, z) and satisfies assumption∫ (H1′′ ) with constants (α, β, γ , c), function κ(·) and process
+T
+f · . If the terminal condition ξ + 0 f t dt has sub-exponential moments of any order, i.e.,
+⎫⎤
+⎧
+⎡
+[ (
+)]
+) α2∗ ⎬
+∫ T
+∫ T
+⎨ (
+⎦ < +∞,
+∀ p > 0, E ψ |ξ | +
+f t dt, p
+= E ⎣exp p |ξ | +
+f t dt
+⎭
+⎩
+0
+0
+then BSDE(ξ, g) admits a solution (Yt , Z t )t∈[0,T ] such that supt∈[0,T ] |Yt | has sub-exponential
+moments of any order (i.e., (3.2) holds). And, Z · ∈ M p for all p > 0.
+Furthermore, if the generator g also satisfies assumption (H2′ ) with constants (α, β, γ , k)
+and process f · , then the solution (Yt , Z t )t∈[0,T ] satisfying (3.2) is unique.
+Proof. In view of Remark 2.6 and Theorem 3.8, the proof runs as that in Theorem 3.1. □
+Remark 3.10. From Remark 2.6, Proposition 3.5 and Remark 3.6, it is not difficult to see
+that Theorems 3.8 and 3.9 respectively extend Theorems 3.2 and 3.1 to the non-convexity and
+non-concavity case.
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+41
+
+4. Stability theorem of the solutions and application to sub-quadratic PDEs
+4.1. Stability theorem
+In this subsection, we establish the following stability result for the unbounded solutions of
+BSDEs under general assumptions (H1′′ ) and (H2′ ).
+Theorem 4.1. Assume that ξ is a terminal condition, g is a generator which is continuous
+in (y, z) and satisfies assumptions (H1′′ ) and (H2′ ) with constants (α, β, γ , c, k), function κ(·)
+and process f · , and (Yt , Z t )t∈[0,T ] is the (unique) solution to BSDE(ξ, g) such that supt∈[0,T ] |Yt |
+has sub-exponential moments of any order.
+Assume also that for each n ≥ 1, ξ n is a terminal condition, g n is a generator which is
+continuous in (y, z) and satisfies assumptions (H1′′ ) and (H2′ ) with constants (α, β, γ , c, k),
+function κ(·) and process f ·n , and (Ytn , Z tn )t∈[0,T ] is the (unique) solution to BSDE(ξ n , g n ) such
+that supt∈[0,T ] |Ytn | has sub-exponential moments of any order.
+Let us assume further that for each p > 0,
+⎫⎤
+⎫⎤
+⎧
+⎧
+⎡
+⎡
+) α2∗ ⎬
+) α2∗ ⎬
+∫ T
+∫ T
+⎨ (
+⎨ (
+⎦ + sup E ⎣exp p |ξ n | +
+⎦ < +∞.
+f tn dt
+f t dt
+E ⎣exp p |ξ | +
+⎭
+⎭
+⎩
+⎩
+n≥1
+0
+0
+(4.1)
+If P − a.s., ξ n → ξ as n → ∞ and there exists a real q > 1 such that
+[(∫
+)q ]
+T ⏐
+⏐
+⏐g n (s, Ys , Z s ) − g(s, Ys , Z s )⏐ ds
+= 0,
+lim E
+n→∞
+
+(4.2)
+
+0
+
+then for each p > 0, we have
+⎧ (
+⎡
+) 2∗ ⎫⎤
+α ⎬
+⎨
+⎦ = 1.
+lim E ⎣exp p sup |Ytn − Yt |
+n→∞
+⎩
+⎭
+t∈[0,T ]
+
+(4.3)
+
+And, if the function κ(·) defined in (H1′′ ) further satisfies that for some constant c > 0,
+2
+
+κ(|x|) ≤ c exp(c|x| α∗ ), x ∈ R,
+
+(4.4)
+
+then for each p > 0, we have
+[(∫
+) 2p ]
+T
+2
+n
+lim E
+|Z s − Z s | ds
+= 0.
+
+(4.5)
+
+n→∞
+
+0
+
+Proof. It follows from the integrability assumption (4.1) and the proof of Theorems 3.9 and
+3.1 (see, in particular, inequality (3.5)) that the sequence (Ytn , Z tn )t∈[0,T ] satisfies
+⎧ (
+⎡
+⎤
+) 2∗ ⎫ (∫
+) 2p
+α ⎬
+⎨
+T
+∀ p > 0, sup E ⎣exp p sup |Ytn |
++
+|Z sn |2 ds ⎦ < +∞.
+(4.6)
+⎩
+⎭
+t∈[0,T ]
+n≥1
+0
+
+42
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+It is thus enough to prove that
+∫ T
+sup |Ytn − Yt | +
+|Z sn − Z s |2 ds
+t∈[0,T ]
+
+0
+
+converges to 0 in probability to get the desired conclusion.
+We only prove the case that β = 0 and inequality (3.17) holds for g and g n . The other cases
+can be proved in the same way. For each fixed θ ∈ (0, 1), define
+Z n − θ Z·
+Y n − θ Y·
+and δθn V· := ·
+.
+δθn U· := ·
+1−θ
+1−θ
+Then the pair (δθn U· , δθn V· ) verifies the following BSDE:
+∫ T
+∫ T
+n
+n
+n
+n
+n
+δθ U t = δθ U T +
+δθ g(s, δθ Us , δθ Vs )ds −
+δθn Vs · dBs ,
+t ∈ [0, T ],
+(4.7)
+t
+
+t
+
+where dP × ds − a.e., for each (y, z) ∈ R × Rd ,
+δθn g(s, y, z) :=
+
+)
+1 ( n
+g (s, (1 − θ )y + θ Ys , (1 − θ )z + θ Z s ) − θg n (s, Ys , Z s ) + Dθn (s)
+1−θ
+(4.8)
+
+with
+)
+θ ( n
+g (s, Ys , Z s ) − g(s, Ys , Z s ) .
+1−θ
+Since (3.17) holds for g n , it follows from (4.8) and (3.19) that dP × ds − a.e., for each
+(y, z) ∈ R × Rd ,
+Dθn (s) :=
+
+δθn g(s, y, z)1 y>0 ≤ f sn + k|Ys | + |Dθn (s)| + γ |z|α .
+
+(4.9)
+
+Now, let the functions ϕ̃(s, x; ε) and ψ(x, µ) be defined respectively in (2.13) and (2.20), and
+denote
+∫ t
+( n
+)
+f s + k|Ys | ds, t ∈ [0, T ].
+∆nθ Ut := (δθn Ut )+ +
+0
+
+Applying Itô-Tanaka’s formula to the process ϕ̃(s, ∆nθ Us ; 1) and using (4.7), (4.9) and (2.18)
+in Proposition 2.1, a similar computation to that in the proof of Proposition 2.4 yields the
+existence of a positive constant δ̄ > 0 depending only on α such that
+dϕ̃(s, ∆nθ Us ; 1) ≥
+
+δ̄
+−ϕ̃x (s, ∆nθ Us ; 1)|Dθn (s)|ds + 1δθn Us >0 |δθn Vs |2 ds
+2
++ϕ̃x (s, ∆nθ Us ; 1)1δθn Us >0 δθn Vs · dBs , s ∈ [0, T ].
+
+(4.10)
+
+Note from (2.5) that for each s ∈ [0, T ] and x ≥ 0, we have ϕ̃x (s, x; 1) ≤ K ϕ̃(s, x; 1) for
+some positive constant K depending only on (α, γ , T ). It follows from the BDG inequality,
+Young’s inequality, (4.1) and (4.6) that the process
+(∫ t
+)
+ϕ̃x (s, ∆nθ Us ; 1)1δθn Us >0 δθn Vs · dBs
+0
+
+t∈[0,T ]
+
+is a uniformly integrable martingale. Then, from (4.10) we know that
+⏐ ]
+[∫ T
+⏐
+δ̄
+2 ⏐
+n
+n
+ϕ̃(t, ∆θ Us ; 1) + E
+1δθn Us >0 |δθ Vs | ds ⏐ Ft
+2
+t
+⏐ ]
+[∫ T
+⏐ ]
+⏐
+[
+n
+n
+n
+⏐
+≤ E ϕ̃(T, ∆θ UT ; 1) Ft + K E
+ϕ̃(s, ∆θ Us ; 1)|Dθ (s)|ds ⏐⏐ Ft , t ∈ [0, T ].
+t
+
+43
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+Furthermore, by the definitions of functions ϕ̃ and ψ together with ∆nθ Us we can conclude that
+there exists a positive constant K̄ depending only on (α, γ , T, k) such that P − a.s.,
+⏐ ]
+((
+) δ̄ [ ∫ T
+⏐
+)+
+2 ⏐
+n
+n
+1δθn Us >0 |δθ Vs | ds ⏐ Ft
+ψ δθ U t , 1 + E
+2
+t
+⏐ ]
+[
+∫ T
+⏐
+( n
+)
+( n
+) n
+≤ K̄ E ψ ∆θ UT , K̄ +
+ψ ∆θ Us , K̄ |Dθ (s)|ds ⏐⏐ Ft , t ∈ [0, T ].
+0
+
+Consequently, for each n ≥ 1, θ ∈ (0, 1) and t ∈ [0, T ], we have
+
+≤
+
+(Ytn − θ Yt )+
+⏐ ]) α2∗
+(
+[
+∫ T
+⏐
+( n
+) n
+( n
+)
+ψ ∆θ Us , K̄ |Dθ (s)|ds ⏐⏐ Ft
+(1 − θ ) K̄ E ψ ∆θ UT , K̄ +
+.
+
+(4.11)
+
+0
+
+On the other hand, for each fixed θ ∈ (0, 1), we define
+δ̄θn U· :=
+
+Y· − θ Y·n
+Z · − θ Z ·n
+and δ̄θn V· :=
+.
+1−θ
+1−θ
+
+Then the pair (δ̄θn U· , δ̄θn V· ) verifies the following BSDE:
+∫ T
+∫ T
+δ̄θn Ut = δ̄θn UT +
+δ̄θn g(s, δ̄θn Us , δ̄θn Vs )ds −
+δ̄θn Vs · dBs ,
+t
+
+t ∈ [0, T ],
+
+t
+
+where dP × ds − a.e., for each (y, z) ∈ R × Rd ,
+δ̄θn g(s, y, z) :=
+
+)
+1 ( n
+g (s, (1 − θ)y + θ Ysn , (1 − θ )z + θ Z sn ) − θg n (s, Ysn , Z sn ) + D̄θn (s)
+1−θ
+
+with
+D̄θn (s) :=
+
+)
+1 (
+g(s, Ys , Z s ) − g n (s, Ys , Z s ) .
+1−θ
+
+Since (3.17) holds for g n , it follows that dP × ds − a.e., for each (y, z) ∈ R × Rd ,
+δθn g(s, y, z)1 y>0 ≤ f sn + k|Ysn | + | D̄θn (s)| + γ |z|α .
+Then, let us denote
+¯ nθ Ut := (δ̄θn Ut )+ +
+∆
+
+∫ t
+
+(
+
+)
+f sn + k|Ysn | ds, t ∈ [0, T ].
+
+0
+
+A similar computation as that from inequality (4.10) to inequality (4.11) yields that for each
+n ≥ 1, t ∈ [0, T ] and θ ∈ (0, 1),
+
+≤
+
+(Yt − θ Ytn )+
+⏐ ]) α2∗
+(
+[
+∫ T
+⏐
+( n
+)
+( n
+) n
+¯ θ UT , K̄ +
+¯ θ Us , K̄ | D̄θ (s)|ds ⏐ Ft
+(1 − θ ) K̄ E ψ ∆
+ψ ∆
+.
+⏐
+
+(4.12)
+
+0
+
+Combining (4.11) and (4.12) together with inequalities
+Ytn − Yt ≤ (Ytn − θ Yt )+ + (1 − θ)|Yt | and Yt − Ytn ≤ (Yt − θ Ytn )+ + (1 − θ )|Ytn |,
+
+44
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+we can deduce that for each n ≥ 1, θ ∈ (0, 1) and t ∈ [0, T ],
+(
+[ (
+)⏐ ]) α∗
+|Ytn − Yt | ≤ (1 − θ)(|Yt | + |Ytn |) + 4(1 − θ) K̄ E ψ X n (θ ) + G nT , K̄ ⏐ Ft 2
+⏐ ]} α2∗
+{
+[
+∫ T
+⏐
+⏐
+⏐
+( n
+)
+4
+⏐g n (s, Ys , Z s ) − g(s, Ys , Z s )⏐ ds ⏐ Ft
+K̄ E ψ H (θ ) + G nT , K̄
+,
++
+⏐
+α ∗ −2
+0
+(1 − θ ) 2
+(4.13)
+where
+(
+)
+supt∈[0,T ] |Yt | + |Ytn |
+|ξ − θ ξ n | ∨ |ξ n − θ ξ |
+n
+, H (θ ) :=
+X (θ ) :=
+1−θ
+1−θ
+n
+
+and
+G nT :=
+
+∫ T
+
+(
+
+)
+f sn + k|Ysn | + k|Ys | ds.
+
+0
+
+Now, let us fix ε > 0. It follows from (4.13) and Doob’s maximal inequality on martingale
+that
+(
+)
+sup |Ytn − Yt | > ε
+[
+] (
+)2
+[ (
+) (
+)]
+3(1 − θ)
+12(1 − θ ) α∗
+n
+≤
+E sup (|Yt | + |Yt |) +
+K̄ E ψ X n (θ ), K̄ ψ G nT , K̄
+ε
+ε
+t∈[0,T ]
+( ) 2∗ [
+∫
+( n
+) ( n
+) T⏐ n
+K̄
+12 α
+⏐g (s, Ys , Z s )
+E
+ψ
+H
+(θ
+),
+K̄
+ψ
+G
+,
+K̄
++
+T
+α ∗ −2
+ε
+0
+(1 − θ ) α∗
+]
+−g(s, Ys , Z s )| ds .
+P
+
+t∈[0,T ]
+
+Observe from the inequalities (4.1) and (4.6) that the sequences
+(
+)
+( (
+))
+( (
+))
+n
+sup (|Yt | + |Yt |)
+, ψ G nT , K̄ n≥1 and ψ H n (θ ), K̄ n≥1
+t∈[0,T ]
+
+n≥1
+
+are bounded in all L p spaces. From the previous inequality together with Hölder’s inequality
+we deduce that there exist a universal constant C > 0 and a constant C(θ, q) > 0 depending
+only on θ and q such that
+(
+)
+P
+
+sup |Ytn − Yt | > ε
+
+t∈[0,T ]
+
+)2
+( [ (
+)])1/2
+12(1 − θ ) α∗
+K̄ C E ψ X n (θ ), 2 K̄
+≤
+ε
+( ) 2∗ ( [(∫ T
+)q ]) q1
+⏐ n
+⏐
+K̄ C(θ, q)
+12 α
+⏐g (s, Ys , Z s ) − g(s, Ys , Z s )⏐ ds
+E
+.
++
+α ∗ −2
+ε
+∗
+0
+α
+(1 − θ )
+3(1 − θ )
+C+
+ε
+
+(
+
+(4.14)
+
+n
+From
+(4.1)
+[ (inequality
+)] and the fact [that( P − a.s.,
+)] ξ → ξ , it follows that as n goes to ∞,
+n
+E ψ X (θ), 2 K̄ converges to E ψ |ξ |, 2 K̄ for each θ ∈ (0, 1). Thus, in view of (4.2),
+sending first n → ∞ and then θ → 1 in inequality (4.14) yields that supt∈[0,T ] |Ytn − Yt |
+converges to 0 in probability, and the conclusion (4.3) follows due to the inequality (4.6).
+
+45
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+Finally, let (4.4) be further satisfied, and we show that (4.5) holds. In fact, by Itô’s formula
+we get that for each n ≥ 1,
+[∫ T
+]
+2
+n
+E
+|Z s − Z s | ds
+[ 0
+]
+(4.15)
+∫ T
+⏐ n
+⏐
+2
+n
+n
+n
+n
+⏐
+⏐
+≤ E |ξ − ξ | + 2 sup |Y − Yt |
+g (s, Y , Z ) − g(s, Ys , Z s ) ds .
+t∈[0,T ]
+
+t
+
+s
+
+s
+
+0
+
+On the other hand, it follows from (H1′′ ) with (4.4) as well as (4.1) and (4.6) that
+[(∫
+)2 ]
+T ⏐
+⏐
+n
+n
+n
+⏐
+⏐
+< +∞.
+sup E
+g (s, Y , Z ) − g(s, Ys , Z s ) ds
+s
+
+n≥1
+
+s
+
+(4.16)
+
+0
+
+Then, by virtue of Hölder’s inequality, the desired conclusion (4.5) follows from (4.15), (4.16),
+(4.3) and (4.6). The proof is then complete. □
+Remark 4.2. We note that if assumption (H1′′ ) for g and g n in Theorem 4.1 is respectively
+replaced with the stronger assumption (H1) with the process f t instead of |g(t, 0, 0)| and
+|g n (t, 0, 0)|, and assumption (4.2) is replaced with the following assumption: dP × dt − a.e.,
+for each (y, z) ∈ R × Rd , g n (t, y, z) → g(t, y, z), then the conclusions (4.3) and (4.5) of
+Theorem 4.1 still hold. Indeed, it is easy to check that these two assumptions together with
+(4.1) can imply that (4.2) holds for any q > 1, and that (4.4) holds for some c > 0.
+4.2. Nonlinear Feynman–Kac formula
+In this subsection, we give an application of our results concerning BSDEs to PDEs which
+are sub-quadratic with respect to the gradient of the solution. More precisely, we will derive
+the nonlinear Feynman–Kac formula for these PDEs. Let us consider the following semilinear
+PDE
+∂t u(t, x) + Lu(t, x) + g(t, x, u(t, x), σ ∗ ∇x u(t, x)) = 0,
+
+u(T, ·) = h(·),
+
+(4.17)
+
+where L is the infinitesimal generator of the diffusion solution X ·t,x to the following SDE
+∫ s
+∫ s
+X st,x = x +
+b(r, X rt,x )dr +
+σ (r, X rt,x )dBr , t ≤ s ≤ T, and X st,x = x, 0 ≤ s < t.
+t
+
+t
+
+(4.18)
+The nonlinear Feynman–Kac formula consists in proving that the function defined by
+∀ (t, x) ∈ [0, T ] × Rn ,
+
+u(t, x) := Ytt,x ,
+
+(4.19)
+
+t ,x
+t ,x
+where, for each (t0 , x0 ) ∈ [0, T ] × Rn , (Y· 0 0 , Z · 0 0 ) represents the solution to the BSDE
+
+( t ,x )
+Yt = h X T0 0 +
+
+∫ T
+t
+
+g(s, X st0 ,x0 , Ys , Z s )ds +
+
+∫ T
+
+Z s · dBs , t ∈ [0, T ],
+
+(4.20)
+
+t
+
+is a solution, at least a viscosity solution, to PDE (4.17).
+The objective of this section is to derive the above probabilistic representation for the
+solution to PDE (4.17) when the nonlinearity g is sub-quadratic of α ∈ (1, 2) order with respect
+to ∇x u and when h and g have a power growth of p < 2/α ∗ order with respect to x. Let us
+first recall the following definition of a viscosity solution to PDE (4.17).
+
+46
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+Definition 4.3. A continuous function u defined on [0, T ] × Rn such that u(T, ·) = h(·) is
+said to be a viscosity super-solution (respectively sub-solution) to PDE (4.17) if
+∂t u(t0 , x0 ) + Lu(t0 , x0 ) + g(t0 , x0 , u(t0 , x0 ), σ ∗ ∇x ϕ(t0 , x0 )) ≤ 0
+
+(resp. ≥ 0)
+
+as soon as the function u − ϕ has a local minimum (resp. maximum) at the point (t0 , x0 ) ∈
+(0, T ) × Rn where ϕ is a smooth function. Moreover, a viscosity solution is both a viscosity
+super-solution and a viscosity sub-solution.
+Let us now introduce our assumptions concerning the linear part of the PDE namely the
+coefficients of the diffusion.
+(A1) b(t, x) : [0, T ] × Rn → Rn and σ (t, x) : [0, T ] × Rn → Rn×d are continuous functions
+and there exists a constant K > 0 such that for each (t, x, x ′ ) ∈ [0, T ] × Rn × Rn ,
+|b(t, 0)| + |σ (t, x)| ≤ K
+and
+|b(t, x) − b(t, x ′ )| + |σ (t, x) − σ (t, x ′ )| ≤ K |x − x ′ |.
+Classical results on SDEs show that under the assumption (A1), for each (t, x) ∈ [0, T ]×Rn
+the SDE (4.18) admits a unique solution X ·t,x ∈ S q for all q ≥ 1. And, since σ is a bounded
+function, the argument in page 563 of Briand and Hu [6] shows that for each q ∈ [1, 2) and
+(t, x) ∈ [0, T ] × Rn , we have
+[
+]
+(
+)
+t,x q
+∀ λ > 0, E sup exp λ|X s |
+≤ C exp(λC|x|q ),
+(4.21)
+s∈[0,T ]
+
+where the constant C depends only on (q, λ, T, K ). Furthermore, we assume that the point
+n
+n
+sequence {(tm , xm )}∞
+m=1 in the space [0, T ] × R converges to a point (t, x) ∈ [0, T ] × R as
+m tends to +∞. Classical results on SDEs show that
+[
+]
+∀ λ > 0,
+
+lim E
+
+m→∞
+
+λ
+
+sup |X stm ,xm − X st,x |
+
+= 0.
+
+(4.22)
+
+s∈[0,T ]
+
+And, by a similar analysis as that in page 563 of [6] we can also deduce that for each q ∈ [1, 2),
+]
+[
+)
+(
+tm ,xm q
+≤ C exp(λC|x|q ),
+(4.23)
+|
+∀ λ > 0, E sup sup exp λ|X s
+m≥1 s∈[0,T ]
+
+where the constant C is the same as in (4.21).
+With these observations at hand, we can give our assumptions on the nonlinear term of the
+PDE, the generator g, and the terminal condition.
+(A2) g(t, x, y, z) : [0, T ] × Rn × R × Rd → R and h(x) : Rn → R are continuous functions
+and there exist three real constants α ∈ (1, 2), p ∈ [1, α ∗ ) and k ≥ 0 such that for each
+(t, x, y, z) ∈ [0, T ] × Rn × R × Rd , (y ′ , z ′ ) ∈ R × Rd and θ ∈ (0, 1), it holds that
+(
+)
+sgn(y)g(t, x, y, z) ≤ k 1 + |x| p + |y| + |z|α ,
+(
+)
+2
+|g(t, x, y, z)| + |h(x)| ≤ k 1 + |x| p + exp(k|y| α∗ ) + |z|2
+and
+≤
+
+(
+)
+′ ′
+1{y−θ y ′ >0}( g(t, x, y, z) − θg(t,
+⏐ x, y ,′z⏐ ) ⏐
+⏐ )
+⏐ y − θ y ⏐ ⏐ z − θ z ′ ⏐α
+p
+′
+⏐
+⏐
+⏐
+⏐
+(1 − θ )k 1 + |x| + |y | + ⏐
++
+1−θ ⏐ ⏐ 1−θ ⏐
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+47
+
+or
+(
+)
+′ ′
+−1{y−θ y ′ <0}
+g(t,
+x,
+y,
+z)
+−
+θg(t,
+x,
+y
+,
+z
+)
+⏐
+⏐
+⏐
+⏐ )
+(
+⏐ y − θ y ′ ⏐ ⏐ z − θ z ′ ⏐α
+p
+′
+⏐
+⏐
+⏐
+⏐ .
++
+≤ (1 − θ )k 1 + |x| + |y | + ⏐
+1−θ ⏐ ⏐ 1−θ ⏐
+The following example shows that assumption (A2) are more general than those used in
+some existing literature.
+Example 4.4. From Proposition 3.5 and Remark 3.6, it is not difficult to verify that the
+assumption (A2) holds for the following generator g and terminal function h:
+g(t, x, y, z) := 1 + |x| p sin |x| + y 2m 1 y≤0 + sin y + |z|α + l(y)q(z),
+h(x) := |x| p cos |x|, (t, x, y, z) ∈ [0, T ] × Rn × R × Rd ,
+where α ∈ (1, 2), p ∈ [1, α ∗ ), m is a positive integer, and the function l(·) and q(·) are defined
+in (iii) of Proposition 3.5. It is clear that g has a power growth in the state variables (y, z) and
+it is non-Lipschitz continuous in y and non-convex (non-concave) in z, and that both g and h
+have a power growth in the state variable x and they are not uniformly continuous in x.
+In the sequel, due to p ∈ [1, α ∗ ), it follows from (4.21) that for each (t0 , x0 ) ∈ [0, T ] × Rn
+and each λ > 0, we have
+[
+[
+( (
+(
+)]
+) 2 )]
+2p
+2p
+t0 ,x0 p α ∗
+E exp λ |X T |
+≤ E sup exp λ|X st0 ,x0 | α∗
+≤ C̄ exp(λC̄|x0 | α∗ ) < +∞
+s∈[0,T ]
+
+(4.24)
+and
+⎡
+
+⎛
+
+E ⎣exp ⎝λ
+
+(∫ T
+
+p
+|X st0 ,x0 | ds
+
+) α2∗
+
+⎞⎤
+
+[
+
+⎠⎦ ≤ E
+
+(
+
+sup exp λT
+
+2
+α∗
+
+s∈[0,T ]
+
+0
+
+≤ C̄ exp(λT
+
+2
+α∗
+
+2p
+∗
+0 α
+
+C̄|x |
+
+2p
+
+|X st0 ,x0 | α∗
+
+)]
+(4.25)
+
+) < +∞,
+
+where the constant C̄ depends only on ( p, α, λ, T, K ). Then, the assumption (A2) together with
+the inequalities (4.24) and (4.25) allows us to use Theorem 3.9 to construct a unique solution,
+t ,x
+t ,x
+(Y· 0 0 , Z · 0 0 ), to the BSDE (4.20) such that
+⎧ (
+⎡
+) 2∗ ⎫⎤
+α ⎬
+⎨
+t ,x
+⎦ < +∞
+∀ λ > 0, E ⎣exp λ sup |Yt 0 0 |
+⎩ t∈[0,T ]
+⎭
+t ,x
+
+and Z · 0 0 ∈ Mq for all q ≥ 1. Furthermore, by a classical analysis we know that u defined
+by the formula (4.19) is a deterministic function.
+Now we can state and prove the main result of this section.
+Theorem 4.5. Let the assumptions (A1) and (A2) hold. Then, the function u defined in (4.19)
+is continuous on [0, T ] × Rn and there exists a constant C > 0 such that
+∀ (t, x) ∈ [0, T ] × Rn ,
+
+|u(t, x)| ≤ C(1 + |x| p ).
+
+Moreover, u is a viscosity solution to PDE (4.17).
+
+(4.26)
+
+48
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+Proof. Let us first show that u is a continuous function. Indeed, we assume that the point
+n
+n
+sequence {(tm , xm )}∞
+m=1 in the space [0, T ] × R converges to a point (t, x) ∈ [0, T ] × R as m
+goes to +∞. From the continuity of function h and inequality (4.22) it follows that P − a.s.,
+(
+)
+(
+)
+lim h X Ttm ,xm = h X Tt,x .
+(4.27)
+m→∞
+
+And, since g is a continuous function and satisfies assumption (A2), by Lebesgue’s dominated
+convergence theorem and inequalities (4.22) and (4.23) together with the integrability condition
+of the process (Y·t,x , Z ·t,x ) we can derive that for each q > 1,
+[(∫
+)q ]
+T ⏐
+⏐
+⏐g(s, X tm ,xm , Y t,x , Z t,x ) − g(s, X t,x , Y t,x , Z t,x )⏐ ds
+lim E
+= 0.
+(4.28)
+s
+s
+s
+s
+s
+s
+m→∞
+
+0
+
+Furthermore, in view of the growth condition of function h and inequality (4.23), a similar
+argument to (4.24) and (4.25) yields that for each λ > 0,
+⎫⎤
+⎧
+⎡
+) α2∗ ⎬
+∫ T
+⎨ (⏐ (
+)⏐
+p
+⎦ < +∞.
+(4.29)
+|X stm ,xm | ds
+sup E ⎣exp λ ⏐h X Ttm ,xm +
+⎭
+⎩
+m≥1
+0
+In view of (4.27)–(4.29) and (A2), using the stability theorem (Theorem 4.1) leads to P − a.s.,
+⏐
+⏐
+lim sup ⏐Ystm ,xm − Yst,x ⏐ = 0,
+m→∞ s∈[0,T ]
+
+which together with the continuity of Y·t,x with respect to the time variable yields that u is a
+continuous function on [0, T ] × Rn .
+Secondly, in view of assumption (A2) and Remark 2.6, the inequality (4.26) follows from
+inequalities (4.24) and (4.25) with the estimates (2.23) and (2.24) in Theorem 2.2.
+Finally, we use a double approximation procedure and a stability result to prove that the
+function u is a viscosity solution to PDE (4.17). For each (t, x, y, z) ∈ [0, T ] × Rn × R × Rd
+and each pair of positive integers m and l, we define
+{
+}
+g m,l (t, x, y, z) := inf g{+ (t, x, y, z) + m|y − y ′ | + m|z − z ′ |, (y ′ , z ′ ) ∈ Q × Qd }
+− inf g − (t, x, y, z) + l|y − y ′ | + l|z − z ′ |, (y ′ , z ′ ) ∈ Q × Qd .
+By Lepeltier and San Martin [20] it is well known that g m,l is uniformly Lipschitz continuous
+in (y, z), g m,l converges decreasingly uniformly on compact sets to a limit g m,∞ as l tends
+to +∞, and g m,∞ converges increasingly uniformly on compact sets to the generator g as
+m tends to +∞. For (t, x) ∈ [0, T ] × Rn , let (Y·m,l,t,x
+,) Z ·m,l,t,x ) be the unique( solution in
+(
+)
+S 2 × M2 to the BSDE with the terminal condition h X Tt,x and the generator g m,l ·, X ·t,x , ·, · .
+We denote u m,l (t, x) := Ytm,l,t,x . Then, by the classical nonlinear Feynman–Kac formula (see,
+e.g. El Karoui et al. [12] and Pardoux and Peng [23]), u m,l (·, ·) is a viscosity solution to the
+following PDE
+∂t u(t, x) + Lu(t, x) + g m,l (t, x, u(t, x), σ ∗ ∇x u(t, x)) = 0,
+
+u(T, ·) = h(·).
+
+Moreover, by virtue of the classical comparison theorem and the stability Theorem 4.1 we can
+derive that u m,l (·, ·) is decreasing and converges pointwisely to a continuous function u m,∞ (·, ·)
+as l tends to +∞, and u m,∞ (·, ·) is increasing and converges pointwisely to the continuous
+function u(·, ·) as m tends to +∞. Dini’s theorem implies that the convergence is also uniform
+on compact sets of [0, T ] × Rn . Then, we can apply the stability theorem 1.7 in Chapter 5
+of Bardi and Capuzzo-Dolcetta [1] to show that u is a viscosity solution to PDE (4.17). □
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+49
+
+Remark 4.6. Under the superlinear growth conditions on data, the existence and uniqueness
+of viscosity solution of PDE (4.17) was studied in Da Lio and Ley [9], where b and σ satisfy
+condition (A1), g and h are continuous functions and satisfy the following growth:
+(
+)
+∗
+∀ (t, x, y, z) ∈ [0, T ]×Rn ×R×Rd , |g(t, x, y, z)| + |h(x)| ≤ k 1 + |x|α + |y| + |z|α
+with k > 0, α > 1 and α ∗ being the conjugate of α. Roughly speaking, in [9] the authors proved
+that under the above conditions, if g is locally uniformly continuous in the state variable x,
+uniformly Lipschitz continuous in the state variable y and convex in the state variable z, then
+PDE (4.17) admits at most a viscosity solution u on [0, T ]×Rn satisfying the following growth:
+∀ (t, x) ∈ [0, T ] × Rn , |u(t, x)| ≤ C(1 + |x|α )
+∗
+
+where C > 0 is a constant, and there exists ϵ ∈ (0, T ] such that PDE (4.17) admits a unique
+viscosity solution u on [0, ϵ] × Rn satisfying the following growth:
+∀ (t, x) ∈ [0, ϵ] × Rn , |u(t, x)| ≤ C(1 + |x|α )
+∗
+
+with C > 0. See Theorems 3.1 and 3.2 in [9] for more details .
+Acknowledgments
+The authors are greatly grateful to the two anonymous referees for their careful reading and
+many valuable suggestions.
+References
+[1] M. Bardi, I. Capuzzo-Dolcetta, Optimal Control and Viscosity Solutions of Hamilton–Jacobi-Bellman
+Equations, Birkhuser, Boston, MA, 1997.
+[2] P. Barrieu, N. El Karoui, Monotone stability of quadratic semimartingales with applications to unbounded
+general quadratic BSDEs, Ann. Probab. 41 (3B) (2013) 1831–1863.
+[3] P. Briand, B. Delyon, Y. Hu, E. Pardoux, L. Stoica, L p solutions of backward stochastic differential equations,
+Stochastic Process. Appl. 108 (1) (2003) 109–129.
+[4] P. Briand, R. Elie, A simple constructive approach to quadratic BSDEs with or without delay, Stochastic
+Process. Appl. 123 (2013) 2921–2939.
+[5] P. Briand, Y. Hu, BSDE with quadratic growth and unbounded terminal value, Probab. Theory Related Fields
+136 (4) (2006) 604–618.
+[6] P. Briand, Y. Hu, Quadratic BSDEs with convex generators and unbounded terminal conditions, Probab. Theory
+Related Fields 141 (3) (2008) 543–567.
+)
+( √
+[7] R. Buckdahn, Y. Hu, S. Tang, Existence of solution to scalar BSDEs with L exp µ 2 log(1 + L) -integrable
+terminal values, Electron. Commun. Probab. 23 (2018) 8, Paper No. 59.
+[8] P. Cheridito, K. Nam, BSDEs with terminal conditions that have bounded Malliavin derivative, J. Funct. Anal.
+266 (2014) 1257–1285.
+[9] F. Da Lio, O. Ley, Convex Hamilton–Jacobi equations under superlinear growth conditions on data, Appl.
+Math. Optim. 63 (2011) 309–339.
+[10] F. Delbaen, Y. Hu, X. Bao, Backward SDEs with superquadratic growth, Probab. Theory Related Fields 150
+(2011) 145–192.
+[11] F. Delbaen, Y. Hu, A. Richou, On the uniqueness of solutions to quadratic BSDEs with convex generators
+and unbounded terminal conditions, Ann. Inst. Henri Poincaré Probab. Stat. 47 (2011) 559–574.
+[12] N. El Karoui, S. Peng, M.C. Quenez, Backward stochastic differential equations in finance, Math. Finance 7
+(1) (1997) 1–71.
+[13] S. Fan, Bounded solutions, L p ( p > 1) solutions and L 1 solutions for one-dimensional BSDEs under general
+assumptions, Stochastic Process. Appl. 126 (2016) 1511–1552.
+[14] S. Fan, Existence, uniqueness and stability of L 1 solutions for multidimensional BSDEs with generators of
+one-sided osgood type, J. Theoret. Probab. 31 (2018) 1860–1899.
+
+50
+
+S. Fan and Y. Hu / Stochastic Processes and their Applications 131 (2021) 21–50
+
+)
+( √
+[15] S. Fan, Y. Hu, Existence and uniqueness of solution to scalar BSDEs with L exp µ 2 log(1 + L) -integrable
+terminal values: the critical case, Electron. Commun. Probab. 24 (2019) 10, Paper No. 49.
+[16] S. Fan, L. Jiang, L p ( p > 1) Solutions for one-dimensional BSDEs with linear-growth generators, J. Appl.
+Math. Comput. 38 (1–2) (2012) 295–304.
+[17] Y. Hu, S. Tang, Multi-dimensional backward stochastic differential equations of diagonally quadratic
+generators, Stochastic Process. Appl. 126 (4) (2016) 1066–1086. √
+[18] Y. Hu, S. Tang, Existence of solution to scalar BSDEs with L exp λ2 log(1 + L)-integrable terminal values,
+Electron. Commun. Probab. 23 (2018) 11, Paper No. 27.
+[19] M. Kobylanski, Backward stochastic differential equations and partial differential equations with quadratic
+growth, Ann. Probab. 28 (2) (2000) 558–602.
+[20] J.-P. Lepeltier, J. San Martin, Backward stochastic differential equations with continuous coefficient, Statist.
+Probab. Lett. 32 (4) (1997) 425–430.
+[21] F. Masiero, A. Richou, A note on the existence of solutions to Markovian superquadratic BSDEs with an
+unbounded ternimal condtion, Electron. J. Probab. 18 (50) (2013) 1–15.
+[22] E. Pardoux, S. Peng, Adapted solution of a backward stochastic differential equation, Systems Control Lett.
+14 (1) (1990) 55–61.
+[23] E. Pardoux, S. Peng, Backward stochastic differential equations and quasilinear parabolic partial differential
+equations, in: Stochastic Partial Differential Equations and their Applications (Charlotte, NC, 1991), in: Lecture
+Notes in Control and Inform. Sci., vol. 176, Springer, Berlin, 1992, pp. 200–217.
+[24] A. Richou, Markovian quadratic and superquadratic BSDEs with an unbounded terminal condition, Stochastic
+Process. Appl. 122 (2012) 3173–3208.
+
+

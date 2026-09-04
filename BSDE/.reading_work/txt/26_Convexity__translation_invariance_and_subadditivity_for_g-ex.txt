@@ -1,0 +1,971 @@
+arXiv:0801.3340v1 [math.PR] 22 Jan 2008
+
+The Annals of Applied Probability
+2008, Vol. 18, No. 1, 245–258
+DOI: 10.1214/105051607000000294
+c Institute of Mathematical Statistics, 2008
+
+CONVEXITY, TRANSLATION INVARIANCE AND
+SUBADDITIVITY FOR G-EXPECTATIONS AND RELATED RISK
+MEASURES
+By Long Jiang1
+China University of Mining and Technology, Fudan University
+Under the continuous assumption on the generator g, Briand et
+al. [Electron. Comm. Probab. 5 (2000) 101–117] showed some connections between g and the conditional g-expectation (Eg [·|Ft ])t∈[0,T ]
+and Rosazza Gianin [Insurance: Math. Econ. 39 (2006) 19–34] showed
+some connections between g and the corresponding dynamic risk measure (ρgt )t∈[0,T ] . In this paper we prove that, without the additional
+continuous assumption on g, a g-expectation Eg satisfies translation
+invariance if and only if g is independent of y, and Eg satisfies convexity (resp. subadditivity) if and only if g is independent of y and g
+is convex (resp. subadditive) with respect to z. By these conclusions
+we deduce that the static risk measure ρg induced by a g-expectation
+Eg is a convex (resp. coherent) risk measure if and only if g is independent of y and g is convex (resp. sublinear) with respect to z. Our
+results extend the results in Briand et al. [Electron. Comm. Probab.
+5 (2000) 101–117] and Rosazza Gianin [Insurance: Math. Econ. 39
+(2006) 19–34] on these subjects.
+
+1. Introduction and preliminaries.
+1.1. Introduction. By Pardoux and Peng [16] we know that there exists
+a unique adapted and square integrable solution to a backward stochastic
+differential equation (BSDE in short) of type
+(1.1)
+
+yt = ξ +
+
+Z T
+t
+
+g(s, ys , zs ) ds −
+
+Z T
+t
+
+zs · dBs ,
+
+0 ≤ t ≤ T,
+
+Received September 2005; revised June 2007.
+Supported by NSFC Grant 10671205 and CPSF Grant 20060400158 and National
+Basic Research Program of China Grant 2007CB814901.
+AMS 2000 subject classifications. Primary 60H10; secondary 60H30, 91B30.
+Key words and phrases. Backward stochastic differential equation, g-expectation,
+translation invariance of g-expectation, convexity of g-expectation, risk measure.
+1
+
+This is an electronic reprint of the original article published by the
+Institute of Mathematical Statistics in The Annals of Applied Probability,
+2008, Vol. 18, No. 1, 245–258. This reprint differs from the original in pagination
+and typographic detail.
+1
+
+2
+
+L. JIANG
+
+providing that the function g is Lipschitz in both variables y and z , and
+ξ and (g(t, 0, 0))t∈[0,T ] are square integrable. g is called the generator of
+the BSDE (1.1) and (g, T, ξ) are called the parameters of (1.1). We denote
+the unique solution of (1.1) by (Yt (g, T, ξ), Zt (g, T, ξ))t∈[0,T ] . When g also
+satisfies g(·, y, 0) ≡ 0 for any y, then Y0 (g, T, ξ), denoted by Eg [ξ], is called the
+g-expectation of ξ; Yt (g, T, ξ), denoted by Eg [ξ|Ft ], is called the conditional
+g-expectation of ξ; see Peng [17].
+g-expectation is a kind of nonlinear expectation. The original motivation for studying g-expectation comes from the theory of expected utility,
+which is the foundation of modern mathematical economics and is challenged by the well-known Allais paradox. Since the notion of g-expectation
+was introduced, many properties of g-expectation have been studied in
+[3, 4, 5, 6, 13, 14, 15, 17, 18, 19]. Chen and Epstein [5] gave an application of g-expectation to recursive utility. Coquet et al. [6] obtained a very
+interesting result. They proved that if a filtration consistent (nonlinear) expectation E can be dominated by a kind of g-expectation, then E must be a
+g-expectation. More recently, Rosazza Gianin [20, 21] first introduced some
+examples of risk measures via g-expectations and conditional g-expectations:
+(1.2)
+
+ρg (ξ) := Eg [−ξ],
+
+ρgt (ξ) := Eg [−ξ|Ft ]
+
+∀t ∈ [0, T ].
+
+Under an additional continuity assumption (A4) (see Section 1.2), with the
+help of Proposition 2.3 of Briand et al. [3], Rosazza Gianin [21] showed us
+that (ρgt )t∈[0,T ] is a dynamic convex (resp. coherent) risk measure if and only
+if g is independent of y and is convex (resp. sublinear) with respect to z.
+Barrieu and El Karoui [2] and Peng [19] also obtained some results on this
+subject.
+The main objective of this paper is to explore some fundamental characteristics of g-expectations which are related to risk measures. The major
+contributions of this paper are:
+(a) We establish a general Representation Lemma for generators of BSDEs
+under the usual assumptions (A1) and (A2), which generalizes Proposition
+2.3 of [3] and helps us to confirm the same necessary and sufficient conditions
+in [3] and [21] without the additional continuity assumption (A4). We hope
+that it turns out to be useful in other situations, as well.
+(b) Under the usual assumptions (A1) and (A3), without any additional
+assumptions on g, we prove that if the static risk measure ρg , which is an
+operator, is a convex (resp. coherent) risk measure, then the corresponding
+dynamic risk measure (ρgt )t∈[0,T ] , which is an operator system, is a dynamic
+convex (resp. coherent) risk measure, and the generator g is independent of
+y and is convex (resp. sublinear) with respect to z.
+The remainder of this paper is organized as follows. In Section 1.2, we
+introduce some preliminaries. In Section 2, we establish a general Representation Lemma for generators of BSDEs. In Section 3, under the usual
+
+G-EXPECTATIONS AND RELATED RISK MEASURES
+
+3
+
+assumptions (A1) and (A3), we obtain some necessary and sufficient conditions for translation invariance, convexity, subadditivity and positive homogeneity of g-expectations, respectively. In Section 4, we state our results on
+static risk measure ρg and dynamic risk measure (ρgt )t∈[0,T ] .
+1.2. Preliminaries. Let T > 0 be a fixed time horizon; let (Ω, F, P ) be
+a probability space and (Bt )t≥0 be a d -dimensional standard Brownian motion on this space such that B 0 = 0; let (Ft )t≥0 be the augmented natural filtration generated by (Bt )t≥0 and satisfy the usual conditions. Let
+MF (Rn ) denote the space of all Rn -valued, (Ft )-progressively measurable
+R
+2 (0, T ; Rn ) := {ψ ∈ M (Rn ); kψk2 := E[ T |ψ |2 dt] <
+processes. We set HF
+t
+F
+2
+0
+∞}, SF2 (0, T ; R) := {ψ ∈ MF (R); ψ is continuous and E[sup0≤t≤T |ψt |2 ] < ∞},
+L2 (Ft ) := {ξ; ξ isR-valued, Ft -measurable random variable, E[ξ 2 ] < ∞}.
+The generator g of a BSDE is a function g : Ω×[0, T ]×R × Rd 7−→ R such
+that (g(t, y, z))t∈[0,T ] is progressively measurable for each (y, z) ∈ R × Rd ,
+and g also satisfies the following usual assumptions (A1) and (A2):
+(A1) There exists a constant K ≥ 0 such that dP × dt-a.s., ∀y1 , y2 , z1 , z2 ,
+|g(t, y1 , z1 ) − g(t, y2 , z2 )| ≤ K(|y1 − y2 | + |z1 − z2 |).
+2 (0, T ; R).
+(A2) The process (g(t, 0, 0))t∈[0,T ] ∈ HF
+(A3) dP × dt-a.s., for any y ∈ R, g(·, y, 0) ≡ 0.
+(A4) P -a.s., for any y ∈ R, z ∈ Rd , t 7→ g(t, y, z) is continuous.
+Let (A1) and (A2) hold for g. By [16], for each ξ ∈ L2 (FT ), (1.1) has a
+2 (0, T ; Rd ), which is denoted by
+unique solution in SF2 (0, T ; R) × HF
+(Yt (g, T, ξ), Zt (g, T, ξ))t∈[0,T ] .
+We recall the notions of g-expectation and conditional g-expectation and
+some properties given in Peng [17]. In the following Definitions 1.1 and 1.2
+and Lemma 1.1, g is assumed to satisfy (A1) and (A3).
+Definition 1.1 ([17]).
+by Eg [ξ] := Y0 (g, T, ξ).
+
+The g-expectation Eg [·] : L2 (FT ) 7−→ R is defined
+
+Definition 1.2 ([17]). The conditional g-expectation of ξ with respect
+to Ft is defined by Eg [ξ|Ft ] := Yt (g, T, ξ), which is the unique random variable
+η in L2 (Ft ) such that Eg [ξ1A ] = Eg [η1A ], for all A ∈ Ft .
+Lemma 1.1 ([17]).
+
+(i) For each constant c, Eg [c] = c.
+
+(ii) If X1 ≥ X2 , a.s., then Eg [X1 ] ≥ Eg [X2 ].
+(iii) If X1 ≥ X2 , a.s., and P (X1 > X2 ) > 0, then Eg [X1 ] > Eg [X2 ].
+(iv) If g is independent of y, that is, g is defined on Ω × [0, T ] × Rd, then
+Eg [X + η|Ft ] = Eg [X|Ft ] + η, ∀X ∈ L2 (FT ), η ∈ L2 (Ft ).
+
+4
+
+L. JIANG
+
+2. Representation lemma for generators of BSDEs. For studying a kind
+of converse comparison problem, Proposition 2.3 in Briand et al. [3] showed
+us that for any (y, z) ∈ R × Rd and t ∈ [0, T [, the equality
+1
+g(t, y, z) = L2 − lim+ [Yt (g, t + ε, y + z · (Bt+ε − Bt )) − y]
+ε→0 ε
+holds under (A1), (A2), (A4) and E[sup0≤t≤T |g(t, 0, 0)|2 ] < ∞. For studying
+Jensen’s inequality for g-expectation, [15] got the following Proposition 2.1.
+Proposition 2.1 (Theorem 3.3 in [15]). Let (A1) and (A2) hold for g;
+let 1 ≤ p ≤ 2. Then for any triplet (t, y, z) ∈ [0, T [ × R × Rd , the following
+two statements are equivalent:
+(i) g(t, y, z) = Lp − limε→0+ 1ε [Yt (g, t + ε, y + z · (Bt+ε − Bt )) − y].
+R
+(ii) g(t, y, z) = Lp − limε→0+ E[ 1ε tt+ε g(s, y, z) ds|Ft ].
+Further studying shows that many problems on BSDEs are related to this
+kind of representation problem. In this section, we will establish a general
+Representation Lemma for generators of BSDEs under (A1) and (A2), which
+generalizes Proposition 2.3 of [3] and will be used frequently.
+Lemma 2.1 (Representation lemma). Let (A1) and (A2) hold for g. Let
+1 ≤ p < 2. Then for each (y, z) ∈ R × Rd , the equality
+1
+
+g(t, y, z) = Lp − lim
+
+ε→0+ ε
+
+[Yt (g, t + ε, y + z · (Bt+ε − Bt )) − y]
+
+holds for almost every t ∈ [0, T [.
+In order to prove Lemma 2.1, we introduce the following proposition.
+q
+(0, T ; R) := {ψ ∈
+Proposition 2.2. Let q > 1; let 1 ≤ p < q. Set HF
+RT
+q
+MF (R); E[ 0 |ψt |q dt] < ∞}. Then for any ψ ∈ HF
+(0, T ; R), we have
+
+1
+ε→0+ ε
+
+ψt = Lp − lim
+
+Z t+ε
+t
+
+ψs ds
+
+a.e. t ∈ [0, T [.
+
+q
+(0, T ; R), the Fubini theorem yields 0T E[|ψt |q ] dt =
+Proof. Since ψ ∈ HF
+RT
+E[ 0 |ψt |q dt] < ∞. Thus E[|ψt |q ] < ∞, a.e. t ∈ [0, T ]. By the Lebesgue lemma
+(see Lemma 18.4 of [12]), we know that the equality
+
+R
+
+1
++
+ε→0 ε
+lim
+
+Z t+ε
+t
+
+holds for almost every t ∈ [0, T [.
+
+E[|ψs |q ] ds = E[|ψt |q ]
+
+5
+
+G-EXPECTATIONS AND RELATED RISK MEASURES
+
+q
+Also by ψ ∈ HF
+(0, T ; R) we understand that | 0T ψt dt| < ∞, a.s. Therefore, by the Lebesgue lemma we have
+
+R
+
+(2.1)
+
+1
+lim+
+ε→0 ε
+
+Z t+ε
+
+ψs ds = ψt
+
+a.e., a.s.
+
+1
+lim
++
+ε→0 ε
+
+Z t+ε
+
+ψs ds = ψt
+
+a.s., a.e.
+
+t
+
+Hence
+t
+
+Thus there exists a subset S ⊆ [0, T [ such that the Lebesgue measure λ([0, T ]\
+S) of [0, T ] \ S equals 0, and for each t ∈ S we have
+1
+lim+
+ε→0 ε
+
+(2.2)
+
+t
+
+ψs ds = ψt
+
+1
+lim+
+ε→0 ε
+
+q
+
+(2.3)
+
+Z t+ε
+
+E[|ψt | ] < ∞,
+
+Z t+ε
+t
+
+a.s.,
+
+E[|ψs |q ] ds = E[|ψt |q ].
+
+For any t ∈ S, by (2.3) we know that there exists a constant δt > 0 such that
+1
+ε
+
+(2.4)
+
+Z t+ε
+t
+
+E[|ψs |q ] ds ≤ E[|ψt |q ] + 1
+
+∀ε ∈ ]0, δt ].
+
+For any t ∈ S, ε ∈ ]0, δt ], we set Xtε := | 1ε tt+ε ψs ds|. Then for any N > 0, by
+Hölder’s inequality, Fubini’s theorem and (2.4) we have
+R
+
+1
+{Xtε >N } ε
+
+Z
+
+Z t+ε
+t
+
+p
+
+ψs ds dP ≤
+
+Z
+
+≤
+
+Z
+
+≤
+≤
+
+Z t+ε
+
+ψs ds dP
+
+1
+
+ Z t+ε
+
+q
+
+1
+q−p
+ε
+{Xtε >N } N
+{Xtε >N } N
+
+1
+
+N
+
+E
+q−p
+1
+
+N q−p
+
+q−p
+
+ Z t+ε
+
+1
+ε
+
+q
+
+1
+
+t
+
+1
+ε
+
+t
+
+t
+
+
+
+|ψs | ds dP
+
+|ψs |q ds
+
+
+
+[E[|ψt |q ] + 1].
+
+Thus {| 1ε tt+ε ψs ds|p ; ε ∈ ]0, δt ]} are uniformly integrable. Combining this
+conclusion with (2.2), we conclude that for each t ∈ S, we have
+R
+
+(2.5)
+
+ψt = Lp − lim+
+ε→0
+
+1
+ε
+
+Z t+ε
+t
+
+ψs ds.
+
+The proof of Proposition 2.2 is complete. 
+2 (0, T ; R) and g satProof of Lemma 2.1. Since (g(t, 0, 0))t∈[0,T ] ∈ HF
+d
+2 (0, T ; R).
+isfies (A1), we know that for each (y, z) ∈ R×R , (g(t, y, z))t∈[0,T ] ∈ HF
+
+6
+
+L. JIANG
+
+Then for any 1 ≤ p < 2 and any (y, z) ∈ R × Rd , Proposition 2.2 and Jensen’s
+inequality yield
+ Z t+ε
+
+1
+(2.6) g(t, y, z) = L − lim+ E
+ε
+ε→0
+p
+
+t
+
+g(s, y, z) ds Ft
+
+
+
+a.e. t ∈ [0, T [.
+
+Thus Lemma 2.1 follows from (2.6) and Proposition 2.1 immediately. 
+Remark 2.1. Consider a financial market where derivatives pricing is
+constrained by BSDEs with generator g; Lemma 2.1 may help us to find the
+pricing mechanism, that is, the function g.
+3. Translation invariance, convexity, subadditivity and positive homogeneity for g-expectations. In this section, we study some properties of
+g-expectations such as translation invariance, convexity, subadditivity and
+positive homogeneity. All these properties are related to risk measures via
+g-expectations. We obtain some necessary and sufficient conditions on these
+problems, respectively. The main differences between our results and other
+known results on these problems such as those results in Briand et al. [3]
+and Rosazza Gianin [21] are:
+(a) We can use the g-expectation Eg [·], which is an operator, to describe
+the character of the generator g; on the other hand, [3] and [21] always used
+the conditional g-expectation (Eg [·|Ft ])t∈[0,T ] , which is an operator system,
+to describe the character of g.
+(b) Our results are obtained under the usual assumptions (A1) and (A3);
+on the other hand, the necessary and sufficient conditions given in [3] and [21]
+are always obtained under the assumptions (A1), (A3) and the additional
+continuity assumption (A4).
+From now on, for any pair (y, z) ∈ R × Rd , we set
+
+
+Syz (g) := t ∈ [0, T [
+1
+[Yt (g, t + ε, y + z · (Bt+ε − Bt )) − y] .
+ε→0+ ε
+
+
+g(t, y, z) = L1 − lim
+
+If g is independent of y, then for any z ∈ Rd , we set
+1
+S (g) := t ∈ [0, T [ g(t, z) = L − lim+ Yt (g, t + ε, z · (Bt+ε − Bt )) .
+ε→0 ε
+z
+
+
+
+1
+
+
+
+3.1. Translation invariance for g-expectation. If g is independent of y,
+then by Lemma 1.1(iv) we know that the g-expectation Eg satisfies translation invariance. We now investigate the inverse problem. We have the
+following theorem.
+
+G-EXPECTATIONS AND RELATED RISK MEASURES
+
+7
+
+Theorem 3.1 (Translation invariance for g-expectation). Let (A1) and
+(A3) hold for g. Then the following three statements are equivalent:
+(i) Eg [ξ + c] = Eg [ξ] + c, ∀ξ ∈ L2 (FT ), c ∈ R.
+(ii) For ∀ξ ∈ L2 (FT ), c ∈ R, ∀t ∈ [0, T ],
+Eg [ξ + c|Ft ] = Eg [ξ|Ft ] + c,
+
+(Translation invariance.)
+P -a.s.
+
+(iii) g is independent of y.
+Proof. (iii) ⇒ (ii) follows from Lemma 1.1. (ii) ⇒ (i) is trivial. Now
+let us prove that (i) ⇒ (iii). Suppose that (i) holds.
+For any c ∈ R, we define a new generator
+gc (t, y, z) := g(t, y − c, z)
+
+∀t ∈ [0, T ], y ∈ R, z ∈ Rd .
+
+Then gc satisfies (A1), (A2) and (A3).
+For any X ∈ L2 (FT ), by the uniqueness of solution of BSDE we can verify
+easily that
+(Yt (gc , T, X + c), Zt (gc , T, X + c))t∈[0,T ] = (Yt (g, T, X) + c, Zt (g, T, X))t∈[0,T ] .
+It follows that
+Egc [X + c] = Y0 (gc , T, X + c) = Y0 (g, T, X) + c = Eg [X] + c.
+Combining the above equality with (i) we have
+Egc [X + c] = Eg [X + c]
+
+∀X ∈ L2 (FT ).
+
+Hence for any given c ∈ R, we have
+(3.1)
+
+∀ξ ∈ L2 (FT ).
+
+Egc [ξ] = Eg [ξ]
+
+It follows from (3.1) and Proposition 3.4 of [13] that for any ξ ∈ L2 (FT ), we
+have
+(3.2)
+
+P -a.s., ∀t ∈ [0, T ]
+
+Egc [ξ|Ft ] = Eg [ξ|Ft ].
+
+Then for any (y, z) ∈ R × Rd and for any t ∈ Syz (gc ) ∩ Syz (g), (3.2) yields
+(3.3)
+
+P -a.s., gc (t, y, z) = g(t, y, z).
+
+By the representation lemma we understand that
+(3.4)
+
+λ([0, T ] \ (Syz (gc ) ∩ Syz (g))) = 0,
+
+where λ denotes the Lebesgue measure. It follows from (3.3) and (3.4) that
+(3.5)
+
+dP × dt-a.s.,
+
+gc (t, y, z) = g(t, y, z).
+
+Since g and gc are both Lipschitz with respect to (y, z), it follows that
+(3.6)
+
+dP × dt-a.s., ∀y ∈ R, z ∈ Rd
+
+gc (t, y, z) = g(t, y, z);
+
+8
+
+L. JIANG
+
+that is, for any given c ∈ R, we have gc = g. Thus for any y ∈ R, we have
+(3.7)
+
+dP × dt-a.s., ∀z ∈ Rd
+
+g(t, y, z) = g(t, 0, z).
+
+Therefore (iii) follows from (3.7) and the Lipschitz assumption (A1). 
+Remark 3.1. Under (A1), (A3) and (A4), Briand et al. [3] proved that
+(ii) is equivalent to (iii) in Theorem 3.1; see Lemmas 4.2 and 4.3 in [3].
+3.2. Convexity, subadditivity and positive homogeneity for g-expectations.
+For studying a control problem, El Karoui, Peng and Quenez [8] studied concave BSDEs. For studying dynamic risk measures, Rosazza Gianin [20, 21]
+studied the convexity, subadditivity and positive homogeneity of conditional
+g-expectations. The reader can see some results of [21] in Remark 3.2. Now
+let us introduce our results.
+Theorem 3.2 (Convexity for g-expectation). Let (A1) and (A3) hold
+for g. Then the following three statements are equivalent:
+(i) Eg [·] is convex.
+(Convexity.)
+(ii) For any t ∈ [0, T ], Eg [·|Ft ] is convex, that is, ∀ξ, η ∈ L2 (FT ), α ∈
+[0, 1],
+Eg [αξ + (1 − α)η|Ft ] ≤ αEg [ξ|Ft ] + (1 − α)Eg [η|Ft ],
+
+P -a.s.
+
+(iii) g is independent of y and g is convex with respect to z, that is, for
+any z1 , z2 ∈ Rd , α ∈ [0, 1],
+g(t, αz1 + (1 − α)z2 ) ≤ αg(t, z1 ) + (1 − α)g(t, z2 ),
+
+dP × dt-a.s.
+
+Proof. (iii) ⇒ (ii) follows from the well-known comparison theorem;
+the argument is analogous to the argument of Proposition 3.5 in El Karoui,
+Peng and Quenez [8] when those authors studied concave BSDEs. (ii) ⇒ (i)
+is trivial. Now let us prove that (i) ⇒ (iii).
+Suppose that (i) holds. First, let us prove that the convexity of g-expectation
+implies the translation invariance. Indeed, for any ξ ∈ L2 (FT ), c ∈ R, α ∈
+[0, 1], by (i) and Lemma 1.1 we have
+(3.8)
+
+Eg [αξ + (1 − α)c] ≤ αEg [ξ] + (1 − α)Eg [c] = αEg [ξ] + (1 − α)c.
+
+Thus for any ξ ∈ L2 (FT ), c ∈ R and any positive integer n, we have
+Eg
+
+1
+1−
+ξ + c = Eg
+n
+
+
+
+
+
+
+
+1
+1
+1−
+ξ + (nc)
+n
+n
+
+
+1
+≤ 1−
+Eg [ξ] + c.
+n
+
+
+
+
+
+
+9
+
+G-EXPECTATIONS AND RELATED RISK MEASURES
+
+Since the operator Eg [·] is continuous in L2 sense, we have
+
+
+
+1
+ξ+c
+Eg [ξ + c] = lim Eg 1 −
+n→∞
+n
+
+
+1
+Eg [ξ] + c
+≤ lim 1 −
+n→∞
+n
+= Eg [ξ] + c.
+Hence we have
+(3.9)
+
+Eg [ξ + c] ≤ Eg [ξ] + c
+
+∀ξ ∈ L2 (FT ), c ∈ R.
+
+Therefore
+(3.10)
+
+∀ξ ∈ L2 (FT ), c ∈ R.
+
+Eg [ξ] = Eg [ξ + c − c] ≤ Eg [ξ + c] − c
+
+It follows from the above two inequalities that
+(3.11)
+
+Eg [ξ + c] = Eg [ξ] + c
+
+∀ξ ∈ L2 (FT ), c ∈ R.
+
+Thus the g-expectation Eg satisfies the translation invariance. Then by Theorem 3.1 we conclude that g is independent of y.
+Second, let us prove that for each ξ, η ∈ L2 (FT ), α ∈ [0, 1], P -a.s.,
+(3.12)
+
+Eg [αξ + (1 − α)η|Ft ] ≤ αEg [ξ|Ft ] + (1 − α)Eg [η|Ft ]
+
+∀t ∈ [0, T ].
+
+We set
+A := {Eg [αξ + (1 − α)η|Ft ] > αEg [ξ|Ft ] + (1 − α)Eg [η|Ft ]}.
+Then A ∈ Ft . Suppose by contradiction that P (A) > 0. Then
+1A Eg [αξ + (1 − α)η|Ft ] − 1A (αEg [ξ|Ft ] + (1 − α)Eg [η|Ft ]) ≥ 0,
+and
+P ({1A Eg [αξ + (1 − α)η|Ft ] − 1A (αEg [ξ|Ft ] + (1 − α)Eg [η|Ft ]) > 0}) > 0.
+Since g(t, 0) ≡ 0 and A ∈ Ft , it is obvious that
+(3.13)
+
+Eg [1A X|Ft ] = 1A Eg [X|Ft ]
+
+∀X ∈ L2 (FT ).
+
+Since g is independent of y and A ∈ Ft , by Definition 1.2, Lemma 1.1(iv),
+equality (3.13) and Lemma 1.1(iii) we infer
+Eg [1A (αξ + (1 − α)η) − 1A (αEg [ξ|Ft ] + (1 − α)Eg [η|Ft ])]
+= Eg {Eg [1A (αξ + (1 − α)η)
+− 1A (αEg [ξ|Ft ] + (1 − α)Eg [η|Ft ])|Ft ]}
+(3.14)
+
+= Eg {Eg [1A (αξ + (1 − α)η)|Ft ]
+− 1A (αEg [ξ|Ft ] + (1 − α)Eg [η|Ft ])}
+= Eg {1A Eg [(αξ + (1 − α)η)|Ft ]
+− 1A (αEg [ξ|Ft ] + (1 − α)Eg [η|Ft ])} > 0.
+
+10
+
+L. JIANG
+
+On the other hand, since Eg is convex and g is independent of y, in view of
+Definition 1.2, Lemma 1.1(iv) and equality (3.13), we deduce that
+Eg [1A (αξ + (1 − α)η) − 1A (αEg (ξ|Ft ) + (1 − α)Eg (η|Ft ))]
+= Eg [α(1A ξ − 1A Eg (ξ|Ft )) + (1 − α)(1A η − 1A Eg (η|Ft ))]
+(3.15)
+
+≤ αEg [1A ξ − 1A Eg (ξ|Ft )] + (1 − α)Eg [1A η − 1A Eg (η|Ft )]
+= αEg {Eg [1A ξ − 1A Eg (ξ|Ft )|Ft ]}
++ (1 − α)Eg {Eg [1A η − 1A Eg (η|Ft )|Ft ]}
+= αEg {Eg [1A ξ|Ft ] − 1A Eg (ξ|Ft )}
++ (1 − α)Eg {Eg [1A η|Ft ] − 1A Eg (η|Ft )}
+= αEg {1A Eg [ξ|Ft ] − 1A Eg (ξ|Ft )}
++ (1 − α)Eg {1A Eg [η|Ft ] − 1A Eg (η|Ft )}
+= 0 + 0 = 0.
+
+Clearly (3.15) is a contradiction to (3.14). Therefore P (A) = 0. Thus (3.12)
+does hold.
+For any z1 , z2 ∈ Rd , α ∈ [0, 1], if t ∈ S αz1 +(1−α)z2 (g) ∩ S z1 (g) ∩ S z2 (g),
+by (3.12) we deduce that
+P -a.s.,
+
+g(t, αz1 + (1 − α)z2 ) ≤ αg(t, z1 ) + (1 − α)g(t, z2 ).
+
+For any z1 , z2 ∈ Rd , α ∈ [0, 1], by the Representation Lemma we know that
+λ([0, T ] \ (S αz1 +(1−α)z2 (g) ∩ S z1 (g) ∩ S z2 (g))) = 0.
+Thus for any z1 , z2 ∈ Rd , α ∈ [0, 1], we have
+(3.16)
+
+dP × dt-a.s.,
+
+g(t, αz1 + (1 − α)z2 ) ≤ αg(t, z1 ) + (1 − α)g(t, z2 ).
+
+Thus (iii) does hold. 
+Analogously to the argument of convexity for g-expectations, we have:
+Theorem 3.3 (Subadditivity for g-expectation). Let (A1) and (A3)
+hold for g. Then the following three statements are equivalent:
+(i) Eg [·] is subadditive.
+(Subadditivity.)
+(ii) For any t ∈ [0, T ], Eg [·|Ft ] is subadditive, that is, ∀ξ, η ∈ L2 (FT ),
+Eg [ξ + η|Ft ] ≤ Eg [ξ|Ft ] + Eg [η|Ft ],
+
+P -a.s.
+
+(iii) g is independent of y and g is subadditive with respect to z, that is,
+for any z1 , z2 ∈ Rd ,
+g(t, z1 + z2 ) ≤ g(t, z2 ) + g(t, z2 ),
+
+dP × dt-a.s.
+
+11
+
+G-EXPECTATIONS AND RELATED RISK MEASURES
+
+For the positive homogeneity of g-expectations, we have the following
+theorem.
+Theorem 3.4 (Positive homogeneity for g-expectation). Let (A1) and
+(A3) hold for g. Then the following three statements are equivalent:
+(i) Eg [·] is positively homogeneous.
+(ii) For any t ∈ [0, T ], Eg [·|Ft ] is positively homogeneous, that is, ∀ξ ∈
+L2 (FT ), α ≥ 0,
+Eg [αξ|Ft ] = αEg [ξ|Ft ],
+
+P -a.s.
+
+(iii) g is positively homogeneous with respect to (y, z), that is, for any
+(y, z) ∈ R × Rd , α ≥ 0,
+g(t, αy, αz) = αg(t, y, z),
+
+dP × dt-a.s.
+
+Proof. (iii) ⇒ (ii) is just Proposition 9 of [21]. (ii) ⇒ (i) is trivial. Now
+let us prove that (i) ⇒ (iii). Suppose that (i) holds for Eg . For any α > 0,
+we define a new function
+y z
+g̃α (t, y, z) := αg t, ,
+α α
+
+
+
+
+∀(t, y, z) ∈ [0, T ] × R × Rd .
+
+It is clear that g̃α satisfies (A1), (A2) and (A3).
+For any ξ ∈ L2 (FT ), we deduce that
+(Yt (g̃α , T, αξ), Zt (g̃α , T, αξ))t∈[0,T ] = α(Yt (g, T, ξ), Zt (g, T, ξ))t∈[0,T ] .
+Thus for any given α > 0, we have
+Eg̃α [αξ] = αEg [ξ]
+
+∀ξ ∈ L2 (FT ).
+
+Combining (i) with the above equality we have
+(3.17)
+
+∀ξ ∈ L2 (FT ).
+
+Eg̃α [ξ] = Eg [ξ]
+
+Thus for any α > 0, using the same argument as in (3.1)–(3.6) we conclude
+that g̃α = g, that is,
+(3.18)
+
+d
+
+dP × dt-a.s., ∀(y, z) ∈ R × R ,
+
+y z
+.
+g(t, y, z) = αg t, ,
+α α
+
+
+
+
+Hence (iii) follows from (A1) and (3.18). 
+Remark 3.2. Under (A1), (A3) and (A4), [21] proved that (ii) is equivalent to (iii) in Theorems 3.2–3.4; see Propositions 8–11 in [21].
+
+12
+
+L. JIANG
+
+4. Risk measures via g-expectations. Recently, many papers have been
+devoted to the problem of quantifying the risk of a financial position. Such
+a position, as in Artzner et al. [1] and Föllmer and Schied [10], will be described by the corresponding payoff profile, that is, by a real-valued function
+X on some set Ω of possible scenarios, where X(ω) is the discounted net
+worth of the position at the end of the trading period if the scenario ω ∈ Ω
+is realized. Coherent risk measures were introduced by Artzner et al. [1];
+then, convex risk measures were introduced by Föllmer and Schied [9], and
+independently, by Frittelli and Rosazza Gianin [11]. Among others, we are
+especially interested in [1, 2, 7, 9, 10, 11, 19, 20, 21]. For the convenience
+of the reader, we recall some definitions of risk measures. The definition
+of convex measure of risk we use in this paper was given by Föllmer and
+Schied [10], slightly different from the one given by Frittelli and Rosazza
+Gianin [11].
+Definition 4.1 ([1, 10]). Let G be the set of risks, that is, a set of
+real-valued functions on Ω. A mapping ρ : G → R is called a monetary risk
+measure if ρ satisfies the following conditions for all X, Y, ∈ G:
+(1) Monotonicity: If X ≤ Y, then ρ(Y ) ≥ ρ(X).
+(2) Translation invariance: If c ∈ R, then ρ(X + c) = ρ(X) − c.
+Definition 4.2 ([1, 10]). A monetary risk measure ρ is called a convex
+measure of risk if it satisfies
+(3) Convexity: ρ(λX + (1 − λ)Y ) ≤ λρ(Y X) + (1 − λ)ρ(Y ), ∀λ ∈ [0, 1].
+A convex measure of risk ρ is called a coherent measure of risk if it satisfies
+(4) Positive homogeneity: If λ ≥ 0, then ρ(λX) = λρ(X).
+Definition 4.3 ([21]). Let G be the set of risks and G ⊆ L0 (Ω, FT , P ).
+A map system (ρt )t∈[0,T ] is called a dynamic risk measure if it satisfies the
+following conditions for all X, Y ∈ G and all t ∈ [0, T ]:
+(1◦ ) ρt : G 7→ L0 (Ω, Ft , P ).
+(2◦ ) ρ0 is a static monetary risk measure.
+(3◦ ) ρT (X) = −X.
+(4◦ ) Dynamic monotonicity: If X ≤ Y, then ρt (Y ) ≥ ρt (X).
+(5◦ ) Dynamic translation invariance: If c ∈ R, then ρt (X + c) = ρt (X) − c.
+Definition 4.4 ([21]). A dynamic risk measure (ρt )t∈[0,T ] is called a
+dynamic convex measure of risk if it satisfies
+(6◦ ) Dynamic convexity: For any X, Y ∈ G, λ ∈ [0, 1], t ∈ [0, T ], P -a.s.,
+ρt (λX + (1 − λ)Y ) ≤ λρt (X) + (1 − λ)ρt (Y ).
+A dynamic convex measure of risk (ρt )t∈[0,T ] is called a dynamic coherent
+measure of risk if it satisfies
+
+G-EXPECTATIONS AND RELATED RISK MEASURES
+
+13
+
+(7◦ ) Dynamic positive homogeneity: For any X ∈ G, λ ≥ 0, t ∈ [0, T ],
+P -a.s.,
+
+ρt (λX) = λρt (X).
+
+By Theorems 3.1–3.4 and Definitions 4.1–4.4, we can obtain the following
+Theorems 4.1 and 4.2 immediately.
+Theorem 4.1. Let (A1) and (A3) hold for g. Let the set G of risks
+be L2 (FT ). Let ρg and (ρgt )t∈[0,T ] be defined as in equality (1.2). Then the
+following statements are equivalent:
+(i) ρg is a convex measure of risk.
+(ii) (ρgt )t∈[0,T ] is a dynamic convex measure of risk.
+(iii) Eg is convex.
+(iv) g is independent of y and is convex with respect to z.
+Theorem 4.2. Let g, G, ρg and (ρgt )t∈[0,T ] be as in Theorem 4.1. Then
+the following statements are equivalent:
+(i) ρg is a coherent measure of risk.
+(ii) (ρgt )t∈[0,T ] is a dynamic coherent measure of risk.
+(iii) Eg is sublinear, that is, Eg is positively homogeneous and subadditive.
+(iv) g is independent of y and is sublinear with respect to z.
+Remark 4.1. Rosazza Gianin [21] proved that (ii) is equivalent to (iv)
+in Theorems 4.1 and 4.2 under assumptions (A1), (A3) and (A4).
+Remark 4.2. Generally, verifying that a dynamic risk measure (ρt )t∈[0,T ]
+is a dynamic convex (resp. coherent) measure may be much more difficult
+than verifying that the corresponding static risk measure ρ0 is a static convex (resp. coherent) measure. But for risk measures (ρgt )t∈[0,T ] , by Theorems
+4.1 and 4.2 we know that if ρg is a static convex (resp. coherent) measure
+of risk, then (ρgt )t∈[0,T ] must be a dynamic convex (resp. coherent) measure
+of risk.
+Acknowledgments. This paper is an improved version of part of my
+Ph.D. thesis. I thank Professors S. Peng and Z. Chen for their help. I also
+thank Professor R. Adler and three anonymous referees for their careful
+reading of this paper and valuable suggestions.
+REFERENCES
+[1] Artzner, P., Delbaen, F., Eber, J. M. and Heath, D. (1999). Coherent measures
+of risk, Math. Finance 4 203–228. MR1850791
+
+14
+
+L. JIANG
+
+[2] Barrieu, P. and El Karoui, N. (2004). Optimal derivatives design under dynamic
+risk measures. In Mathematics of Finance (G. Yin and Q. Zhang, eds.) 13–25.
+Amer. Math. Soc., Providence, RI. MR2076287
+[3] Briand, Ph., Coquet, F., Hu, Y., Mémin, J. and Peng, S. (2000). A converse
+comparison theorem for BSDEs and related properties of g-expectation. Electron. Comm. Probab. 5 101–117. MR1781845
+[4] Chen, Z., Chen, T. and Davison, M. (2005). Choquet expectation and Peng’s
+g-expectation. Ann. Probab. 33 1179–1199. MR2135317
+[5] Chen, Z. and Epstein, L. (2002). Ambiguity, risk and asset returns in continuous
+time. Econometrica 70 1403–1444. MR1929974
+[6] Coquet, F., Hu, Y., Mémin, J. and Peng, S. (2002). Filtration consistent nonlinear
+expectations and related g-expectation. Probab. Theory Related Fields 123 1–27.
+MR1906435
+[7] Cvitanic, J. and Karatzas, I. (1999). On dynamic measures of risk. Finance Stoch.
+3 451–482. MR1842283
+[8] El Karoui, N., Peng, S. and Quenez, M. C. (1997). Backward stochastic differential equations in finance. Math. Finance 7 1–71. MR1434407
+[9] Föllmer, H. and Schied, A. (2002). Convex measures of risk and trading constraints. Finance Stoch. 6 429–447. MR1932379
+[10] Föllmer, H. and Schied, A. (2002). Stochastic Finance, an Introduction in Discrete
+Time. De Gruyter, Berlin–New York. MR1925197
+[11] Frittelli, M. and Rosazza Gianin, E. (2002). Putting order in risk measures. J.
+Banking and Finance 26 1473–1486.
+[12] Hewitt, E. and Stromberg, K. R. (1978). Real and Abstract Analysis. Springer,
+New York. MR0367121
+[13] Jiang, L. (2004). Some results on the uniqueness of generators of backward stochastic
+differential equations. C. R. Acad. Sci. Paris Sér. I 338 575–580. MR2057033
+[14] Jiang, L. (2005). Nonlinear expectation—g-expectation theory and its applications
+in finance. Ph. D. thesis, Shandong Univ., P. R. China.
+[15] Jiang, L. (2005). Representations theorems for generators of backward stochastic
+differential equations and their applications. Stoch. Process. Appl. 115 1883–
+1903. MR2178500
+[16] Pardoux, E. and Peng, S. (1990). Adapted solution of a backward stochastic differential equation. Syst. Control. Lett. 14 55–61. MR1037747
+[17] Peng, S. (1997). Backward SDE and related g-expectation. In Backward Stochastic
+Differential Equations (N. El Karoui and L. Mazliak, eds.). Pitman Research
+Notes Math. Ser. 364 141–159. Longman, Harlow. MR1752680
+[18] Peng, S. (1999). Monotonic limit theorem of BSDE and nonlinear decomposition
+theorem of Doob–Meyer’s type. Probab. Theory Related Fields 113 473–499.
+MR1717527
+[19] Peng, S. (2004). Nonlinear expectations, nonlinear evaluations and risk measures.
+Stochastic Methods in Finance Lectures. Lecture Notes in Math. 1856 143–217.
+Springer, Berlin. MR2113723
+[20] Rosazza Gianin, E. (2002). Convexity and law invariance of risk measures. Ph. D.
+thesis, Univ. di Bergamo, Italy.
+[21] Rosazza Gianin, E. (2006). Risk measures via g-expectations. Insurance: Mathematics and Economics 39 19–34. MR2241848
+
+G-EXPECTATIONS AND RELATED RISK MEASURES
+
+15
+
+Department of Mathematics
+China University of Mining and Technology
+Xuzhou 221116
+P. R. China
+E-mail: jianglong365@hotmail.com
+
+
