@@ -1,0 +1,22 @@
+# Pi agent
+.pi/
+
+# Reading work
+.reading_work/
+reading_work/
+*.reading_work/
+
+# Temp / cache
+*.t.dat
+*.h.dat
+*.dat.tmp
+.cache/
+.temp/
+tmp/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
